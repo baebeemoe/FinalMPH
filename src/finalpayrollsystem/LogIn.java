@@ -13,10 +13,7 @@ import java.awt.LayoutManager;
 import java.awt.RenderingHints;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Default
- */
+
 public class LogIn extends javax.swing.JFrame {
 
     /**
@@ -47,12 +44,11 @@ public class LogIn extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        LogInbtn = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1366, 768));
         setResizable(false);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1366, 768));
@@ -127,12 +123,17 @@ public class LogIn extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 153, 0));
         jLabel8.setText("Log In to MotorPH Portal");
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0,0));
-        jButton2.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 153, 0));
-        jButton2.setText("Log In");
-        jButton2.setBorder(null);
-        jButton2.setPreferredSize(new java.awt.Dimension(41, 17));
+        LogInbtn.setBackground(new java.awt.Color(0, 0, 0,0));
+        LogInbtn.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        LogInbtn.setForeground(new java.awt.Color(255, 153, 0));
+        LogInbtn.setText("Log In");
+        LogInbtn.setBorder(null);
+        LogInbtn.setPreferredSize(new java.awt.Dimension(41, 17));
+        LogInbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogInbtnActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0,0));
         jButton1.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
@@ -165,7 +166,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(144, 144, 144)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(LogInbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(112, 112, 112)
                 .addComponent(jButton1))
@@ -190,7 +191,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addGap(3, 3, 3)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LogInbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1))
         );
@@ -198,7 +199,6 @@ public class LogIn extends javax.swing.JFrame {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 290, 360, 340));
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/newBackground.jpg"))); // NOI18N
-        Background.setPreferredSize(new java.awt.Dimension(1366, 768));
         Background.setRequestFocusEnabled(false);
         Background.setVerifyInputWhenFocusTarget(false);
         jPanel1.add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 780));
@@ -215,11 +215,18 @@ public class LogIn extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void LogInbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInbtnActionPerformed
+Dashboard dashboard = new Dashboard();
+dashboard.setVisible(true);
+this.dispose();
+    }//GEN-LAST:event_LogInbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,10 +256,8 @@ public class LogIn extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LogIn().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new LogIn().setVisible(true);
         });
     }
 
@@ -260,8 +265,8 @@ public class LogIn extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
+    private javax.swing.JButton LogInbtn;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
