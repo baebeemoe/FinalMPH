@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package finalpayrollsystem;
+package Forms;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -25,7 +25,7 @@ public class LogIn extends javax.swing.JFrame {
     }
     
     
-    @SuppressWarnings("unchecked")
+   
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -224,8 +224,12 @@ public class LogIn extends javax.swing.JFrame {
 
     private void LogInbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInbtnActionPerformed
 Dashboard dashboard = new Dashboard();
-dashboard.setVisible(true);
 this.dispose();
+dashboard.getProfilePanel().setVisible(false);
+dashboard.setVisible(true);
+
+
+
     }//GEN-LAST:event_LogInbtnActionPerformed
 
     /**
