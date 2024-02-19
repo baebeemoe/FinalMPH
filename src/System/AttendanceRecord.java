@@ -8,13 +8,17 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class TimeKeeping {
+public class AttendanceRecord {
     private int userID;
     
-    public TimeKeeping(int userID) {
+    
+    public AttendanceRecord(int userID) {
+        
         this.userID = 123;
     }
 
+  
+    
     public String timeIn() {
         return getCurrentDateTimeFormatted();
     }

@@ -5,26 +5,32 @@
  */
 package Forms;
 
+import System.EmployeeRecords;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.LayoutManager;
 import java.awt.RenderingHints;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 
 public class LogIn extends javax.swing.JFrame {
 
-    /**
-     * Creates new form LogIn
-     */
+    private EmployeeRecords[] employees;
+   
     public LogIn() {
+       
         initComponents();
+        
+        // Load employee records from CSV when the form is initialized
+        employees = EmployeeRecords.readEmployeesFromCSV("src/Files/EmployeeData.csv");
        
     }
-    
-    
+   
    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -37,7 +43,7 @@ public class LogIn extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        UserId = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
@@ -91,11 +97,11 @@ public class LogIn extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 0, 0,100));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(232, 156, 26), 2, true));
 
-        jTextField1.setBackground(new java.awt.Color(0, 0, 0,0));
-        jTextField1.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(null);
-        jTextField1.setCaretColor(new java.awt.Color(255, 255, 255));
+        UserId.setBackground(new java.awt.Color(0, 0, 0,0));
+        UserId.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
+        UserId.setForeground(new java.awt.Color(255, 255, 255));
+        UserId.setBorder(null);
+        UserId.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jPasswordField1.setBackground(new java.awt.Color(0, 0, 0,0));
         jPasswordField1.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
@@ -152,7 +158,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(UserId, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(84, 84, 84)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -178,7 +184,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addGap(61, 61, 61)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UserId, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -223,14 +229,45 @@ public class LogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void LogInbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInbtnActionPerformed
-Dashboard dashboard = new Dashboard();
-this.dispose();
-dashboard.getProfilePanel().setVisible(false);
-dashboard.setVisible(true);
+        Dashboard dashboard = new Dashboard();
+        String userID = UserId.getText().trim();
+      
+         // Check if the userID exists in the employee records
+        boolean accessGranted = false;
+        for (EmployeeRecords employee : employees) {
+            if (employee.getEmpNo() == Integer.parseInt(userID)) {
+               accessGranted = true;
+               dashboard.getMainDashBoardFirstName().setText(employee.getFirstName());
+               dashboard.getMainDashboardempNo().setText(userID);
+               
+                break;
+            }
+        }
+        // Grant or deny access based on the result
+        if (accessGranted) {
+            // Access granted, you can open the dashboard or perform any action here
 
-
-
+            
+            
+    
+            this.dispose();
+            dashboard.getProfilePanel().setVisible(false);
+            dashboard.setVisible(true);
+         
+        
+               
+        } else {
+            // Access denied, display an error message
+            JOptionPane.showMessageDialog(this, "Invalid UserID! Access Denied.", "Login Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        
+  
     }//GEN-LAST:event_LogInbtnActionPerformed
+
+    public JTextField getUserId() {
+        return UserId;
+    }
 
     /**
      * @param args the command line arguments
@@ -270,6 +307,7 @@ dashboard.setVisible(true);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
     private javax.swing.JButton LogInbtn;
+    private javax.swing.JTextField UserId;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -285,7 +323,6 @@ dashboard.setVisible(true);
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
 
