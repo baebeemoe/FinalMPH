@@ -231,9 +231,11 @@ public class LogIn extends javax.swing.JFrame {
     private void LogInbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInbtnActionPerformed
         Dashboard dashboard = new Dashboard();
         String userID = UserId.getText().trim();
-      
+        
          // Check if the userID exists in the employee records
         boolean accessGranted = false;
+        
+        
         for (EmployeeRecords employee : employees) {
             if (employee.getEmpNo() == Integer.parseInt(userID)) {
                accessGranted = true;
@@ -242,16 +244,18 @@ public class LogIn extends javax.swing.JFrame {
                
                 break;
             }
+            
+            
         }
         // Grant or deny access based on the result
         if (accessGranted) {
             // Access granted, you can open the dashboard or perform any action here
 
-            
-            
-    
+           
+
             this.dispose();
             dashboard.getProfilePanel().setVisible(false);
+            dashboard.getPayslipPanel().setVisible(false);
             dashboard.setVisible(true);
          
         
