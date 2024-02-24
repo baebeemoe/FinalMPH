@@ -3,6 +3,9 @@ package Forms;
 
 import System.AttendanceRecord;
 import System.EmployeeRecords;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -18,16 +21,19 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.table.DefaultTableModel;
 
 public class Dashboard extends javax.swing.JFrame {
 
     private EmployeeRecords[] employees;
+    private AttendanceRecord[] attendance;
     
     public Dashboard() {
         initComponents();
         
         // Load employee records from CSV when the form is initialized
         employees = EmployeeRecords.readEmployeesFromCSV("src/Files/EmployeeData.csv");
+        attendance = AttendanceRecord.readAttendanceFromCSV("src/Files/timekeeping.csv");
     }
 
     public JPanel getAttendancePanel() {
@@ -83,6 +89,11 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        AttendancePanel = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        attendanceTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         PayslipPanel = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
@@ -243,11 +254,6 @@ public javax.swing.JPanel getProfilePanel() {
         jScrollPane2 = new javax.swing.JScrollPane();
         ProfileAddress = new javax.swing.JTextArea();
         jLabel32 = new javax.swing.JLabel();
-        AttendancePanel = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         LeavePanel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel112 = new javax.swing.JLabel();
@@ -304,6 +310,85 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("People Portal");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
+
+        AttendancePanel.setBackground(new java.awt.Color(0, 0, 0,100));
+        AttendancePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        AttendancePanel.setPreferredSize(new java.awt.Dimension(1114, 520));
+
+        attendanceTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        attendanceTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Date", "Time In", "Time Out", "Overtime", "Status"
+            }
+        ));
+        attendanceTable.setGridColor(new java.awt.Color(153, 153, 153));
+        attendanceTable.setName(""); // NOI18N
+        attendanceTable.setOpaque(false);
+        attendanceTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(attendanceTable);
+
+        jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        jLabel1.setText("Attendance Record");
+
+        jButton2.setText("Apply Dispute");
+
+        javax.swing.GroupLayout AttendancePanelLayout = new javax.swing.GroupLayout(AttendancePanel);
+        AttendancePanel.setLayout(AttendancePanelLayout);
+        AttendancePanelLayout.setHorizontalGroup(
+            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AttendancePanelLayout.createSequentialGroup()
+                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AttendancePanelLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(AttendancePanelLayout.createSequentialGroup()
+                        .addGap(443, 443, 443)
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(418, 418, 418)))
+                .addGap(45, 45, 45))
+        );
+        AttendancePanelLayout.setVerticalGroup(
+            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AttendancePanelLayout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(jButton2)
+                .addContainerGap())
+        );
+
+        jPanel1.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
 
         PayslipPanel.setBackground(new java.awt.Color(255, 255, 255));
         PayslipPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
@@ -542,7 +627,7 @@ public javax.swing.JPanel getProfilePanel() {
                                         .addGap(312, 312, 312)
                                         .addComponent(jLabel75, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                        .addComponent(jLabel109, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                                        .addComponent(jLabel109, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGap(312, 312, 312)
                                         .addComponent(jLabel110, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(10, 10, 10)))
@@ -1691,85 +1776,6 @@ public javax.swing.JPanel getProfilePanel() {
 
         jPanel1.add(ProfilePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
 
-        AttendancePanel.setBackground(new java.awt.Color(0, 0, 0,100));
-        AttendancePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-        AttendancePanel.setPreferredSize(new java.awt.Dimension(1114, 520));
-
-        jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Date", "Time In", "Time Out", "Overtime", "Status"
-            }
-        ));
-        jTable2.setGridColor(new java.awt.Color(153, 153, 153));
-        jTable2.setName(""); // NOI18N
-        jTable2.setOpaque(false);
-        jTable2.getTableHeader().setReorderingAllowed(false);
-        jScrollPane3.setViewportView(jTable2);
-
-        jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
-        jLabel1.setText("Attendance Record");
-
-        jButton2.setText("Apply Dispute");
-
-        javax.swing.GroupLayout AttendancePanelLayout = new javax.swing.GroupLayout(AttendancePanel);
-        AttendancePanel.setLayout(AttendancePanelLayout);
-        AttendancePanelLayout.setHorizontalGroup(
-            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AttendancePanelLayout.createSequentialGroup()
-                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AttendancePanelLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(AttendancePanelLayout.createSequentialGroup()
-                        .addGap(443, 443, 443)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(418, 418, 418)))
-                .addGap(45, 45, 45))
-        );
-        AttendancePanelLayout.setVerticalGroup(
-            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AttendancePanelLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
-                .addComponent(jButton2)
-                .addContainerGap())
-        );
-
-        jPanel1.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
-
         LeavePanel.setBackground(new java.awt.Color(0, 0, 0,100));
         LeavePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
         LeavePanel.setPreferredSize(new java.awt.Dimension(1114, 520));
@@ -1947,10 +1953,7 @@ public javax.swing.JPanel getProfilePanel() {
                 ProfileAddress.setWrapStyleWord(true);
                 ProfileAddress.setText(employee.getAddress());
                 ProfileAddress.setEditable(false);
-      
-                
-                
-               
+             AttendancePanel.setVisible(false);
                 break;
             }
         }
@@ -1963,6 +1966,7 @@ public javax.swing.JPanel getProfilePanel() {
             Request_MainDashboard.setVisible(false);
             PayslipPanel.setVisible(false);
             ProfilePanel.setVisible(true);
+            
         } else {
             // Access denied, display an error message
             JOptionPane.showMessageDialog(this, "Invalid UserID! Access Denied.", "Login Error", JOptionPane.ERROR_MESSAGE);
@@ -1975,28 +1979,47 @@ public javax.swing.JPanel getProfilePanel() {
    
     private void PunchInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PunchInActionPerformed
    
-     try {
-            AttendanceRecord timekeeping = new AttendanceRecord(123); // Pass userID to AttendanceRecord constructor
-            String timeIn = timekeeping.timeIn(); // Record time in
-            if (timeIn != null) {
-                TimeInLabel.setText(timekeeping.formatTime(timeIn)); // Display time in
-                PunchIn.setEnabled(false);
-                PunchOut.setEnabled(true);
+String empID = MainDashboardempNo.getText(); // Assuming you're getting the employee ID from a JTextField
+boolean accessGranted = false;
+
+    for (AttendanceRecord att : attendance) {
+        if (att.getEmpID() == Integer.parseInt(empID)) {
+            // Compare empID with the employee ID from the CSV
+            accessGranted = true;
+            try {
+                String timeIn = att.timeIn(); // Record time in
+                if (timeIn != null) {
+                    TimeInLabel.setText(att.formatTime(timeIn)); // Display time in
+                    PunchIn.setEnabled(false);
+                    PunchOut.setEnabled(true);
+                    break; // Exit the loop once time in is recorded
+                }
+            } catch (Exception ex) {
+                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } catch (Exception ex) {
-            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    if (!accessGranted) {
+        // If access is not granted (i.e., employee ID not found in the CSV), display an error message
+        JOptionPane.showMessageDialog(this, "Invalid Employee ID! Access Denied.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
        
     }//GEN-LAST:event_PunchInActionPerformed
 
     private void PunchOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PunchOutActionPerformed
+        String empID = MainDashboardempNo.getText();
+        boolean accessGranted = false;
+
+    for (AttendanceRecord att : attendance) {
+        if (att.getEmpID()== Integer.parseInt(empID)) {
+        // Compare empID with the employee ID from the CSV
+        accessGranted = true;
         try {
-            AttendanceRecord timekeeping = new AttendanceRecord(123); // Pass userID to AttendanceRecord constructor
-            String timeOut = timekeeping.timeOut(); // Record time out
-            
+            String timeOut = att.getTimeOut(); // Record time out
             if (timeOut != null) {
-                TimeOutLabel.setText(timekeeping.formatTime(timeOut)); // Display time out
-                timekeeping.writeToCSV(TimeInLabel.getText(), TimeOutLabel.getText()); // Write to CSV
+                TimeOutLabel.setText(att.formatTime(timeOut)); // Display time out
+                att.writeToCSV(TimeInLabel.getText(), TimeOutLabel.getText()); // Write to CSV
                 PunchOut.setEnabled(false);
                 PunchIn.setEnabled(true);
             } else {
@@ -2006,19 +2029,75 @@ public javax.swing.JPanel getProfilePanel() {
         } catch (Exception ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
+        break; // Exit the loop once the employee ID is found
+    } else {    }
+}
+
+if (!accessGranted) {
+    // If access is not granted (i.e., employee ID not found in the CSV), display an error message
+    JOptionPane.showMessageDialog(this, "Invalid Employee ID! Access Denied.", "Error", JOptionPane.ERROR_MESSAGE);
+}
         
         
     }//GEN-LAST:event_PunchOutActionPerformed
 
     private void AttendanceMainDashboardButtionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AttendanceMainDashboardButtionActionPerformed
-            TimeKeeping_MainDashboard.setVisible(false);
-            PayrollHealth_MainDashboard.setVisible(false);
-            EmployeeRecords_MainDashboard.setVisible(false);
-            Request_MainDashboard.setVisible(false);
-            PayslipPanel.setVisible(false);
-            ProfilePanel.setVisible(false);
-            AttendancePanel.setVisible(true);
-            LeavePanel.setVisible(false);
+       String empID = MainDashboardempNo.getText().trim();
+boolean accessGranted = false;
+
+System.out.println("Employee ID from input: " + empID);
+
+for (AttendanceRecord att : attendance) {
+     System.out.println("Employee ID from record: " + att.getEmpID());
+    if (att.getEmpID() == Integer.parseInt(empID)) {
+        accessGranted = true;
+        break;
+    }
+}
+
+// Grant or deny access based on the result
+if (accessGranted) {
+    DefaultTableModel model = (DefaultTableModel) attendanceTable.getModel();
+    model.setRowCount(0);
+
+    // Populate the table with data from the CSV file
+    String csvFilePath = "src/Files/timekeeping.csv";
+    boolean foundRecords = false;
+
+    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] data = line.split(",");
+            if (data.length >= 5 && data[0].equals(empID)) {
+                model.addRow(new Object[]{data[1], data[2], data[3], data[4]});
+                foundRecords = true;
+            }
+        }
+    } catch (IOException ex) {
+        ex.printStackTrace();
+    }
+
+    // Check if records were found for the employee
+    if (!foundRecords) {
+        JOptionPane.showMessageDialog(this, "No attendance records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+
+    // Show the AttendancePanel and hide other panels
+    TimeKeeping_MainDashboard.setVisible(false);
+    PayrollHealth_MainDashboard.setVisible(false);
+    EmployeeRecords_MainDashboard.setVisible(false);
+    Request_MainDashboard.setVisible(false);
+    PayslipPanel.setVisible(false);
+    ProfilePanel.setVisible(false);
+    AttendancePanel.setVisible(true);
+    LeavePanel.setVisible(false);
+} else {
+    // Access denied, display an error message
+    JOptionPane.showMessageDialog(this, "Access Denied. Employee ID not found.", "Error", JOptionPane.ERROR_MESSAGE);
+}
+
+            
+            
     }//GEN-LAST:event_AttendanceMainDashboardButtionActionPerformed
 
     private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
@@ -2104,6 +2183,7 @@ login.setVisible(true);// TODO add your handling code here:
     private javax.swing.JLabel TimeInLabel;
     private javax.swing.JPanel TimeKeeping_MainDashboard;
     private javax.swing.JLabel TimeOutLabel;
+    private javax.swing.JTable attendanceTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -2253,7 +2333,6 @@ login.setVisible(true);// TODO add your handling code here:
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel profileFirstName;
     // End of variables declaration//GEN-END:variables

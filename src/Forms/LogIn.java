@@ -230,44 +230,41 @@ public class LogIn extends javax.swing.JFrame {
 
     private void LogInbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInbtnActionPerformed
         Dashboard dashboard = new Dashboard();
-        String userID = UserId.getText().trim();
-        
-         // Check if the userID exists in the employee records
-        boolean accessGranted = false;
-        
-        
-        for (EmployeeRecords employee : employees) {
-            if (employee.getEmpNo() == Integer.parseInt(userID)) {
-               accessGranted = true;
-               dashboard.getMainDashBoardFirstName().setText(employee.getFirstName());
-               dashboard.getMainDashboardempNo().setText(userID);
-               
-                break;
-            }
-            
-            
-        }
-        // Grant or deny access based on the result
-        if (accessGranted) {
-            // Access granted, you can open the dashboard or perform any action here
+String userID = UserId.getText().trim();
 
-           
+// Check if the userID exists in the employee records
+boolean accessGranted = false;
 
-            this.dispose();
-            dashboard.getProfilePanel().setVisible(false);
-            dashboard.getPayslipPanel().setVisible(false);
-            dashboard.getAttendancePanel().setVisible(false);
-            dashboard.getLeavePanel().setVisible(false);
-            dashboard.setVisible(true);
-            
-         
-        
-               
-        } else {
-            // Access denied, display an error message
-            JOptionPane.showMessageDialog(this, "Invalid UserID! Access Denied.", "Login Error", JOptionPane.ERROR_MESSAGE);
+// Validate if the input is a valid integer
+try {
+    int parsedUserID = Integer.parseInt(userID);
+    
+    for (EmployeeRecords employee : employees) {
+        if (employee.getEmpNo() == parsedUserID) {
+            accessGranted = true;
+            dashboard.getMainDashBoardFirstName().setText(employee.getFirstName());
+            dashboard.getMainDashboardempNo().setText(userID);
+            break;
         }
-        
+    }
+} catch (NumberFormatException e) {
+    // Handle the case where the input is not a valid integer
+    JOptionPane.showMessageDialog(this, "Invalid UserID! Please enter a valid integer.", "Login Error", JOptionPane.ERROR_MESSAGE);
+}
+
+// Grant or deny access based on the result
+if (accessGranted) {
+    // Access granted, you can open the dashboard or perform any action here
+    this.dispose();
+    dashboard.getProfilePanel().setVisible(false);
+    dashboard.getPayslipPanel().setVisible(false);
+    dashboard.getAttendancePanel().setVisible(false);
+    dashboard.getLeavePanel().setVisible(false);
+    dashboard.setVisible(true);
+} else {
+    // Access denied, display an error message
+    JOptionPane.showMessageDialog(this, "Invalid UserID! Access Denied.", "Login Error", JOptionPane.ERROR_MESSAGE);
+}
         
   
     }//GEN-LAST:event_LogInbtnActionPerformed

@@ -1,22 +1,57 @@
 package System;
 
 import Forms.Dashboard;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+
+
+
 
 public class AttendanceRecord {
-    private int userID;
+    //Variables
+    private int empID;
+    private String date;
+    private String timeIn;
+    private String timeOut;
+    private String overTime;
     
     
-    public AttendanceRecord(int userID) {
-        
-        this.userID = 123;
+    
+//Set up getter
+    public int getEmpID() {
+        return empID;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public String getTimeIn() {
+        return timeIn;
+    }
+
+    public String getTimeOut() {
+        return timeOut;
+    }
+
+    public String getOverTime() {
+        return overTime;
+    }
+   
+  
+    
+
+
+    
   
     
     public String timeIn() {
@@ -91,7 +126,7 @@ public long calculateOvertime(String timeIn, String timeOut) {
             String formattedTimeOut = timeFormat.format(timeOutDate);
             long overtime = calculateOvertime(timeIn, timeOut);
 
-            writer.append(userID + "," + formattedDate + "," + formattedTimeIn + "," + formattedTimeOut + "," + overtime + "\n");
+            writer.append(empID + "," + formattedDate + "," + formattedTimeIn + "," + formattedTimeOut + "," + overtime + "\n");
         } else {
             System.out.println("Error: Time in or time out is null or empty.");
         }
@@ -115,4 +150,93 @@ public long calculateOvertime(String timeIn, String timeOut) {
         }
         return time;
     }
+    
+   
+    //Constructor for CsV
+    public AttendanceRecord(String[] data) {
+     if (data.length >= 5) { // Check if data array has at least 5 elements
+       this.empID = Integer.parseInt(data[0].trim()); // Parse the employee ID
+    this.date = data[1].trim();
+    this.timeIn = data[2].trim();
+    this.timeOut = data[3].trim();
+    this.overTime = data[4].trim();
+    } else { System.err.println("Error: Insufficient data in the array.");
+    }
+    
+    }
+    
+   /**
+   ///Read Csv attendance
+   public static AttendanceRecord[] readAttendanceFromCSV(String filePath) {
+        String line = "";
+        String csvSplitBy = ",";
+        AttendanceRecord[] attendance = null;
+        BufferedReader br = null;
+       
+
+        try {
+            br = new BufferedReader(new FileReader(filePath));
+
+            // Skip the first line (column headers)
+            br.readLine();
+
+            // Determine number of lines (employees) in the CSV file
+            int numEmployees = (int) br.lines().count();
+            attendance = new AttendanceRecord[numEmployees];
+
+            // Reset BufferedReader to start of file
+            br.close();
+            br = new BufferedReader(new FileReader(filePath));
+
+            // Skip the first line again before reading data
+            br.readLine();
+
+            int index = 0;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(csvSplitBy);
+                attendance[index] = new AttendanceRecord(data);
+                index++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return attendance;
+    }**/
+    
+public static AttendanceRecord[] readAttendanceFromCSV(String filePath) {
+    List<AttendanceRecord> records = new ArrayList<>();
+
+    try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        String line;
+        // Read each line from the CSV file
+        while ((line = br.readLine()) != null) {
+            // Split the line into fields using the appropriate delimiter
+            String[] data = line.split(",");
+            // Create an AttendanceRecord object using the data
+            AttendanceRecord record = new AttendanceRecord(data);
+            // Add the record to the list
+            records.add(record);
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+
+    // Convert the list to an array and return
+    return records.toArray(new AttendanceRecord[0]);
 }
+
+}
+   
+   
+      
+
+    
+
