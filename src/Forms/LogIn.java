@@ -256,7 +256,10 @@ public class LogIn extends javax.swing.JFrame {
             this.dispose();
             dashboard.getProfilePanel().setVisible(false);
             dashboard.getPayslipPanel().setVisible(false);
+            dashboard.getAttendancePanel().setVisible(false);
+            dashboard.getLeavePanel().setVisible(false);
             dashboard.setVisible(true);
+            
          
         
                
