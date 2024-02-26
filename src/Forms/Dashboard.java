@@ -990,8 +990,6 @@ public javax.swing.JPanel getProfilePanel() {
         Home.setText("Home");
         Home.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Home.setBorderPainted(false);
-        Home.setContentAreaFilled(false);
-        Home.setOpaque(true);
         Home.setPreferredSize(new java.awt.Dimension(160, 52));
         Home.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -1014,8 +1012,6 @@ public javax.swing.JPanel getProfilePanel() {
         ProfileButton.setText("Profile");
         ProfileButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         ProfileButton.setBorderPainted(false);
-        ProfileButton.setContentAreaFilled(false);
-        ProfileButton.setOpaque(true);
         ProfileButton.setPreferredSize(new java.awt.Dimension(160, 52));
         ProfileButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -1038,8 +1034,6 @@ public javax.swing.JPanel getProfilePanel() {
         AttendanceMainDashboardButton.setText("Attendance");
         AttendanceMainDashboardButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         AttendanceMainDashboardButton.setBorderPainted(false);
-        AttendanceMainDashboardButton.setContentAreaFilled(false);
-        AttendanceMainDashboardButton.setOpaque(true);
         AttendanceMainDashboardButton.setPreferredSize(new java.awt.Dimension(160, 52));
         AttendanceMainDashboardButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -1062,8 +1056,6 @@ public javax.swing.JPanel getProfilePanel() {
         LeaveMainDashboard.setText("Leave");
         LeaveMainDashboard.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         LeaveMainDashboard.setBorderPainted(false);
-        LeaveMainDashboard.setContentAreaFilled(false);
-        LeaveMainDashboard.setOpaque(true);
         LeaveMainDashboard.setPreferredSize(new java.awt.Dimension(160, 52));
         LeaveMainDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -1086,8 +1078,6 @@ public javax.swing.JPanel getProfilePanel() {
         PayslipMaindashboard.setText("Payslip");
         PayslipMaindashboard.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         PayslipMaindashboard.setBorderPainted(false);
-        PayslipMaindashboard.setContentAreaFilled(false);
-        PayslipMaindashboard.setOpaque(true);
         PayslipMaindashboard.setPreferredSize(new java.awt.Dimension(160, 52));
         PayslipMaindashboard.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -1143,12 +1133,13 @@ public javax.swing.JPanel getProfilePanel() {
         jSeparator4.setForeground(new java.awt.Color(102, 102, 102));
         jSeparator4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
 
-        jProgressBar1.setBackground(new java.awt.Color(0, 0, 0, 0));
+        jProgressBar1.setBackground(new java.awt.Color(34, 34, 50, 220));
         jProgressBar1.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
-        jProgressBar1.setForeground(new java.awt.Color(255, 255, 255));
+        jProgressBar1.setForeground(new java.awt.Color(255, 153, 0));
         jProgressBar1.setValue(20);
         jProgressBar1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
         jProgressBar1.setFocusable(false);
+        jProgressBar1.setOpaque(true);
         jProgressBar1.setRequestFocusEnabled(false);
         jProgressBar1.setStringPainted(true);
 
@@ -1298,8 +1289,8 @@ public javax.swing.JPanel getProfilePanel() {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel13)))
                 .addGap(18, 18, 18)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
                     .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
@@ -1411,7 +1402,6 @@ public javax.swing.JPanel getProfilePanel() {
         jButton3.setText("Employee Records");
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
         jButton3.setOpaque(true);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
