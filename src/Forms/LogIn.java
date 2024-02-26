@@ -6,7 +6,6 @@
 package Forms;
 
 import System.EmployeeRecords;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -146,7 +145,6 @@ public class LogIn extends javax.swing.JFrame {
         LogInbtn.setFont(new java.awt.Font("Poppins Medium", 0, 18)); // NOI18N
         LogInbtn.setForeground(new java.awt.Color(255, 255, 255));
         LogInbtn.setText("Log in");
-        LogInbtn.setActionCommand("Log in");
         LogInbtn.setBorder(null);
         LogInbtn.setBorderPainted(false);
         LogInbtn.setContentAreaFilled(false);
@@ -156,17 +154,28 @@ public class LogIn extends javax.swing.JFrame {
         LogInbtn.setOpaque(true);
         LogInbtn.setPreferredSize(new java.awt.Dimension(280, 40));
         LogInbtn.setRequestFocusEnabled(false);
+        LogInbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LogInbtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LogInbtnMouseExited(evt);
+            }
+        });
         LogInbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogInbtnActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0,0));
         jButton1.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 153, 255));
         jButton1.setText("Forgotten your password?");
         jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setRequestFocusEnabled(false);
+        jButton1.setRolloverEnabled(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -378,6 +387,16 @@ if (accessGranted) {
         
   
     }//GEN-LAST:event_LogInbtnActionPerformed
+
+    private void LogInbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInbtnMouseEntered
+        // TODO add your handling code here:
+        LogInbtn.setBackground(new java.awt.Color(255, 153, 0));
+    }//GEN-LAST:event_LogInbtnMouseEntered
+
+    private void LogInbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInbtnMouseExited
+        // TODO add your handling code here:
+        LogInbtn.setBackground(new java.awt.Color(255, 102, 0));
+    }//GEN-LAST:event_LogInbtnMouseExited
 
     public JTextField getUserId() {
         return UserId;
