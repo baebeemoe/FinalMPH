@@ -86,6 +86,7 @@ public javax.swing.JPanel getProfilePanel() {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -158,9 +159,10 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        LogOut = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         MainDashBoardFirstName = new javax.swing.JLabel();
-        LogOut = new javax.swing.JButton();
         MainDashboardempNo = new javax.swing.JLabel();
         MenuBar_MainDashboard = new javax.swing.JPanel();
         Home = new javax.swing.JButton();
@@ -294,22 +296,49 @@ public javax.swing.JPanel getProfilePanel() {
         jPanel1.setPreferredSize(new java.awt.Dimension(1366, 768));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
+        jPanel5.setOpaque(false);
+
+        jLabel2.setFont(new java.awt.Font("Poppins", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Motor");
         jLabel2.setIconTextGap(0);
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Poppins", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 153, 0));
         jLabel3.setText("PH");
         jLabel3.setIconTextGap(0);
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, -1, 30));
 
-        jLabel4.setFont(new java.awt.Font("Lucida Bright", 1, 17)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Poppins", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("People Portal");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3))
+                    .addComponent(jLabel4))
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
 
         AttendancePanel.setBackground(new java.awt.Color(0, 0, 0,100));
         AttendancePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
@@ -379,7 +408,7 @@ public javax.swing.JPanel getProfilePanel() {
         AttendancePanelLayout.setVerticalGroup(
             AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AttendancePanelLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -809,9 +838,9 @@ public javax.swing.JPanel getProfilePanel() {
                         .addGap(12, 12, 12)
                         .addComponent(jLabel82)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel71)
-                            .addComponent(jLabel72))
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel72)
+                            .addComponent(jLabel71))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel92)
@@ -843,9 +872,9 @@ public javax.swing.JPanel getProfilePanel() {
                             .addComponent(jLabel106)
                             .addComponent(jLabel105))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel108)
-                            .addComponent(jLabel107)))
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel107)
+                            .addComponent(jLabel108)))
                     .addGroup(PayslipPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -854,15 +883,14 @@ public javax.swing.JPanel getProfilePanel() {
 
         jPanel1.add(PayslipPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 460));
 
-        EmployeeDashboard_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
-        EmployeeDashboard_MainDashboard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 1, true));
+        EmployeeDashboard_MainDashboard.setBackground(new java.awt.Color(34, 34, 50, 220));
 
-        jLabel5.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Poppins", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Employee");
         jLabel5.setIconTextGap(0);
 
-        jLabel6.setFont(new java.awt.Font("Lucida Bright", 1, 17)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Poppins", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Dashboard");
 
@@ -870,28 +898,41 @@ public javax.swing.JPanel getProfilePanel() {
         jSeparator1.setForeground(new java.awt.Color(255, 153, 0));
         jSeparator1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 51)));
 
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Welcome,");
-
-        MainDashBoardFirstName.setBackground(new java.awt.Color(255, 255, 255));
-        MainDashBoardFirstName.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
-        MainDashBoardFirstName.setForeground(new java.awt.Color(255, 255, 255));
-
-        LogOut.setBackground(new java.awt.Color(255, 51, 51));
-        LogOut.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        LogOut.setBackground(new java.awt.Color(255, 102, 0));
+        LogOut.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         LogOut.setForeground(new java.awt.Color(255, 255, 255));
-        LogOut.setText("Log Out");
+        LogOut.setText("LOG OUT");
         LogOut.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 51, 51), 1, true));
+        LogOut.setBorderPainted(false);
+        LogOut.setContentAreaFilled(false);
+        LogOut.setOpaque(true);
+        LogOut.setPreferredSize(new java.awt.Dimension(72, 32));
         LogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogOutActionPerformed(evt);
             }
         });
 
-        MainDashboardempNo.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        jPanel4.setOpaque(false);
+        jPanel4.setLayout(new java.awt.GridLayout(2, 1, 5, 10));
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Welcome,");
+        jLabel7.setMaximumSize(new java.awt.Dimension(64, 20));
+        jLabel7.setMinimumSize(new java.awt.Dimension(48, 20));
+        jLabel7.setPreferredSize(new java.awt.Dimension(48, 20));
+        jPanel4.add(jLabel7);
+
+        MainDashBoardFirstName.setBackground(new java.awt.Color(255, 255, 255));
+        MainDashBoardFirstName.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
+        MainDashBoardFirstName.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel4.add(MainDashBoardFirstName);
+
+        MainDashboardempNo.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         MainDashboardempNo.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel4.add(MainDashboardempNo);
 
         javax.swing.GroupLayout EmployeeDashboard_MainDashboardLayout = new javax.swing.GroupLayout(EmployeeDashboard_MainDashboard);
         EmployeeDashboard_MainDashboard.setLayout(EmployeeDashboard_MainDashboardLayout);
@@ -905,103 +946,110 @@ public javax.swing.JPanel getProfilePanel() {
                 .addGap(501, 501, 501)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(EmployeeDashboard_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EmployeeDashboard_MainDashboardLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MainDashBoardFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                        .addComponent(LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(EmployeeDashboard_MainDashboardLayout.createSequentialGroup()
-                        .addComponent(MainDashboardempNo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addComponent(LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
         EmployeeDashboard_MainDashboardLayout.setVerticalGroup(
             EmployeeDashboard_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EmployeeDashboard_MainDashboardLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(24, 24, 24))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EmployeeDashboard_MainDashboardLayout.createSequentialGroup()
-                .addGroup(EmployeeDashboard_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(EmployeeDashboard_MainDashboardLayout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(EmployeeDashboard_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(MainDashBoardFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(EmployeeDashboard_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel7)
-                                .addComponent(LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MainDashboardempNo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(EmployeeDashboard_MainDashboardLayout.createSequentialGroup()
+                .addGroup(EmployeeDashboard_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(EmployeeDashboard_MainDashboardLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jSeparator1)))
+                        .addComponent(jSeparator1))
+                    .addGroup(EmployeeDashboard_MainDashboardLayout.createSequentialGroup()
+                        .addGroup(EmployeeDashboard_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(EmployeeDashboard_MainDashboardLayout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addComponent(LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(EmployeeDashboard_MainDashboardLayout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(EmployeeDashboard_MainDashboardLayout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel6)))
+                        .addGap(0, 24, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
         jPanel1.add(EmployeeDashboard_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 990, -1));
         EmployeeDashboard_MainDashboard.getAccessibleContext().setAccessibleDescription("");
 
-        MenuBar_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
-        MenuBar_MainDashboard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 1, true));
+        MenuBar_MainDashboard.setBackground(new java.awt.Color(34, 34, 50, 220));
+        MenuBar_MainDashboard.setPreferredSize(new java.awt.Dimension(240, 280));
 
-        Home.setBackground(new java.awt.Color(0, 0, 0,100));
-        Home.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        Home.setBackground(new java.awt.Color(102, 102, 102));
+        Home.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         Home.setForeground(new java.awt.Color(255, 255, 255));
         Home.setText("Home");
         Home.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Home.setBorderPainted(false);
+        Home.setContentAreaFilled(false);
+        Home.setOpaque(true);
+        Home.setPreferredSize(new java.awt.Dimension(160, 40));
         Home.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HomeActionPerformed(evt);
             }
         });
 
-        ProfileButton.setBackground(new java.awt.Color(0, 0, 0,100));
-        ProfileButton.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        ProfileButton.setBackground(new java.awt.Color(102, 102, 102));
+        ProfileButton.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         ProfileButton.setForeground(new java.awt.Color(255, 255, 255));
         ProfileButton.setText("Profile");
         ProfileButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         ProfileButton.setBorderPainted(false);
+        ProfileButton.setContentAreaFilled(false);
+        ProfileButton.setOpaque(true);
+        ProfileButton.setPreferredSize(new java.awt.Dimension(160, 40));
         ProfileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ProfileButtonActionPerformed(evt);
             }
         });
 
-        AttendanceMainDashboardButtion.setBackground(new java.awt.Color(0, 0, 0,100));
-        AttendanceMainDashboardButtion.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        AttendanceMainDashboardButtion.setBackground(new java.awt.Color(102, 102, 102));
+        AttendanceMainDashboardButtion.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         AttendanceMainDashboardButtion.setForeground(new java.awt.Color(255, 255, 255));
-        AttendanceMainDashboardButtion.setText("Attendnce");
+        AttendanceMainDashboardButtion.setText("Attendance");
         AttendanceMainDashboardButtion.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         AttendanceMainDashboardButtion.setBorderPainted(false);
+        AttendanceMainDashboardButtion.setContentAreaFilled(false);
+        AttendanceMainDashboardButtion.setOpaque(true);
+        AttendanceMainDashboardButtion.setPreferredSize(new java.awt.Dimension(160, 40));
         AttendanceMainDashboardButtion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AttendanceMainDashboardButtionActionPerformed(evt);
             }
         });
 
-        LeaveMainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
-        LeaveMainDashboard.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        LeaveMainDashboard.setBackground(new java.awt.Color(102, 102, 102));
+        LeaveMainDashboard.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         LeaveMainDashboard.setForeground(new java.awt.Color(255, 255, 255));
         LeaveMainDashboard.setText("Leave");
         LeaveMainDashboard.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         LeaveMainDashboard.setBorderPainted(false);
+        LeaveMainDashboard.setContentAreaFilled(false);
+        LeaveMainDashboard.setOpaque(true);
+        LeaveMainDashboard.setPreferredSize(new java.awt.Dimension(160, 40));
         LeaveMainDashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LeaveMainDashboardActionPerformed(evt);
             }
         });
 
-        PayslipMaindashboard.setBackground(new java.awt.Color(0, 0, 0,100));
-        PayslipMaindashboard.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        PayslipMaindashboard.setBackground(new java.awt.Color(102, 102, 102));
+        PayslipMaindashboard.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         PayslipMaindashboard.setForeground(new java.awt.Color(255, 255, 255));
         PayslipMaindashboard.setText("Payslip");
         PayslipMaindashboard.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         PayslipMaindashboard.setBorderPainted(false);
+        PayslipMaindashboard.setContentAreaFilled(false);
+        PayslipMaindashboard.setOpaque(true);
+        PayslipMaindashboard.setPreferredSize(new java.awt.Dimension(160, 40));
         PayslipMaindashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PayslipMaindashboardActionPerformed(evt);
@@ -1013,28 +1061,28 @@ public javax.swing.JPanel getProfilePanel() {
         MenuBar_MainDashboardLayout.setHorizontalGroup(
             MenuBar_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuBar_MainDashboardLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(MenuBar_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ProfileButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AttendanceMainDashboardButtion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LeaveMainDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PayslipMaindashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(31, 31, 31))
+                .addGap(28, 28, 28)
+                .addGroup(MenuBar_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(Home, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                    .addComponent(ProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(AttendanceMainDashboardButtion, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(LeaveMainDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(PayslipMaindashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(28, 28, 28))
         );
         MenuBar_MainDashboardLayout.setVerticalGroup(
             MenuBar_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuBar_MainDashboardLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Home, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ProfileButton, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                .addComponent(ProfileButton, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AttendanceMainDashboardButtion, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                .addComponent(AttendanceMainDashboardButtion, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LeaveMainDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PayslipMaindashboard, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                .addComponent(PayslipMaindashboard, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                 .addGap(34, 34, 34))
         );
 
@@ -1908,7 +1956,7 @@ public javax.swing.JPanel getProfilePanel() {
 
         jPanel1.add(LeavePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/newBackground.jpg"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/main-bg.jpg"))); // NOI18N
         Background.setText("jLabel1");
         Background.setPreferredSize(new java.awt.Dimension(1366, 768));
         jPanel1.add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 770));
@@ -2314,6 +2362,8 @@ login.setVisible(true);// TODO add your handling code here:
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
