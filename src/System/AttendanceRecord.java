@@ -48,17 +48,12 @@ public class AttendanceRecord {
     }
    
   
-    
-
-
-    
-  
-    
-    public String timeIn() {
+ 
+    public String punchIn() {
         return getCurrentDateTimeFormatted();
     }
 
-    public String timeOut() {
+    public String punchOut() {
         return getCurrentDateTimeFormatted();
     }
 
@@ -91,7 +86,7 @@ public long calculateOvertime(String timeIn, String timeOut) {
                 return overtimeHours;
             }
         } else {
-            // Either timeIn or timeOut is null, so no calculation can be done
+            // Either punchIn or punchOut is null, so no calculation can be done
             return 0;
         }
     } catch (ParseException e) {
@@ -120,13 +115,13 @@ public long calculateOvertime(String timeIn, String timeOut) {
             String formattedDate = dateFormat.format(currentDate);
             
             Date timeInDate = timeFormat.parse(timeIn);
-            Date timeOutDate = timeFormat.parse(timeOut);
+            //Date timeOutDate = timeFormat.parse(punchOut);
 
             String formattedTimeIn = timeFormat.format(timeInDate);
-            String formattedTimeOut = timeFormat.format(timeOutDate);
+            //String formattedTimeOut = timeFormat.format(timeOutDate);
             long overtime = calculateOvertime(timeIn, timeOut);
 
-            writer.append(empID + "," + formattedDate + "," + formattedTimeIn + "," + formattedTimeOut + "," + overtime + "\n");
+            writer.append(empID + "," + formattedDate + "," + formattedTimeIn + "," + timeOut + "," + overtime + "\n");
         } else {
             System.out.println("Error: Time in or time out is null or empty.");
         }
