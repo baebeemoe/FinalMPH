@@ -1026,6 +1026,9 @@ public javax.swing.JPanel getProfilePanel() {
         Home.setBorderPainted(false);
         Home.setPreferredSize(new java.awt.Dimension(160, 52));
         Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomeMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 HomeMouseEntered(evt);
             }
@@ -1073,6 +1076,9 @@ public javax.swing.JPanel getProfilePanel() {
         AttendanceMainDashboardButton.setBorderPainted(false);
         AttendanceMainDashboardButton.setPreferredSize(new java.awt.Dimension(160, 52));
         AttendanceMainDashboardButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AttendanceMainDashboardButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 AttendanceMainDashboardButtonMouseEntered(evt);
             }
@@ -1095,6 +1101,9 @@ public javax.swing.JPanel getProfilePanel() {
         LeaveMainDashboard.setBorderPainted(false);
         LeaveMainDashboard.setPreferredSize(new java.awt.Dimension(160, 52));
         LeaveMainDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LeaveMainDashboardMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 LeaveMainDashboardMouseEntered(evt);
             }
@@ -1117,6 +1126,9 @@ public javax.swing.JPanel getProfilePanel() {
         PayslipMaindashboard.setBorderPainted(false);
         PayslipMaindashboard.setPreferredSize(new java.awt.Dimension(160, 52));
         PayslipMaindashboard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PayslipMaindashboardMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 PayslipMaindashboardMouseEntered(evt);
             }
@@ -1148,7 +1160,7 @@ public javax.swing.JPanel getProfilePanel() {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         jPanel1.add(MenuBar_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 770));
@@ -1178,7 +1190,7 @@ public javax.swing.JPanel getProfilePanel() {
         PunchIn.setBorderPainted(false);
         PunchIn.setIconTextGap(8);
         PunchIn.setMargin(new java.awt.Insets(2, 8, 3, 8));
-        PunchIn.setPreferredSize(new java.awt.Dimension(96, 52));
+        PunchIn.setPreferredSize(new java.awt.Dimension(112, 52));
         PunchIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PunchInActionPerformed(evt);
@@ -1290,26 +1302,26 @@ public javax.swing.JPanel getProfilePanel() {
                 .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 292, Short.MAX_VALUE)
-                                .addComponent(jLabel56)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jProgressBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jProgressBar1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, TimeKeeping_MainDashboardLayout.createSequentialGroup()
                                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(51, 51, 51)
                                 .addComponent(PunchIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
-                                .addComponent(PunchOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                                .addComponent(PunchOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel56)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(jLabel13)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         TimeKeeping_MainDashboardLayout.setVerticalGroup(
             TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1320,7 +1332,7 @@ public javax.swing.JPanel getProfilePanel() {
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TimeKeeping_MainDashboardLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1328,14 +1340,16 @@ public javax.swing.JPanel getProfilePanel() {
                             .addComponent(PunchOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(35, 35, 35)))
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel56, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(TimeOutLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                    .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel56, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(TimeOutLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jPanel1.add(TimeKeeping_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, -1, -1));
@@ -1675,20 +1689,20 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel41.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel41.setText("Address");
 
-        jLabel42.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        jLabel42.setFont(new java.awt.Font("Poppins", 0, 18)); // NOI18N
         jLabel42.setText("My Account Numbers");
 
-        jLabel43.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        jLabel43.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         jLabel43.setText("SSS");
 
-        jLabel44.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        jLabel44.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         jLabel44.setText("Pag-ibig");
 
-        jLabel45.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        jLabel45.setText("Phil-health");
+        jLabel45.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        jLabel45.setText("Philhealth");
 
-        jLabel46.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        jLabel46.setText("Tin No.");
+        jLabel46.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        jLabel46.setText("TIN");
 
         jLabel47.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel47.setText(":");
@@ -1780,7 +1794,7 @@ public javax.swing.JPanel getProfilePanel() {
                         .addComponent(ProfileBirthdate, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jLabel40)
-                        .addGap(89, 89, 89)
+                        .addGap(82, 82, 82)
                         .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(35, 35, 35)
                         .addComponent(ProfilePhonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1919,7 +1933,7 @@ public javax.swing.JPanel getProfilePanel() {
             .addGroup(ProfilePanelLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         ProfilePanelLayout.setVerticalGroup(
             ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2351,6 +2365,26 @@ login.setVisible(true);// TODO add your handling code here:
         jLabel6.setText("Profile");
         
     }//GEN-LAST:event_ProfileButtonMouseClicked
+
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
+        // TODO add your handling code here:
+        jLabel6.setText("Dashboard");
+    }//GEN-LAST:event_HomeMouseClicked
+
+    private void AttendanceMainDashboardButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AttendanceMainDashboardButtonMouseClicked
+        // TODO add your handling code here:
+        jLabel6.setText("Attendance Records");
+    }//GEN-LAST:event_AttendanceMainDashboardButtonMouseClicked
+
+    private void LeaveMainDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LeaveMainDashboardMouseClicked
+        // TODO add your handling code here:
+        jLabel6.setText("Leave Application");
+    }//GEN-LAST:event_LeaveMainDashboardMouseClicked
+
+    private void PayslipMaindashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PayslipMaindashboardMouseClicked
+        // TODO add your handling code here:
+        jLabel6.setText("Payslip");
+    }//GEN-LAST:event_PayslipMaindashboardMouseClicked
 
     
   
