@@ -2325,24 +2325,32 @@ if (accessGranted) {
 
         for (AttendanceRecord att : attendance) {
             if (att.getEmpID()== Integer.parseInt(empID)) {
-                // Compare empID with the employee ID from the CSV
-                accessGranted = true;
-                try {
-                    String timeOut = att.getTimeOut(); // Record time out
-                    if (timeOut != null) {
-                        TimeOutLabel.setText(att.formatTime(timeOut)); // Display time out
-                        att.writeToCSV(TimeInLabel.getText(), TimeOutLabel.getText()); // Write to CSV
-                        PunchOut.setEnabled(false);
-                        PunchIn.setEnabled(true);
-                    } else {
-                        // Handle the case when timeOut is null
-                        System.out.println("Error: Time out is null.");
-                    }
-                } catch (Exception ex) {
-                    Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        // Compare empID with the employee ID from the CSV
+        accessGranted = true;
+        try {
+            // Show a confirmation dialog
+            int dialogResult = JOptionPane.showConfirmDialog(this, "Are you sure you want to punch out?", "Punch Out Confirmation", JOptionPane.YES_NO_OPTION);
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                String timeOut = att.punchOut(); // Record time out
+                if (timeOut != null) {
+                    TimeOutLabel.setText(att.formatTime(timeOut)); // Display time out
+                    att.writeToCSV(TimeInLabel.getText().toString(), TimeOutLabel.getText().toString()); // Write to CSV
+                    JOptionPane.showMessageDialog(this, "Punch Out successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+
+                    PunchOut.setEnabled(false);
+                    PunchIn.setEnabled(true);
+                } else {
+                    // Handle the case when timeOut is null
+                    System.out.println("Error: Time out is null.");
                 }
-                break; // Exit the loop once the employee ID is found
-            } else {    }
+            } else {
+                // User canceled the punch out, do nothing
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        break; // Exit the loop once the employee ID is found
+    }
         }
 
         if (!accessGranted) {
@@ -2362,11 +2370,12 @@ if (accessGranted) {
                 // Compare empID with the employee ID from the CSV
                 accessGranted = true;
                 try {
-                    String timeIn = att.timeIn(); // Record time in
+                    String timeIn = att.punchIn(); // Record time in
                     if (timeIn != null) {
                         TimeInLabel.setText(att.formatTime(timeIn)); // Display time in
                         PunchIn.setEnabled(false);
                         PunchOut.setEnabled(true);
+                        JOptionPane.showMessageDialog(this, "Punch in successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
                         break; // Exit the loop once time in is recorded
                     }
                 } catch (Exception ex) {

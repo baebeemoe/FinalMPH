@@ -54,11 +54,11 @@ public class AttendanceRecord {
     
   
     
-    public String timeIn() {
+    public String punchIn() {
         return getCurrentDateTimeFormatted();
     }
 
-    public String timeOut() {
+    public String punchOut() {
         return getCurrentDateTimeFormatted();
     }
 
