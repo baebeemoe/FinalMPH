@@ -2219,9 +2219,9 @@ if (accessGranted) {
             String empID = MainDashboardempNo.getText();
             boolean accessGranted = false;
 
-        for (AttendanceRecord att : attendance) 
+        for (EmployeeRecords employee : employees) 
                 {
-            if (att.getEmpID() == Integer.parseInt(empID)) {
+            if (employee.getEmpNo() == Integer.parseInt(empID)) {
                 accessGranted = true;
                 break; // No need to continue the loop if access is granted
             }
