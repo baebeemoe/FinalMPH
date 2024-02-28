@@ -89,6 +89,24 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        TimeKeeping_MainDashboard = new javax.swing.JPanel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        timeprogressbar = new javax.swing.JProgressBar();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        Shift = new javax.swing.JLabel();
+        Department = new javax.swing.JLabel();
+        PunchIn = new javax.swing.JButton();
+        PunchOut = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        TimeInLabel = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        TimeOutLabel = new javax.swing.JLabel();
         AttendancePanel = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         attendanceTable = new javax.swing.JTable();
@@ -168,24 +186,6 @@ public javax.swing.JPanel getProfilePanel() {
         AttendanceMainDashboardButtion = new javax.swing.JButton();
         LeaveMainDashboard = new javax.swing.JButton();
         PayslipMaindashboard = new javax.swing.JButton();
-        TimeKeeping_MainDashboard = new javax.swing.JPanel();
-        jSeparator2 = new javax.swing.JSeparator();
-        jSeparator3 = new javax.swing.JSeparator();
-        jSeparator4 = new javax.swing.JSeparator();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        Shift = new javax.swing.JLabel();
-        Department = new javax.swing.JLabel();
-        PunchIn = new javax.swing.JButton();
-        PunchOut = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
-        TimeInLabel = new javax.swing.JLabel();
-        jLabel56 = new javax.swing.JLabel();
-        TimeOutLabel = new javax.swing.JLabel();
         PayrollHealth_MainDashboard = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
@@ -310,6 +310,181 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("People Portal");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
+
+        TimeKeeping_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
+
+        jSeparator2.setBackground(new java.awt.Color(102, 102, 102));
+        jSeparator2.setForeground(new java.awt.Color(102, 102, 102));
+        jSeparator2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        jSeparator2.setPreferredSize(new java.awt.Dimension(0, 1));
+
+        jSeparator3.setBackground(new java.awt.Color(102, 102, 102));
+        jSeparator3.setForeground(new java.awt.Color(102, 102, 102));
+        jSeparator3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        jSeparator3.setPreferredSize(new java.awt.Dimension(0, 1));
+
+        jSeparator4.setBackground(new java.awt.Color(102, 102, 102));
+        jSeparator4.setForeground(new java.awt.Color(102, 102, 102));
+        jSeparator4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+
+        timeprogressbar.setRequestFocusEnabled(false);
+        timeprogressbar.setStringPainted(true);
+
+        jLabel9.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 204, 102));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/check-box.png"))); // NOI18N
+        jLabel9.setText(" Present");
+
+        jLabel10.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Time In : ");
+
+        jLabel8.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Schedule Status :");
+
+        jLabel11.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 255, 51));
+        jLabel11.setText("WORK");
+
+        jLabel12.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Schedule :");
+
+        Shift.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        Shift.setForeground(new java.awt.Color(255, 255, 255));
+        Shift.setText("03:15AM - 12:15 PM");
+
+        Department.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        Department.setForeground(new java.awt.Color(255, 255, 255));
+        Department.setText("Finance Department");
+
+        PunchIn.setBackground(new java.awt.Color(0, 255, 51));
+        PunchIn.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        PunchIn.setForeground(new java.awt.Color(255, 255, 255));
+        PunchIn.setText("Time In");
+        PunchIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PunchInActionPerformed(evt);
+            }
+        });
+
+        PunchOut.setBackground(new java.awt.Color(0, 0, 0,0));
+        PunchOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/clock (4).png"))); // NOI18N
+        PunchOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PunchOutActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Time out");
+
+        TimeInLabel.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        TimeInLabel.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel56.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel56.setText("Time Out : ");
+
+        TimeOutLabel.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        TimeOutLabel.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout TimeKeeping_MainDashboardLayout = new javax.swing.GroupLayout(TimeKeeping_MainDashboard);
+        TimeKeeping_MainDashboard.setLayout(TimeKeeping_MainDashboardLayout);
+        TimeKeeping_MainDashboardLayout.setHorizontalGroup(
+            TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Shift))
+                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Department)
+                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(PunchIn)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PunchOut)
+                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel13)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel56)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(timeprogressbar, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        TimeKeeping_MainDashboardLayout.setVerticalGroup(
+            TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel11))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel12)
+                                    .addComponent(Shift)))
+                            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(Department)
+                                .addGap(18, 18, 18)
+                                .addComponent(PunchIn))
+                            .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE))))
+                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(PunchOut)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel13)
+                        .addGap(1, 1, 1)))
+                .addComponent(timeprogressbar, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel56)
+                    .addComponent(jLabel10)
+                    .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jSeparator2.getAccessibleContext().setAccessibleName("");
+
+        jPanel1.add(TimeKeeping_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 660, 150));
 
         AttendancePanel.setBackground(new java.awt.Color(0, 0, 0,100));
         AttendancePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
@@ -809,9 +984,9 @@ public javax.swing.JPanel getProfilePanel() {
                         .addGap(12, 12, 12)
                         .addComponent(jLabel82)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel71)
-                            .addComponent(jLabel72))
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel72)
+                            .addComponent(jLabel71))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel92)
@@ -843,9 +1018,9 @@ public javax.swing.JPanel getProfilePanel() {
                             .addComponent(jLabel106)
                             .addComponent(jLabel105))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel108)
-                            .addComponent(jLabel107)))
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel107)
+                            .addComponent(jLabel108)))
                     .addGroup(PayslipPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1039,181 +1214,6 @@ public javax.swing.JPanel getProfilePanel() {
         );
 
         jPanel1.add(MenuBar_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 200, 260));
-
-        TimeKeeping_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
-
-        jSeparator2.setBackground(new java.awt.Color(102, 102, 102));
-        jSeparator2.setForeground(new java.awt.Color(102, 102, 102));
-        jSeparator2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-        jSeparator2.setPreferredSize(new java.awt.Dimension(0, 1));
-
-        jSeparator3.setBackground(new java.awt.Color(102, 102, 102));
-        jSeparator3.setForeground(new java.awt.Color(102, 102, 102));
-        jSeparator3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-        jSeparator3.setPreferredSize(new java.awt.Dimension(0, 1));
-
-        jSeparator4.setBackground(new java.awt.Color(102, 102, 102));
-        jSeparator4.setForeground(new java.awt.Color(102, 102, 102));
-        jSeparator4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-
-        jProgressBar1.setRequestFocusEnabled(false);
-        jProgressBar1.setStringPainted(true);
-
-        jLabel9.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 204, 102));
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/check-box.png"))); // NOI18N
-        jLabel9.setText(" Present");
-
-        jLabel10.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Time In : ");
-
-        jLabel8.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Schedule Status :");
-
-        jLabel11.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 255, 51));
-        jLabel11.setText("WORK");
-
-        jLabel12.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Schedule :");
-
-        Shift.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        Shift.setForeground(new java.awt.Color(255, 255, 255));
-        Shift.setText("03:15AM - 12:15 PM");
-
-        Department.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        Department.setForeground(new java.awt.Color(255, 255, 255));
-        Department.setText("Finance Department");
-
-        PunchIn.setBackground(new java.awt.Color(0, 255, 51));
-        PunchIn.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        PunchIn.setForeground(new java.awt.Color(255, 255, 255));
-        PunchIn.setText("Time In");
-        PunchIn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PunchInActionPerformed(evt);
-            }
-        });
-
-        PunchOut.setBackground(new java.awt.Color(0, 0, 0,0));
-        PunchOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/clock (4).png"))); // NOI18N
-        PunchOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PunchOutActionPerformed(evt);
-            }
-        });
-
-        jLabel13.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Time out");
-
-        TimeInLabel.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        TimeInLabel.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel56.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel56.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel56.setText("Time Out : ");
-
-        TimeOutLabel.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        TimeOutLabel.setForeground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout TimeKeeping_MainDashboardLayout = new javax.swing.GroupLayout(TimeKeeping_MainDashboard);
-        TimeKeeping_MainDashboard.setLayout(TimeKeeping_MainDashboardLayout);
-        TimeKeeping_MainDashboardLayout.setHorizontalGroup(
-            TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Shift))
-                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Department)
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(PunchIn)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PunchOut)
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel13)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel56)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-        TimeKeeping_MainDashboardLayout.setVerticalGroup(
-            TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel11))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel12)
-                                    .addComponent(Shift)))
-                            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addComponent(Department)
-                                .addGap(18, 18, 18)
-                                .addComponent(PunchIn))
-                            .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE))))
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(PunchOut)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel13)
-                        .addGap(1, 1, 1)))
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel56)
-                    .addComponent(jLabel10)
-                    .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        jSeparator2.getAccessibleContext().setAccessibleName("");
-
-        jPanel1.add(TimeKeeping_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 660, 150));
 
         PayrollHealth_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
 
@@ -1987,11 +1987,12 @@ boolean accessGranted = false;
             // Compare empID with the employee ID from the CSV
             accessGranted = true;
             try {
-                String timeIn = att.timeIn(); // Record time in
+                String timeIn = att.punchIn(); // Record time in
                 if (timeIn != null) {
                     TimeInLabel.setText(att.formatTime(timeIn)); // Display time in
                     PunchIn.setEnabled(false);
                     PunchOut.setEnabled(true);
+                    JOptionPane.showMessageDialog(this, "Punch in successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
                     break; // Exit the loop once time in is recorded
                 }
             } catch (Exception ex) {
@@ -2008,39 +2009,49 @@ boolean accessGranted = false;
     }//GEN-LAST:event_PunchInActionPerformed
 
     private void PunchOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PunchOutActionPerformed
-        String empID = MainDashboardempNo.getText();
-        boolean accessGranted = false;
+       String empID = MainDashboardempNo.getText();
+boolean accessGranted = false;
 
-    for (AttendanceRecord att : attendance) {
-        if (att.getEmpID()== Integer.parseInt(empID)) {
+for (AttendanceRecord att : attendance) {
+    if (att.getEmpID() == Integer.parseInt(empID)) {
         // Compare empID with the employee ID from the CSV
         accessGranted = true;
         try {
-            String timeOut = att.getTimeOut(); // Record time out
-            if (timeOut != null) {
-                TimeOutLabel.setText(att.formatTime(timeOut)); // Display time out
-                att.writeToCSV(TimeInLabel.getText(), TimeOutLabel.getText()); // Write to CSV
-                PunchOut.setEnabled(false);
-                PunchIn.setEnabled(true);
+            // Show a confirmation dialog
+            int dialogResult = JOptionPane.showConfirmDialog(this, "Are you sure you want to punch out?", "Punch Out Confirmation", JOptionPane.YES_NO_OPTION);
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                String timeOut = att.punchOut(); // Record time out
+                if (timeOut != null) {
+                    TimeOutLabel.setText(att.formatTime(timeOut)); // Display time out
+                    att.writeToCSV(TimeInLabel.getText().toString(), TimeOutLabel.getText().toString()); // Write to CSV
+                    JOptionPane.showMessageDialog(this, "Punch Out successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+
+                    PunchOut.setEnabled(false);
+                    PunchIn.setEnabled(true);
+                } else {
+                    // Handle the case when timeOut is null
+                    System.out.println("Error: Time out is null.");
+                }
             } else {
-                // Handle the case when timeOut is null
-                System.out.println("Error: Time out is null.");
+                // User canceled the punch out, do nothing
             }
         } catch (Exception ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
         break; // Exit the loop once the employee ID is found
-    } else {    }
+    }
 }
 
 if (!accessGranted) {
     // If access is not granted (i.e., employee ID not found in the CSV), display an error message
     JOptionPane.showMessageDialog(this, "Invalid Employee ID! Access Denied.", "Error", JOptionPane.ERROR_MESSAGE);
 }
-        
+   
         
     }//GEN-LAST:event_PunchOutActionPerformed
 
+
+    
     private void AttendanceMainDashboardButtionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AttendanceMainDashboardButtionActionPerformed
        String empID = MainDashboardempNo.getText().trim();
 boolean accessGranted = false;
@@ -2315,7 +2326,6 @@ login.setVisible(true);// TODO add your handling code here:
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -2335,6 +2345,7 @@ login.setVisible(true);// TODO add your handling code here:
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel profileFirstName;
+    private javax.swing.JProgressBar timeprogressbar;
     // End of variables declaration//GEN-END:variables
 
    
