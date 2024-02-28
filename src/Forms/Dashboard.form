@@ -117,6 +117,892 @@
             </Constraint>
           </Constraints>
         </Component>
+        <Container class="javax.swing.JPanel" name="PayslipPanel">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder roundedCorners="true">
+                  <Color PropertyName="color" blue="0" green="99" red="ff" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[1114, 520]"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="310" y="170" width="990" height="460"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel59" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel60" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel61" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="payslipNumber" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="payslipEmployeNumber" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="payslipEmployeeName" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel65" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel66" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel67" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="payslipStartDate" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="payslipEndDate" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="payslipPosition" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel73" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel81" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
+                                              <Component id="jLabel80" min="-2" pref="78" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel79" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
+                                              <Component id="payslipDaysWorked" min="-2" pref="78" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel76" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
+                                              <Component id="jLabel77" min="-2" pref="78" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel74" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
+                                              <Component id="jLabel75" min="-2" pref="78" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel109" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
+                                              <Component id="jLabel110" min="-2" pref="78" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
+                                              <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                                              <Component id="jLabel57" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jSeparator13" max="32767" attributes="0"/>
+                                          <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Component id="jSeparator12" min="-2" pref="2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel85" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
+                                          <Component id="jLabel83" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                                          <Component id="jLabel87" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="252" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="payslipRiceAllowance" pref="127" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="payslipPhoneAllowance" alignment="0" pref="125" max="32767" attributes="0"/>
+                                                  <Component id="payslipClothingAllowance" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="payslipBenefitTotal" alignment="0" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel101" min="-2" pref="79" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel104" min="-2" pref="79" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="271" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="jLabel103" pref="124" max="32767" attributes="0"/>
+                                                  <Component id="jLabel102" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel105" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel107" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="257" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="jLabel108" pref="124" max="32767" attributes="0"/>
+                                                  <Component id="jLabel106" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="jLabel89" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel71" min="-2" pref="79" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="payslipSSS" min="-2" pref="124" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jLabel82" alignment="0" min="-2" pref="475" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel97" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
+                                                      <Component id="jLabel95" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
+                                                      <Component id="jLabel92" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel98" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="payslipTax" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="payslipPagibig" alignment="0" pref="124" max="32767" attributes="0"/>
+                                                      <Component id="payslipPhilhealth" max="32767" attributes="0"/>
+                                                      <Component id="payslipDeductionTotal" alignment="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Component id="jLabel91" alignment="0" min="-2" pref="477" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace pref="80" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jLabel100" min="-2" pref="473" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel35" min="-2" pref="10" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel57" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                              <Component id="jSeparator13" min="-2" pref="2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="2" attributes="0">
+                                  <Group type="102" alignment="2" attributes="0">
+                                      <Component id="payslipStartDate" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="payslipEndDate" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="payslipPosition" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="2" attributes="0">
+                                      <Component id="jLabel67" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel65" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel66" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="2" attributes="0">
+                                      <Component id="payslipNumber" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="payslipEmployeNumber" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="payslipEmployeeName" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="2" attributes="0">
+                                      <Component id="jLabel59" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="2" attributes="0">
+                                  <Component id="jLabel75" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel74" alignment="2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="2" attributes="0">
+                                  <Component id="jLabel77" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel76" alignment="2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="2" attributes="0">
+                                  <Component id="payslipDaysWorked" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel79" alignment="2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="2" attributes="0">
+                                  <Component id="jLabel80" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel81" alignment="2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="2" attributes="0">
+                                  <Component id="jLabel110" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel109" alignment="2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="payslipRiceAllowance" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel83" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="2" attributes="0">
+                                  <Component id="payslipPhoneAllowance" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel85" alignment="2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="2" attributes="0">
+                                  <Component id="payslipClothingAllowance" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel87" alignment="2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="2" attributes="0">
+                                  <Component id="payslipBenefitTotal" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel89" alignment="2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Component id="jLabel82" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="payslipSSS" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel71" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel92" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="payslipPhilhealth" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel95" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="payslipPagibig" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel97" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="payslipTax" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel98" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="payslipDeductionTotal" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="jLabel100" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel102" alignment="3" min="-2" pref="13" max="-2" attributes="0"/>
+                                  <Component id="jLabel101" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel103" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel104" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel106" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel105" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel107" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel108" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jSeparator12" min="-2" pref="415" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="33" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel33">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="24" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="MotorPH"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator12">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder roundedCorners="true" thickness="2"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel34">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=" 7 Jupiter Avenue cor. F. Sandoval Jr., Bagong Nayon, Quezon City"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel35">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Phone: (028) 911-5071 / (028) 911-5072 / (028) 911-5073 "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel57">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=" Email: corporate@motorph.com&#x9;&#x9;&#x9;"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel58">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="EMPLOYEE PAYSLIP"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel59">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel60">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="EMPLOYEE ID"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel61">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="EMPLOYEE NAME"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipEmployeeName">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="EMPLOYEE NAME"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipEmployeNumber">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="EMPLOYEE ID"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipNumber">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel65">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="END DATE"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel66">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="POSITION"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel67">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="START DATE"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipStartDate">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipEndDate">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="EMPLOYEE ID"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipPosition">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="EMPLOYEE NAME"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator13">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder roundedCorners="true" thickness="2"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel71">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="SSS"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipSSS">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel73">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="                                                         EARNINGS"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder>
+                      <Color PropertyName="color" blue="99" green="66" red="0" type="rgb"/>
+                    </LineBorder>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel74">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Monthly Rate"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel75">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel76">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Daily Rate"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel77">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipDaysWorked">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel79">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Days Worked"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel80">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel81">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Overtime"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel82">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="0" red="0" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="                                                     DEDUCTIONS"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder roundedCorners="true">
+                      <Color PropertyName="color" blue="99" green="66" red="0" type="rgb"/>
+                    </LineBorder>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel83">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Rice Subsidy"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipRiceAllowance">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel85">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Phone Allowance"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipPhoneAllowance">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel87">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Clothing Allowance"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipClothingAllowance">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel89">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="TOTAL"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipBenefitTotal">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel91">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="0" red="0" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="                                                       BENEFITS"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder roundedCorners="true">
+                      <Color PropertyName="color" blue="99" green="66" red="0" type="rgb"/>
+                    </LineBorder>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel92">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Philhealth"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipPhilhealth">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipPagibig">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel95">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Pag-IbigPag-Ibig"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipTax">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel97">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Withholding Tax"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel98">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="TOTAL DEDUCTIONS"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="payslipDeductionTotal">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel100">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="0" red="0" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="                                                     SUMMARY"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder roundedCorners="true">
+                      <Color PropertyName="color" blue="99" green="66" red="0" type="rgb"/>
+                    </LineBorder>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel101">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Gross Income"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel102">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel103">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel104">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Benefits"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel105">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Total Deducations"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel106">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel107">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="TAKE HOME PAY"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel108">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel109">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="GROSS INCOME"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel110">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Lucida Bright" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
         <Container class="javax.swing.JPanel" name="TimeKeeping_MainDashboard">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
@@ -600,898 +1486,6 @@
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Apply Dispute"/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="PayslipPanel">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder roundedCorners="true">
-                  <Color PropertyName="color" blue="0" green="99" red="ff" type="rgb"/>
-                </LineBorder>
-              </Border>
-            </Property>
-            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[1114, 520]"/>
-            </Property>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="310" y="170" width="990" height="460"/>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel59" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel60" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel61" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel64" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel63" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel62" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel65" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel66" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel67" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel68" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel69" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel70" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel73" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel81" max="32767" attributes="0"/>
-                                              <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
-                                              <Component id="jLabel80" min="-2" pref="78" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel79" max="32767" attributes="0"/>
-                                              <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
-                                              <Component id="jLabel78" min="-2" pref="78" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel76" max="32767" attributes="0"/>
-                                              <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
-                                              <Component id="jLabel77" min="-2" pref="78" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel74" max="32767" attributes="0"/>
-                                              <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
-                                              <Component id="jLabel75" min="-2" pref="78" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jLabel109" max="32767" attributes="0"/>
-                                              <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
-                                              <Component id="jLabel110" min="-2" pref="78" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
-                                              <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                                              <Component id="jLabel57" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jSeparator13" max="32767" attributes="0"/>
-                                          <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Component id="jSeparator12" min="-2" pref="2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel85" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
-                                          <Component id="jLabel87" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
-                                          <Component id="jLabel83" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="261" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel84" pref="127" max="32767" attributes="0"/>
-                                              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="jLabel86" alignment="0" pref="125" max="32767" attributes="0"/>
-                                                  <Component id="jLabel88" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jLabel90" alignment="0" max="32767" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel101" min="-2" pref="79" max="-2" attributes="0"/>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel104" min="-2" pref="79" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jLabel102" pref="195" max="32767" attributes="0"/>
-                                                  <Component id="jLabel103" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel105" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel107" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="257" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel106" max="32767" attributes="0"/>
-                                                  <Component id="jLabel108" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Component id="jLabel89" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel71" min="-2" pref="79" max="-2" attributes="0"/>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="jLabel72" min="-2" pref="124" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jLabel82" alignment="0" min="-2" pref="475" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel97" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
-                                                      <Component id="jLabel95" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
-                                                      <Component id="jLabel92" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel98" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="jLabel93" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
-                                                      <Component id="jLabel94" max="32767" attributes="0"/>
-                                                      <Component id="jLabel96" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="jLabel99" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Component id="jLabel91" alignment="0" min="-2" pref="477" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabel100" min="-2" pref="473" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel35" min="-2" pref="10" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel57" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                              <Component id="jSeparator13" min="-2" pref="2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="2" attributes="0">
-                                  <Group type="102" alignment="2" attributes="0">
-                                      <Component id="jLabel68" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel69" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel70" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="2" attributes="0">
-                                      <Component id="jLabel67" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel65" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel66" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="2" attributes="0">
-                                      <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel63" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel62" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="2" attributes="0">
-                                      <Component id="jLabel59" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="2" attributes="0">
-                                  <Component id="jLabel75" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel74" alignment="2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="2" attributes="0">
-                                  <Component id="jLabel77" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel76" alignment="2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="2" attributes="0">
-                                  <Component id="jLabel78" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel79" alignment="2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="2" attributes="0">
-                                  <Component id="jLabel80" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel81" alignment="2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="2" attributes="0">
-                                  <Component id="jLabel110" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel109" alignment="2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel84" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel83" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="2" attributes="0">
-                                  <Component id="jLabel86" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel85" alignment="2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="2" attributes="0">
-                                  <Component id="jLabel88" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel87" alignment="2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="2" attributes="0">
-                                  <Component id="jLabel90" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel89" alignment="2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                              <Component id="jLabel82" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel72" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel71" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel92" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel93" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel95" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel94" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel97" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel96" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel98" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel99" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jLabel100" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel102" alignment="3" min="-2" pref="13" max="-2" attributes="0"/>
-                                  <Component id="jLabel101" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel103" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel104" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel106" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel105" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel107" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel108" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jSeparator12" min="-2" pref="415" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="33" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel33">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="24" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="MotorPH"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator12">
-              <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder roundedCorners="true" thickness="2"/>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel34">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value=" 7 Jupiter Avenue cor. F. Sandoval Jr., Bagong Nayon, Quezon City"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel35">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Phone: (028) 911-5071 / (028) 911-5072 / (028) 911-5073 "/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel57">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value=" Email: corporate@motorph.com&#x9;&#x9;&#x9;"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel58">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="EMPLOYEE PAYSLIP"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel59">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel60">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="EMPLOYEE ID"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel61">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="EMPLOYEE NAME"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel62">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="EMPLOYEE NAME"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel63">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="EMPLOYEE ID"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel64">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel65">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="END DATE"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel66">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="POSITION"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel67">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="START DATE"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel68">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel69">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="EMPLOYEE ID"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel70">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="EMPLOYEE NAME"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator13">
-              <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder roundedCorners="true" thickness="2"/>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel71">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Social Security System"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel72">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel73">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="66" red="0" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="                                                         EARNINGS"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder>
-                      <Color PropertyName="color" blue="99" green="66" red="0" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel74">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Monthly Rate"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel75">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel76">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Daily Rate"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel77">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel78">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel79">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Days Worked"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel80">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel81">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Overtime"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel82">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="                                                     DEDUCTIONS"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder roundedCorners="true">
-                      <Color PropertyName="color" blue="99" green="66" red="0" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel83">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Rice Subsidy"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel84">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel85">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Phone Allowance"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel86">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel87">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Clothing Allowance"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel88">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel89">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="TOTAL"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel90">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel91">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="                                                       BENEFITS"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder roundedCorners="true">
-                      <Color PropertyName="color" blue="99" green="66" red="0" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel92">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Philhealth"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel93">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel94">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel95">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Pag-IbigPag-Ibig"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel96">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel97">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Withholding Tax"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel98">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="TOTAL DEDUCTIONS"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel99">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel100">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="                                                     SUMMARY"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder roundedCorners="true">
-                      <Color PropertyName="color" blue="99" green="66" red="0" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel101">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Gross Income"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel102">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel103">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel104">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Benefits"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel105">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Total Deducations"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel106">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel107">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="TAKE HOME PAY"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel108">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel109">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="GROSS INCOME"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel110">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Bright" size="10" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="PAYSLIP NO"/>
               </Properties>
             </Component>
           </SubComponents>

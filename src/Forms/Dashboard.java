@@ -1,6 +1,6 @@
 
 package Forms;
-
+import System.PayPeriod;
 import System.AttendanceRecord;
 import System.EmployeeRecords;
 import java.io.BufferedReader;
@@ -27,7 +27,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private EmployeeRecords[] employees;
     private AttendanceRecord[] attendance;
-    
+    private PayPeriod payperiod;
     public Dashboard() {
         initComponents();
         
@@ -89,6 +89,66 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        PayslipPanel = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        jSeparator12 = new javax.swing.JSeparator();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        payslipEmployeeName = new javax.swing.JLabel();
+        payslipEmployeNumber = new javax.swing.JLabel();
+        payslipNumber = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
+        payslipStartDate = new javax.swing.JLabel();
+        payslipEndDate = new javax.swing.JLabel();
+        payslipPosition = new javax.swing.JLabel();
+        jSeparator13 = new javax.swing.JSeparator();
+        jLabel71 = new javax.swing.JLabel();
+        payslipSSS = new javax.swing.JLabel();
+        jLabel73 = new javax.swing.JLabel();
+        jLabel74 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
+        jLabel76 = new javax.swing.JLabel();
+        jLabel77 = new javax.swing.JLabel();
+        payslipDaysWorked = new javax.swing.JLabel();
+        jLabel79 = new javax.swing.JLabel();
+        jLabel80 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
+        jLabel82 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
+        payslipRiceAllowance = new javax.swing.JLabel();
+        jLabel85 = new javax.swing.JLabel();
+        payslipPhoneAllowance = new javax.swing.JLabel();
+        jLabel87 = new javax.swing.JLabel();
+        payslipClothingAllowance = new javax.swing.JLabel();
+        jLabel89 = new javax.swing.JLabel();
+        payslipBenefitTotal = new javax.swing.JLabel();
+        jLabel91 = new javax.swing.JLabel();
+        jLabel92 = new javax.swing.JLabel();
+        payslipPhilhealth = new javax.swing.JLabel();
+        payslipPagibig = new javax.swing.JLabel();
+        jLabel95 = new javax.swing.JLabel();
+        payslipTax = new javax.swing.JLabel();
+        jLabel97 = new javax.swing.JLabel();
+        jLabel98 = new javax.swing.JLabel();
+        payslipDeductionTotal = new javax.swing.JLabel();
+        jLabel100 = new javax.swing.JLabel();
+        jLabel101 = new javax.swing.JLabel();
+        jLabel102 = new javax.swing.JLabel();
+        jLabel103 = new javax.swing.JLabel();
+        jLabel104 = new javax.swing.JLabel();
+        jLabel105 = new javax.swing.JLabel();
+        jLabel106 = new javax.swing.JLabel();
+        jLabel107 = new javax.swing.JLabel();
+        jLabel108 = new javax.swing.JLabel();
+        jLabel109 = new javax.swing.JLabel();
+        jLabel110 = new javax.swing.JLabel();
         TimeKeeping_MainDashboard = new javax.swing.JPanel();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
@@ -112,66 +172,6 @@ public javax.swing.JPanel getProfilePanel() {
         attendanceTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        PayslipPanel = new javax.swing.JPanel();
-        jLabel33 = new javax.swing.JLabel();
-        jSeparator12 = new javax.swing.JSeparator();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel57 = new javax.swing.JLabel();
-        jLabel58 = new javax.swing.JLabel();
-        jLabel59 = new javax.swing.JLabel();
-        jLabel60 = new javax.swing.JLabel();
-        jLabel61 = new javax.swing.JLabel();
-        jLabel62 = new javax.swing.JLabel();
-        jLabel63 = new javax.swing.JLabel();
-        jLabel64 = new javax.swing.JLabel();
-        jLabel65 = new javax.swing.JLabel();
-        jLabel66 = new javax.swing.JLabel();
-        jLabel67 = new javax.swing.JLabel();
-        jLabel68 = new javax.swing.JLabel();
-        jLabel69 = new javax.swing.JLabel();
-        jLabel70 = new javax.swing.JLabel();
-        jSeparator13 = new javax.swing.JSeparator();
-        jLabel71 = new javax.swing.JLabel();
-        jLabel72 = new javax.swing.JLabel();
-        jLabel73 = new javax.swing.JLabel();
-        jLabel74 = new javax.swing.JLabel();
-        jLabel75 = new javax.swing.JLabel();
-        jLabel76 = new javax.swing.JLabel();
-        jLabel77 = new javax.swing.JLabel();
-        jLabel78 = new javax.swing.JLabel();
-        jLabel79 = new javax.swing.JLabel();
-        jLabel80 = new javax.swing.JLabel();
-        jLabel81 = new javax.swing.JLabel();
-        jLabel82 = new javax.swing.JLabel();
-        jLabel83 = new javax.swing.JLabel();
-        jLabel84 = new javax.swing.JLabel();
-        jLabel85 = new javax.swing.JLabel();
-        jLabel86 = new javax.swing.JLabel();
-        jLabel87 = new javax.swing.JLabel();
-        jLabel88 = new javax.swing.JLabel();
-        jLabel89 = new javax.swing.JLabel();
-        jLabel90 = new javax.swing.JLabel();
-        jLabel91 = new javax.swing.JLabel();
-        jLabel92 = new javax.swing.JLabel();
-        jLabel93 = new javax.swing.JLabel();
-        jLabel94 = new javax.swing.JLabel();
-        jLabel95 = new javax.swing.JLabel();
-        jLabel96 = new javax.swing.JLabel();
-        jLabel97 = new javax.swing.JLabel();
-        jLabel98 = new javax.swing.JLabel();
-        jLabel99 = new javax.swing.JLabel();
-        jLabel100 = new javax.swing.JLabel();
-        jLabel101 = new javax.swing.JLabel();
-        jLabel102 = new javax.swing.JLabel();
-        jLabel103 = new javax.swing.JLabel();
-        jLabel104 = new javax.swing.JLabel();
-        jLabel105 = new javax.swing.JLabel();
-        jLabel106 = new javax.swing.JLabel();
-        jLabel107 = new javax.swing.JLabel();
-        jLabel108 = new javax.swing.JLabel();
-        jLabel109 = new javax.swing.JLabel();
-        jLabel110 = new javax.swing.JLabel();
         EmployeeDashboard_MainDashboard = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -310,6 +310,464 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("People Portal");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
+
+        PayslipPanel.setBackground(new java.awt.Color(255, 255, 255));
+        PayslipPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        PayslipPanel.setPreferredSize(new java.awt.Dimension(1114, 520));
+
+        jLabel33.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
+        jLabel33.setText("MotorPH");
+
+        jSeparator12.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+
+        jLabel34.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
+        jLabel34.setText(" 7 Jupiter Avenue cor. F. Sandoval Jr., Bagong Nayon, Quezon City");
+
+        jLabel35.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
+        jLabel35.setText("Phone: (028) 911-5071 / (028) 911-5072 / (028) 911-5073 ");
+
+        jLabel57.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
+        jLabel57.setText(" Email: corporate@motorph.com\t\t\t");
+
+        jLabel58.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
+        jLabel58.setText("EMPLOYEE PAYSLIP");
+
+        jLabel59.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel59.setText("PAYSLIP NO");
+
+        jLabel60.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel60.setText("EMPLOYEE ID");
+
+        jLabel61.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel61.setText("EMPLOYEE NAME");
+
+        payslipEmployeeName.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        payslipEmployeeName.setText("EMPLOYEE NAME");
+
+        payslipEmployeNumber.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        payslipEmployeNumber.setText("EMPLOYEE ID");
+
+        payslipNumber.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        payslipNumber.setText("PAYSLIP NO");
+
+        jLabel65.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel65.setText("END DATE");
+
+        jLabel66.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel66.setText("POSITION");
+
+        jLabel67.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel67.setText("START DATE");
+
+        payslipStartDate.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        payslipStartDate.setText("PAYSLIP NO");
+
+        payslipEndDate.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        payslipEndDate.setText("EMPLOYEE ID");
+
+        payslipPosition.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        payslipPosition.setText("EMPLOYEE NAME");
+
+        jSeparator13.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+
+        jLabel71.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel71.setText("SSS");
+
+        payslipSSS.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        payslipSSS.setText("PAYSLIP NO");
+
+        jLabel73.setBackground(new java.awt.Color(0, 102, 153));
+        jLabel73.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
+        jLabel73.setText("                                                         EARNINGS");
+        jLabel73.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
+
+        jLabel74.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel74.setText("Monthly Rate");
+
+        jLabel75.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel75.setText("PAYSLIP NO");
+
+        jLabel76.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel76.setText("Daily Rate");
+
+        jLabel77.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel77.setText("PAYSLIP NO");
+
+        payslipDaysWorked.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+
+        jLabel79.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel79.setText("Days Worked");
+
+        jLabel80.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel80.setText("PAYSLIP NO");
+
+        jLabel81.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel81.setText("Overtime");
+
+        jLabel82.setBackground(new java.awt.Color(0, 0, 102));
+        jLabel82.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
+        jLabel82.setText("                                                     DEDUCTIONS");
+        jLabel82.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
+
+        jLabel83.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel83.setText("Rice Subsidy");
+
+        payslipRiceAllowance.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+
+        jLabel85.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel85.setText("Phone Allowance");
+
+        payslipPhoneAllowance.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+
+        jLabel87.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel87.setText("Clothing Allowance");
+
+        payslipClothingAllowance.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+
+        jLabel89.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
+        jLabel89.setText("TOTAL");
+
+        payslipBenefitTotal.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+
+        jLabel91.setBackground(new java.awt.Color(0, 0, 102));
+        jLabel91.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
+        jLabel91.setText("                                                       BENEFITS");
+        jLabel91.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
+
+        jLabel92.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel92.setText("Philhealth");
+
+        payslipPhilhealth.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        payslipPhilhealth.setText("PAYSLIP NO");
+
+        payslipPagibig.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        payslipPagibig.setText("PAYSLIP NO");
+
+        jLabel95.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel95.setText("Pag-IbigPag-Ibig");
+
+        payslipTax.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        payslipTax.setText("PAYSLIP NO");
+
+        jLabel97.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel97.setText("Withholding Tax");
+
+        jLabel98.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
+        jLabel98.setText("TOTAL DEDUCTIONS");
+
+        payslipDeductionTotal.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        payslipDeductionTotal.setText("PAYSLIP NO");
+
+        jLabel100.setBackground(new java.awt.Color(0, 0, 102));
+        jLabel100.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
+        jLabel100.setText("                                                     SUMMARY");
+        jLabel100.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
+
+        jLabel101.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel101.setText("Gross Income");
+
+        jLabel102.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel102.setText("PAYSLIP NO");
+
+        jLabel103.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel103.setText("PAYSLIP NO");
+
+        jLabel104.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel104.setText("Benefits");
+
+        jLabel105.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel105.setText("Total Deducations");
+
+        jLabel106.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel106.setText("PAYSLIP NO");
+
+        jLabel107.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
+        jLabel107.setText("TAKE HOME PAY");
+
+        jLabel108.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel108.setText("PAYSLIP NO");
+
+        jLabel109.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
+        jLabel109.setText("GROSS INCOME");
+
+        jLabel110.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel110.setText("PAYSLIP NO");
+
+        javax.swing.GroupLayout PayslipPanelLayout = new javax.swing.GroupLayout(PayslipPanel);
+        PayslipPanel.setLayout(PayslipPanelLayout);
+        PayslipPanelLayout.setHorizontalGroup(
+            PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PayslipPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel59, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel61, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(50, 50, 50)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(payslipNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(payslipEmployeNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(payslipEmployeeName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(50, 50, 50)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel65, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel66, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel67, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(50, 50, 50)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(payslipStartDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(payslipEndDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(payslipPosition, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(10, 10, 10))
+                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PayslipPanelLayout.createSequentialGroup()
+                                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel81, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(312, 312, 312)
+                                        .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel79, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(312, 312, 312)
+                                        .addComponent(payslipDaysWorked, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(312, 312, 312)
+                                        .addComponent(jLabel77, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel74, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(312, 312, 312)
+                                        .addComponent(jLabel75, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel109, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(312, 312, 312)
+                                        .addComponent(jLabel110, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(10, 10, 10)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PayslipPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PayslipPanelLayout.createSequentialGroup()
+                                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                        .addGap(116, 116, 116)
+                                        .addComponent(jLabel33))
+                                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                        .addGap(91, 91, 91)
+                                        .addComponent(jLabel57))
+                                    .addComponent(jLabel35)
+                                    .addComponent(jLabel34))
+                                .addGap(63, 63, 63))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PayslipPanelLayout.createSequentialGroup()
+                                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jSeparator13)
+                                    .addComponent(jLabel58))
+                                .addGap(174, 174, 174)))))
+                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel83, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel87))
+                                .addGap(252, 252, 252)
+                                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                        .addComponent(payslipRiceAllowance, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                                        .addGap(80, 80, 80))
+                                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(payslipPhoneAllowance, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                                            .addComponent(payslipClothingAllowance, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(payslipBenefitTotal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel101, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                                .addGap(2, 2, 2)
+                                                .addComponent(jLabel104, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(271, 271, 271)
+                                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel103, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                                            .addComponent(jLabel102, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                        .addGap(2, 2, 2)
+                                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel105)
+                                            .addComponent(jLabel107, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(257, 257, 257)
+                                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel108, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                                            .addComponent(jLabel106, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
+                                            .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(payslipSSS, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel82, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
+                                            .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel97, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                                    .addGap(2, 2, 2)
+                                                    .addComponent(jLabel98)))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(payslipTax, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(payslipPagibig, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                                                .addComponent(payslipPhilhealth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(payslipDeductionTotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(jLabel91, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(80, Short.MAX_VALUE))))
+                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel100, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        PayslipPanelLayout.setVerticalGroup(
+            PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PayslipPanelLayout.createSequentialGroup()
+                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel57)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel58)
+                        .addGap(1, 1, 1)
+                        .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                .addComponent(payslipStartDate)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(payslipEndDate)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(payslipPosition))
+                            .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel67)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel65)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel66))
+                            .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                .addComponent(payslipNumber)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(payslipEmployeNumber)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(payslipEmployeeName))
+                            .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel59)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel60)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel61)))
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel73)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel75)
+                            .addComponent(jLabel74))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel77)
+                            .addComponent(jLabel76))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(payslipDaysWorked)
+                            .addComponent(jLabel79))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel80)
+                            .addComponent(jLabel81))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel110)
+                            .addComponent(jLabel109)))
+                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel91)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(payslipRiceAllowance)
+                            .addComponent(jLabel83))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(payslipPhoneAllowance)
+                            .addComponent(jLabel85))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(payslipClothingAllowance)
+                            .addComponent(jLabel87))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(payslipBenefitTotal)
+                            .addComponent(jLabel89))
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel82)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(payslipSSS)
+                            .addComponent(jLabel71))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel92)
+                            .addComponent(payslipPhilhealth))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel95)
+                            .addComponent(payslipPagibig))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel97)
+                            .addComponent(payslipTax))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel98)
+                            .addComponent(payslipDeductionTotal))
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel100)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel102, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel101))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel103)
+                            .addComponent(jLabel104, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel106)
+                            .addComponent(jLabel105))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel107)
+                            .addComponent(jLabel108)))
+                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(PayslipPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 460));
 
         TimeKeeping_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
 
@@ -564,470 +1022,6 @@ public javax.swing.JPanel getProfilePanel() {
         );
 
         jPanel1.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
-
-        PayslipPanel.setBackground(new java.awt.Color(255, 255, 255));
-        PayslipPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-        PayslipPanel.setPreferredSize(new java.awt.Dimension(1114, 520));
-
-        jLabel33.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
-        jLabel33.setText("MotorPH");
-
-        jSeparator12.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-
-        jLabel34.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
-        jLabel34.setText(" 7 Jupiter Avenue cor. F. Sandoval Jr., Bagong Nayon, Quezon City");
-
-        jLabel35.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
-        jLabel35.setText("Phone: (028) 911-5071 / (028) 911-5072 / (028) 911-5073 ");
-
-        jLabel57.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
-        jLabel57.setText(" Email: corporate@motorph.com\t\t\t");
-
-        jLabel58.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
-        jLabel58.setText("EMPLOYEE PAYSLIP");
-
-        jLabel59.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel59.setText("PAYSLIP NO");
-
-        jLabel60.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel60.setText("EMPLOYEE ID");
-
-        jLabel61.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel61.setText("EMPLOYEE NAME");
-
-        jLabel62.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel62.setText("EMPLOYEE NAME");
-
-        jLabel63.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel63.setText("EMPLOYEE ID");
-
-        jLabel64.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel64.setText("PAYSLIP NO");
-
-        jLabel65.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel65.setText("END DATE");
-
-        jLabel66.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel66.setText("POSITION");
-
-        jLabel67.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel67.setText("START DATE");
-
-        jLabel68.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel68.setText("PAYSLIP NO");
-
-        jLabel69.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel69.setText("EMPLOYEE ID");
-
-        jLabel70.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel70.setText("EMPLOYEE NAME");
-
-        jSeparator13.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-
-        jLabel71.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel71.setText("Social Security System");
-
-        jLabel72.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel72.setText("PAYSLIP NO");
-
-        jLabel73.setBackground(new java.awt.Color(0, 102, 153));
-        jLabel73.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        jLabel73.setText("                                                         EARNINGS");
-        jLabel73.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
-
-        jLabel74.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel74.setText("Monthly Rate");
-
-        jLabel75.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel75.setText("PAYSLIP NO");
-
-        jLabel76.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel76.setText("Daily Rate");
-
-        jLabel77.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel77.setText("PAYSLIP NO");
-
-        jLabel78.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel78.setText("PAYSLIP NO");
-
-        jLabel79.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel79.setText("Days Worked");
-
-        jLabel80.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel80.setText("PAYSLIP NO");
-
-        jLabel81.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel81.setText("Overtime");
-
-        jLabel82.setBackground(new java.awt.Color(0, 0, 102));
-        jLabel82.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        jLabel82.setText("                                                     DEDUCTIONS");
-        jLabel82.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
-
-        jLabel83.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel83.setText("Rice Subsidy");
-
-        jLabel84.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel84.setText("PAYSLIP NO");
-
-        jLabel85.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel85.setText("Phone Allowance");
-
-        jLabel86.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel86.setText("PAYSLIP NO");
-
-        jLabel87.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel87.setText("Clothing Allowance");
-
-        jLabel88.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel88.setText("PAYSLIP NO");
-
-        jLabel89.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
-        jLabel89.setText("TOTAL");
-
-        jLabel90.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel90.setText("PAYSLIP NO");
-
-        jLabel91.setBackground(new java.awt.Color(0, 0, 102));
-        jLabel91.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        jLabel91.setText("                                                       BENEFITS");
-        jLabel91.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
-
-        jLabel92.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel92.setText("Philhealth");
-
-        jLabel93.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel93.setText("PAYSLIP NO");
-
-        jLabel94.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel94.setText("PAYSLIP NO");
-
-        jLabel95.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel95.setText("Pag-IbigPag-Ibig");
-
-        jLabel96.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel96.setText("PAYSLIP NO");
-
-        jLabel97.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel97.setText("Withholding Tax");
-
-        jLabel98.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
-        jLabel98.setText("TOTAL DEDUCTIONS");
-
-        jLabel99.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel99.setText("PAYSLIP NO");
-
-        jLabel100.setBackground(new java.awt.Color(0, 0, 102));
-        jLabel100.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        jLabel100.setText("                                                     SUMMARY");
-        jLabel100.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
-
-        jLabel101.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel101.setText("Gross Income");
-
-        jLabel102.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel102.setText("PAYSLIP NO");
-
-        jLabel103.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel103.setText("PAYSLIP NO");
-
-        jLabel104.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel104.setText("Benefits");
-
-        jLabel105.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel105.setText("Total Deducations");
-
-        jLabel106.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel106.setText("PAYSLIP NO");
-
-        jLabel107.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
-        jLabel107.setText("TAKE HOME PAY");
-
-        jLabel108.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel108.setText("PAYSLIP NO");
-
-        jLabel109.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
-        jLabel109.setText("GROSS INCOME");
-
-        jLabel110.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel110.setText("PAYSLIP NO");
-
-        javax.swing.GroupLayout PayslipPanelLayout = new javax.swing.GroupLayout(PayslipPanel);
-        PayslipPanel.setLayout(PayslipPanelLayout);
-        PayslipPanelLayout.setHorizontalGroup(
-            PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PayslipPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PayslipPanelLayout.createSequentialGroup()
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel59, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel61, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(50, 50, 50)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel64, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel63, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel62, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(50, 50, 50)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel65, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel66, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel67, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(50, 50, 50)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel68, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel69, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel70, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(10, 10, 10))
-                    .addGroup(PayslipPanelLayout.createSequentialGroup()
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PayslipPanelLayout.createSequentialGroup()
-                                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
-                                        .addComponent(jLabel81, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(312, 312, 312)
-                                        .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
-                                        .addComponent(jLabel79, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(312, 312, 312)
-                                        .addComponent(jLabel78, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
-                                        .addComponent(jLabel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(312, 312, 312)
-                                        .addComponent(jLabel77, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
-                                        .addComponent(jLabel74, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(312, 312, 312)
-                                        .addComponent(jLabel75, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                        .addComponent(jLabel109, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(312, 312, 312)
-                                        .addComponent(jLabel110, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(10, 10, 10)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PayslipPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PayslipPanelLayout.createSequentialGroup()
-                                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                        .addGap(116, 116, 116)
-                                        .addComponent(jLabel33))
-                                    .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                        .addGap(91, 91, 91)
-                                        .addComponent(jLabel57))
-                                    .addComponent(jLabel35)
-                                    .addComponent(jLabel34))
-                                .addGap(63, 63, 63))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PayslipPanelLayout.createSequentialGroup()
-                                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jSeparator13)
-                                    .addComponent(jLabel58))
-                                .addGap(174, 174, 174)))))
-                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PayslipPanelLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel87, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel83, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(261, 261, 261)
-                                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                        .addComponent(jLabel84, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
-                                        .addGap(80, 80, 80))
-                                    .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jLabel86, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                                            .addComponent(jLabel88, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel90, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PayslipPanelLayout.createSequentialGroup()
-                                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel101, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                                .addGap(2, 2, 2)
-                                                .addComponent(jLabel104, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel102, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                            .addComponent(jLabel103, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                        .addGap(2, 2, 2)
-                                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel105)
-                                            .addComponent(jLabel107, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(257, 257, 257)
-                                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel106, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel108, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
-                                            .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(jLabel82, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
-                                            .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel97, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                                    .addGap(2, 2, 2)
-                                                    .addComponent(jLabel98)))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jLabel93, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel94, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel96, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel99, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGap(39, 39, 39)))
-                                    .addComponent(jLabel91, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap())))
-                    .addGroup(PayslipPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel100, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-        );
-        PayslipPanelLayout.setVerticalGroup(
-            PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PayslipPanelLayout.createSequentialGroup()
-                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PayslipPanelLayout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel33)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel34)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel57)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel58)
-                        .addGap(1, 1, 1)
-                        .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel68)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel69)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel70))
-                            .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel67)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel65)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel66))
-                            .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel64)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel63)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel62))
-                            .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel59)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel60)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel61)))
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel73)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel75)
-                            .addComponent(jLabel74))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel77)
-                            .addComponent(jLabel76))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel78)
-                            .addComponent(jLabel79))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel80)
-                            .addComponent(jLabel81))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel110)
-                            .addComponent(jLabel109)))
-                    .addGroup(PayslipPanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel91)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel84)
-                            .addComponent(jLabel83))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel86)
-                            .addComponent(jLabel85))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel88)
-                            .addComponent(jLabel87))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel90)
-                            .addComponent(jLabel89))
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel82)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel72)
-                            .addComponent(jLabel71))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel92)
-                            .addComponent(jLabel93))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel95)
-                            .addComponent(jLabel94))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel97)
-                            .addComponent(jLabel96))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel98)
-                            .addComponent(jLabel99))
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel100)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel102, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel101))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel103)
-                            .addComponent(jLabel104, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel106)
-                            .addComponent(jLabel105))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel107)
-                            .addComponent(jLabel108)))
-                    .addGroup(PayslipPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(33, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(PayslipPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 460));
 
         EmployeeDashboard_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
         EmployeeDashboard_MainDashboard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 1, true));
@@ -2053,7 +2047,7 @@ if (!accessGranted) {
 
     
     private void AttendanceMainDashboardButtionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AttendanceMainDashboardButtionActionPerformed
-       String empID = MainDashboardempNo.getText().trim();
+String empID = MainDashboardempNo.getText().trim();
 boolean accessGranted = false;
 
 System.out.println("Employee ID from input: " + empID);
@@ -2127,7 +2121,29 @@ if (accessGranted) {
     }//GEN-LAST:event_HomeActionPerformed
 
     private void PayslipMaindashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PayslipMaindashboardActionPerformed
-         TimeKeeping_MainDashboard.setVisible(false);
+           try {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        PayPeriod payperiod = new PayPeriod("10001", dateFormat.parse("09/01/2022"), dateFormat.parse("9/14/2022"));
+        String empID = MainDashboardempNo.getText();
+        boolean accessGranted = false;
+
+        for (AttendanceRecord att : attendance) 
+                {
+            if (att.getEmpID() == Integer.parseInt(empID)) {
+                accessGranted = true;
+                break; // No need to continue the loop if access is granted
+            }
+        }
+
+        if (accessGranted) {
+            
+             for (EmployeeRecords employee : employees) {
+            int daysworked = payperiod.countDays("src/Files/Timekeeping.csv");
+            
+            payslipDaysWorked.setText(String.valueOf(daysworked));
+            payslipRiceAllowance.setText(String.valueOf(employee.getRiceSubsidy()));
+           
+            TimeKeeping_MainDashboard.setVisible(false);
             PayrollHealth_MainDashboard.setVisible(false);
             EmployeeRecords_MainDashboard.setVisible(false);
             Request_MainDashboard.setVisible(false);
@@ -2135,6 +2151,15 @@ if (accessGranted) {
             ProfilePanel.setVisible(false);
             AttendancePanel.setVisible(false);
             LeavePanel.setVisible(false);
+             }
+            
+        } else {
+            // Handle cases where access is not granted
+        }
+    } catch (ParseException e) {
+        e.printStackTrace();
+        // Handle ParseException (e.g., display an error message)
+    }
     }//GEN-LAST:event_PayslipMaindashboardActionPerformed
 
     private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
@@ -2281,47 +2306,31 @@ login.setVisible(true);// TODO add your handling code here:
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
-    private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
-    private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
-    private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel87;
-    private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
-    private javax.swing.JLabel jLabel93;
-    private javax.swing.JLabel jLabel94;
     private javax.swing.JLabel jLabel95;
-    private javax.swing.JLabel jLabel96;
     private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
-    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -2344,6 +2353,22 @@ login.setVisible(true);// TODO add your handling code here:
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel payslipBenefitTotal;
+    private javax.swing.JLabel payslipClothingAllowance;
+    private javax.swing.JLabel payslipDaysWorked;
+    private javax.swing.JLabel payslipDeductionTotal;
+    private javax.swing.JLabel payslipEmployeNumber;
+    private javax.swing.JLabel payslipEmployeeName;
+    private javax.swing.JLabel payslipEndDate;
+    private javax.swing.JLabel payslipNumber;
+    private javax.swing.JLabel payslipPagibig;
+    private javax.swing.JLabel payslipPhilhealth;
+    private javax.swing.JLabel payslipPhoneAllowance;
+    private javax.swing.JLabel payslipPosition;
+    private javax.swing.JLabel payslipRiceAllowance;
+    private javax.swing.JLabel payslipSSS;
+    private javax.swing.JLabel payslipStartDate;
+    private javax.swing.JLabel payslipTax;
     private javax.swing.JLabel profileFirstName;
     private javax.swing.JProgressBar timeprogressbar;
     // End of variables declaration//GEN-END:variables
