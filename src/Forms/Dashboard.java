@@ -22,6 +22,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.table.DefaultTableModel;
+import System.Benefit;
 
 public class Dashboard extends javax.swing.JFrame {
 
@@ -113,12 +114,12 @@ public javax.swing.JPanel getProfilePanel() {
         payslipSSS = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
-        jLabel75 = new javax.swing.JLabel();
+        payslipMonthlyRate = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
-        jLabel77 = new javax.swing.JLabel();
+        payslipDailyRate = new javax.swing.JLabel();
         payslipDaysWorked = new javax.swing.JLabel();
         jLabel79 = new javax.swing.JLabel();
-        jLabel80 = new javax.swing.JLabel();
+        payslipOvertime = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
         jLabel83 = new javax.swing.JLabel();
@@ -342,13 +343,10 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel61.setText("EMPLOYEE NAME");
 
         payslipEmployeeName.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        payslipEmployeeName.setText("EMPLOYEE NAME");
 
         payslipEmployeNumber.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        payslipEmployeNumber.setText("EMPLOYEE ID");
 
         payslipNumber.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        payslipNumber.setText("PAYSLIP NO");
 
         jLabel65.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel65.setText("END DATE");
@@ -360,13 +358,10 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel67.setText("START DATE");
 
         payslipStartDate.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        payslipStartDate.setText("PAYSLIP NO");
 
         payslipEndDate.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        payslipEndDate.setText("EMPLOYEE ID");
 
         payslipPosition.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        payslipPosition.setText("EMPLOYEE NAME");
 
         jSeparator13.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
@@ -384,22 +379,19 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel74.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel74.setText("Monthly Rate");
 
-        jLabel75.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel75.setText("PAYSLIP NO");
+        payslipMonthlyRate.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
         jLabel76.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel76.setText("Daily Rate");
 
-        jLabel77.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel77.setText("PAYSLIP NO");
+        payslipDailyRate.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
         payslipDaysWorked.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
         jLabel79.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel79.setText("Days Worked");
 
-        jLabel80.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel80.setText("PAYSLIP NO");
+        payslipOvertime.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
         jLabel81.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel81.setText("Overtime");
@@ -529,7 +521,7 @@ public javax.swing.JPanel getProfilePanel() {
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
                                         .addComponent(jLabel81, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGap(312, 312, 312)
-                                        .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(payslipOvertime, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
                                         .addComponent(jLabel79, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGap(312, 312, 312)
@@ -537,11 +529,11 @@ public javax.swing.JPanel getProfilePanel() {
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
                                         .addComponent(jLabel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGap(312, 312, 312)
-                                        .addComponent(jLabel77, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(payslipDailyRate, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
                                         .addComponent(jLabel74, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGap(312, 312, 312)
-                                        .addComponent(jLabel75, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(payslipMonthlyRate, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(PayslipPanelLayout.createSequentialGroup()
                                         .addComponent(jLabel109, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGap(312, 312, 312)
@@ -684,11 +676,11 @@ public javax.swing.JPanel getProfilePanel() {
                         .addComponent(jLabel73)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel75)
+                            .addComponent(payslipMonthlyRate)
                             .addComponent(jLabel74))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel77)
+                            .addComponent(payslipDailyRate)
                             .addComponent(jLabel76))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
@@ -696,7 +688,7 @@ public javax.swing.JPanel getProfilePanel() {
                             .addComponent(jLabel79))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel80)
+                            .addComponent(payslipOvertime)
                             .addComponent(jLabel81))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
@@ -2123,12 +2115,12 @@ if (accessGranted) {
     private void PayslipMaindashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PayslipMaindashboardActionPerformed
            try {
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-        PayPeriod payperiod = new PayPeriod("10001", dateFormat.parse("09/01/2022"), dateFormat.parse("9/14/2022"));
+        PayPeriod payperiod = new PayPeriod("10001", dateFormat.parse("09/01/2022"), dateFormat.parse("09/15/2022"), "src/Files/Timekeeping.csv");
         String empID = MainDashboardempNo.getText();
+        Benefit benefit = new Benefit();
         boolean accessGranted = false;
 
-        for (AttendanceRecord att : attendance) 
-                {
+        for (AttendanceRecord att : attendance) {
             if (att.getEmpID() == Integer.parseInt(empID)) {
                 accessGranted = true;
                 break; // No need to continue the loop if access is granted
@@ -2137,22 +2129,38 @@ if (accessGranted) {
 
         if (accessGranted) {
             
-             for (EmployeeRecords employee : employees) {
-            int daysworked = payperiod.countDays("src/Files/Timekeeping.csv");
-            
-            payslipDaysWorked.setText(String.valueOf(daysworked));
-            payslipRiceAllowance.setText(String.valueOf(employee.getRiceSubsidy()));
-           
-            TimeKeeping_MainDashboard.setVisible(false);
-            PayrollHealth_MainDashboard.setVisible(false);
-            EmployeeRecords_MainDashboard.setVisible(false);
-            Request_MainDashboard.setVisible(false);
-            PayslipPanel.setVisible(true);
-            ProfilePanel.setVisible(false);
-            AttendancePanel.setVisible(false);
-            LeavePanel.setVisible(false);
-             }
-            
+            for (AttendanceRecord att : attendance) 
+            for (EmployeeRecords employee : employees) {
+                int daysWorked = payperiod.countDays();
+                
+                
+                payslipNumber.setText(payperiod.getPayslipNo());
+                payslipEmployeNumber.setText(String.valueOf(employee.getEmpNo()));
+                payslipEmployeeName.setText(employee.getFirstName() + " " + employee.getLastName());
+                payslipStartDate.setText(dateFormat.format(payperiod.getStartDate()));
+                payslipEndDate.setText(dateFormat.format(payperiod.getEndDate()));
+                payslipPosition.setText(employee.getPosition());
+               
+                
+                payslipMonthlyRate.setText(String.valueOf("Php" + " " +employee.getBasicSalary()));
+                payslipDailyRate.setText(String.valueOf("Php" + " " +employee.getHourlyRate()*8));
+               
+                payslipOvertime.setText(String.valueOf("Php" + " " +payperiod.calculateTotalOvertime()* employee.getHourlyRate()));
+                payslipDaysWorked.setText(String.valueOf(daysWorked + " " + "Days"));
+                payslipRiceAllowance.setText("Php" + " " + employee.getFormattedDouble(employee.getRiceSubsidy()));
+                payslipPhoneAllowance.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(employee.getPhoneAllowance())));
+                payslipClothingAllowance.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(employee.getClothingAllowance())));
+                payslipBenefitTotal.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(benefit.getTotalBenefits(employee))));
+
+                TimeKeeping_MainDashboard.setVisible(false);
+                PayrollHealth_MainDashboard.setVisible(false);
+                EmployeeRecords_MainDashboard.setVisible(false);
+                Request_MainDashboard.setVisible(false);
+                PayslipPanel.setVisible(true);
+                ProfilePanel.setVisible(false);
+                AttendancePanel.setVisible(false);
+                LeavePanel.setVisible(false);
+            }
         } else {
             // Handle cases where access is not granted
         }
@@ -2313,12 +2321,9 @@ login.setVisible(true);// TODO add your handling code here:
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
-    private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
-    private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
@@ -2355,12 +2360,15 @@ login.setVisible(true);// TODO add your handling code here:
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel payslipBenefitTotal;
     private javax.swing.JLabel payslipClothingAllowance;
+    private javax.swing.JLabel payslipDailyRate;
     private javax.swing.JLabel payslipDaysWorked;
     private javax.swing.JLabel payslipDeductionTotal;
     private javax.swing.JLabel payslipEmployeNumber;
     private javax.swing.JLabel payslipEmployeeName;
     private javax.swing.JLabel payslipEndDate;
+    private javax.swing.JLabel payslipMonthlyRate;
     private javax.swing.JLabel payslipNumber;
+    private javax.swing.JLabel payslipOvertime;
     private javax.swing.JLabel payslipPagibig;
     private javax.swing.JLabel payslipPhilhealth;
     private javax.swing.JLabel payslipPhoneAllowance;

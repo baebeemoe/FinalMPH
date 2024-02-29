@@ -210,6 +210,10 @@ public static AttendanceRecord[] readAttendanceFromCSV(String filePath) {
     List<AttendanceRecord> records = new ArrayList<>();
 
     try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        // Skip the header line
+        br.readLine();
+        
+        
         String line;
         // Read each line from the CSV file
         while ((line = br.readLine()) != null) {
