@@ -2116,20 +2116,15 @@ if (accessGranted) {
         Benefit benefit = new Benefit();
         Earning earning = new Earning();
         Deduction deduction = new Deduction();
+        
         boolean accessGranted = false;
-
+        for (EmployeeRecords employee : employees)
         for (AttendanceRecord att : attendance) {
-            if (att.getEmpID() == Integer.parseInt(empID)) {
+            if (att.getEmpID() == Integer.parseInt(empID)) 
+                if (employee.getEmpNo() == Integer.parseInt(empID)){
                 accessGranted = true;
-                break; // No need to continue the loop if access is granted
-            }
-        }
-
-        if (accessGranted) {
-            
-            for (AttendanceRecord att : attendance) 
-            for (EmployeeRecords employee : employees) {
-                //Payslip information
+                
+                 //Payslip information
                 payslipNumber.setText(payperiod.getPayslipNo());
                 payslipEmployeNumber.setText(String.valueOf(employee.getEmpNo()));
                 payslipEmployeeName.setText(employee.getFirstName() + " " + employee.getLastName());
@@ -2167,7 +2162,19 @@ if (accessGranted) {
                summaryTotalDeduction.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.totalDeduction(employee))));
                summaryTakeHomePay.setText("Php" + " " + String.valueOf(takehomepay));
                
-               //hide other panels
+            
+                
+                break; // No need to continue the loop if access is granted
+            }
+        }
+
+        if (accessGranted) {
+            
+            for (AttendanceRecord att : attendance) 
+            for (EmployeeRecords employee : employees) {
+               
+                
+                   //hide other panels
                 TimeKeeping_MainDashboard.setVisible(false);
                 PayrollHealth_MainDashboard.setVisible(false);
                 EmployeeRecords_MainDashboard.setVisible(false);
@@ -2176,6 +2183,7 @@ if (accessGranted) {
                 ProfilePanel.setVisible(false);
                 AttendancePanel.setVisible(false);
                 LeavePanel.setVisible(false);
+                
             }
         } else {
             // Handle cases where access is not granted

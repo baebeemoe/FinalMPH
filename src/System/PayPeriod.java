@@ -77,6 +77,7 @@ public class PayPeriod {
         while ((line = br.readLine()) != null) {
             String[] data = line.split(delimiter);
             if (data.length == 5) { // Check if data has exactly five elements
+                
                 Date date = dateFormat.parse(data[1]);
                 // Check if the date falls within the pay period
                 if (date.compareTo(this.startDate) >= 0 && date.compareTo(this.endDate) <= 0) {
