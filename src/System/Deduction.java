@@ -154,6 +154,8 @@ public double calculateSssContribution(EmployeeRecords employee) {
         return (double)employee.getBasicSalary() < 1500.0 ? (double)employee.getBasicSalary() * 0.01 : 100.0;
     }
 
+   
+    
     public double calculateTotalGovernmentDeduction(EmployeeRecords employee){
     double sssDeduction = calculateSssContribution(employee);
     double philhealthContribution = calculatePhilhealthContribution(employee);
@@ -180,4 +182,11 @@ public double calculateSssContribution(EmployeeRecords employee) {
         return taxRate;
     }
     
+     public double totalDeduction(EmployeeRecords employee){
+        double total = 0;
+        double contribution = calculateTotalGovernmentDeduction(employee);
+        double tax = calculateTax( employee );
+        total = contribution + tax;
+    return total;
+    }
 }
