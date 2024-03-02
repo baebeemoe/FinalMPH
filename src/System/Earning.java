@@ -15,7 +15,8 @@ public class Earning {
      return monthlyRate;    
 } 
     
-public double dailyRate (EmployeeRecords employee){
+public double dailyRate (EmployeeRecords employee ){
+    
     double dailyRate = employee.getHourlyRate()*8;
      return dailyRate;
 }    

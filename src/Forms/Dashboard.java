@@ -25,12 +25,14 @@ import javax.swing.table.DefaultTableModel;
 import System.Benefit;
 import System.Earning;
 import System.Deduction;
+import System.Request;
 
 public class Dashboard extends javax.swing.JFrame {
 
     private EmployeeRecords[] employees;
     private AttendanceRecord[] attendance;
     private PayPeriod payperiod;
+    private Request request;
     public Dashboard() {
         initComponents();
         
@@ -260,12 +262,15 @@ public javax.swing.JPanel getProfilePanel() {
         LeavePanel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel112 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        LeavePanelLeaveSelector = new javax.swing.JComboBox<>();
         jLabel113 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jTextArea1 = new javax.swing.JTextArea();
+        LeavePanelStartDate = new com.toedter.calendar.JDateChooser();
+        LeavePanelReason = new javax.swing.JTextArea();
         jLabel114 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        LeavePanelSubmitButton = new javax.swing.JButton();
+        LeavePanelEndDate = new com.toedter.calendar.JDateChooser();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
         jLabel111 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel115 = new javax.swing.JLabel();
@@ -1768,23 +1773,32 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel112.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel112.setText("Leave Type");
 
-        jComboBox1.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Leave Type", "Vacation Leave", "Sick Leave", "Emergency Leave" }));
-        jComboBox1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jComboBox1.setName("Choose the Type of Leave"); // NOI18N
+        LeavePanelLeaveSelector.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        LeavePanelLeaveSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Leave Type", "Vacation Leave", "Sick Leave", "Emergency Leave" }));
+        LeavePanelLeaveSelector.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        LeavePanelLeaveSelector.setName("Choose the Type of Leave"); // NOI18N
 
         jLabel113.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel113.setText("Reason");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        LeavePanelReason.setColumns(20);
+        LeavePanelReason.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        LeavePanelReason.setRows(5);
+        LeavePanelReason.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel114.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel114.setText("Date");
 
-        jButton1.setText("Submit");
+        LeavePanelSubmitButton.setText("Submit");
+        LeavePanelSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LeavePanelSubmitButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel62.setText("Start Date");
+
+        jLabel63.setText("End Date");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1796,15 +1810,22 @@ public javax.swing.JPanel getProfilePanel() {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel112)
                         .addComponent(jLabel114)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel113)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextArea1, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)))
+                        .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(LeavePanelStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel113))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LeavePanelEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(157, 157, 157)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                .addComponent(LeavePanelSubmitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
                 .addGap(152, 152, 152))
         );
         jPanel2Layout.setVerticalGroup(
@@ -1813,17 +1834,23 @@ public javax.swing.JPanel getProfilePanel() {
                 .addGap(37, 37, 37)
                 .addComponent(jLabel112)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel114)
                 .addGap(10, 10, 10)
-                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LeavePanelStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LeavePanelEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel62)
+                    .addComponent(jLabel63))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel113)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(LeavePanelSubmitButton)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -1885,7 +1912,7 @@ public javax.swing.JPanel getProfilePanel() {
                 .addGroup(LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         jPanel1.add(LeavePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
@@ -2035,12 +2062,12 @@ if (!accessGranted) {
 
     
     private void AttendanceMainDashboardButtionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AttendanceMainDashboardButtionActionPerformed
-String empID = MainDashboardempNo.getText().trim();
-boolean accessGranted = false;
+   String empID = MainDashboardempNo.getText().trim();
+   boolean accessGranted = false;
 
-System.out.println("Employee ID from input: " + empID);
+   System.out.println("Employee ID from input: " + empID);
 
-for (AttendanceRecord att : attendance) {
+   for (AttendanceRecord att : attendance) {
      System.out.println("Employee ID from record: " + att.getEmpID());
     if (att.getEmpID() == Integer.parseInt(empID)) {
         accessGranted = true;
@@ -2122,7 +2149,8 @@ if (accessGranted) {
         for (AttendanceRecord att : attendance) {
             if (att.getEmpID() == Integer.parseInt(empID)) 
                 if (employee.getEmpNo() == Integer.parseInt(empID)){
-                accessGranted = true;
+                accessGranted = true; 
+              
                 
                  //Payslip information
                 payslipNumber.setText(payperiod.getPayslipNo());
@@ -2200,7 +2228,8 @@ login.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_LogOutActionPerformed
 
     private void LeaveMainDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaveMainDashboardActionPerformed
-       TimeKeeping_MainDashboard.setVisible(false);
+
+            TimeKeeping_MainDashboard.setVisible(false);
             PayrollHealth_MainDashboard.setVisible(false);
             EmployeeRecords_MainDashboard.setVisible(false);
             Request_MainDashboard.setVisible(false);
@@ -2208,7 +2237,47 @@ login.setVisible(true);// TODO add your handling code here:
             ProfilePanel.setVisible(false);
             AttendancePanel.setVisible(false);
             LeavePanel.setVisible(true);
+            
+        
     }//GEN-LAST:event_LeaveMainDashboardActionPerformed
+
+    private void LeavePanelSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeavePanelSubmitButtonActionPerformed
+             Request request = new Request();
+              SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+              
+             Date startDate = LeavePanelStartDate.getDate();
+             Date endDate = LeavePanelEndDate.getDate();
+             String empID = MainDashboardempNo.getText();
+             String startdateFiled = dateFormat.format(startDate);
+             String enddateFiled = dateFormat.format(endDate);
+             String leaveType = LeavePanelLeaveSelector.getSelectedItem().toString();
+             String reason = LeavePanelReason.getText();
+
+            if (startDate.compareTo(endDate) >= 0) {
+                JOptionPane.showMessageDialog(this, "End date should be greater than Start Date");
+          } else {
+            int dialogResult = JOptionPane.showConfirmDialog(this, "Submit Request Form?", "Leave Request Confirmation", JOptionPane.YES_NO_OPTION);
+
+    if (dialogResult == JOptionPane.YES_OPTION) {
+        JOptionPane.showMessageDialog(this, "Submitted Successfully");
+        request.LeaveRequestwriteToCSV(empID, startdateFiled, enddateFiled, reason);
+        
+        
+    }
+}
+
+System.out.println("EmployeeID " + empID);
+System.out.println("LeaveType " + leaveType);
+System.out.println("startDate " + startdateFiled);
+System.out.println("endDate " + enddateFiled);
+System.out.println("Reason " + reason);
+              
+        
+              
+           
+
+  
+    }//GEN-LAST:event_LeavePanelSubmitButtonActionPerformed
 
   
 
@@ -2222,6 +2291,11 @@ login.setVisible(true);// TODO add your handling code here:
     private javax.swing.JButton Home;
     private javax.swing.JButton LeaveMainDashboard;
     private javax.swing.JPanel LeavePanel;
+    private com.toedter.calendar.JDateChooser LeavePanelEndDate;
+    private javax.swing.JComboBox<String> LeavePanelLeaveSelector;
+    private javax.swing.JTextArea LeavePanelReason;
+    private com.toedter.calendar.JDateChooser LeavePanelStartDate;
+    private javax.swing.JButton LeavePanelSubmitButton;
     private javax.swing.JButton LogOut;
     private javax.swing.JLabel MainDashBoardFirstName;
     private javax.swing.JLabel MainDashboardempNo;
@@ -2252,12 +2326,9 @@ login.setVisible(true);// TODO add your handling code here:
     private javax.swing.JPanel TimeKeeping_MainDashboard;
     private javax.swing.JLabel TimeOutLabel;
     private javax.swing.JTable attendanceTable;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -2333,6 +2404,8 @@ login.setVisible(true);// TODO add your handling code here:
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
@@ -2376,7 +2449,6 @@ login.setVisible(true);// TODO add your handling code here:
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel payslipBenefitTotal;
     private javax.swing.JLabel payslipClothingAllowance;
     private javax.swing.JLabel payslipDailyRate;

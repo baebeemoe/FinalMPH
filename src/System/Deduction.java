@@ -6,6 +6,12 @@
 package System;
 
 import System.EmployeeRecords;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 public class Deduction {
 
 public double calculateSssContribution(EmployeeRecords employee) {
@@ -189,4 +195,7 @@ public double calculateSssContribution(EmployeeRecords employee) {
         total = contribution + tax;
     return total;
     }
+     
+     
+     
 }

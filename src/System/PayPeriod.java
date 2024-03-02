@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import Forms.Dashboard;
 
 public class PayPeriod {
     private String payslipNo;
@@ -43,16 +44,19 @@ public class PayPeriod {
         int daysWorked = 0;
         String line;
         String delimiter = ",";
-        
+        Dashboard dashboard = new Dashboard();
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             // Skip header line
             br.readLine();
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(delimiter);
                 if (data.length == 5) { // Check if data has exactly five elements
+                     String employeeID = data[0]; // Assuming index 0 holds the employee ID
+                     String empID = dashboard.getMainDashboardempNo().getText();
+                     System.out.println("Incorrect data format: " + empID);
                     Date date = dateFormat.parse(data[1]);
                     // Check if the date falls within the pay period
-                    if (date.compareTo(this.startDate) >= 0 && date.compareTo(this.endDate) <= 0) {
+                    if (employeeID.equals(empID)&& date.compareTo(this.startDate) >= 0 && date.compareTo(this.endDate) <= 0) {
                         daysWorked++;
                     }
                 } else {
