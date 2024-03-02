@@ -2238,13 +2238,13 @@ if (accessGranted) {
             
              for (EmployeeRecords employee : employees) {
                 if (empID != null && employee.getEmpNo() == Integer.parseInt(empID)) {
-                int daysworked = payperiod.countDays("src/Files/Timekeeping.csv");
-            
-                payslipDaysWorked.setText(String.valueOf(daysworked));
-                payslipRiceAllowance.setText(String.valueOf(employee.getRiceSubsidy()));
-                payslipEmployeeNumber.setText(empID);
-                payslipEmployeeName.setText(String.valueOf(employee.getLastName()) + ", " + String.valueOf(employee.getFirstName()) );
-                payslipEmpPosition.setText(String.valueOf(employee.getPosition()));
+//                int daysworked = payperiod.countDays("src/Files/Timekeeping.csv");
+//            
+//                payslipDaysWorked.setText(String.valueOf(daysworked));
+//                payslipRiceAllowance.setText(String.valueOf(employee.getRiceSubsidy()));
+//                payslipEmployeeNumber.setText(empID);
+//                payslipEmployeeName.setText(String.valueOf(employee.getLastName()) + ", " + String.valueOf(employee.getFirstName()) );
+//                payslipEmpPosition.setText(String.valueOf(employee.getPosition()));
            
             TimeKeeping_MainDashboard.setVisible(false);
             PayrollHealth_MainDashboard.setVisible(false);

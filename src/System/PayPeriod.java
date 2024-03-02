@@ -65,33 +65,33 @@ public class PayPeriod {
             
             
        String csvFile = "src/Files/timekeeping.csv";    
-   public int countDays(String csvFile) {
-    int daysWorked = 0;
-    SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-    String line;
-    String delimiter = ",";
-
-    try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-        // Skip header line
-        br.readLine();
-        while ((line = br.readLine()) != null) {
-            String[] data = line.split(delimiter);
-            if (data.length == 5) { // Check if data has exactly five elements
-                Date date = dateFormat.parse(data[1]);
-                // Check if the date falls within the pay period
-                if (date.compareTo(this.startDate) >= 0 && date.compareTo(this.endDate) <= 0) {
-                    daysWorked++;
-                }
-            } else {
-                // Handle cases where the data format is incorrect
-                System.out.println("Incorrect data format: " + line);
-            }
-        }
-    } catch (IOException | ParseException e) {
-        e.printStackTrace();
-    }
-    return daysWorked;
-}
+//   public int countDays(String csvFile) {
+//    int daysWorked = 0;
+//    SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+//    String line;
+//    String delimiter = ",";
+//
+//    try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+//        // Skip header line
+//        br.readLine();
+//        while ((line = br.readLine()) != null) {
+//            String[] data = line.split(delimiter);
+//            if (data.length == 5) { // Check if data has exactly five elements
+//                Date date = dateFormat.parse(data[1]);
+//                // Check if the date falls within the pay period
+//                if (date.compareTo(this.startDate) >= 0 && date.compareTo(this.endDate) <= 0) {
+//                    daysWorked++;
+//                }
+//            } else {
+//                // Handle cases where the data format is incorrect
+//                System.out.println("Incorrect data format: " + line);
+//            }
+//        }
+//    } catch (IOException | ParseException e) {
+//        e.printStackTrace();
+//    }
+//    return daysWorked;
+//}
             
    
 }
