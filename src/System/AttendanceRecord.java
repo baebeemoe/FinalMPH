@@ -12,10 +12,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
-
-
-
 public class AttendanceRecord {
     //Variables
     private int empID;
@@ -23,8 +19,7 @@ public class AttendanceRecord {
     private String timeIn;
     private String timeOut;
     private String overTime;
-    
-    
+ 
     
 //Set up getter
     public int getEmpID() {
@@ -46,14 +41,7 @@ public class AttendanceRecord {
     public String getOverTime() {
         return overTime;
     }
-   
-  
-    
-
-
-    
-  
-    
+        
     public String punchIn() {
         return getCurrentDateTimeFormatted();
     }
@@ -215,6 +203,9 @@ public static AttendanceRecord[] readAttendanceFromCSV(String filePath) {
     List<AttendanceRecord> records = new ArrayList<>();
 
     try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        //Skip the header line
+        br.readLine();
+        
         String line;
         // Read each line from the CSV file
         while ((line = br.readLine()) != null) {

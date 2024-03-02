@@ -7,12 +7,10 @@ package System;
 
 
 public class Earning {
-    
-    
-    
- public double monthlyRate (EmployeeRecords employee){
-     double monthlyRate = employee.getBasicSalary();
-     return monthlyRate;    
+ 
+    public double monthlyRate (EmployeeRecords employee){
+    double monthlyRate = employee.getBasicSalary();
+    return monthlyRate;    
 } 
     
 public double dailyRate (EmployeeRecords employee){
@@ -20,27 +18,27 @@ public double dailyRate (EmployeeRecords employee){
      return dailyRate;
 }    
 
-//public int daysWorked (PayPeriod payperiod){
-//    
-//      int daysWorked = payperiod.countDays();
-//     return daysWorked;
-//}
+public int daysWorked (PayPeriod payperiod){
     
-//public double overTime (EmployeeRecords employee, PayPeriod payperiod ) {
-//    double overTime = payperiod.calculateTotalOvertime() * employee.getHourlyRate();
-//     return overTime;
-//    
-//}   
+      int daysWorked = payperiod.countDays();
+     return daysWorked;
+}
+    
+public double overTime (EmployeeRecords employee, PayPeriod payperiod ) {
+    double overTime = payperiod.calculateTotalOvertime() * employee.getHourlyRate();
+     return overTime;
+    
+}   
   
     
-//public double GrossSalary (EmployeeRecords employee, PayPeriod payperiod){
-//    double salary = 0;
-//    double dailyRate = dailyRate(employee);
-//    int daysWorked = daysWorked (payperiod);
-//    double overtime = overTime(employee,payperiod);
-//    salary = (dailyRate * daysWorked)+ overtime;
-//     return salary;
-//}    
+public double GrossSalary (EmployeeRecords employee, PayPeriod payperiod){
+    double salary = 0;
+    double dailyRate = dailyRate(employee);
+    int daysWorked = daysWorked (payperiod);
+    double overtime = overTime(employee,payperiod);
+    salary = (dailyRate * daysWorked)+ overtime;
+     return salary;
+}    
     
     
 }

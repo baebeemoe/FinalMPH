@@ -180,4 +180,12 @@ public double calculateSssContribution(EmployeeRecords employee) {
         return taxRate;
     }
     
+    public double totalDeduction(EmployeeRecords employee){
+        double total = 0;
+        double contribution = calculateTotalGovernmentDeduction(employee);
+        double tax = calculateTax( employee );
+        total = contribution + tax;
+    return total;
+    }
+    
 }

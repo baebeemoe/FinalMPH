@@ -3,6 +3,7 @@ package System;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 public class EmployeeRecords {
     
@@ -169,5 +170,21 @@ public class EmployeeRecords {
         return employees;
     } 
     
+    private String formatDouble(double value) {
+        DecimalFormat df = new DecimalFormat("#.00");
+        return df.format(value);
+    }
+   
+    
+    public String getFormattedDouble(double value) {
+        return formatDouble(value);
+    }
+    
+    
+    public double Dailyrate(){
+        double dailyRate = 0;
+        dailyRate = hourlyRate * 8;
+        return dailyRate;
+    } 
    
 }

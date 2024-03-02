@@ -6,6 +6,8 @@ import System.EmployeeRecords;
 import System.Benefit;
 import System.Deduction;
 import System.PayPeriod;
+import System.Request;
+import System.Earning;
 import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -114,17 +116,17 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel67 = new javax.swing.JLabel();
         payslipStartDate = new javax.swing.JLabel();
         payslipEndDate = new javax.swing.JLabel();
-        payslipEmpPosition = new javax.swing.JLabel();
+        payslipPosition = new javax.swing.JLabel();
         jLabel71 = new javax.swing.JLabel();
         payslipSSS = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
-        jLabel75 = new javax.swing.JLabel();
+        payslipMonthlyRate = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
-        jLabel77 = new javax.swing.JLabel();
+        payslipDailyRate = new javax.swing.JLabel();
         payslipDaysWorked = new javax.swing.JLabel();
         jLabel79 = new javax.swing.JLabel();
-        jLabel80 = new javax.swing.JLabel();
+        payslipOvertime = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
         jLabel83 = new javax.swing.JLabel();
@@ -146,15 +148,15 @@ public javax.swing.JPanel getProfilePanel() {
         payslipDeductionTotal = new javax.swing.JLabel();
         jLabel100 = new javax.swing.JLabel();
         jLabel101 = new javax.swing.JLabel();
-        jLabel102 = new javax.swing.JLabel();
-        jLabel103 = new javax.swing.JLabel();
+        summaryGrossIncome = new javax.swing.JLabel();
+        summaryBenefits = new javax.swing.JLabel();
         jLabel104 = new javax.swing.JLabel();
         jLabel105 = new javax.swing.JLabel();
-        jLabel106 = new javax.swing.JLabel();
+        summaryTotalDeduction = new javax.swing.JLabel();
         jLabel107 = new javax.swing.JLabel();
-        jLabel108 = new javax.swing.JLabel();
+        summaryTakeHomePay = new javax.swing.JLabel();
         jLabel109 = new javax.swing.JLabel();
-        jLabel110 = new javax.swing.JLabel();
+        payslipGrossIncome = new javax.swing.JLabel();
         EmployeeDashboard_MainDashboard = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -261,13 +263,15 @@ public javax.swing.JPanel getProfilePanel() {
         LeavePanel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel112 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        LeavePanelLeaveSelector = new javax.swing.JComboBox<>();
         jLabel113 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jTextArea1 = new javax.swing.JTextArea();
+        LeavePanelStartDate = new com.toedter.calendar.JDateChooser();
+        LeavePanelReason = new javax.swing.JTextArea();
         jLabel114 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        LeavePanelSubmitButton = new javax.swing.JButton();
         jLabel115 = new javax.swing.JLabel();
+        LeavePanelEndDate = new com.toedter.calendar.JDateChooser();
+        jLabel119 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel116 = new javax.swing.JLabel();
         jLabel120 = new javax.swing.JLabel();
@@ -437,8 +441,8 @@ public javax.swing.JPanel getProfilePanel() {
         payslipEndDate.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
         payslipEndDate.setText("02/15/2024");
 
-        payslipEmpPosition.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
-        payslipEmpPosition.setText("EMPLOYEE NAME");
+        payslipPosition.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
+        payslipPosition.setText("EMPLOYEE NAME");
 
         jLabel71.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel71.setText("Social Security System");
@@ -456,14 +460,14 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel74.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
         jLabel74.setText("Monthly Rate");
 
-        jLabel75.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
-        jLabel75.setText("PAYSLIP NO");
+        payslipMonthlyRate.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
+        payslipMonthlyRate.setText("PAYSLIP NO");
 
         jLabel76.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
         jLabel76.setText("Daily Rate");
 
-        jLabel77.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
-        jLabel77.setText("PAYSLIP NO");
+        payslipDailyRate.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
+        payslipDailyRate.setText("PAYSLIP NO");
 
         payslipDaysWorked.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
         payslipDaysWorked.setText("PAYSLIP NO");
@@ -471,8 +475,8 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel79.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
         jLabel79.setText("Days Worked");
 
-        jLabel80.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
-        jLabel80.setText("PAYSLIP NO");
+        payslipOvertime.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
+        payslipOvertime.setText("PAYSLIP NO");
 
         jLabel81.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
         jLabel81.setText("Overtime");
@@ -543,11 +547,11 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel101.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel101.setText("Gross Income");
 
-        jLabel102.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel102.setText("PAYSLIP NO");
+        summaryGrossIncome.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        summaryGrossIncome.setText("PAYSLIP NO");
 
-        jLabel103.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel103.setText("PAYSLIP NO");
+        summaryBenefits.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        summaryBenefits.setText("PAYSLIP NO");
 
         jLabel104.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel104.setText("Benefits");
@@ -555,20 +559,20 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel105.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel105.setText("Total Deducations");
 
-        jLabel106.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel106.setText("PAYSLIP NO");
+        summaryTotalDeduction.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        summaryTotalDeduction.setText("PAYSLIP NO");
 
         jLabel107.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
         jLabel107.setText("TAKE HOME PAY");
 
-        jLabel108.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel108.setText("PAYSLIP NO");
+        summaryTakeHomePay.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        summaryTakeHomePay.setText("PAYSLIP NO");
 
         jLabel109.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
         jLabel109.setText("GROSS INCOME");
 
-        jLabel110.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
-        jLabel110.setText("PAYSLIP NO");
+        payslipGrossIncome.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
+        payslipGrossIncome.setText("PAYSLIP NO");
 
         javax.swing.GroupLayout PayslipPanelLayout = new javax.swing.GroupLayout(PayslipPanel);
         PayslipPanel.setLayout(PayslipPanelLayout);
@@ -612,7 +616,7 @@ public javax.swing.JPanel getProfilePanel() {
                                 .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(payslipStartDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(payslipEndDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(payslipEmpPosition, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(payslipPosition, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PayslipPanelLayout.createSequentialGroup()
                                 .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel81, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -622,10 +626,10 @@ public javax.swing.JPanel getProfilePanel() {
                                     .addComponent(jLabel109, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(306, 306, 306)
                                 .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel110, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel75, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel77, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(payslipGrossIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(payslipMonthlyRate, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(payslipDailyRate, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(payslipOvertime, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(payslipDaysWorked, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(18, 18, 18)))
                 .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -659,8 +663,8 @@ public javax.swing.JPanel getProfilePanel() {
                                                 .addComponent(jLabel104, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel102, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                            .addComponent(jLabel103, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                            .addComponent(summaryGrossIncome, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                            .addComponent(summaryBenefits, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                     .addGroup(PayslipPanelLayout.createSequentialGroup()
                                         .addGap(2, 2, 2)
                                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -668,8 +672,8 @@ public javax.swing.JPanel getProfilePanel() {
                                             .addComponent(jLabel107, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(257, 257, 257)
                                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel106, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel108, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                            .addComponent(summaryTotalDeduction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(summaryTakeHomePay, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                     .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
@@ -721,7 +725,7 @@ public javax.swing.JPanel getProfilePanel() {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(payslipEndDate)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(payslipEmpPosition))
+                                .addComponent(payslipPosition))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PayslipPanelLayout.createSequentialGroup()
                                 .addComponent(jLabel67)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -744,11 +748,11 @@ public javax.swing.JPanel getProfilePanel() {
                         .addComponent(jLabel73)
                         .addGap(18, 18, 18)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel75)
+                            .addComponent(payslipMonthlyRate)
                             .addComponent(jLabel74))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel77)
+                            .addComponent(payslipDailyRate)
                             .addComponent(jLabel76))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
@@ -756,11 +760,11 @@ public javax.swing.JPanel getProfilePanel() {
                             .addComponent(jLabel79))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel80)
+                            .addComponent(payslipOvertime)
                             .addComponent(jLabel81))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel110)
+                            .addComponent(payslipGrossIncome)
                             .addComponent(jLabel109)))
                     .addGroup(PayslipPanelLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
@@ -807,20 +811,20 @@ public javax.swing.JPanel getProfilePanel() {
                         .addComponent(jLabel100)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel102, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(summaryGrossIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel101))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel103)
+                            .addComponent(summaryBenefits)
                             .addComponent(jLabel104, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel106)
+                            .addComponent(summaryTotalDeduction)
                             .addComponent(jLabel105))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel107)
-                            .addComponent(jLabel108)))
+                            .addComponent(summaryTakeHomePay)))
                     .addGroup(PayslipPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1938,70 +1942,99 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel112.setForeground(new java.awt.Color(255, 255, 255));
         jLabel112.setText("Leave Type");
 
-        jComboBox1.setBackground(new java.awt.Color(102, 102, 102));
-        jComboBox1.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Leave Type", "Vacation Leave", "Sick Leave", "Emergency Leave" }));
-        jComboBox1.setBorder(null);
-        jComboBox1.setName("Choose the Type of Leave"); // NOI18N
-        jComboBox1.setOpaque(true);
-        jComboBox1.setPreferredSize(new java.awt.Dimension(290, 28));
+        LeavePanelLeaveSelector.setBackground(new java.awt.Color(102, 102, 102));
+        LeavePanelLeaveSelector.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        LeavePanelLeaveSelector.setForeground(new java.awt.Color(255, 255, 255));
+        LeavePanelLeaveSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Leave Type", "Vacation Leave", "Sick Leave", "Emergency Leave" }));
+        LeavePanelLeaveSelector.setBorder(null);
+        LeavePanelLeaveSelector.setName("Choose the Type of Leave"); // NOI18N
+        LeavePanelLeaveSelector.setOpaque(true);
+        LeavePanelLeaveSelector.setPreferredSize(new java.awt.Dimension(290, 28));
 
         jLabel113.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         jLabel113.setForeground(new java.awt.Color(255, 255, 255));
         jLabel113.setText("Reason");
 
-        jDateChooser1.setBackground(new java.awt.Color(102, 102, 102));
-        jDateChooser1.setForeground(new java.awt.Color(255, 255, 255));
-        jDateChooser1.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        jDateChooser1.setMinSelectableDate(new java.util.Date(-62135794718000L));
-        jDateChooser1.setPreferredSize(new java.awt.Dimension(290, 28));
+        LeavePanelStartDate.setBackground(new java.awt.Color(102, 102, 102));
+        LeavePanelStartDate.setForeground(new java.awt.Color(255, 255, 255));
+        LeavePanelStartDate.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        LeavePanelStartDate.setMinSelectableDate(new java.util.Date(-62135794718000L));
+        LeavePanelStartDate.setPreferredSize(new java.awt.Dimension(290, 28));
 
-        jTextArea1.setBackground(new java.awt.Color(102, 102, 102));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createEmptyBorder(8, 8, 8, 8));
+        LeavePanelReason.setBackground(new java.awt.Color(102, 102, 102));
+        LeavePanelReason.setColumns(20);
+        LeavePanelReason.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        LeavePanelReason.setForeground(new java.awt.Color(255, 255, 255));
+        LeavePanelReason.setRows(5);
+        LeavePanelReason.setBorder(javax.swing.BorderFactory.createEmptyBorder(8, 8, 8, 8));
 
         jLabel114.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         jLabel114.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel114.setText("Date");
+        jLabel114.setText("Start Date");
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 0));
-        jButton1.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("SUBMIT");
-        jButton1.setBorderPainted(false);
-        jButton1.setMaximumSize(new java.awt.Dimension(100, 36));
-        jButton1.setPreferredSize(new java.awt.Dimension(100, 36));
+        LeavePanelSubmitButton.setBackground(new java.awt.Color(255, 153, 0));
+        LeavePanelSubmitButton.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        LeavePanelSubmitButton.setForeground(new java.awt.Color(255, 255, 255));
+        LeavePanelSubmitButton.setText("SUBMIT");
+        LeavePanelSubmitButton.setBorderPainted(false);
+        LeavePanelSubmitButton.setMaximumSize(new java.awt.Dimension(100, 36));
+        LeavePanelSubmitButton.setPreferredSize(new java.awt.Dimension(100, 36));
+        LeavePanelSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LeavePanelSubmitButtonActionPerformed(evt);
+            }
+        });
 
         jLabel115.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         jLabel115.setForeground(new java.awt.Color(255, 255, 255));
         jLabel115.setText("Leave Request");
+
+        LeavePanelEndDate.setBackground(new java.awt.Color(102, 102, 102));
+        LeavePanelEndDate.setForeground(new java.awt.Color(255, 255, 255));
+        LeavePanelEndDate.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        LeavePanelEndDate.setMinSelectableDate(new java.util.Date(-62135794718000L));
+        LeavePanelEndDate.setPreferredSize(new java.awt.Dimension(290, 28));
+
+        jLabel119.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        jLabel119.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel119.setText("End Date");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                        .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel115)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel113)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel112)
-                            .addComponent(jLabel114))))
-                .addContainerGap(34, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(LeavePanelSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel115))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel112))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(LeavePanelStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(LeavePanelEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel113))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel114))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel119)))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2011,18 +2044,22 @@ public javax.swing.JPanel getProfilePanel() {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel112)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel114)
                 .addGap(10, 10, 10)
-                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LeavePanelStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel119)
+                .addGap(10, 10, 10)
+                .addComponent(LeavePanelEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel113)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addComponent(LeavePanelSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
@@ -2062,7 +2099,7 @@ public javax.swing.JPanel getProfilePanel() {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         LeavePanelLayout.setVerticalGroup(
             LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2071,7 +2108,7 @@ public javax.swing.JPanel getProfilePanel() {
                 .addGroup(LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(LeavePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
@@ -2121,7 +2158,7 @@ public javax.swing.JPanel getProfilePanel() {
                 ProfileAddress.setWrapStyleWord(true);
                 ProfileAddress.setText(employee.getAddress());
                 ProfileAddress.setEditable(false);
-             AttendancePanel.setVisible(false);
+                AttendancePanel.setVisible(false);
                 break;
             }
         }
@@ -2146,7 +2183,7 @@ public javax.swing.JPanel getProfilePanel() {
 
    
     private void AttendanceMainDashboardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AttendanceMainDashboardButtonActionPerformed
-       String empID = MainDashboardempNo.getText().trim();
+        String empID = MainDashboardempNo.getText().trim();
         boolean accessGranted = false;
 
         System.out.println("Employee ID from input: " + empID);
@@ -2159,46 +2196,46 @@ public javax.swing.JPanel getProfilePanel() {
     }
 }
 
-// Grant or deny access based on the result
-if (accessGranted) {
-    DefaultTableModel model = (DefaultTableModel) attendanceTable.getModel();
-    model.setRowCount(0);
+        // Grant or deny access based on the result
+        if (accessGranted) {
+            DefaultTableModel model = (DefaultTableModel) attendanceTable.getModel();
+            model.setRowCount(0);
 
-    // Populate the table with data from the CSV file
-    String csvFilePath = "src/Files/timekeeping.csv";
-    boolean foundRecords = false;
+        // Populate the table with data from the CSV file
+        String csvFilePath = "src/Files/timekeeping.csv";
+        boolean foundRecords = false;
 
-    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
-        String line;
-        while ((line = br.readLine()) != null) {
-            String[] data = line.split(",");
-            if (data.length >= 5 && data[0].equals(empID)) {
-                model.addRow(new Object[]{data[1], data[2], data[3], data[4]});
-                foundRecords = true;
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                if (data.length >= 5 && data[0].equals(empID)) {
+                    model.addRow(new Object[]{data[1], data[2], data[3], data[4]});
+                    foundRecords = true;
+                }
             }
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
-    } catch (IOException ex) {
-        ex.printStackTrace();
-    }
 
-    // Check if records were found for the employee
-    if (!foundRecords) {
-        JOptionPane.showMessageDialog(this, "No attendance records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
+        // Check if records were found for the employee
+        if (!foundRecords) {
+            JOptionPane.showMessageDialog(this, "No attendance records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
 
-    // Show the AttendancePanel and hide other panels
-    TimeKeeping_MainDashboard.setVisible(false);
-    PayrollHealth_MainDashboard.setVisible(false);
-    EmployeeRecords_MainDashboard.setVisible(false);
-    Request_MainDashboard.setVisible(false);
-    PayslipPanel.setVisible(false);
-    ProfilePanel.setVisible(false);
-    AttendancePanel.setVisible(true);
-    LeavePanel.setVisible(false);
-} else {
+        // Show the AttendancePanel and hide other panels
+        TimeKeeping_MainDashboard.setVisible(false);
+        PayrollHealth_MainDashboard.setVisible(false);
+        EmployeeRecords_MainDashboard.setVisible(false);
+        Request_MainDashboard.setVisible(false);
+        PayslipPanel.setVisible(false);
+        ProfilePanel.setVisible(false);
+        AttendancePanel.setVisible(true);
+        LeavePanel.setVisible(false);
+    } else {
     // Access denied, display an error message
-    JOptionPane.showMessageDialog(this, "Access Denied. Employee ID not found.", "Error", JOptionPane.ERROR_MESSAGE);
-}
+        JOptionPane.showMessageDialog(this, "Access Denied. Employee ID not found.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
 
             
             
@@ -2222,30 +2259,67 @@ if (accessGranted) {
     private void PayslipMaindashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PayslipMaindashboardActionPerformed
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-            PayPeriod payperiod = new PayPeriod("10001", dateFormat.parse("09/01/2022"), dateFormat.parse("9/14/2022"));
+            PayPeriod payperiod = new PayPeriod("10001", dateFormat.parse("09/01/2022"), dateFormat.parse("9/14/2022"), "");
             String empID = MainDashboardempNo.getText();
+            Benefit benefit = new Benefit();
+            Earning earning = new Earning();
+            Deduction deduction = new Deduction();
             boolean accessGranted = false;
 
         for (EmployeeRecords employee : employees) 
-                {
-            if (employee.getEmpNo() == Integer.parseInt(empID)) {
+        for (AttendanceRecord att : attendance) {
+            if (att.getEmpID() == Integer.parseInt(empID))
+                if (employee.getEmpNo() == Integer.parseInt(empID)) {
                 accessGranted = true;
+                
+                //Payslip information
+                payslipNumber.setText(payperiod.getPayslipNo());
+                payslipEmployeeNumber.setText(String.valueOf(employee.getEmpNo()));
+                payslipEmployeeName.setText(employee.getFirstName() + " " + employee.getLastName());
+                payslipStartDate.setText(dateFormat.format(payperiod.getStartDate()));
+                payslipEndDate.setText(dateFormat.format(payperiod.getEndDate()));
+                payslipPosition.setText(employee.getPosition());
+                
+                //Earnings
+                payslipMonthlyRate.setText(String.valueOf("Php" + " " +employee.getBasicSalary()));
+                payslipDailyRate.setText(String.valueOf("Php" + " " + earning.dailyRate(employee)));
+                payslipOvertime.setText(String.valueOf("Php" + " " +earning.overTime(employee, payperiod)));
+                payslipDaysWorked.setText(String.valueOf(earning.daysWorked(payperiod) + " " + "Days"));
+                payslipGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.GrossSalary(employee, payperiod))));
+                
+                //Benefits
+                payslipRiceAllowance.setText("Php" + " " + employee.getFormattedDouble(employee.getRiceSubsidy()));
+                payslipPhoneAllowance.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(employee.getPhoneAllowance())));
+                payslipClothingAllowance.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(employee.getClothingAllowance())));
+                payslipBenefitTotal.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(benefit.getTotalBenefits(employee))));
+
+                //Deductions
+                payslipSSS.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculateSssContribution(employee))));
+                payslipPhilhealth.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculatePhilhealthContribution(employee))));
+                payslipPagibig.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculatePagibigContribution(employee))));
+                payslipTax.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculateTax(employee))));
+                payslipDeductionTotal.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.totalDeduction(employee))));
+                
+                
+               //Summary
+               
+               double takehomepay = earning.GrossSalary(employee, payperiod)+ benefit.getTotalBenefits(employee)+ deduction.totalDeduction(employee);
+               
+               summaryGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.GrossSalary(employee, payperiod))));
+               summaryBenefits.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(benefit.getTotalBenefits(employee))));
+               summaryTotalDeduction.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.totalDeduction(employee))));
+               summaryTakeHomePay.setText("Php" + " " + String.valueOf(takehomepay));
+                
                 break; // No need to continue the loop if access is granted
             }
         }
 
         if (accessGranted) {
             
-             for (EmployeeRecords employee : employees) {
-                if (empID != null && employee.getEmpNo() == Integer.parseInt(empID)) {
-//                int daysworked = payperiod.countDays("src/Files/Timekeeping.csv");
-//            
-//                payslipDaysWorked.setText(String.valueOf(daysworked));
-//                payslipRiceAllowance.setText(String.valueOf(employee.getRiceSubsidy()));
-//                payslipEmployeeNumber.setText(empID);
-//                payslipEmployeeName.setText(String.valueOf(employee.getLastName()) + ", " + String.valueOf(employee.getFirstName()) );
-//                payslipEmpPosition.setText(String.valueOf(employee.getPosition()));
-           
+            for (AttendanceRecord att : attendance)  
+            for (EmployeeRecords employee : employees) {
+            
+            //Hide other panels
             TimeKeeping_MainDashboard.setVisible(false);
             PayrollHealth_MainDashboard.setVisible(false);
             EmployeeRecords_MainDashboard.setVisible(false);
@@ -2254,8 +2328,7 @@ if (accessGranted) {
             ProfilePanel.setVisible(false);
             AttendancePanel.setVisible(false);
             LeavePanel.setVisible(false);
-                }
-             }
+            }
             
         } else {
             // Handle cases where access is not granted
@@ -2272,7 +2345,8 @@ if (accessGranted) {
     }//GEN-LAST:event_LogOutActionPerformed
 
     private void LeaveMainDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaveMainDashboardActionPerformed
-       TimeKeeping_MainDashboard.setVisible(false);
+            
+            TimeKeeping_MainDashboard.setVisible(false);
             PayrollHealth_MainDashboard.setVisible(false);
             EmployeeRecords_MainDashboard.setVisible(false);
             Request_MainDashboard.setVisible(false);
@@ -2434,8 +2508,41 @@ if (accessGranted) {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void LeavePanelSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeavePanelSubmitButtonActionPerformed
+        // TODO add your handling code here:
+        Request request = new Request();
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+              
+            Date startDate = LeavePanelStartDate.getDate();
+            Date endDate = LeavePanelEndDate.getDate();
+            String empID = MainDashboardempNo.getText();
+            String startdateFiled = dateFormat.format(startDate);
+            String enddateFiled = dateFormat.format(endDate);
+            String leaveType = LeavePanelLeaveSelector.getSelectedItem().toString();
+            String reason = LeavePanelReason.getText();
+
+            if (startDate.compareTo(endDate) >= 0) {
+                JOptionPane.showMessageDialog(this, "End date should be greater than Start Date");
+          } else {
+            int dialogResult = JOptionPane.showConfirmDialog(this, "Submit Request Form?", "Leave Request Confirmation", JOptionPane.YES_NO_OPTION);
+
+    if (dialogResult == JOptionPane.YES_OPTION) {
+        JOptionPane.showMessageDialog(this, "Submitted Successfully");
+        request.LeaveRequestwriteToCSV(empID, startdateFiled, enddateFiled, reason);
+        
+        
+    }
+}
+
+System.out.println("EmployeeID " + empID);
+System.out.println("LeaveType " + leaveType);
+System.out.println("startDate " + startdateFiled);
+System.out.println("endDate " + enddateFiled);
+System.out.println("Reason " + reason);
+    }//GEN-LAST:event_LeavePanelSubmitButtonActionPerformed
+
     
-  
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AttendanceMainDashboardButton;
@@ -2447,6 +2554,11 @@ if (accessGranted) {
     private javax.swing.JButton Home;
     private javax.swing.JButton LeaveMainDashboard;
     private javax.swing.JPanel LeavePanel;
+    private com.toedter.calendar.JDateChooser LeavePanelEndDate;
+    private javax.swing.JComboBox<String> LeavePanelLeaveSelector;
+    private javax.swing.JTextArea LeavePanelReason;
+    private com.toedter.calendar.JDateChooser LeavePanelStartDate;
+    private javax.swing.JButton LeavePanelSubmitButton;
     private javax.swing.JButton LogOut;
     private javax.swing.JLabel MainDashBoardFirstName;
     private javax.swing.JLabel MainDashboardempNo;
@@ -2477,25 +2589,17 @@ if (accessGranted) {
     private javax.swing.JPanel TimeKeeping_MainDashboard;
     private javax.swing.JLabel TimeOutLabel;
     private javax.swing.JTable attendanceTable;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
-    private javax.swing.JLabel jLabel102;
-    private javax.swing.JLabel jLabel103;
     private javax.swing.JLabel jLabel104;
     private javax.swing.JLabel jLabel105;
-    private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel107;
-    private javax.swing.JLabel jLabel108;
     private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel110;
     private javax.swing.JLabel jLabel112;
     private javax.swing.JLabel jLabel113;
     private javax.swing.JLabel jLabel114;
@@ -2503,6 +2607,7 @@ if (accessGranted) {
     private javax.swing.JLabel jLabel116;
     private javax.swing.JLabel jLabel117;
     private javax.swing.JLabel jLabel118;
+    private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel121;
@@ -2554,12 +2659,9 @@ if (accessGranted) {
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
-    private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
-    private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
@@ -2597,7 +2699,6 @@ if (accessGranted) {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel labelAddress;
     private javax.swing.JLabel labelBirthdate;
     private javax.swing.JLabel labelPagibigNo;
@@ -2609,21 +2710,29 @@ if (accessGranted) {
     private javax.swing.JLabel labelTIN;
     private javax.swing.JLabel payslipBenefitTotal;
     private javax.swing.JLabel payslipClothingAllowance;
+    private javax.swing.JLabel payslipDailyRate;
     private javax.swing.JLabel payslipDaysWorked;
     private javax.swing.JLabel payslipDeductionTotal;
-    private javax.swing.JLabel payslipEmpPosition;
     private javax.swing.JLabel payslipEmployeeName;
     private javax.swing.JLabel payslipEmployeeNumber;
     private javax.swing.JLabel payslipEndDate;
+    private javax.swing.JLabel payslipGrossIncome;
+    private javax.swing.JLabel payslipMonthlyRate;
     private javax.swing.JLabel payslipNumber;
+    private javax.swing.JLabel payslipOvertime;
     private javax.swing.JLabel payslipPagibig;
     private javax.swing.JLabel payslipPhilhealth;
     private javax.swing.JLabel payslipPhoneAllowance;
+    private javax.swing.JLabel payslipPosition;
     private javax.swing.JLabel payslipRiceAllowance;
     private javax.swing.JLabel payslipSSS;
     private javax.swing.JLabel payslipStartDate;
     private javax.swing.JLabel payslipTax;
     private javax.swing.JLabel profileFirstName;
+    private javax.swing.JLabel summaryBenefits;
+    private javax.swing.JLabel summaryGrossIncome;
+    private javax.swing.JLabel summaryTakeHomePay;
+    private javax.swing.JLabel summaryTotalDeduction;
     // End of variables declaration//GEN-END:variables
 
    
