@@ -19,6 +19,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -181,8 +182,6 @@ public javax.swing.JPanel getProfilePanel() {
         TimeKeeping_MainDashboard = new javax.swing.JPanel();
         jProgressBar1 = new javax.swing.JProgressBar();
         jLabel10 = new javax.swing.JLabel();
-        PunchIn = new javax.swing.JButton();
-        PunchOut = new javax.swing.JButton();
         TimeInLabel = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         TimeOutLabel = new javax.swing.JLabel();
@@ -194,6 +193,7 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel12 = new javax.swing.JLabel();
         Shift = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        TimeButton = new javax.swing.JToggleButton();
         PayrollHealth_MainDashboard = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
@@ -1136,34 +1136,6 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Time in : ");
 
-        PunchIn.setBackground(new java.awt.Color(0, 153, 0));
-        PunchIn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        PunchIn.setForeground(new java.awt.Color(255, 255, 255));
-        PunchIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/enterw24px.png"))); // NOI18N
-        PunchIn.setText("Time in");
-        PunchIn.setBorderPainted(false);
-        PunchIn.setIconTextGap(8);
-        PunchIn.setMargin(new java.awt.Insets(2, 8, 3, 8));
-        PunchIn.setPreferredSize(new java.awt.Dimension(112, 52));
-        PunchIn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PunchInActionPerformed(evt);
-            }
-        });
-
-        PunchOut.setBackground(new java.awt.Color(204, 51, 0));
-        PunchOut.setForeground(new java.awt.Color(255, 255, 255));
-        PunchOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/exitw24px.png"))); // NOI18N
-        PunchOut.setText("Time out");
-        PunchOut.setBorderPainted(false);
-        PunchOut.setIconTextGap(8);
-        PunchOut.setPreferredSize(new java.awt.Dimension(112, 52));
-        PunchOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PunchOutActionPerformed(evt);
-            }
-        });
-
         TimeInLabel.setBackground(new java.awt.Color(0, 0, 0));
         TimeInLabel.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         TimeInLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -1248,6 +1220,21 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Attendance");
 
+        TimeButton.setBackground(new java.awt.Color(255, 102, 0));
+        TimeButton.setForeground(new java.awt.Color(255, 255, 255));
+        TimeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/enterw24px.png"))); // NOI18N
+        TimeButton.setText("Time in");
+        TimeButton.setBorderPainted(false);
+        TimeButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        TimeButton.setIconTextGap(8);
+        TimeButton.setPreferredSize(new java.awt.Dimension(110, 52));
+        TimeButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/exitw24px.png"))); // NOI18N
+        TimeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TimeButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout TimeKeeping_MainDashboardLayout = new javax.swing.GroupLayout(TimeKeeping_MainDashboard);
         TimeKeeping_MainDashboard.setLayout(TimeKeeping_MainDashboardLayout);
         TimeKeeping_MainDashboardLayout.setHorizontalGroup(
@@ -1255,54 +1242,49 @@ public javax.swing.JPanel getProfilePanel() {
             .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
                 .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel13))
+                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jProgressBar1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, TimeKeeping_MainDashboardLayout.createSequentialGroup()
                                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(51, 51, 51)
-                                .addComponent(PunchIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
-                                .addComponent(PunchOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TimeButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, TimeKeeping_MainDashboardLayout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 297, Short.MAX_VALUE)
                                 .addComponent(jLabel56)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel13)))
+                                .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         TimeKeeping_MainDashboardLayout.setVerticalGroup(
             TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PunchIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PunchOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(35, 35, 35)))
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel56, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(TimeOutLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(76, 76, 76))
                     .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel56, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(TimeOutLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                        .addComponent(TimeButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jPanel1.add(TimeKeeping_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, -1, -1));
@@ -2406,78 +2388,6 @@ public javax.swing.JPanel getProfilePanel() {
         PayslipMaindashboard.setBackground(new java.awt.Color(34, 34, 50));
     }//GEN-LAST:event_PayslipMaindashboardMouseExited
 
-    private void PunchOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PunchOutActionPerformed
-        String empID = MainDashboardempNo.getText();
-        boolean accessGranted = false;
-
-        for (AttendanceRecord att : attendance) {
-            if (att.getEmpID()== Integer.parseInt(empID)) {
-        // Compare empID with the employee ID from the CSV
-        accessGranted = true;
-        try {
-            // Show a confirmation dialog
-            int dialogResult = JOptionPane.showConfirmDialog(this, "Are you sure you want to punch out?", "Punch Out Confirmation", JOptionPane.YES_NO_OPTION);
-            if (dialogResult == JOptionPane.YES_OPTION) {
-                String timeOut = att.punchOut(); // Record time out
-                if (timeOut != null) {
-                    TimeOutLabel.setText(att.formatTime(timeOut)); // Display time out
-                    att.writeToCSV(TimeInLabel.getText().toString(), TimeOutLabel.getText().toString()); // Write to CSV
-                    JOptionPane.showMessageDialog(this, "Punch Out successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
-
-                    PunchOut.setEnabled(false);
-                    PunchIn.setEnabled(true);
-                } else {
-                    // Handle the case when timeOut is null
-                    System.out.println("Error: Time out is null.");
-                }
-            } else {
-                // User canceled the punch out, do nothing
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        break; // Exit the loop once the employee ID is found
-    }
-        }
-
-        if (!accessGranted) {
-            // If access is not granted (i.e., employee ID not found in the CSV), display an error message
-            JOptionPane.showMessageDialog(this, "Invalid Employee ID! Access Denied.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-
-    }//GEN-LAST:event_PunchOutActionPerformed
-
-    private void PunchInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PunchInActionPerformed
-
-        String empID = MainDashboardempNo.getText(); // Assuming you're getting the employee ID from a JTextField
-        boolean accessGranted = false;
-
-        for (AttendanceRecord att : attendance) {
-            if (att.getEmpID() == Integer.parseInt(empID)) {
-                // Compare empID with the employee ID from the CSV
-                accessGranted = true;
-                try {
-                    String timeIn = att.punchIn(); // Record time in
-                    if (timeIn != null) {
-                        TimeInLabel.setText(att.formatTime(timeIn)); // Display time in
-                        PunchIn.setEnabled(false);
-                        PunchOut.setEnabled(true);
-                        JOptionPane.showMessageDialog(this, "Punch in successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                        break; // Exit the loop once time in is recorded
-                    }
-                } catch (Exception ex) {
-                    Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
-
-        if (!accessGranted) {
-            // If access is not granted (i.e., employee ID not found in the CSV), display an error message
-            JOptionPane.showMessageDialog(this, "Invalid Employee ID! Access Denied.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-
-    }//GEN-LAST:event_PunchInActionPerformed
-
     private void ProfileButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProfileButtonMouseClicked
         // TODO add your handling code here:
         jLabel6.setText("Profile");
@@ -2540,8 +2450,83 @@ System.out.println("startDate " + startdateFiled);
 System.out.println("endDate " + enddateFiled);
 System.out.println("Reason " + reason);
     }//GEN-LAST:event_LeavePanelSubmitButtonActionPerformed
-
     
+    private void TimeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TimeButtonActionPerformed
+        // TODO add your handling code here:
+        if (TimeButton.getText().equals("Time in")) {
+            timeIn();
+        } else {
+            timeOut();
+        }
+    }//GEN-LAST:event_TimeButtonActionPerformed
+
+    private void timeIn() {
+        String empID = MainDashboardempNo.getText(); // Assuming you're getting the employee ID from a JTextField
+        boolean accessGranted = false;
+
+        for (AttendanceRecord att : attendance) {
+            if (att.getEmpID() == Integer.parseInt(empID)) {
+                // Compare empID with the employee ID from the CSV
+                accessGranted = true;
+                try {
+                    String timeIn = att.punchIn(); // Record time in
+                    if (timeIn != null) {
+                        TimeInLabel.setText(att.formatTime(timeIn)); // Display time in
+                        JOptionPane.showMessageDialog(this, "Punch in successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                        TimeButton.setText("Time out");
+                        break; // Exit the loop once time in is recorded
+                    }
+                } catch (Exception ex) {
+                    Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+
+        if (!accessGranted) {
+            // If access is not granted (i.e., employee ID not found in the CSV), display an error message
+            JOptionPane.showMessageDialog(this, "Invalid Employee ID! Access Denied.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }
+    
+    private void timeOut() {
+        String empID = MainDashboardempNo.getText();
+        boolean accessGranted = false;
+
+        for (AttendanceRecord att : attendance) {
+            if (att.getEmpID()== Integer.parseInt(empID)) {
+        // Compare empID with the employee ID from the CSV
+        accessGranted = true;
+        try {
+            // Show a confirmation dialog
+            int dialogResult = JOptionPane.showConfirmDialog(this, "Are you sure you want to punch out?", "Punch Out Confirmation", JOptionPane.YES_NO_OPTION);
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                String timeOut = att.punchOut(); // Record time out
+                if (timeOut != null) {
+                    TimeOutLabel.setText(att.formatTime(timeOut)); // Display time out
+                    att.writeToCSV(TimeInLabel.getText().toString(), TimeOutLabel.getText().toString()); // Write to CSV
+                    JOptionPane.showMessageDialog(this, "Punch Out successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    TimeButton.setText("Time in");
+                    break; // Exit the loop once time in is recorded
+                } else {
+                    // Handle the case when timeOut is null
+                    System.out.println("Error: Time out is null.");
+                }
+            } else {
+                // User canceled the punch out, do nothing
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        break; // Exit the loop once the employee ID is found
+    }
+        }
+
+        if (!accessGranted) {
+            // If access is not granted (i.e., employee ID not found in the CSV), display an error message
+            JOptionPane.showMessageDialog(this, "Invalid Employee ID! Access Denied.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -2581,10 +2566,9 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel ProfileSSS;
     private javax.swing.JLabel ProfileStatus;
     private javax.swing.JLabel ProfileTinnumber;
-    private javax.swing.JButton PunchIn;
-    private javax.swing.JButton PunchOut;
     private javax.swing.JPanel Request_MainDashboard;
     private javax.swing.JLabel Shift;
+    private javax.swing.JToggleButton TimeButton;
     private javax.swing.JLabel TimeInLabel;
     private javax.swing.JPanel TimeKeeping_MainDashboard;
     private javax.swing.JLabel TimeOutLabel;
