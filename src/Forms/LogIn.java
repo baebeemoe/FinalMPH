@@ -260,6 +260,7 @@ if (accessGranted) {
     dashboard.getPayslipPanel().setVisible(false);
     dashboard.getAttendancePanel().setVisible(false);
     dashboard.getLeavePanel().setVisible(false);
+    dashboard.getPayPeriodPanel().setVisible(false);
     dashboard.setVisible(true);
 } else {
     // Access denied, display an error message

@@ -38,7 +38,7 @@ public class Dashboard extends javax.swing.JFrame {
         
         // Load employee records from CSV when the form is initialized
         employees = EmployeeRecords.readEmployeesFromCSV("src/Files/EmployeeData.csv");
-        attendance = AttendanceRecord.readAttendanceFromCSV("src/Files/timekeeping.csv");
+        attendance = AttendanceRecord.readAttendanceFromCSV("src/Files/Attendance.csv");
     }
 
     public JPanel getAttendancePanel() {
@@ -84,6 +84,10 @@ public javax.swing.JPanel getProfilePanel() {
         return PayslipPanel;
     }
 
+    public JPanel getPayPeriodPanel() {
+        return PayPeriodPanel;
+    }
+
    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -94,6 +98,13 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        PayPeriodPanel = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel68 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
+        PayPeriodPanelButtonSept1to15 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel64 = new javax.swing.JLabel();
         PayslipPanel = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
@@ -318,6 +329,88 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("People Portal");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
+
+        PayPeriodPanel.setBackground(new java.awt.Color(0, 0, 0));
+        PayPeriodPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        PayPeriodPanel.setPreferredSize(new java.awt.Dimension(1114, 520));
+
+        jPanel4.setBackground(new java.awt.Color(0, 0, 0,100));
+        jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 2, true));
+
+        jLabel68.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        jLabel68.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel68.setText("September 01, 2023 to September 15, 20223");
+
+        jLabel69.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        jLabel69.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel69.setText("September 16, 2023 to September 30, 2023");
+
+        PayPeriodPanelButtonSept1to15.setText("View Payslip");
+        PayPeriodPanelButtonSept1to15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PayPeriodPanelButtonSept1to15ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("View Payslip");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(196, 196, 196)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel69, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(130, 130, 130)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PayPeriodPanelButtonSept1to15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(179, 179, 179))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel68)
+                    .addComponent(PayPeriodPanelButtonSept1to15))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel69)
+                    .addComponent(jButton5))
+                .addContainerGap(204, Short.MAX_VALUE))
+        );
+
+        jLabel64.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel64.setText("Pay Period");
+
+        javax.swing.GroupLayout PayPeriodPanelLayout = new javax.swing.GroupLayout(PayPeriodPanel);
+        PayPeriodPanel.setLayout(PayPeriodPanelLayout);
+        PayPeriodPanelLayout.setHorizontalGroup(
+            PayPeriodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PayPeriodPanelLayout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PayPeriodPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel64)
+                .addGap(425, 425, 425))
+        );
+        PayPeriodPanelLayout.setVerticalGroup(
+            PayPeriodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PayPeriodPanelLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel64)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(PayPeriodPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
 
         PayslipPanel.setBackground(new java.awt.Color(255, 255, 255));
         PayslipPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
@@ -1975,6 +2068,7 @@ public javax.swing.JPanel getProfilePanel() {
             Request_MainDashboard.setVisible(false);
             PayslipPanel.setVisible(false);
             ProfilePanel.setVisible(true);
+            PayPeriodPanel.setVisible(false);
             
         } else {
             // Access denied, display an error message
@@ -2081,7 +2175,7 @@ if (accessGranted) {
     model.setRowCount(0);
 
     // Populate the table with data from the CSV file
-    String csvFilePath = "src/Files/timekeeping.csv";
+    String csvFilePath = "src/Files/Attendance.csv";
     boolean foundRecords = false;
 
     try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
@@ -2111,6 +2205,7 @@ if (accessGranted) {
     ProfilePanel.setVisible(false);
     AttendancePanel.setVisible(true);
     LeavePanel.setVisible(false);
+    PayPeriodPanel.setVisible(false);
 } else {
     // Access denied, display an error message
     JOptionPane.showMessageDialog(this, "Access Denied. Employee ID not found.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -2130,15 +2225,91 @@ if (accessGranted) {
             ProfilePanel.setVisible(false);
             AttendancePanel.setVisible(false);
             LeavePanel.setVisible(false);
+            PayPeriodPanel.setVisible(false);
 
 
         // TODO add your handling code here:
     }//GEN-LAST:event_HomeActionPerformed
 
     private void PayslipMaindashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PayslipMaindashboardActionPerformed
-           try {
+          
+                PayPeriodPanel.setVisible(true);
+                   //hide other panels
+                TimeKeeping_MainDashboard.setVisible(false);
+                PayrollHealth_MainDashboard.setVisible(false);
+                EmployeeRecords_MainDashboard.setVisible(false);
+                Request_MainDashboard.setVisible(false);
+                PayslipPanel.setVisible(false);
+                ProfilePanel.setVisible(false);
+                AttendancePanel.setVisible(false);
+                LeavePanel.setVisible(false);
+                
+         
+    }//GEN-LAST:event_PayslipMaindashboardActionPerformed
+
+    private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
+LogIn login = new LogIn();  
+login.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_LogOutActionPerformed
+
+    private void LeaveMainDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaveMainDashboardActionPerformed
+
+            TimeKeeping_MainDashboard.setVisible(false);
+            PayrollHealth_MainDashboard.setVisible(false);
+            EmployeeRecords_MainDashboard.setVisible(false);
+            Request_MainDashboard.setVisible(false);
+            PayslipPanel.setVisible(false);
+            ProfilePanel.setVisible(false);
+            AttendancePanel.setVisible(false);
+            LeavePanel.setVisible(true);
+            PayPeriodPanel.setVisible(false);
+            
+        
+    }//GEN-LAST:event_LeaveMainDashboardActionPerformed
+
+    private void LeavePanelSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeavePanelSubmitButtonActionPerformed
+             Request request = new Request();
+              SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+              
+             Date startDate = LeavePanelStartDate.getDate();
+             Date endDate = LeavePanelEndDate.getDate();
+             String empID = MainDashboardempNo.getText();
+             String startdateFiled = dateFormat.format(startDate);
+             String enddateFiled = dateFormat.format(endDate);
+             String leaveType = LeavePanelLeaveSelector.getSelectedItem().toString();
+             String reason = LeavePanelReason.getText();
+
+            if (startDate.compareTo(endDate) >= 0) {
+                JOptionPane.showMessageDialog(this, "End date should be greater than Start Date");
+          } else {
+            int dialogResult = JOptionPane.showConfirmDialog(this, "Submit Request Form?", "Leave Request Confirmation", JOptionPane.YES_NO_OPTION);
+
+    if (dialogResult == JOptionPane.YES_OPTION) {
+        JOptionPane.showMessageDialog(this, "Submitted Successfully");
+        request.LeaveRequestwriteToCSV(empID, startdateFiled, enddateFiled, reason);
+        
+        
+    }
+}
+
+System.out.println("EmployeeID " + empID);
+System.out.println("LeaveType " + leaveType);
+System.out.println("startDate " + startdateFiled);
+System.out.println("endDate " + enddateFiled);
+System.out.println("Reason " + reason);
+              
+        
+              
+           
+
+  
+    }//GEN-LAST:event_LeavePanelSubmitButtonActionPerformed
+
+    private void PayPeriodPanelButtonSept1to15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PayPeriodPanelButtonSept1to15ActionPerformed
+
+try {
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-        PayPeriod payperiod = new PayPeriod("10001", dateFormat.parse("09/01/2022"), dateFormat.parse("09/15/2022"), "src/Files/Timekeeping.csv");
+        PayPeriod payperiod = new PayPeriod("10001", dateFormat.parse("09/01/2022"), dateFormat.parse("09/15/2022"), "src/Files/Attendance.csv");
         String empID = MainDashboardempNo.getText();
         Benefit benefit = new Benefit();
         Earning earning = new Earning();
@@ -2198,8 +2369,7 @@ if (accessGranted) {
 
         if (accessGranted) {
             
-            for (AttendanceRecord att : attendance) 
-            for (EmployeeRecords employee : employees) {
+           
                
                 
                    //hide other panels
@@ -2211,73 +2381,17 @@ if (accessGranted) {
                 ProfilePanel.setVisible(false);
                 AttendancePanel.setVisible(false);
                 LeavePanel.setVisible(false);
-                
-            }
-        } else {
-            // Handle cases where access is not granted
-        }
+                PayPeriodPanel.setVisible(false);
+        }         
+       
     } catch (ParseException e) {
         e.printStackTrace();
         // Handle ParseException (e.g., display an error message)
     }
-    }//GEN-LAST:event_PayslipMaindashboardActionPerformed
 
-    private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
-LogIn login = new LogIn();  
-login.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_LogOutActionPerformed
 
-    private void LeaveMainDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaveMainDashboardActionPerformed
-
-            TimeKeeping_MainDashboard.setVisible(false);
-            PayrollHealth_MainDashboard.setVisible(false);
-            EmployeeRecords_MainDashboard.setVisible(false);
-            Request_MainDashboard.setVisible(false);
-            PayslipPanel.setVisible(false);
-            ProfilePanel.setVisible(false);
-            AttendancePanel.setVisible(false);
-            LeavePanel.setVisible(true);
-            
-        
-    }//GEN-LAST:event_LeaveMainDashboardActionPerformed
-
-    private void LeavePanelSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeavePanelSubmitButtonActionPerformed
-             Request request = new Request();
-              SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-              
-             Date startDate = LeavePanelStartDate.getDate();
-             Date endDate = LeavePanelEndDate.getDate();
-             String empID = MainDashboardempNo.getText();
-             String startdateFiled = dateFormat.format(startDate);
-             String enddateFiled = dateFormat.format(endDate);
-             String leaveType = LeavePanelLeaveSelector.getSelectedItem().toString();
-             String reason = LeavePanelReason.getText();
-
-            if (startDate.compareTo(endDate) >= 0) {
-                JOptionPane.showMessageDialog(this, "End date should be greater than Start Date");
-          } else {
-            int dialogResult = JOptionPane.showConfirmDialog(this, "Submit Request Form?", "Leave Request Confirmation", JOptionPane.YES_NO_OPTION);
-
-    if (dialogResult == JOptionPane.YES_OPTION) {
-        JOptionPane.showMessageDialog(this, "Submitted Successfully");
-        request.LeaveRequestwriteToCSV(empID, startdateFiled, enddateFiled, reason);
-        
-        
-    }
-}
-
-System.out.println("EmployeeID " + empID);
-System.out.println("LeaveType " + leaveType);
-System.out.println("startDate " + startdateFiled);
-System.out.println("endDate " + enddateFiled);
-System.out.println("Reason " + reason);
-              
-        
-              
-           
-
-  
-    }//GEN-LAST:event_LeavePanelSubmitButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PayPeriodPanelButtonSept1to15ActionPerformed
 
   
 
@@ -2303,6 +2417,8 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel NoOfDaysPresent;
     private javax.swing.JLabel NoOfDaysPresent1;
     private javax.swing.JLabel NoOfDaysPresent2;
+    private javax.swing.JPanel PayPeriodPanel;
+    private javax.swing.JButton PayPeriodPanelButtonSept1to15;
     private javax.swing.JPanel PayrollHealth_MainDashboard;
     private javax.swing.JButton PayslipMaindashboard;
     private javax.swing.JPanel PayslipPanel;
@@ -2329,6 +2445,7 @@ System.out.println("Reason " + reason);
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -2406,9 +2523,12 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel73;
@@ -2431,6 +2551,7 @@ System.out.println("Reason " + reason);
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
