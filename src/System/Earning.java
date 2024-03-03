@@ -15,18 +15,17 @@ public class Earning {
     
 public double dailyRate (EmployeeRecords employee){
     double dailyRate = employee.getHourlyRate()*8;
-     return dailyRate;
+    return dailyRate;
 }    
 
 public int daysWorked (PayPeriod payperiod){
-    
-      int daysWorked = payperiod.countDays();
-     return daysWorked;
+    int daysWorked = payperiod.countDays();
+    return daysWorked;
 }
     
 public double overTime (EmployeeRecords employee, PayPeriod payperiod ) {
     double overTime = payperiod.calculateTotalOvertime() * employee.getHourlyRate();
-     return overTime;
+    return overTime;
     
 }   
   
@@ -36,8 +35,9 @@ public double GrossSalary (EmployeeRecords employee, PayPeriod payperiod){
     double dailyRate = dailyRate(employee);
     int daysWorked = daysWorked (payperiod);
     double overtime = overTime(employee,payperiod);
-    salary = (dailyRate * daysWorked)+ overtime;
-     return salary;
+    salary = (dailyRate * daysWorked) + overtime;
+    
+    return salary;
 }    
     
     
