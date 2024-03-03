@@ -2247,7 +2247,7 @@ public javax.swing.JPanel getProfilePanel() {
     private void PayslipMaindashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PayslipMaindashboardActionPerformed
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-            PayPeriod payperiod = new PayPeriod("10001", dateFormat.parse("09/01/2022"), dateFormat.parse("9/14/2022"), "");
+            PayPeriod payperiod = new PayPeriod("10001", dateFormat.parse("09/01/2022"), dateFormat.parse("9/14/2022"), "src/Files/Timekeeping.csv");
             String empID = MainDashboardempNo.getText();
             Benefit benefit = new Benefit();
             Earning earning = new Earning();
