@@ -92,7 +92,7 @@ public long calculateOvertime(String timeIn, String timeOut) {
 
   public void writeToCSV(String timeIn, String timeOut) {
     try {
-        File file = new File("src/Files/timekeeping.csv");
+        File file = new File("src/Files/Attendance.csv");
         boolean isNewFile = !file.exists();
         FileWriter writer = new FileWriter(file, true); // Append to existing file
         
