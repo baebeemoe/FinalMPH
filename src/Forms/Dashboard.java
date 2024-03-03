@@ -2163,9 +2163,9 @@ if (accessGranted) {
                 //Earnings
                 payslipMonthlyRate.setText(String.valueOf("Php" + " " +employee.getBasicSalary()));
                 payslipDailyRate.setText(String.valueOf("Php" + " " + earning.dailyRate(employee)));
-                payslipOvertime.setText(String.valueOf("Php" + " " +earning.overTime(employee, payperiod)));
-                payslipDaysWorked.setText(String.valueOf(earning.daysWorked(payperiod) + " " + "Days"));
-                payslipGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.GrossSalary(employee, payperiod))));
+                payslipOvertime.setText(String.valueOf("Php" + " " +earning.overTime(employee, payperiod,att)));
+                payslipDaysWorked.setText(String.valueOf(earning.daysWorked(payperiod,att) + " " + "Days"));
+                payslipGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.GrossSalary(employee, payperiod,att))));
                 
                 //Benefits
                 payslipRiceAllowance.setText("Php" + " " + employee.getFormattedDouble(employee.getRiceSubsidy()));
@@ -2183,9 +2183,9 @@ if (accessGranted) {
                 
                //Summary
                
-               double takehomepay = earning.GrossSalary(employee, payperiod)+ benefit.getTotalBenefits(employee)+ deduction.totalDeduction(employee);
+               double takehomepay = earning.GrossSalary(employee, payperiod,att)+ benefit.getTotalBenefits(employee)+ deduction.totalDeduction(employee);
                
-               summaryGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.GrossSalary(employee, payperiod))));
+               summaryGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.GrossSalary(employee, payperiod,att))));
                summaryBenefits.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(benefit.getTotalBenefits(employee))));
                summaryTotalDeduction.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.totalDeduction(employee))));
                summaryTakeHomePay.setText("Php" + " " + String.valueOf(takehomepay));

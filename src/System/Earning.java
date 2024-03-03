@@ -21,24 +21,24 @@ public double dailyRate (EmployeeRecords employee ){
      return dailyRate;
 }    
 
-public int daysWorked (PayPeriod payperiod){
+public int daysWorked (PayPeriod payperiod, AttendanceRecord attendance){
     
-      int daysWorked = payperiod.countDays();
+      int daysWorked = payperiod.countDays(attendance);
      return daysWorked;
 }
     
-public double overTime (EmployeeRecords employee, PayPeriod payperiod ) {
-    double overTime = payperiod.calculateTotalOvertime() * employee.getHourlyRate();
+public double overTime (EmployeeRecords employee, PayPeriod payperiod, AttendanceRecord attendance ) {
+    double overTime = payperiod.calculateTotalOvertime(attendance) * employee.getHourlyRate();
      return overTime;
     
 }   
   
     
-public double GrossSalary (EmployeeRecords employee, PayPeriod payperiod){
+public double GrossSalary (EmployeeRecords employee, PayPeriod payperiod,AttendanceRecord attendance){
     double salary = 0;
     double dailyRate = dailyRate(employee);
-    int daysWorked = daysWorked (payperiod);
-    double overtime = overTime(employee,payperiod);
+    int daysWorked = daysWorked (payperiod,attendance);
+    double overtime = overTime(employee,payperiod,attendance);
     salary = (dailyRate * daysWorked)+ overtime;
      return salary;
 }    
