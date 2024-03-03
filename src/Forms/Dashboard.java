@@ -22,6 +22,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.JDialog;
 import System.Employee.Benefit;
 import System.Employee.Earning;
 import System.Employee.Deduction;
@@ -87,13 +88,32 @@ public javax.swing.JPanel getProfilePanel() {
     public JPanel getPayPeriodPanel() {
         return PayPeriodPanel;
     }
+    
+    public JDialog getOTRequestDialog() {
+        return OTRequestDialog;
+    }
 
    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        OTRequestDialog = new javax.swing.JDialog();
+        jLabel72 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel77 = new javax.swing.JLabel();
+        datePicker1 = new com.github.lgooddatepicker.components.DatePicker();
+        jLabel70 = new javax.swing.JLabel();
+        timePicker1 = new com.github.lgooddatepicker.components.TimePicker();
+        jLabel75 = new javax.swing.JLabel();
+        timePicker2 = new com.github.lgooddatepicker.components.TimePicker();
+        jLabel78 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -188,6 +208,7 @@ public javax.swing.JPanel getProfilePanel() {
         attendanceTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        OvertimeRequest = new javax.swing.JButton();
         EmployeeDashboard_MainDashboard = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -305,6 +326,104 @@ public javax.swing.JPanel getProfilePanel() {
             }
         ));
         jScrollPane1.setViewportView(jTable1);
+
+        OTRequestDialog.setMinimumSize(new java.awt.Dimension(500, 400));
+        OTRequestDialog.setPreferredSize(new java.awt.Dimension(500, 400));
+
+        jLabel72.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel72.setText("Request Overtime Work");
+
+        jPanel5.setLayout(new java.awt.GridBagLayout());
+
+        jLabel77.setText("Date");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        jPanel5.add(jLabel77, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(4, 12, 4, 4);
+        jPanel5.add(datePicker1, gridBagConstraints);
+
+        jLabel70.setText("Start Time");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        jPanel5.add(jLabel70, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(4, 12, 4, 4);
+        jPanel5.add(timePicker1, gridBagConstraints);
+
+        jLabel75.setText("End Time");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        jPanel5.add(jLabel75, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(4, 12, 4, 4);
+        jPanel5.add(timePicker2, gridBagConstraints);
+
+        jLabel78.setText("Reason");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        jPanel5.add(jLabel78, gridBagConstraints);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane4.setViewportView(jTextArea1);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(4, 12, 4, 4);
+        jPanel5.add(jScrollPane4, gridBagConstraints);
+
+        jButton1.setText("Submit");
+
+        jButton5.setText("Cancel");
+
+        javax.swing.GroupLayout OTRequestDialogLayout = new javax.swing.GroupLayout(OTRequestDialog.getContentPane());
+        OTRequestDialog.getContentPane().setLayout(OTRequestDialogLayout);
+        OTRequestDialogLayout.setHorizontalGroup(
+            OTRequestDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(OTRequestDialogLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(OTRequestDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel72)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OTRequestDialogLayout.createSequentialGroup()
+                        .addComponent(jButton5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1)))
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+        OTRequestDialogLayout.setVerticalGroup(
+            OTRequestDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(OTRequestDialogLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel72)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(OTRequestDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton5))
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1366, 768));
@@ -1037,7 +1156,7 @@ public javax.swing.JPanel getProfilePanel() {
 
         AttendancePanel.setBackground(new java.awt.Color(0, 0, 0,100));
         AttendancePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-        AttendancePanel.setPreferredSize(new java.awt.Dimension(1114, 520));
+        AttendancePanel.setPreferredSize(new java.awt.Dimension(980, 520));
 
         attendanceTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
         attendanceTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -1083,36 +1202,44 @@ public javax.swing.JPanel getProfilePanel() {
 
         jButton2.setText("Apply Dispute");
 
+        OvertimeRequest.setText("Request Overtime");
+        OvertimeRequest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OvertimeRequestActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout AttendancePanelLayout = new javax.swing.GroupLayout(AttendancePanel);
         AttendancePanel.setLayout(AttendancePanelLayout);
         AttendancePanelLayout.setHorizontalGroup(
             AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AttendancePanelLayout.createSequentialGroup()
-                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(28, 28, 28)
+                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(AttendancePanelLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(AttendancePanelLayout.createSequentialGroup()
-                        .addGap(443, 443, 443)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(418, 418, 418)))
-                .addGap(45, 45, 45))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(OvertimeRequest))
+                    .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         AttendancePanelLayout.setVerticalGroup(
             AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AttendancePanelLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(9, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
-                .addComponent(jButton2)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(OvertimeRequest))
+                .addGap(7, 7, 7))
         );
 
-        jPanel1.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
+        jPanel1.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, -1, -1));
 
         EmployeeDashboard_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
         EmployeeDashboard_MainDashboard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 1, true));
@@ -2483,6 +2610,13 @@ try {
         // TODO add your handling code here:
     }//GEN-LAST:event_PayPeriodbtnSept16to30ActionPerformed
 
+    private void OvertimeRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OvertimeRequestActionPerformed
+        // TODO add your handling code here:
+        OTRequestDialog.setVisible(true);
+        OTRequestDialog.setLocationRelativeTo(this);
+        
+    }//GEN-LAST:event_OvertimeRequestActionPerformed
+
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -2507,6 +2641,8 @@ try {
     private javax.swing.JLabel NoOfDaysPresent;
     private javax.swing.JLabel NoOfDaysPresent1;
     private javax.swing.JLabel NoOfDaysPresent2;
+    private javax.swing.JDialog OTRequestDialog;
+    private javax.swing.JButton OvertimeRequest;
     private javax.swing.JPanel PayPeriodPanel;
     private javax.swing.JButton PayPeriodPanelButtonSept1to15;
     private javax.swing.JButton PayPeriodbtnSept16to30;
@@ -2533,9 +2669,12 @@ try {
     private javax.swing.JPanel TimeKeeping_MainDashboard;
     private javax.swing.JLabel TimeOutLabel;
     private javax.swing.JTable attendanceTable;
+    private com.github.lgooddatepicker.components.DatePicker datePicker1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -2620,10 +2759,15 @@ try {
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel81;
@@ -2642,10 +2786,12 @@ try {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -2660,6 +2806,7 @@ try {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel payslipBenefitTotal;
     private javax.swing.JLabel payslipClothingAllowance;
     private javax.swing.JLabel payslipDailyRate;
@@ -2685,6 +2832,8 @@ try {
     private javax.swing.JLabel summaryGrossIncome;
     private javax.swing.JLabel summaryTakeHomePay;
     private javax.swing.JLabel summaryTotalDeduction;
+    private com.github.lgooddatepicker.components.TimePicker timePicker1;
+    private com.github.lgooddatepicker.components.TimePicker timePicker2;
     private javax.swing.JProgressBar timeprogressbar;
     // End of variables declaration//GEN-END:variables
 
