@@ -5,7 +5,7 @@
  */
 package Forms;
 
-import System.EmployeeRecords;
+import System.Employee.EmployeeRecords;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Dimension;
 import java.awt.Graphics;

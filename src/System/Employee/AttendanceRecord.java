@@ -1,4 +1,4 @@
-package System;
+package System.Employee;
 
 import Forms.Dashboard;
 import java.io.BufferedReader;

@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package System;
+package System.Employee;
 
-import System.EmployeeRecords;
+import System.Employee.EmployeeRecords;
 public class Deduction {
 
 public double calculateSssContribution(EmployeeRecords employee) {
