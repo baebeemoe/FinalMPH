@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package System;
+package System.Employee;
 
-import System.EmployeeRecords;
+import System.Employee.EmployeeRecords;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

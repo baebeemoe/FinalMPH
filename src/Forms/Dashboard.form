@@ -193,7 +193,7 @@
                           <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="PayPeriodPanelButtonSept1to15" max="32767" attributes="0"/>
-                              <Component id="jButton5" max="32767" attributes="0"/>
+                              <Component id="PayPeriodbtnSept16to30" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="179" max="-2" attributes="0"/>
                       </Group>
@@ -210,7 +210,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel69" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="PayPeriodbtnSept16to30" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="204" max="32767" attributes="0"/>
                       </Group>
@@ -248,10 +248,13 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PayPeriodPanelButtonSept1to15ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton5">
+                <Component class="javax.swing.JButton" name="PayPeriodbtnSept16to30">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="View Payslip"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PayPeriodbtnSept16to30ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

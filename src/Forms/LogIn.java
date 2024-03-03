@@ -5,7 +5,7 @@
  */
 package Forms;
 
-import System.EmployeeRecords;
+import System.Employee.EmployeeRecords;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;

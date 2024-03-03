@@ -1,8 +1,8 @@
 
 package Forms;
-import System.PayPeriod;
-import System.AttendanceRecord;
-import System.EmployeeRecords;
+import System.Employee.PayPeriod;
+import System.Employee.AttendanceRecord;
+import System.Employee.EmployeeRecords;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -22,10 +22,10 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.table.DefaultTableModel;
-import System.Benefit;
-import System.Earning;
-import System.Deduction;
-import System.Request;
+import System.Employee.Benefit;
+import System.Employee.Earning;
+import System.Employee.Deduction;
+import System.Employee.Request;
 
 public class Dashboard extends javax.swing.JFrame {
 
@@ -103,7 +103,7 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel68 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
         PayPeriodPanelButtonSept1to15 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        PayPeriodbtnSept16to30 = new javax.swing.JButton();
         jLabel64 = new javax.swing.JLabel();
         PayslipPanel = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
@@ -352,7 +352,12 @@ public javax.swing.JPanel getProfilePanel() {
             }
         });
 
-        jButton5.setText("View Payslip");
+        PayPeriodbtnSept16to30.setText("View Payslip");
+        PayPeriodbtnSept16to30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PayPeriodbtnSept16to30ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -366,7 +371,7 @@ public javax.swing.JPanel getProfilePanel() {
                 .addGap(130, 130, 130)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PayPeriodPanelButtonSept1to15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PayPeriodbtnSept16to30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(179, 179, 179))
         );
         jPanel4Layout.setVerticalGroup(
@@ -379,7 +384,7 @@ public javax.swing.JPanel getProfilePanel() {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel69)
-                    .addComponent(jButton5))
+                    .addComponent(PayPeriodbtnSept16to30))
                 .addContainerGap(204, Short.MAX_VALUE))
         );
 
@@ -2359,7 +2364,7 @@ try {
                summaryGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.GrossSalary(employee, payperiod,att))));
                summaryBenefits.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(benefit.getTotalBenefits(employee))));
                summaryTotalDeduction.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.totalDeduction(employee))));
-               summaryTakeHomePay.setText("Php" + " " + String.valueOf(takehomepay));
+               summaryTakeHomePay.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(takehomepay)));
                
             
                 
@@ -2393,6 +2398,91 @@ try {
         // TODO add your handling code here:
     }//GEN-LAST:event_PayPeriodPanelButtonSept1to15ActionPerformed
 
+    private void PayPeriodbtnSept16to30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PayPeriodbtnSept16to30ActionPerformed
+try {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        PayPeriod payperiod = new PayPeriod("10002", dateFormat.parse("09/16/2022"), dateFormat.parse("09/30/2022"), "src/Files/Attendance.csv");
+        String empID = MainDashboardempNo.getText();
+        Benefit benefit = new Benefit();
+        Earning earning = new Earning();
+        Deduction deduction = new Deduction();
+        
+        boolean accessGranted = false;
+        for (EmployeeRecords employee : employees)
+        for (AttendanceRecord att : attendance) {
+            if (att.getEmpID() == Integer.parseInt(empID)) 
+                if (employee.getEmpNo() == Integer.parseInt(empID)){
+                accessGranted = true; 
+              
+                
+                 //Payslip information
+                payslipNumber.setText(payperiod.getPayslipNo());
+                payslipEmployeNumber.setText(String.valueOf(employee.getEmpNo()));
+                payslipEmployeeName.setText(employee.getFirstName() + " " + employee.getLastName());
+                payslipStartDate.setText(dateFormat.format(payperiod.getStartDate()));
+                payslipEndDate.setText(dateFormat.format(payperiod.getEndDate()));
+                payslipPosition.setText(employee.getPosition());
+                
+                //Earnings
+                payslipMonthlyRate.setText(String.valueOf("Php" + " " +employee.getBasicSalary()));
+                payslipDailyRate.setText(String.valueOf("Php" + " " + earning.dailyRate(employee)));
+                payslipOvertime.setText(String.valueOf("Php" + " " +earning.overTime(employee, payperiod,att)));
+                payslipDaysWorked.setText(String.valueOf(earning.daysWorked(payperiod,att) + " " + "Days"));
+                payslipGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.GrossSalary(employee, payperiod,att))));
+                
+                //Benefits
+                payslipRiceAllowance.setText("Php" + " " + employee.getFormattedDouble(employee.getRiceSubsidy()));
+                payslipPhoneAllowance.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(employee.getPhoneAllowance())));
+                payslipClothingAllowance.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(employee.getClothingAllowance())));
+                payslipBenefitTotal.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(benefit.getTotalBenefits(employee))));
+
+                //Deductions
+                payslipSSS.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculateSssContribution(employee))));
+                payslipPhilhealth.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculatePhilhealthContribution(employee))));
+                payslipPagibig.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculatePagibigContribution(employee))));
+                payslipTax.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculateTax(employee))));
+                payslipDeductionTotal.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.totalDeduction(employee))));
+                
+                
+               //Summary
+               
+               double takehomepay = earning.GrossSalary(employee, payperiod,att)+ benefit.getTotalBenefits(employee)+ deduction.totalDeduction(employee);
+               
+               summaryGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.GrossSalary(employee, payperiod,att))));
+               summaryBenefits.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(benefit.getTotalBenefits(employee))));
+               summaryTotalDeduction.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.totalDeduction(employee))));
+               summaryTakeHomePay.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(takehomepay)));
+               
+            
+                
+                break; // No need to continue the loop if access is granted
+            }
+        }
+
+        if (accessGranted) {
+            
+           
+               
+                
+                   //hide other panels
+                TimeKeeping_MainDashboard.setVisible(false);
+                PayrollHealth_MainDashboard.setVisible(false);
+                EmployeeRecords_MainDashboard.setVisible(false);
+                Request_MainDashboard.setVisible(false);
+                PayslipPanel.setVisible(true);
+                ProfilePanel.setVisible(false);
+                AttendancePanel.setVisible(false);
+                LeavePanel.setVisible(false);
+                PayPeriodPanel.setVisible(false);
+        }         
+       
+    } catch (ParseException e) {
+        e.printStackTrace();
+        // Handle ParseException (e.g., display an error message)
+    }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PayPeriodbtnSept16to30ActionPerformed
+
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -2419,6 +2509,7 @@ try {
     private javax.swing.JLabel NoOfDaysPresent2;
     private javax.swing.JPanel PayPeriodPanel;
     private javax.swing.JButton PayPeriodPanelButtonSept1to15;
+    private javax.swing.JButton PayPeriodbtnSept16to30;
     private javax.swing.JPanel PayrollHealth_MainDashboard;
     private javax.swing.JButton PayslipMaindashboard;
     private javax.swing.JPanel PayslipPanel;
@@ -2445,7 +2536,6 @@ try {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
