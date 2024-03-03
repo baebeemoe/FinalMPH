@@ -44,7 +44,7 @@ public class PayPeriod {
         return endDate;
     }
 
-    public int countDays() {
+    public int countDays(AttendanceRecord attendance) {
         int daysWorked = 0;
         String line;
         String delimiter = ",";
@@ -55,12 +55,12 @@ public class PayPeriod {
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(delimiter);
                 if (data.length == 5) { // Check if data has exactly five elements
-                     String employeeID = data[0]; // Assuming index 0 holds the employee ID
-                     String empID = dashboard.getMainDashboardempNo().getText();
+                     int employeeID =Integer.parseInt( data[0]); // Assuming index 0 holds the employee ID
+                     int empID = attendance.getEmpID();
                      System.out.println("Incorrect data format: " + empID);
                     Date date = dateFormat.parse(data[1]);
                     // Check if the date falls within the pay period
-                    if (employeeID.equals(empID)&& date.compareTo(this.startDate) >= 0 && date.compareTo(this.endDate) <= 0) {
+                    if (employeeID == empID && date.compareTo(this.startDate) >= 0 && date.compareTo(this.endDate) <= 0) {
                         daysWorked++;
                     }
                 } else {
@@ -74,7 +74,7 @@ public class PayPeriod {
         return daysWorked;
     }
     
-    public double calculateTotalOvertime() {
+    public double calculateTotalOvertime(AttendanceRecord attendance) {
     double totalOvertime = 0.0;
     String line;
     String delimiter = ",";
@@ -86,9 +86,12 @@ public class PayPeriod {
             String[] data = line.split(delimiter);
             if (data.length == 5) { // Check if data has exactly five elements
                 
+                int empID = Integer.parseInt(data[0]);
+                int employeeId = attendance.getEmpID();
+                
                 Date date = dateFormat.parse(data[1]);
                 // Check if the date falls within the pay period
-                if (date.compareTo(this.startDate) >= 0 && date.compareTo(this.endDate) <= 0) {
+                if (empID == employeeId && date.compareTo(this.startDate) >= 0 && date.compareTo(this.endDate) <= 0) {
                     double overtime = Double.parseDouble(data[4]); // Assuming index 4 holds the overtime value
                     totalOvertime += overtime;
                 }

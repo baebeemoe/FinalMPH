@@ -110,15 +110,15 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel59 = new javax.swing.JLabel();
         payslipNumber = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
-        jLabel65 = new javax.swing.JLabel();
-        jLabel66 = new javax.swing.JLabel();
-        payslipEmployeeName = new javax.swing.JLabel();
-        payslipPosition = new javax.swing.JLabel();
-        payslipEmployeeNumber = new javax.swing.JLabel();
         payslipStartDate = new javax.swing.JLabel();
-        jLabel61 = new javax.swing.JLabel();
-        payslipEndDate = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
+        payslipEmployeeNumber = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        payslipEndDate = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        payslipEmployeeName = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        payslipPosition = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
         payPanelEarnings = new javax.swing.JPanel();
         jLabel74 = new javax.swing.JLabel();
@@ -455,6 +455,46 @@ public javax.swing.JPanel getProfilePanel() {
         gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         payPanelEmpInfo.add(jLabel67, gridBagConstraints);
 
+        payslipStartDate.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
+        payslipStartDate.setText("02/01/2024");
+        payslipStartDate.setPreferredSize(new java.awt.Dimension(0, 16));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 2;
+        gridBagConstraints.ipady = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        payPanelEmpInfo.add(payslipStartDate, gridBagConstraints);
+
+        jLabel60.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
+        jLabel60.setText("EMPLOYEE ID");
+        jLabel60.setPreferredSize(new java.awt.Dimension(84, 16));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 2;
+        gridBagConstraints.ipady = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        payPanelEmpInfo.add(jLabel60, gridBagConstraints);
+
+        payslipEmployeeNumber.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
+        payslipEmployeeNumber.setText("EMPLOYEE ID");
+        payslipEmployeeNumber.setMaximumSize(new java.awt.Dimension(64, 16));
+        payslipEmployeeNumber.setPreferredSize(new java.awt.Dimension(64, 16));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 44;
+        gridBagConstraints.ipady = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        payPanelEmpInfo.add(payslipEmployeeNumber, gridBagConstraints);
+
         jLabel65.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
         jLabel65.setText("END DATE");
         jLabel65.setPreferredSize(new java.awt.Dimension(60, 16));
@@ -466,17 +506,31 @@ public javax.swing.JPanel getProfilePanel() {
         gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         payPanelEmpInfo.add(jLabel65, gridBagConstraints);
 
-        jLabel66.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
-        jLabel66.setText("POSITION");
-        jLabel66.setPreferredSize(new java.awt.Dimension(48, 16));
+        payslipEndDate.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
+        payslipEndDate.setText("02/15/2024");
+        payslipEndDate.setPreferredSize(new java.awt.Dimension(0, 16));
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 68;
         gridBagConstraints.ipady = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        payPanelEmpInfo.add(jLabel66, gridBagConstraints);
+        payPanelEmpInfo.add(payslipEndDate, gridBagConstraints);
+
+        jLabel61.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
+        jLabel61.setText("EMPLOYEE NAME");
+        jLabel61.setPreferredSize(new java.awt.Dimension(84, 16));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 2;
+        gridBagConstraints.ipady = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        payPanelEmpInfo.add(jLabel61, gridBagConstraints);
 
         payslipEmployeeName.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
         payslipEmployeeName.setText("EMPLOYEE NAME");
@@ -493,85 +547,33 @@ public javax.swing.JPanel getProfilePanel() {
         gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         payPanelEmpInfo.add(payslipEmployeeName, gridBagConstraints);
 
+        jLabel66.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
+        jLabel66.setText("POSITION");
+        jLabel66.setPreferredSize(new java.awt.Dimension(48, 16));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipady = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        payPanelEmpInfo.add(jLabel66, gridBagConstraints);
+
         payslipPosition.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
-        payslipPosition.setText("Position");
-        payslipPosition.setPreferredSize(new java.awt.Dimension(0, 16));
+        payslipPosition.setText("Position of Employee");
+        payslipPosition.setMaximumSize(new java.awt.Dimension(60, 14));
+        payslipPosition.setMinimumSize(new java.awt.Dimension(120, 14));
+        payslipPosition.setPreferredSize(new java.awt.Dimension(120, 16));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.RELATIVE;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 2;
         gridBagConstraints.ipady = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         payPanelEmpInfo.add(payslipPosition, gridBagConstraints);
-
-        payslipEmployeeNumber.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
-        payslipEmployeeNumber.setText("EMPLOYEE ID");
-        payslipEmployeeNumber.setMaximumSize(new java.awt.Dimension(64, 16));
-        payslipEmployeeNumber.setPreferredSize(new java.awt.Dimension(64, 16));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 44;
-        gridBagConstraints.ipady = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        payPanelEmpInfo.add(payslipEmployeeNumber, gridBagConstraints);
-
-        payslipStartDate.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
-        payslipStartDate.setText("02/01/2024");
-        payslipStartDate.setPreferredSize(new java.awt.Dimension(0, 16));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 2;
-        gridBagConstraints.ipady = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        payPanelEmpInfo.add(payslipStartDate, gridBagConstraints);
-
-        jLabel61.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
-        jLabel61.setText("EMPLOYEE NAME");
-        jLabel61.setPreferredSize(new java.awt.Dimension(84, 16));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 2;
-        gridBagConstraints.ipady = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        payPanelEmpInfo.add(jLabel61, gridBagConstraints);
-
-        payslipEndDate.setFont(new java.awt.Font("Open Sans", 1, 10)); // NOI18N
-        payslipEndDate.setText("02/15/2024");
-        payslipEndDate.setPreferredSize(new java.awt.Dimension(0, 16));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 68;
-        gridBagConstraints.ipady = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        payPanelEmpInfo.add(payslipEndDate, gridBagConstraints);
-
-        jLabel60.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
-        jLabel60.setText("EMPLOYEE ID");
-        jLabel60.setPreferredSize(new java.awt.Dimension(84, 16));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 2;
-        gridBagConstraints.ipady = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        payPanelEmpInfo.add(jLabel60, gridBagConstraints);
 
         jSeparator12.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jSeparator12.setOpaque(true);
@@ -783,26 +785,28 @@ public javax.swing.JPanel getProfilePanel() {
                     .addGroup(PayslipPanelLayout.createSequentialGroup()
                         .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                .addGap(105, 105, 105)
-                                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                    .addComponent(jLabel33)
-                                    .addComponent(jLabel34)
-                                    .addComponent(jLabel35)
-                                    .addComponent(jLabel57)))
-                            .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                    .addComponent(payPanelEarnings, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                        .addGap(105, 105, 105)
+                                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                            .addComponent(jLabel33)
+                                            .addComponent(jLabel34)
+                                            .addComponent(jLabel35)
+                                            .addComponent(jLabel57)))
+                                    .addGroup(PayslipPanelLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                            .addComponent(payPanelEarnings, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PayslipPanelLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(12, 12, 12))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PayslipPanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PayslipPanelLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(payPanelEmpInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(12, 12, 12)
+                        .addComponent(payPanelEmpInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
                 .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(PayslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PayslipPanelLayout.createSequentialGroup()
@@ -1299,13 +1303,10 @@ public javax.swing.JPanel getProfilePanel() {
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TimeButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
                         .addGap(1, 1, 1)
@@ -1361,32 +1362,33 @@ public javax.swing.JPanel getProfilePanel() {
         PayrollHealth_MainDashboardLayout.setHorizontalGroup(
             PayrollHealth_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PayrollHealth_MainDashboardLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel14)
-                .addGap(34, 204, Short.MAX_VALUE))
-            .addGroup(PayrollHealth_MainDashboardLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(PayrollHealth_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel121)
-                    .addGroup(PayrollHealth_MainDashboardLayout.createSequentialGroup()
-                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(NoOfDaysPresent1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(34, 34, 34)
                 .addGroup(PayrollHealth_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PayrollHealth_MainDashboardLayout.createSequentialGroup()
-                        .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(NoOfDaysPresent, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel123))
-                .addGap(40, 40, 40)
-                .addGroup(PayrollHealth_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel14))
                     .addGroup(PayrollHealth_MainDashboardLayout.createSequentialGroup()
-                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NoOfDaysPresent2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel124))
-                .addContainerGap(86, Short.MAX_VALUE))
+                        .addGap(37, 37, 37)
+                        .addGroup(PayrollHealth_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel121)
+                            .addGroup(PayrollHealth_MainDashboardLayout.createSequentialGroup()
+                                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(NoOfDaysPresent1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(34, 34, 34)
+                        .addGroup(PayrollHealth_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PayrollHealth_MainDashboardLayout.createSequentialGroup()
+                                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(NoOfDaysPresent, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel123))
+                        .addGap(40, 40, 40)
+                        .addGroup(PayrollHealth_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PayrollHealth_MainDashboardLayout.createSequentialGroup()
+                                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(NoOfDaysPresent2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel124))))
+                .addGap(34, 86, Short.MAX_VALUE))
         );
         PayrollHealth_MainDashboardLayout.setVerticalGroup(
             PayrollHealth_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1574,16 +1576,13 @@ public javax.swing.JPanel getProfilePanel() {
             .addGroup(Request_MainDashboardLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(Request_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Request_MainDashboardLayout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addGap(31, 219, Short.MAX_VALUE))
-                    .addGroup(Request_MainDashboardLayout.createSequentialGroup()
-                        .addGroup(Request_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(Request_MainDashboardLayout.createSequentialGroup()
-                                .addGap(82, 82, 82)
-                                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addContainerGap(34, Short.MAX_VALUE))))
+                    .addComponent(jLabel17)
+                    .addGroup(Request_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(Request_MainDashboardLayout.createSequentialGroup()
+                            .addGap(82, 82, 82)
+                            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(31, 34, Short.MAX_VALUE))
         );
         Request_MainDashboardLayout.setVerticalGroup(
             Request_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2272,9 +2271,9 @@ public javax.swing.JPanel getProfilePanel() {
                 //Earnings
                 payslipMonthlyRate.setText(String.valueOf("Php" + " " +employee.getBasicSalary()));
                 payslipDailyRate.setText(String.valueOf("Php" + " " + earning.dailyRate(employee)));
-                payslipOvertime.setText(String.valueOf("Php" + " " +earning.overTime(employee, payperiod)));
-                payslipDaysWorked.setText(String.valueOf(earning.daysWorked(payperiod) + " " + "Days"));
-                payslipGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.GrossSalary(employee, payperiod))));
+                payslipOvertime.setText(String.valueOf("Php" + " " +earning.overTime(employee, payperiod, att)));
+                payslipDaysWorked.setText(String.valueOf(earning.daysWorked(payperiod, att) + " " + "Days"));
+                payslipGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.GrossSalary(employee, payperiod, att))));
                 
                 //Benefits
                 payslipRiceAllowance.setText("Php" + " " + employee.getFormattedDouble(employee.getRiceSubsidy()));
@@ -2292,9 +2291,9 @@ public javax.swing.JPanel getProfilePanel() {
                 
                //Summary
                
-               double takehomepay = earning.GrossSalary(employee, payperiod)+ benefit.getTotalBenefits(employee)+ deduction.totalDeduction(employee);
+               double takehomepay = earning.GrossSalary(employee, payperiod, att)+ benefit.getTotalBenefits(employee)+ deduction.totalDeduction(employee);
                
-               summaryGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.GrossSalary(employee, payperiod))));
+               summaryGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.GrossSalary(employee, payperiod, att))));
                summaryBenefits.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(benefit.getTotalBenefits(employee))));
                summaryTotalDeduction.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.totalDeduction(employee))));
                summaryTakeHomePay.setText("Php" + " " + String.valueOf(takehomepay));
