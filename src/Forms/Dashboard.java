@@ -28,6 +28,10 @@ import System.Employee.Earning;
 import System.Employee.Deduction;
 import System.Employee.Request;
 
+import javax.swing.JTable;
+import javax.swing.table.TableModel;
+import Forms.EmployeeHSRDataBase;
+
 public class Dashboard extends javax.swing.JFrame {
 
     private EmployeeRecords[] employees;
@@ -45,6 +49,8 @@ public class Dashboard extends javax.swing.JFrame {
     public JPanel getOvertimePanel() {
         return OvertimePanel;
     }
+
+    
     
     
 
@@ -109,8 +115,6 @@ public javax.swing.JPanel getProfilePanel() {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         OTRequestDialog = new javax.swing.JDialog();
         jLabel72 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -129,52 +133,6 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        LeavePanel = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel112 = new javax.swing.JLabel();
-        LeavePanelLeaveSelector = new javax.swing.JComboBox<>();
-        jLabel113 = new javax.swing.JLabel();
-        LeavePanelStartDate = new com.toedter.calendar.JDateChooser();
-        LeavePanelReason = new javax.swing.JTextArea();
-        jLabel114 = new javax.swing.JLabel();
-        LeavePanelSubmitButton = new javax.swing.JButton();
-        LeavePanelEndDate = new com.toedter.calendar.JDateChooser();
-        jLabel62 = new javax.swing.JLabel();
-        jLabel63 = new javax.swing.JLabel();
-        jLabel111 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel115 = new javax.swing.JLabel();
-        jLabel122 = new javax.swing.JLabel();
-        jLabel116 = new javax.swing.JLabel();
-        jLabel120 = new javax.swing.JLabel();
-        jLabel117 = new javax.swing.JLabel();
-        jLabel118 = new javax.swing.JLabel();
-        jLabel119 = new javax.swing.JLabel();
-        btnLeaveList = new javax.swing.JButton();
-        LeaveListPanel = new javax.swing.JPanel();
-        jLabel125 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        LeaveListTable1 = new javax.swing.JTable();
-        AttendancePanel = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        attendanceTable = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        btnovertimerequest = new javax.swing.JButton();
-        OvertimeRequest = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        PayPeriodPanel = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel68 = new javax.swing.JLabel();
-        jLabel69 = new javax.swing.JLabel();
-        PayPeriodPanelButtonSept1to15 = new javax.swing.JButton();
-        PayPeriodbtnSept16to30 = new javax.swing.JButton();
-        jLabel64 = new javax.swing.JLabel();
-        OvertimePanel = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        overtimeListTable = new javax.swing.JTable();
-        jLabel80 = new javax.swing.JLabel();
-        OvertimeRequest1 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         PayslipPanel = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
@@ -235,24 +193,6 @@ public javax.swing.JPanel getProfilePanel() {
         summaryTakeHomePay = new javax.swing.JLabel();
         jLabel109 = new javax.swing.JLabel();
         payslipGrossIncome = new javax.swing.JLabel();
-        TimeKeeping_MainDashboard = new javax.swing.JPanel();
-        jSeparator2 = new javax.swing.JSeparator();
-        jSeparator3 = new javax.swing.JSeparator();
-        jSeparator4 = new javax.swing.JSeparator();
-        timeprogressbar = new javax.swing.JProgressBar();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        Shift = new javax.swing.JLabel();
-        Department = new javax.swing.JLabel();
-        PunchIn = new javax.swing.JButton();
-        PunchOut = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
-        TimeInLabel = new javax.swing.JLabel();
-        jLabel56 = new javax.swing.JLabel();
-        TimeOutLabel = new javax.swing.JLabel();
         EmployeeDashboard_MainDashboard = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -279,7 +219,7 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         EmployeeRecords_MainDashboard = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
+        btnHRSemployeeDatabase = new javax.swing.JButton();
         Request_MainDashboard = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -335,20 +275,71 @@ public javax.swing.JPanel getProfilePanel() {
         jScrollPane2 = new javax.swing.JScrollPane();
         ProfileAddress = new javax.swing.JTextArea();
         jLabel32 = new javax.swing.JLabel();
+        LeaveListPanel = new javax.swing.JPanel();
+        jLabel125 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        LeaveListTable1 = new javax.swing.JTable();
+        LeavePanel = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel112 = new javax.swing.JLabel();
+        LeavePanelLeaveSelector = new javax.swing.JComboBox<>();
+        jLabel113 = new javax.swing.JLabel();
+        LeavePanelStartDate = new com.toedter.calendar.JDateChooser();
+        LeavePanelReason = new javax.swing.JTextArea();
+        jLabel114 = new javax.swing.JLabel();
+        LeavePanelSubmitButton = new javax.swing.JButton();
+        LeavePanelEndDate = new com.toedter.calendar.JDateChooser();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel111 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel115 = new javax.swing.JLabel();
+        jLabel122 = new javax.swing.JLabel();
+        jLabel116 = new javax.swing.JLabel();
+        jLabel120 = new javax.swing.JLabel();
+        jLabel117 = new javax.swing.JLabel();
+        jLabel118 = new javax.swing.JLabel();
+        jLabel119 = new javax.swing.JLabel();
+        btnLeaveList = new javax.swing.JButton();
+        AttendancePanel = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        attendanceTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        btnovertimerequest = new javax.swing.JButton();
+        OvertimeRequest = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        PayPeriodPanel = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel68 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
+        PayPeriodPanelButtonSept1to15 = new javax.swing.JButton();
+        PayPeriodbtnSept16to30 = new javax.swing.JButton();
+        jLabel64 = new javax.swing.JLabel();
+        OvertimePanel = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        overtimeListTable = new javax.swing.JTable();
+        jLabel80 = new javax.swing.JLabel();
+        OvertimeRequest1 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        TimeKeeping_MainDashboard = new javax.swing.JPanel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        timeprogressbar = new javax.swing.JProgressBar();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        Shift = new javax.swing.JLabel();
+        Department = new javax.swing.JLabel();
+        PunchIn = new javax.swing.JButton();
+        PunchOut = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        TimeInLabel = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        TimeOutLabel = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
 
         OTRequestDialog.setMinimumSize(new java.awt.Dimension(500, 400));
         OTRequestDialog.setPreferredSize(new java.awt.Dimension(500, 400));
@@ -477,521 +468,6 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("People Portal");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
-
-        LeavePanel.setBackground(new java.awt.Color(0, 0, 0,100));
-        LeavePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-        LeavePanel.setPreferredSize(new java.awt.Dimension(1114, 520));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-
-        jLabel112.setText("Leave Type");
-        jLabel112.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        LeavePanelLeaveSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Leave Type", "Vacation Leave", "Sick Leave", "Emergency Leave" }));
-        LeavePanelLeaveSelector.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        LeavePanelLeaveSelector.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        LeavePanelLeaveSelector.setName("Choose the Type of Leave"); // NOI18N
-
-        jLabel113.setText("Reason");
-        jLabel113.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        LeavePanelReason.setColumns(20);
-        LeavePanelReason.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        LeavePanelReason.setRows(5);
-        LeavePanelReason.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel114.setText("Date");
-        jLabel114.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        LeavePanelSubmitButton.setText("Submit");
-        LeavePanelSubmitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LeavePanelSubmitButtonActionPerformed(evt);
-            }
-        });
-
-        jLabel62.setText("Start Date");
-
-        jLabel63.setText("End Date");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel112)
-                        .addComponent(jLabel114)
-                        .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(LeavePanelStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel113))
-                            .addGap(18, 18, 18)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(LeavePanelEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(157, 157, 157)
-                .addComponent(LeavePanelSubmitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-                .addGap(152, 152, 152))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel112)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel114)
-                .addGap(10, 10, 10)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LeavePanelStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LeavePanelEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel62)
-                    .addComponent(jLabel63))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel113)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(LeavePanelSubmitButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jLabel111.setText("Leave Application");
-        jLabel111.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
-        jLabel111.setForeground(new java.awt.Color(255, 255, 255));
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 1, true));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel115.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        jLabel115.setText("Leave Balance");
-        jPanel3.add(jLabel115, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
-
-        jLabel122.setFont(new java.awt.Font("Lucida Bright", 1, 50)); // NOI18N
-        jLabel122.setText("14");
-        jPanel3.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
-
-        jLabel116.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        jLabel116.setText("Vacation Leave");
-        jPanel3.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, -1));
-
-        jLabel120.setFont(new java.awt.Font("Lucida Bright", 1, 50)); // NOI18N
-        jLabel120.setText("15");
-        jPanel3.add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, -1));
-
-        jLabel117.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        jLabel117.setText("Sick Leave");
-        jPanel3.add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
-
-        jLabel118.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new-moon (1).png"))); // NOI18N
-        jPanel3.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 76, -1, -1));
-
-        jLabel119.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new-moon (1).png"))); // NOI18N
-        jPanel3.add(jLabel119, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 76, -1, -1));
-
-        btnLeaveList.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
-        btnLeaveList.setText("Leave List");
-        btnLeaveList.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLeaveListActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout LeavePanelLayout = new javax.swing.GroupLayout(LeavePanel);
-        LeavePanel.setLayout(LeavePanelLayout);
-        LeavePanelLayout.setHorizontalGroup(
-            LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LeavePanelLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LeavePanelLayout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61))
-                    .addGroup(LeavePanelLayout.createSequentialGroup()
-                        .addComponent(jLabel111)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(LeavePanelLayout.createSequentialGroup()
-                .addGap(439, 439, 439)
-                .addComponent(btnLeaveList)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        LeavePanelLayout.setVerticalGroup(
-            LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LeavePanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel111)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(btnLeaveList)
-                .addGap(27, 27, 27))
-        );
-
-        jPanel1.add(LeavePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
-
-        LeaveListPanel.setBackground(new java.awt.Color(0, 0, 0,100));
-        LeaveListPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-        LeaveListPanel.setPreferredSize(new java.awt.Dimension(1114, 520));
-
-        jLabel125.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
-        jLabel125.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel125.setText("Leave Application");
-
-        LeaveListTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-        LeaveListTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Leave Type", "Date  Filed", "Start Date", "End Date", "Reason", "Status"
-            }
-        ));
-        LeaveListTable1.setGridColor(new java.awt.Color(153, 153, 153));
-        LeaveListTable1.setName(""); // NOI18N
-        LeaveListTable1.setOpaque(false);
-        LeaveListTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane6.setViewportView(LeaveListTable1);
-
-        javax.swing.GroupLayout LeaveListPanelLayout = new javax.swing.GroupLayout(LeaveListPanel);
-        LeaveListPanel.setLayout(LeaveListPanelLayout);
-        LeaveListPanelLayout.setHorizontalGroup(
-            LeaveListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LeaveListPanelLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(LeaveListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel125)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 905, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(42, Short.MAX_VALUE))
-        );
-        LeaveListPanelLayout.setVerticalGroup(
-            LeaveListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LeaveListPanelLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel125)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(LeaveListPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
-
-        AttendancePanel.setBackground(new java.awt.Color(0, 0, 0,100));
-        AttendancePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-        AttendancePanel.setPreferredSize(new java.awt.Dimension(980, 520));
-
-        attendanceTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-        attendanceTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Date", "Time In", "Time Out", "Overtime", "Status"
-            }
-        ));
-        attendanceTable.setGridColor(new java.awt.Color(153, 153, 153));
-        attendanceTable.setName(""); // NOI18N
-        attendanceTable.setOpaque(false);
-        attendanceTable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane3.setViewportView(attendanceTable);
-
-        jLabel1.setText("Attendance Record");
-        jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
-
-        btnovertimerequest.setText("Overtime Request List");
-        btnovertimerequest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnovertimerequestActionPerformed(evt);
-            }
-        });
-
-        OvertimeRequest.setText("Request Overtime");
-        OvertimeRequest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OvertimeRequestActionPerformed(evt);
-            }
-        });
-
-        jButton6.setText("Apply Dispute");
-
-        javax.swing.GroupLayout AttendancePanelLayout = new javax.swing.GroupLayout(AttendancePanel);
-        AttendancePanel.setLayout(AttendancePanelLayout);
-        AttendancePanelLayout.setHorizontalGroup(
-            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AttendancePanelLayout.createSequentialGroup()
-                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AttendancePanelLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(AttendancePanelLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnovertimerequest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(OvertimeRequest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(28, 28, 28)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 773, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-        AttendancePanelLayout.setVerticalGroup(
-            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AttendancePanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(AttendancePanelLayout.createSequentialGroup()
-                        .addComponent(OvertimeRequest)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnovertimerequest)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton6)))
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 540));
-
-        PayPeriodPanel.setBackground(new java.awt.Color(0, 0, 0));
-        PayPeriodPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-        PayPeriodPanel.setPreferredSize(new java.awt.Dimension(1114, 520));
-
-        jPanel4.setBackground(new java.awt.Color(0, 0, 0,100));
-        jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 2, true));
-
-        jLabel68.setText("September 01, 2023 to September 15, 20223");
-        jLabel68.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        jLabel68.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel69.setText("September 16, 2023 to September 30, 2023");
-        jLabel69.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        jLabel69.setForeground(new java.awt.Color(255, 255, 255));
-
-        PayPeriodPanelButtonSept1to15.setText("View Payslip");
-        PayPeriodPanelButtonSept1to15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PayPeriodPanelButtonSept1to15ActionPerformed(evt);
-            }
-        });
-
-        PayPeriodbtnSept16to30.setText("View Payslip");
-        PayPeriodbtnSept16to30.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PayPeriodbtnSept16to30ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(196, 196, 196)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel69, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(130, 130, 130)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PayPeriodPanelButtonSept1to15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PayPeriodbtnSept16to30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(179, 179, 179))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel68)
-                    .addComponent(PayPeriodPanelButtonSept1to15))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel69)
-                    .addComponent(PayPeriodbtnSept16to30))
-                .addContainerGap(204, Short.MAX_VALUE))
-        );
-
-        jLabel64.setText("Pay Period");
-        jLabel64.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
-        jLabel64.setForeground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout PayPeriodPanelLayout = new javax.swing.GroupLayout(PayPeriodPanel);
-        PayPeriodPanel.setLayout(PayPeriodPanelLayout);
-        PayPeriodPanelLayout.setHorizontalGroup(
-            PayPeriodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PayPeriodPanelLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PayPeriodPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel64)
-                .addGap(425, 425, 425))
-        );
-        PayPeriodPanelLayout.setVerticalGroup(
-            PayPeriodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PayPeriodPanelLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel64)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(PayPeriodPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
-
-        OvertimePanel.setBackground(new java.awt.Color(0, 0, 0,100));
-        OvertimePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-        OvertimePanel.setPreferredSize(new java.awt.Dimension(980, 520));
-
-        overtimeListTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-        overtimeListTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Date", "Start Time", "End Time", "Reason", "Status"
-            }
-        ));
-        overtimeListTable.setGridColor(new java.awt.Color(153, 153, 153));
-        overtimeListTable.setName(""); // NOI18N
-        overtimeListTable.setOpaque(false);
-        overtimeListTable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane5.setViewportView(overtimeListTable);
-
-        jLabel80.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
-        jLabel80.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel80.setText("Overtime Request List");
-
-        OvertimeRequest1.setText("Request Overtime");
-        OvertimeRequest1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OvertimeRequest1ActionPerformed(evt);
-            }
-        });
-
-        jButton8.setText("Apply Dispute");
-
-        javax.swing.GroupLayout OvertimePanelLayout = new javax.swing.GroupLayout(OvertimePanel);
-        OvertimePanel.setLayout(OvertimePanelLayout);
-        OvertimePanelLayout.setHorizontalGroup(
-            OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(OvertimePanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(OvertimePanelLayout.createSequentialGroup()
-                        .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(OvertimeRequest1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(28, 28, 28)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 773, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-        OvertimePanelLayout.setVerticalGroup(
-            OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OvertimePanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel80)
-                .addGap(18, 18, 18)
-                .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(OvertimePanelLayout.createSequentialGroup()
-                        .addComponent(OvertimeRequest1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton8)))
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(OvertimePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 540));
 
         PayslipPanel.setBackground(new java.awt.Color(255, 255, 255));
         PayslipPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
@@ -1436,181 +912,6 @@ public javax.swing.JPanel getProfilePanel() {
 
         jPanel1.add(PayslipPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 460));
 
-        TimeKeeping_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
-
-        jSeparator2.setBackground(new java.awt.Color(102, 102, 102));
-        jSeparator2.setForeground(new java.awt.Color(102, 102, 102));
-        jSeparator2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-        jSeparator2.setPreferredSize(new java.awt.Dimension(0, 1));
-
-        jSeparator3.setBackground(new java.awt.Color(102, 102, 102));
-        jSeparator3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-        jSeparator3.setForeground(new java.awt.Color(102, 102, 102));
-        jSeparator3.setPreferredSize(new java.awt.Dimension(0, 1));
-
-        jSeparator4.setBackground(new java.awt.Color(102, 102, 102));
-        jSeparator4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-        jSeparator4.setForeground(new java.awt.Color(102, 102, 102));
-
-        timeprogressbar.setRequestFocusEnabled(false);
-        timeprogressbar.setStringPainted(true);
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/check-box.png"))); // NOI18N
-        jLabel9.setText(" Present");
-        jLabel9.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 204, 102));
-
-        jLabel10.setText("Time In : ");
-        jLabel10.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel8.setText("Schedule Status :");
-        jLabel8.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel11.setText("WORK");
-        jLabel11.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 255, 51));
-
-        jLabel12.setText("Schedule :");
-        jLabel12.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-
-        Shift.setText("03:15AM - 12:15 PM");
-        Shift.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        Shift.setForeground(new java.awt.Color(255, 255, 255));
-
-        Department.setText("Finance Department");
-        Department.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        Department.setForeground(new java.awt.Color(255, 255, 255));
-
-        PunchIn.setText("Time In");
-        PunchIn.setBackground(new java.awt.Color(0, 255, 51));
-        PunchIn.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        PunchIn.setForeground(new java.awt.Color(255, 255, 255));
-        PunchIn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PunchInActionPerformed(evt);
-            }
-        });
-
-        PunchOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/clock (4).png"))); // NOI18N
-        PunchOut.setBackground(new java.awt.Color(0, 0, 0,0));
-        PunchOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PunchOutActionPerformed(evt);
-            }
-        });
-
-        jLabel13.setText("Time out");
-        jLabel13.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-
-        TimeInLabel.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        TimeInLabel.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel56.setText("Time Out : ");
-        jLabel56.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        jLabel56.setForeground(new java.awt.Color(255, 255, 255));
-
-        TimeOutLabel.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        TimeOutLabel.setForeground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout TimeKeeping_MainDashboardLayout = new javax.swing.GroupLayout(TimeKeeping_MainDashboard);
-        TimeKeeping_MainDashboard.setLayout(TimeKeeping_MainDashboardLayout);
-        TimeKeeping_MainDashboardLayout.setHorizontalGroup(
-            TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Shift))
-                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Department)
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(PunchIn)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PunchOut)
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel13)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel56)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(timeprogressbar, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-        TimeKeeping_MainDashboardLayout.setVerticalGroup(
-            TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel11))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel12)
-                                    .addComponent(Shift)))
-                            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addComponent(Department)
-                                .addGap(18, 18, 18)
-                                .addComponent(PunchIn))
-                            .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE))))
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(PunchOut)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel13)
-                        .addGap(1, 1, 1)))
-                .addComponent(timeprogressbar, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel56)
-                    .addComponent(jLabel10)
-                    .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        jSeparator2.getAccessibleContext().setAccessibleName("");
-
-        jPanel1.add(TimeKeeping_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 660, 150));
-
         EmployeeDashboard_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
         EmployeeDashboard_MainDashboard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 1, true));
 
@@ -1884,15 +1185,15 @@ public javax.swing.JPanel getProfilePanel() {
 
         EmployeeRecords_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
 
-        jButton3.setText("Employee Records");
-        jButton3.setBackground(new java.awt.Color(0, 0, 0,0));
-        jButton3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton3.setBorderPainted(false);
-        jButton3.setFont(new java.awt.Font("Lucida Bright", 0, 36)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnHRSemployeeDatabase.setText("Employee Records");
+        btnHRSemployeeDatabase.setBackground(new java.awt.Color(0, 0, 0,0));
+        btnHRSemployeeDatabase.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnHRSemployeeDatabase.setBorderPainted(false);
+        btnHRSemployeeDatabase.setFont(new java.awt.Font("Lucida Bright", 0, 36)); // NOI18N
+        btnHRSemployeeDatabase.setForeground(new java.awt.Color(255, 255, 255));
+        btnHRSemployeeDatabase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnHRSemployeeDatabaseActionPerformed(evt);
             }
         });
 
@@ -1902,14 +1203,14 @@ public javax.swing.JPanel getProfilePanel() {
             EmployeeRecords_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EmployeeRecords_MainDashboardLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnHRSemployeeDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         EmployeeRecords_MainDashboardLayout.setVerticalGroup(
             EmployeeRecords_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EmployeeRecords_MainDashboardLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                .addComponent(btnHRSemployeeDatabase, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -2358,6 +1659,696 @@ public javax.swing.JPanel getProfilePanel() {
 
         jPanel1.add(ProfilePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
 
+        LeaveListPanel.setBackground(new java.awt.Color(0, 0, 0,100));
+        LeaveListPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        LeaveListPanel.setPreferredSize(new java.awt.Dimension(1114, 520));
+
+        jLabel125.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
+        jLabel125.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel125.setText("Leave Application");
+
+        LeaveListTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        LeaveListTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Leave Type", "Date  Filed", "Start Date", "End Date", "Reason", "Status"
+            }
+        ));
+        LeaveListTable1.setGridColor(new java.awt.Color(153, 153, 153));
+        LeaveListTable1.setName(""); // NOI18N
+        LeaveListTable1.setOpaque(false);
+        LeaveListTable1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane6.setViewportView(LeaveListTable1);
+
+        javax.swing.GroupLayout LeaveListPanelLayout = new javax.swing.GroupLayout(LeaveListPanel);
+        LeaveListPanel.setLayout(LeaveListPanelLayout);
+        LeaveListPanelLayout.setHorizontalGroup(
+            LeaveListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LeaveListPanelLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(LeaveListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel125)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 905, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+        LeaveListPanelLayout.setVerticalGroup(
+            LeaveListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LeaveListPanelLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel125)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(LeaveListPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
+
+        LeavePanel.setBackground(new java.awt.Color(0, 0, 0,100));
+        LeavePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        LeavePanel.setPreferredSize(new java.awt.Dimension(1114, 520));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+
+        jLabel112.setText("Leave Type");
+        jLabel112.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        LeavePanelLeaveSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Leave Type", "Vacation Leave", "Sick Leave", "Emergency Leave" }));
+        LeavePanelLeaveSelector.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        LeavePanelLeaveSelector.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        LeavePanelLeaveSelector.setName("Choose the Type of Leave"); // NOI18N
+
+        jLabel113.setText("Reason");
+        jLabel113.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        LeavePanelReason.setColumns(20);
+        LeavePanelReason.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        LeavePanelReason.setRows(5);
+        LeavePanelReason.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel114.setText("Date");
+        jLabel114.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        LeavePanelSubmitButton.setText("Submit");
+        LeavePanelSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LeavePanelSubmitButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel62.setText("Start Date");
+
+        jLabel63.setText("End Date");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel112)
+                        .addComponent(jLabel114)
+                        .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(LeavePanelStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel113))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LeavePanelEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(157, 157, 157)
+                .addComponent(LeavePanelSubmitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                .addGap(152, 152, 152))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel112)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel114)
+                .addGap(10, 10, 10)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LeavePanelStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LeavePanelEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel62)
+                    .addComponent(jLabel63))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel113)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(LeavePanelSubmitButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel111.setText("Leave Application");
+        jLabel111.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
+        jLabel111.setForeground(new java.awt.Color(255, 255, 255));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 1, true));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel115.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        jLabel115.setText("Leave Balance");
+        jPanel3.add(jLabel115, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+
+        jLabel122.setFont(new java.awt.Font("Lucida Bright", 1, 50)); // NOI18N
+        jLabel122.setText("14");
+        jPanel3.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
+
+        jLabel116.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        jLabel116.setText("Vacation Leave");
+        jPanel3.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, -1));
+
+        jLabel120.setFont(new java.awt.Font("Lucida Bright", 1, 50)); // NOI18N
+        jLabel120.setText("15");
+        jPanel3.add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, -1));
+
+        jLabel117.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        jLabel117.setText("Sick Leave");
+        jPanel3.add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
+
+        jLabel118.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new-moon (1).png"))); // NOI18N
+        jPanel3.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 76, -1, -1));
+
+        jLabel119.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new-moon (1).png"))); // NOI18N
+        jPanel3.add(jLabel119, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 76, -1, -1));
+
+        btnLeaveList.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
+        btnLeaveList.setText("Leave List");
+        btnLeaveList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLeaveListActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout LeavePanelLayout = new javax.swing.GroupLayout(LeavePanel);
+        LeavePanel.setLayout(LeavePanelLayout);
+        LeavePanelLayout.setHorizontalGroup(
+            LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LeavePanelLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LeavePanelLayout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61))
+                    .addGroup(LeavePanelLayout.createSequentialGroup()
+                        .addComponent(jLabel111)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(LeavePanelLayout.createSequentialGroup()
+                .addGap(439, 439, 439)
+                .addComponent(btnLeaveList)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        LeavePanelLayout.setVerticalGroup(
+            LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LeavePanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel111)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(btnLeaveList)
+                .addGap(27, 27, 27))
+        );
+
+        jPanel1.add(LeavePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
+
+        AttendancePanel.setBackground(new java.awt.Color(0, 0, 0,100));
+        AttendancePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        AttendancePanel.setPreferredSize(new java.awt.Dimension(980, 520));
+
+        attendanceTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        attendanceTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Date", "Time In", "Time Out", "Overtime", "Status"
+            }
+        ));
+        attendanceTable.setGridColor(new java.awt.Color(153, 153, 153));
+        attendanceTable.setName(""); // NOI18N
+        attendanceTable.setOpaque(false);
+        attendanceTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(attendanceTable);
+
+        jLabel1.setText("Attendance Record");
+        jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+
+        btnovertimerequest.setText("Overtime Request List");
+        btnovertimerequest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnovertimerequestActionPerformed(evt);
+            }
+        });
+
+        OvertimeRequest.setText("Request Overtime");
+        OvertimeRequest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OvertimeRequestActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Apply Dispute");
+
+        javax.swing.GroupLayout AttendancePanelLayout = new javax.swing.GroupLayout(AttendancePanel);
+        AttendancePanel.setLayout(AttendancePanelLayout);
+        AttendancePanelLayout.setHorizontalGroup(
+            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AttendancePanelLayout.createSequentialGroup()
+                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AttendancePanelLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AttendancePanelLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnovertimerequest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(OvertimeRequest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(28, 28, 28)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 773, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        AttendancePanelLayout.setVerticalGroup(
+            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AttendancePanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(AttendancePanelLayout.createSequentialGroup()
+                        .addComponent(OvertimeRequest)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnovertimerequest)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton6)))
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 540));
+
+        PayPeriodPanel.setBackground(new java.awt.Color(0, 0, 0));
+        PayPeriodPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        PayPeriodPanel.setPreferredSize(new java.awt.Dimension(1114, 520));
+
+        jPanel4.setBackground(new java.awt.Color(0, 0, 0,100));
+        jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 2, true));
+
+        jLabel68.setText("September 01, 2023 to September 15, 20223");
+        jLabel68.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        jLabel68.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel69.setText("September 16, 2023 to September 30, 2023");
+        jLabel69.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        jLabel69.setForeground(new java.awt.Color(255, 255, 255));
+
+        PayPeriodPanelButtonSept1to15.setText("View Payslip");
+        PayPeriodPanelButtonSept1to15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PayPeriodPanelButtonSept1to15ActionPerformed(evt);
+            }
+        });
+
+        PayPeriodbtnSept16to30.setText("View Payslip");
+        PayPeriodbtnSept16to30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PayPeriodbtnSept16to30ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(196, 196, 196)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel69, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(130, 130, 130)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PayPeriodPanelButtonSept1to15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PayPeriodbtnSept16to30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(179, 179, 179))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel68)
+                    .addComponent(PayPeriodPanelButtonSept1to15))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel69)
+                    .addComponent(PayPeriodbtnSept16to30))
+                .addContainerGap(204, Short.MAX_VALUE))
+        );
+
+        jLabel64.setText("Pay Period");
+        jLabel64.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout PayPeriodPanelLayout = new javax.swing.GroupLayout(PayPeriodPanel);
+        PayPeriodPanel.setLayout(PayPeriodPanelLayout);
+        PayPeriodPanelLayout.setHorizontalGroup(
+            PayPeriodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PayPeriodPanelLayout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PayPeriodPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel64)
+                .addGap(425, 425, 425))
+        );
+        PayPeriodPanelLayout.setVerticalGroup(
+            PayPeriodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PayPeriodPanelLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel64)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(PayPeriodPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
+
+        OvertimePanel.setBackground(new java.awt.Color(0, 0, 0,100));
+        OvertimePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        OvertimePanel.setPreferredSize(new java.awt.Dimension(980, 520));
+
+        overtimeListTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        overtimeListTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Date", "Start Time", "End Time", "Reason", "Status"
+            }
+        ));
+        overtimeListTable.setGridColor(new java.awt.Color(153, 153, 153));
+        overtimeListTable.setName(""); // NOI18N
+        overtimeListTable.setOpaque(false);
+        overtimeListTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane5.setViewportView(overtimeListTable);
+
+        jLabel80.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        jLabel80.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel80.setText("Overtime Request List");
+
+        OvertimeRequest1.setText("Request Overtime");
+        OvertimeRequest1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OvertimeRequest1ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText("Apply Dispute");
+
+        javax.swing.GroupLayout OvertimePanelLayout = new javax.swing.GroupLayout(OvertimePanel);
+        OvertimePanel.setLayout(OvertimePanelLayout);
+        OvertimePanelLayout.setHorizontalGroup(
+            OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(OvertimePanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(OvertimePanelLayout.createSequentialGroup()
+                        .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(OvertimeRequest1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 773, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+        OvertimePanelLayout.setVerticalGroup(
+            OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OvertimePanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel80)
+                .addGap(18, 18, 18)
+                .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(OvertimePanelLayout.createSequentialGroup()
+                        .addComponent(OvertimeRequest1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton8)))
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(OvertimePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 540));
+
+        TimeKeeping_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
+
+        jSeparator2.setBackground(new java.awt.Color(102, 102, 102));
+        jSeparator2.setForeground(new java.awt.Color(102, 102, 102));
+        jSeparator2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        jSeparator2.setPreferredSize(new java.awt.Dimension(0, 1));
+
+        jSeparator3.setBackground(new java.awt.Color(102, 102, 102));
+        jSeparator3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        jSeparator3.setForeground(new java.awt.Color(102, 102, 102));
+        jSeparator3.setPreferredSize(new java.awt.Dimension(0, 1));
+
+        jSeparator4.setBackground(new java.awt.Color(102, 102, 102));
+        jSeparator4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        jSeparator4.setForeground(new java.awt.Color(102, 102, 102));
+
+        timeprogressbar.setRequestFocusEnabled(false);
+        timeprogressbar.setStringPainted(true);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/check-box.png"))); // NOI18N
+        jLabel9.setText(" Present");
+        jLabel9.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 204, 102));
+
+        jLabel10.setText("Time In : ");
+        jLabel10.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel8.setText("Schedule Status :");
+        jLabel8.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel11.setText("WORK");
+        jLabel11.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 255, 51));
+
+        jLabel12.setText("Schedule :");
+        jLabel12.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+
+        Shift.setText("03:15AM - 12:15 PM");
+        Shift.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        Shift.setForeground(new java.awt.Color(255, 255, 255));
+
+        Department.setText("Finance Department");
+        Department.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        Department.setForeground(new java.awt.Color(255, 255, 255));
+
+        PunchIn.setText("Time In");
+        PunchIn.setBackground(new java.awt.Color(0, 255, 51));
+        PunchIn.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        PunchIn.setForeground(new java.awt.Color(255, 255, 255));
+        PunchIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PunchInActionPerformed(evt);
+            }
+        });
+
+        PunchOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/clock (4).png"))); // NOI18N
+        PunchOut.setBackground(new java.awt.Color(0, 0, 0,0));
+        PunchOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PunchOutActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setText("Time out");
+        jLabel13.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+
+        TimeInLabel.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        TimeInLabel.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel56.setText("Time Out : ");
+        jLabel56.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(255, 255, 255));
+
+        TimeOutLabel.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        TimeOutLabel.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout TimeKeeping_MainDashboardLayout = new javax.swing.GroupLayout(TimeKeeping_MainDashboard);
+        TimeKeeping_MainDashboard.setLayout(TimeKeeping_MainDashboardLayout);
+        TimeKeeping_MainDashboardLayout.setHorizontalGroup(
+            TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Shift))
+                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Department)
+                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(PunchIn)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PunchOut)
+                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel13)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel56)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(timeprogressbar, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        TimeKeeping_MainDashboardLayout.setVerticalGroup(
+            TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel11))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel12)
+                                    .addComponent(Shift)))
+                            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(Department)
+                                .addGap(18, 18, 18)
+                                .addComponent(PunchIn))
+                            .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE))))
+                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(PunchOut)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel13)
+                        .addGap(1, 1, 1)))
+                .addComponent(timeprogressbar, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel56)
+                    .addComponent(jLabel10)
+                    .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jSeparator2.getAccessibleContext().setAccessibleName("");
+
+        jPanel1.add(TimeKeeping_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 660, 150));
+
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/newBackground.jpg"))); // NOI18N
         Background.setText("jLabel1");
         Background.setPreferredSize(new java.awt.Dimension(1366, 768));
@@ -2369,9 +2360,17 @@ public javax.swing.JPanel getProfilePanel() {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnHRSemployeeDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHRSemployeeDatabaseActionPerformed
+     EmployeeHSRDataBase employeeDataBase = new EmployeeHSRDataBase();
+      this.setVisible(true);
+     employeeDataBase.setVisible(true);
+    
+
+
+
+
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnHRSemployeeDatabaseActionPerformed
 
     
     private void ProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfileButtonActionPerformed
@@ -2404,6 +2403,7 @@ public javax.swing.JPanel getProfilePanel() {
                 ProfileAddress.setText(employee.getAddress());
                 ProfileAddress.setEditable(false);
              AttendancePanel.setVisible(false);
+            
                 break;
             }
         }
@@ -2419,6 +2419,7 @@ public javax.swing.JPanel getProfilePanel() {
             PayPeriodPanel.setVisible(false);
             OvertimePanel.setVisible(false);
             LeaveListPanel.setVisible(false);
+            
         } else {
             // Access denied, display an error message
             JOptionPane.showMessageDialog(this, "Invalid UserID! Access Denied.", "Login Error", JOptionPane.ERROR_MESSAGE);
@@ -2557,6 +2558,7 @@ if (accessGranted) {
     PayPeriodPanel.setVisible(false);
     OvertimePanel.setVisible(false);
     LeaveListPanel.setVisible(false);
+    
 } else {
     // Access denied, display an error message
     JOptionPane.showMessageDialog(this, "Access Denied. Employee ID not found.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -2579,6 +2581,7 @@ if (accessGranted) {
             PayPeriodPanel.setVisible(false);
             OvertimePanel.setVisible(false);
             LeaveListPanel.setVisible(false);
+            
 
         // TODO add your handling code here:
     }//GEN-LAST:event_HomeActionPerformed
@@ -2597,6 +2600,7 @@ if (accessGranted) {
                 LeavePanel.setVisible(false);
                 OvertimePanel.setVisible(false);
                 LeaveListPanel.setVisible(false);
+                
          
     }//GEN-LAST:event_PayslipMaindashboardActionPerformed
 
@@ -2618,6 +2622,7 @@ login.setVisible(true);// TODO add your handling code here:
             PayPeriodPanel.setVisible(false);
             OvertimePanel.setVisible(false);
             LeaveListPanel.setVisible(false);
+            
         
     }//GEN-LAST:event_LeaveMainDashboardActionPerformed
 
@@ -2699,7 +2704,11 @@ try {
                 LeavePanel.setVisible(false);
                 PayPeriodPanel.setVisible(false);
                 OvertimePanel.setVisible(false);
-        }       LeaveListPanel.setVisible(false);  
+        
+           
+                
+                
+        }
        
     } catch (ParseException e) {
         e.printStackTrace();
@@ -2787,7 +2796,10 @@ try {
                 LeavePanel.setVisible(false);
                 PayPeriodPanel.setVisible(false);
                 OvertimePanel.setVisible(false);
-        }       LeaveListPanel.setVisible(false);  
+               LeaveListPanel.setVisible(false);  
+                
+                
+        }
        
     } catch (ParseException e) {
         e.printStackTrace();
@@ -2994,6 +3006,7 @@ if (accessGranted) {
     OvertimePanel.setVisible(false);
     LeaveListPanel.setVisible(true);
     
+    
 } else {
     // Access denied, display an error message
     JOptionPane.showMessageDialog(this, "Access Denied. Employee ID not found.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -3059,10 +3072,10 @@ if (accessGranted) {
     private javax.swing.JPanel TimeKeeping_MainDashboard;
     private javax.swing.JLabel TimeOutLabel;
     private javax.swing.JTable attendanceTable;
+    private javax.swing.JButton btnHRSemployeeDatabase;
     private javax.swing.JButton btnLeaveList;
     private javax.swing.JButton btnovertimerequest;
     private com.github.lgooddatepicker.components.DatePicker datePicker1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -3182,7 +3195,6 @@ if (accessGranted) {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -3201,7 +3213,6 @@ if (accessGranted) {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable overtimeListTable;
     private javax.swing.JLabel payslipBenefitTotal;
     private javax.swing.JLabel payslipClothingAllowance;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package System.Employee.HumanResourceSystem;
+package Forms;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -20,33 +20,49 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import javax.swing.table.JTableHeader;
 
 
 public class EmployeeHSRDataBase extends javax.swing.JFrame {
-    private JTable table;
+     private JTable table;
     private DefaultTableModel model;
     private JTextField searchField;
 
     public EmployeeHSRDataBase() {
         super("EmployeeHSRDataBase");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1000, 600);
+        setSize(1050, 580);
 
-        JPanel mainPanel = new JPanel(new BorderLayout());
+        JPanel mainPanel = new JPanel(null);
         mainPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+        mainPanel.setBackground(new Color(200, 230, 255));
         setContentPane(mainPanel);
 
         model = new DefaultTableModel();
         table = new JTable(model);
-        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         table.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 14));
         table.setFont(new Font("SansSerif", Font.PLAIN, 12));
         table.setRowHeight(25);
 
         JScrollPane scrollPane = new JScrollPane(table);
-        mainPanel.add(scrollPane, BorderLayout.CENTER);
+        scrollPane.setBounds(200, 50, 800, 450);
+        mainPanel.add(scrollPane);
 
-        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JPanel topPanel = new JPanel();
+        topPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        searchField = new JTextField(50);
+        JButton searchButton = new JButton("Search");
+        topPanel.add(new JLabel("Search:"));
+        topPanel.add(searchField);
+        topPanel.add(searchButton);
+        topPanel.setBounds(200,10, 800, 50);
+        mainPanel.add(topPanel);
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(0, 1, 5, 5));
+        buttonPanel.setBounds(30, 50, 150, 200);
+        
         JButton addEmployeeButton = new JButton("Add Employee");
         addEmployeeButton.addActionListener(new ActionListener() {
             @Override
@@ -92,64 +108,66 @@ public class EmployeeHSRDataBase extends javax.swing.JFrame {
         });
         buttonPanel.add(importCSVButton);
 
-
-
-        // Add search field and button
-        searchField = new JTextField(20);
-        JButton searchButton = new JButton("Search");
-        searchButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                searchEmployee();
-            }
-        });
-        buttonPanel.add(new JLabel("Search:"));
-        buttonPanel.add(searchField);
-        buttonPanel.add(searchButton);
-
-        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+        mainPanel.add(buttonPanel);
 
         displayCSVData("src/Files/EmployeeData.csv"); // Replace with your CSV file path
 
         setVisible(true);
     }
+private void displayCSVData(String csvFile) {
+    model.setColumnIdentifiers(new String[]{"Employee #", "Last Name", "First Name", "Birthday",  "Status", "Position"});
 
-    private void displayCSVData(String csvFile) {
-        model.setColumnIdentifiers(new String[]{"Employee #", "Last Name", "First Name", "Birthday", "Address",
-                "Phone Number", "SSS #", "Philhealth #", "TIN #", "Pag-ibig #", "Status", "Position",
-                "Immediate Supervisor", "Basic Salary", "Rice Subsidy", "Phone Allowance", "Clothing Allowance",
-                "Gross Semi-monthly Rate", "Hourly Rate"});
-
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                model.addRow(line.split(";"));
+    try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+        String line;
+        boolean firstLine = true; // Flag to skip the first line
+        while ((line = br.readLine()) != null) {
+            if (firstLine) {
+                firstLine = false;
+                continue; // Skip the first line
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+            String[] rowData = line.split(";");
+            String[] employeeData = new String[6]; // Adjusted the size to match the number of columns
+            employeeData[0] = rowData[0]; // Employee #
+            employeeData[1] = rowData[1]; // Last Name
+            employeeData[2] = rowData[2]; // First Name
+            employeeData[3] = rowData[3]; // Birthday
+            employeeData[4] = rowData[10]; // Status
+            employeeData[5] = rowData[11]; // Position
+            model.addRow(employeeData);
         }
-
-        // Center align cells
-        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
-        for (int i = 0; i < table.getColumnCount(); i++) {
-            table.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
-        }
-
-        // Enable row selection
-        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-
-        // Add mouse listener to handle row selection for deletion and updating
-        table.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                int selectedRow = table.getSelectedRow();
-                if (selectedRow != -1 && e.getClickCount() == 2) {
-                    updateSelectedEmployee();
-                }
-            }
-        });
+    } catch (IOException e) {
+        e.printStackTrace();
     }
+
+    // Center align cells
+    DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+    centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+    for (int i = 0; i < table.getColumnCount(); i++) {
+        table.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+    }
+
+    // Center align column headers and make them bold
+    JTableHeader header = table.getTableHeader();
+    header.setFont(header.getFont().deriveFont(Font.BOLD)); // Set the font to bold
+    ((DefaultTableCellRenderer)header.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER); // Center align the header text
+
+    // Enable row selection
+    table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+    // Add mouse listener to handle row selection for deletion and updating
+    table.addMouseListener(new MouseAdapter() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            int selectedRow = table.getSelectedRow();
+            if (selectedRow != -1 && e.getClickCount() == 2) {
+                updateSelectedEmployee();
+            }
+        }
+    });
+}
+
+
+
 
     private void addEmployee() {
         JTextField[] fields = new JTextField[19];

@@ -1,3 +1,5 @@
 EmployeeID, Date, StartTime, EndTime, Reason
 1,2024-03-05,01:30,02:30,MAMA mo blue
 3,2024-03-05,01:30,03:00,mama mo green
+2,2024-03-05,01:30,02:30,MAMA mo green
+3,2024-03-14,01:00,03:00,MAMA mo biolet
