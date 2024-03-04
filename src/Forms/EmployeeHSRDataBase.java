@@ -21,6 +21,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.table.JTableHeader;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 
 
 public class EmployeeHSRDataBase extends javax.swing.JFrame {
@@ -40,10 +42,28 @@ public class EmployeeHSRDataBase extends javax.swing.JFrame {
 
         model = new DefaultTableModel();
         table = new JTable(model);
-        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        
+        // Iterate over each column
+   for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
+    TableColumn column = table.getColumnModel().getColumn(columnIndex);
+    int preferredWidth = 0;
+    
+    // Iterate over each row in the column to find the maximum preferred width
+    for (int rowIndex = 0; rowIndex < table.getRowCount(); rowIndex++) {
+        TableCellRenderer cellRenderer = table.getCellRenderer(rowIndex, columnIndex);
+        Component cellComponent = table.prepareRenderer(cellRenderer, rowIndex, columnIndex);
+        preferredWidth = Math.max(preferredWidth, cellComponent.getPreferredSize().width);
+    }
+    
+    // Set the preferred width for the column
+    column.setPreferredWidth(preferredWidth + table.getIntercellSpacing().width);
+}
+        
         table.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 14));
         table.setFont(new Font("SansSerif", Font.PLAIN, 12));
         table.setRowHeight(25);
+       
 
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setBounds(200, 50, 800, 450);
@@ -51,17 +71,19 @@ public class EmployeeHSRDataBase extends javax.swing.JFrame {
 
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        searchField = new JTextField(50);
+        searchField = new JTextField(60);
         JButton searchButton = new JButton("Search");
         topPanel.add(new JLabel("Search:"));
         topPanel.add(searchField);
         topPanel.add(searchButton);
         topPanel.setBounds(200,10, 800, 50);
+        topPanel.setBackground(new Color(200, 230, 255));
         mainPanel.add(topPanel);
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(0, 1, 5, 5));
         buttonPanel.setBounds(30, 50, 150, 200);
+        buttonPanel.setBackground(new Color(200, 230, 255));
         
         JButton addEmployeeButton = new JButton("Add Employee");
         addEmployeeButton.addActionListener(new ActionListener() {
@@ -115,55 +137,40 @@ public class EmployeeHSRDataBase extends javax.swing.JFrame {
         setVisible(true);
     }
 private void displayCSVData(String csvFile) {
-    model.setColumnIdentifiers(new String[]{"Employee #", "Last Name", "First Name", "Birthday",  "Status", "Position"});
+   model.setColumnIdentifiers(new String[]{"Employee #", "Last Name", "First Name", "Birthday", "Address",
+                "Phone Number", "SSS #", "Philhealth #", "TIN #", "Pag-ibig #", "Status", "Position",
+                "Immediate Supervisor", "Basic Salary", "Rice Subsidy", "Phone Allowance", "Clothing Allowance",
+                "Gross Semi-monthly Rate", "Hourly Rate"});
 
-    try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-        String line;
-        boolean firstLine = true; // Flag to skip the first line
-        while ((line = br.readLine()) != null) {
-            if (firstLine) {
-                firstLine = false;
-                continue; // Skip the first line
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                model.addRow(line.split(";"));
             }
-            String[] rowData = line.split(";");
-            String[] employeeData = new String[6]; // Adjusted the size to match the number of columns
-            employeeData[0] = rowData[0]; // Employee #
-            employeeData[1] = rowData[1]; // Last Name
-            employeeData[2] = rowData[2]; // First Name
-            employeeData[3] = rowData[3]; // Birthday
-            employeeData[4] = rowData[10]; // Status
-            employeeData[5] = rowData[11]; // Position
-            model.addRow(employeeData);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
 
-    // Center align cells
-    DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-    centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
-    for (int i = 0; i < table.getColumnCount(); i++) {
-        table.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
-    }
+        // Center align cells
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+        for (int i = 0; i < table.getColumnCount(); i++) {
+            table.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
 
-    // Center align column headers and make them bold
-    JTableHeader header = table.getTableHeader();
-    header.setFont(header.getFont().deriveFont(Font.BOLD)); // Set the font to bold
-    ((DefaultTableCellRenderer)header.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER); // Center align the header text
+        // Enable row selection
+        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
-    // Enable row selection
-    table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-
-    // Add mouse listener to handle row selection for deletion and updating
-    table.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            int selectedRow = table.getSelectedRow();
-            if (selectedRow != -1 && e.getClickCount() == 2) {
-                updateSelectedEmployee();
+        // Add mouse listener to handle row selection for deletion and updating
+        table.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int selectedRow = table.getSelectedRow();
+                if (selectedRow != -1 && e.getClickCount() == 2) {
+                    updateSelectedEmployee();
+                }
             }
-        }
-    });
+        });
 }
 
 
@@ -172,7 +179,7 @@ private void displayCSVData(String csvFile) {
     private void addEmployee() {
         JTextField[] fields = new JTextField[19];
         JPanel panel = new JPanel(new GridLayout(19, 2, 5, 5));
-        panel.setPreferredSize(new Dimension(400, 400));
+        panel.setPreferredSize(new Dimension(400, 600));
         String[] labels = {"Employee #", "Last Name", "First Name", "Birthday", "Address",
                 "Phone Number", "SSS #", "Philhealth #", "TIN #", "Pag-ibig #", "Status", "Position",
                 "Immediate Supervisor", "Basic Salary", "Rice Subsidy", "Phone Allowance", "Clothing Allowance",
@@ -214,7 +221,7 @@ private void displayCSVData(String csvFile) {
         if (selectedRow != -1) {
             JTextField[] fields = new JTextField[19];
             JPanel panel = new JPanel(new GridLayout(19, 2, 5, 5));
-            panel.setPreferredSize(new Dimension(400, 400));
+            panel.setPreferredSize(new Dimension(400, 600));
             String[] labels = {"Employee #", "Last Name", "First Name", "Birthday", "Address",
                     "Phone Number", "SSS #", "Philhealth #", "TIN #", "Pag-ibig #", "Status", "Position",
                     "Immediate Supervisor", "Basic Salary", "Rice Subsidy", "Phone Allowance", "Clothing Allowance",
@@ -299,7 +306,7 @@ private void displayCSVData(String csvFile) {
             for (int i = 0; i < model.getColumnCount(); i++) {
                 details.append(model.getColumnName(i)).append(": ").append(model.getValueAt(selectedRow, i)).append("\n");
             }
-            JOptionPane.showMessageDialog(this, details.toString(), "Employee Details", JOptionPane.INFORMATION_MESSAGE);
+           showCustomMessage(details.toString(), "Employee Details");
         }
     }
     private void resetTable() {
@@ -322,5 +329,16 @@ private void displayCSVData(String csvFile) {
             displayCSVData(filePath);
         }
     }
+    
+    private void showCustomMessage(String message, String title) {
+    JDialog dialog = new JDialog(this, title, true);
+    JTextArea textArea = new JTextArea(message);
+    textArea.setEditable(false);
+    JScrollPane scrollPane = new JScrollPane(textArea);
+    dialog.add(scrollPane);
+    dialog.setSize(600, 400); // Set the size as per your requirement
+    dialog.setLocationRelativeTo(this);
+    dialog.setVisible(true);
+}
 
 }
