@@ -28,14 +28,14 @@ public class Request {
 
     
    
-    public void LeaveRequestwriteToCSV(String employeeID, String startDate, String endDate, String reason) {
+    public void LeaveRequestwriteToCSV(String employeeID,String leaveType, String startDate, String endDate, String reason) {
     try {
         File file = new File("src/Files/LeaveRequests.csv");
         boolean isNewFile = !file.exists();
         FileWriter writer = new FileWriter(file, true); // Append to existing file
         
         if (isNewFile) {
-            writer.append("empID,LeaveTpe,Date Filed,StartDate,EndDate,Status\n");
+            writer.append("EmployeeID, LeaveTpe, Date Filed, StartDate, EndDate, Reason\n");
         }
         
             SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
@@ -44,7 +44,7 @@ public class Request {
         
             Date currentDate = new Date(); // Get current date
             String dateFiled = dateFormat.format(currentDate);
-          writer.append(employeeID  + "," + dateFiled + "," + startDate + "," + endDate + "," + reason + "\n");
+          writer.append(employeeID  + "," + leaveType + "," + dateFiled + "," + startDate + "," + endDate + "," + reason + "\n");
         
 
         writer.close();
@@ -54,16 +54,53 @@ public class Request {
     }
     
     
+    }
     
-    
-    
-    
+    public void OvertimeRequestwriteToCSV(String employeeID, String Date, String startTime, String endTime, String reason){
+        
+        try {
+            File file = new File("src/Files/OvertimeRequest.csv");
+            boolean isNewFile = !file.exists();
+            FileWriter  writer = new FileWriter(file, true);// Append if there is an existing file 
+            
+            
+            if (isNewFile) {
+            writer.append("EmployeeID, Date, StartTime, EndTime, Reason\n");
+            }
+            
+            
+            writer.append(employeeID  + "," + Date + "," + startTime + "," + endTime + "," + reason +"\n");
+             
+            writer.close();
+            System.out.println("Data written to CSV successfully.");
+            
+        }catch (IOException e) {
+        e.printStackTrace();
+              
+    }
+        
 }
     
     
-    
-    
-    
-    
-    
+    public String formatTime(String time) {
+        SimpleDateFormat inputFormat = new SimpleDateFormat("MM/dd/yyyy, hh:mm a");
+        SimpleDateFormat outputFormat = new SimpleDateFormat("hh:mm a");
+        try {
+            Date date = inputFormat.parse(time);
+            return outputFormat.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return time;
+    }
 }
+    
+
+    
+    
+    
+    
+    
+    
+    
+

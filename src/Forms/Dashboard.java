@@ -42,6 +42,12 @@ public class Dashboard extends javax.swing.JFrame {
         attendance = AttendanceRecord.readAttendanceFromCSV("src/Files/Attendance.csv");
     }
 
+    public JPanel getOvertimePanel() {
+        return OvertimePanel;
+    }
+    
+    
+
     public JPanel getAttendancePanel() {
         return AttendancePanel;
     }
@@ -93,16 +99,23 @@ public javax.swing.JPanel getProfilePanel() {
         return OTRequestDialog;
     }
 
+    public JPanel getLeaveListPanel() {
+        return LeaveListPanel;
+    }
+
+    
+    
    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         OTRequestDialog = new javax.swing.JDialog();
         jLabel72 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
+        jButton5 = new javax.swing.JButton();
+        OvertTimeSubmitButton = new javax.swing.JButton();
         jLabel77 = new javax.swing.JLabel();
         datePicker1 = new com.github.lgooddatepicker.components.DatePicker();
         jLabel70 = new javax.swing.JLabel();
@@ -111,13 +124,44 @@ public javax.swing.JPanel getProfilePanel() {
         timePicker2 = new com.github.lgooddatepicker.components.TimePicker();
         jLabel78 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        OvertimeReason = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        LeavePanel = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel112 = new javax.swing.JLabel();
+        LeavePanelLeaveSelector = new javax.swing.JComboBox<>();
+        jLabel113 = new javax.swing.JLabel();
+        LeavePanelStartDate = new com.toedter.calendar.JDateChooser();
+        LeavePanelReason = new javax.swing.JTextArea();
+        jLabel114 = new javax.swing.JLabel();
+        LeavePanelSubmitButton = new javax.swing.JButton();
+        LeavePanelEndDate = new com.toedter.calendar.JDateChooser();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel111 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel115 = new javax.swing.JLabel();
+        jLabel122 = new javax.swing.JLabel();
+        jLabel116 = new javax.swing.JLabel();
+        jLabel120 = new javax.swing.JLabel();
+        jLabel117 = new javax.swing.JLabel();
+        jLabel118 = new javax.swing.JLabel();
+        jLabel119 = new javax.swing.JLabel();
+        btnLeaveList = new javax.swing.JButton();
+        LeaveListPanel = new javax.swing.JPanel();
+        jLabel125 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        LeaveListTable1 = new javax.swing.JTable();
+        AttendancePanel = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        attendanceTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        btnovertimerequest = new javax.swing.JButton();
+        OvertimeRequest = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         PayPeriodPanel = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel68 = new javax.swing.JLabel();
@@ -125,6 +169,12 @@ public javax.swing.JPanel getProfilePanel() {
         PayPeriodPanelButtonSept1to15 = new javax.swing.JButton();
         PayPeriodbtnSept16to30 = new javax.swing.JButton();
         jLabel64 = new javax.swing.JLabel();
+        OvertimePanel = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        overtimeListTable = new javax.swing.JTable();
+        jLabel80 = new javax.swing.JLabel();
+        OvertimeRequest1 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         PayslipPanel = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
@@ -203,12 +253,6 @@ public javax.swing.JPanel getProfilePanel() {
         TimeInLabel = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         TimeOutLabel = new javax.swing.JLabel();
-        AttendancePanel = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        attendanceTable = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        OvertimeRequest = new javax.swing.JButton();
         EmployeeDashboard_MainDashboard = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -291,27 +335,6 @@ public javax.swing.JPanel getProfilePanel() {
         jScrollPane2 = new javax.swing.JScrollPane();
         ProfileAddress = new javax.swing.JTextArea();
         jLabel32 = new javax.swing.JLabel();
-        LeavePanel = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel112 = new javax.swing.JLabel();
-        LeavePanelLeaveSelector = new javax.swing.JComboBox<>();
-        jLabel113 = new javax.swing.JLabel();
-        LeavePanelStartDate = new com.toedter.calendar.JDateChooser();
-        LeavePanelReason = new javax.swing.JTextArea();
-        jLabel114 = new javax.swing.JLabel();
-        LeavePanelSubmitButton = new javax.swing.JButton();
-        LeavePanelEndDate = new com.toedter.calendar.JDateChooser();
-        jLabel62 = new javax.swing.JLabel();
-        jLabel63 = new javax.swing.JLabel();
-        jLabel111 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel115 = new javax.swing.JLabel();
-        jLabel122 = new javax.swing.JLabel();
-        jLabel116 = new javax.swing.JLabel();
-        jLabel120 = new javax.swing.JLabel();
-        jLabel117 = new javax.swing.JLabel();
-        jLabel118 = new javax.swing.JLabel();
-        jLabel119 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -330,71 +353,85 @@ public javax.swing.JPanel getProfilePanel() {
         OTRequestDialog.setMinimumSize(new java.awt.Dimension(500, 400));
         OTRequestDialog.setPreferredSize(new java.awt.Dimension(500, 400));
 
-        jLabel72.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel72.setText("Request Overtime Work");
-
-        jPanel5.setLayout(new java.awt.GridBagLayout());
-
-        jLabel77.setText("Date");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        jPanel5.add(jLabel77, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
-        gridBagConstraints.insets = new java.awt.Insets(4, 12, 4, 4);
-        jPanel5.add(datePicker1, gridBagConstraints);
-
-        jLabel70.setText("Start Time");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        jPanel5.add(jLabel70, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
-        gridBagConstraints.insets = new java.awt.Insets(4, 12, 4, 4);
-        jPanel5.add(timePicker1, gridBagConstraints);
-
-        jLabel75.setText("End Time");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        jPanel5.add(jLabel75, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
-        gridBagConstraints.insets = new java.awt.Insets(4, 12, 4, 4);
-        jPanel5.add(timePicker2, gridBagConstraints);
-
-        jLabel78.setText("Reason");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        jPanel5.add(jLabel78, gridBagConstraints);
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane4.setViewportView(jTextArea1);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
-        gridBagConstraints.insets = new java.awt.Insets(4, 12, 4, 4);
-        jPanel5.add(jScrollPane4, gridBagConstraints);
-
-        jButton1.setText("Submit");
+        jLabel72.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jButton5.setText("Cancel");
+
+        OvertTimeSubmitButton.setText("Submit");
+        OvertTimeSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OvertTimeSubmitButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel77.setText("Date");
+
+        jLabel70.setText("Start Time");
+
+        jLabel75.setText("End Time");
+
+        jLabel78.setText("Reason");
+
+        OvertimeReason.setColumns(20);
+        OvertimeReason.setRows(5);
+        jScrollPane4.setViewportView(OvertimeReason);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(OvertTimeSubmitButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton5)
+                        .addGap(32, 32, 32))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel77)
+                            .addComponent(jLabel70)
+                            .addComponent(jLabel75))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(datePicker1, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                            .addComponent(timePicker1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(timePicker2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel78)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(datePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel77))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel70)
+                    .addComponent(timePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel75)
+                    .addComponent(timePicker2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel78)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(OvertTimeSubmitButton)
+                    .addComponent(jButton5))
+                .addGap(54, 54, 54))
+        );
 
         javax.swing.GroupLayout OTRequestDialogLayout = new javax.swing.GroupLayout(OTRequestDialog.getContentPane());
         OTRequestDialog.getContentPane().setLayout(OTRequestDialogLayout);
@@ -404,11 +441,7 @@ public javax.swing.JPanel getProfilePanel() {
                 .addGap(23, 23, 23)
                 .addGroup(OTRequestDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel72)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OTRequestDialogLayout.createSequentialGroup()
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1)))
+                    .addComponent(jLabel72))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         OTRequestDialogLayout.setVerticalGroup(
@@ -418,11 +451,7 @@ public javax.swing.JPanel getProfilePanel() {
                 .addComponent(jLabel72)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(OTRequestDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton5))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -449,6 +478,345 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel4.setText("People Portal");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
 
+        LeavePanel.setBackground(new java.awt.Color(0, 0, 0,100));
+        LeavePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        LeavePanel.setPreferredSize(new java.awt.Dimension(1114, 520));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+
+        jLabel112.setText("Leave Type");
+        jLabel112.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        LeavePanelLeaveSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Leave Type", "Vacation Leave", "Sick Leave", "Emergency Leave" }));
+        LeavePanelLeaveSelector.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        LeavePanelLeaveSelector.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        LeavePanelLeaveSelector.setName("Choose the Type of Leave"); // NOI18N
+
+        jLabel113.setText("Reason");
+        jLabel113.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        LeavePanelReason.setColumns(20);
+        LeavePanelReason.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        LeavePanelReason.setRows(5);
+        LeavePanelReason.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel114.setText("Date");
+        jLabel114.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        LeavePanelSubmitButton.setText("Submit");
+        LeavePanelSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LeavePanelSubmitButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel62.setText("Start Date");
+
+        jLabel63.setText("End Date");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel112)
+                        .addComponent(jLabel114)
+                        .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(LeavePanelStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel113))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LeavePanelEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(157, 157, 157)
+                .addComponent(LeavePanelSubmitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                .addGap(152, 152, 152))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel112)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel114)
+                .addGap(10, 10, 10)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LeavePanelStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LeavePanelEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel62)
+                    .addComponent(jLabel63))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel113)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(LeavePanelSubmitButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel111.setText("Leave Application");
+        jLabel111.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
+        jLabel111.setForeground(new java.awt.Color(255, 255, 255));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 1, true));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel115.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        jLabel115.setText("Leave Balance");
+        jPanel3.add(jLabel115, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+
+        jLabel122.setFont(new java.awt.Font("Lucida Bright", 1, 50)); // NOI18N
+        jLabel122.setText("14");
+        jPanel3.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
+
+        jLabel116.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        jLabel116.setText("Vacation Leave");
+        jPanel3.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, -1));
+
+        jLabel120.setFont(new java.awt.Font("Lucida Bright", 1, 50)); // NOI18N
+        jLabel120.setText("15");
+        jPanel3.add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, -1));
+
+        jLabel117.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        jLabel117.setText("Sick Leave");
+        jPanel3.add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
+
+        jLabel118.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new-moon (1).png"))); // NOI18N
+        jPanel3.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 76, -1, -1));
+
+        jLabel119.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new-moon (1).png"))); // NOI18N
+        jPanel3.add(jLabel119, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 76, -1, -1));
+
+        btnLeaveList.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
+        btnLeaveList.setText("Leave List");
+        btnLeaveList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLeaveListActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout LeavePanelLayout = new javax.swing.GroupLayout(LeavePanel);
+        LeavePanel.setLayout(LeavePanelLayout);
+        LeavePanelLayout.setHorizontalGroup(
+            LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LeavePanelLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LeavePanelLayout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61))
+                    .addGroup(LeavePanelLayout.createSequentialGroup()
+                        .addComponent(jLabel111)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(LeavePanelLayout.createSequentialGroup()
+                .addGap(439, 439, 439)
+                .addComponent(btnLeaveList)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        LeavePanelLayout.setVerticalGroup(
+            LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LeavePanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel111)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(btnLeaveList)
+                .addGap(27, 27, 27))
+        );
+
+        jPanel1.add(LeavePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
+
+        LeaveListPanel.setBackground(new java.awt.Color(0, 0, 0,100));
+        LeaveListPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        LeaveListPanel.setPreferredSize(new java.awt.Dimension(1114, 520));
+
+        jLabel125.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
+        jLabel125.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel125.setText("Leave Application");
+
+        LeaveListTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        LeaveListTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Leave Type", "Date  Filed", "Start Date", "End Date", "Reason", "Status"
+            }
+        ));
+        LeaveListTable1.setGridColor(new java.awt.Color(153, 153, 153));
+        LeaveListTable1.setName(""); // NOI18N
+        LeaveListTable1.setOpaque(false);
+        LeaveListTable1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane6.setViewportView(LeaveListTable1);
+
+        javax.swing.GroupLayout LeaveListPanelLayout = new javax.swing.GroupLayout(LeaveListPanel);
+        LeaveListPanel.setLayout(LeaveListPanelLayout);
+        LeaveListPanelLayout.setHorizontalGroup(
+            LeaveListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LeaveListPanelLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(LeaveListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel125)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 905, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+        LeaveListPanelLayout.setVerticalGroup(
+            LeaveListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LeaveListPanelLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel125)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(LeaveListPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
+
+        AttendancePanel.setBackground(new java.awt.Color(0, 0, 0,100));
+        AttendancePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        AttendancePanel.setPreferredSize(new java.awt.Dimension(980, 520));
+
+        attendanceTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        attendanceTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Date", "Time In", "Time Out", "Overtime", "Status"
+            }
+        ));
+        attendanceTable.setGridColor(new java.awt.Color(153, 153, 153));
+        attendanceTable.setName(""); // NOI18N
+        attendanceTable.setOpaque(false);
+        attendanceTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(attendanceTable);
+
+        jLabel1.setText("Attendance Record");
+        jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+
+        btnovertimerequest.setText("Overtime Request List");
+        btnovertimerequest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnovertimerequestActionPerformed(evt);
+            }
+        });
+
+        OvertimeRequest.setText("Request Overtime");
+        OvertimeRequest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OvertimeRequestActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Apply Dispute");
+
+        javax.swing.GroupLayout AttendancePanelLayout = new javax.swing.GroupLayout(AttendancePanel);
+        AttendancePanel.setLayout(AttendancePanelLayout);
+        AttendancePanelLayout.setHorizontalGroup(
+            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AttendancePanelLayout.createSequentialGroup()
+                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AttendancePanelLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AttendancePanelLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnovertimerequest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(OvertimeRequest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(28, 28, 28)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 773, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        AttendancePanelLayout.setVerticalGroup(
+            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AttendancePanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(AttendancePanelLayout.createSequentialGroup()
+                        .addComponent(OvertimeRequest)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnovertimerequest)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton6)))
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 540));
+
         PayPeriodPanel.setBackground(new java.awt.Color(0, 0, 0));
         PayPeriodPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
         PayPeriodPanel.setPreferredSize(new java.awt.Dimension(1114, 520));
@@ -456,13 +824,13 @@ public javax.swing.JPanel getProfilePanel() {
         jPanel4.setBackground(new java.awt.Color(0, 0, 0,100));
         jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 2, true));
 
+        jLabel68.setText("September 01, 2023 to September 15, 20223");
         jLabel68.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel68.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel68.setText("September 01, 2023 to September 15, 20223");
 
+        jLabel69.setText("September 16, 2023 to September 30, 2023");
         jLabel69.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel69.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel69.setText("September 16, 2023 to September 30, 2023");
 
         PayPeriodPanelButtonSept1to15.setText("View Payslip");
         PayPeriodPanelButtonSept1to15.addActionListener(new java.awt.event.ActionListener() {
@@ -507,9 +875,9 @@ public javax.swing.JPanel getProfilePanel() {
                 .addContainerGap(204, Short.MAX_VALUE))
         );
 
+        jLabel64.setText("Pay Period");
         jLabel64.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
         jLabel64.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel64.setText("Pay Period");
 
         javax.swing.GroupLayout PayPeriodPanelLayout = new javax.swing.GroupLayout(PayPeriodPanel);
         PayPeriodPanel.setLayout(PayPeriodPanelLayout);
@@ -536,35 +904,124 @@ public javax.swing.JPanel getProfilePanel() {
 
         jPanel1.add(PayPeriodPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
 
+        OvertimePanel.setBackground(new java.awt.Color(0, 0, 0,100));
+        OvertimePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        OvertimePanel.setPreferredSize(new java.awt.Dimension(980, 520));
+
+        overtimeListTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        overtimeListTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Date", "Start Time", "End Time", "Reason", "Status"
+            }
+        ));
+        overtimeListTable.setGridColor(new java.awt.Color(153, 153, 153));
+        overtimeListTable.setName(""); // NOI18N
+        overtimeListTable.setOpaque(false);
+        overtimeListTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane5.setViewportView(overtimeListTable);
+
+        jLabel80.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        jLabel80.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel80.setText("Overtime Request List");
+
+        OvertimeRequest1.setText("Request Overtime");
+        OvertimeRequest1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OvertimeRequest1ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText("Apply Dispute");
+
+        javax.swing.GroupLayout OvertimePanelLayout = new javax.swing.GroupLayout(OvertimePanel);
+        OvertimePanel.setLayout(OvertimePanelLayout);
+        OvertimePanelLayout.setHorizontalGroup(
+            OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(OvertimePanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(OvertimePanelLayout.createSequentialGroup()
+                        .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(OvertimeRequest1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 773, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+        OvertimePanelLayout.setVerticalGroup(
+            OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OvertimePanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel80)
+                .addGap(18, 18, 18)
+                .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(OvertimePanelLayout.createSequentialGroup()
+                        .addComponent(OvertimeRequest1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton8)))
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(OvertimePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 540));
+
         PayslipPanel.setBackground(new java.awt.Color(255, 255, 255));
         PayslipPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
         PayslipPanel.setPreferredSize(new java.awt.Dimension(1114, 520));
 
-        jLabel33.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
         jLabel33.setText("MotorPH");
+        jLabel33.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
 
         jSeparator12.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
-        jLabel34.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
         jLabel34.setText(" 7 Jupiter Avenue cor. F. Sandoval Jr., Bagong Nayon, Quezon City");
+        jLabel34.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
 
-        jLabel35.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
         jLabel35.setText("Phone: (028) 911-5071 / (028) 911-5072 / (028) 911-5073 ");
+        jLabel35.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
 
-        jLabel57.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
         jLabel57.setText(" Email: corporate@motorph.com\t\t\t");
+        jLabel57.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
 
-        jLabel58.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
         jLabel58.setText("EMPLOYEE PAYSLIP");
+        jLabel58.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
 
-        jLabel59.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel59.setText("PAYSLIP NO");
+        jLabel59.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel60.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel60.setText("EMPLOYEE ID");
+        jLabel60.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel61.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel61.setText("EMPLOYEE NAME");
+        jLabel61.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
         payslipEmployeeName.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
@@ -572,14 +1029,14 @@ public javax.swing.JPanel getProfilePanel() {
 
         payslipNumber.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel65.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel65.setText("END DATE");
+        jLabel65.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel66.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel66.setText("POSITION");
+        jLabel66.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel67.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel67.setText("START DATE");
+        jLabel67.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
         payslipStartDate.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
@@ -589,121 +1046,121 @@ public javax.swing.JPanel getProfilePanel() {
 
         jSeparator13.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
-        jLabel71.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel71.setText("SSS");
+        jLabel71.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
         payslipSSS.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel73.setBackground(new java.awt.Color(0, 102, 153));
-        jLabel73.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
         jLabel73.setText("                                                         EARNINGS");
+        jLabel73.setBackground(new java.awt.Color(0, 102, 153));
         jLabel73.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
+        jLabel73.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
 
-        jLabel74.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel74.setText("Monthly Rate");
+        jLabel74.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
         payslipMonthlyRate.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel76.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel76.setText("Daily Rate");
+        jLabel76.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
         payslipDailyRate.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
         payslipDaysWorked.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel79.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel79.setText("Days Worked");
+        jLabel79.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
         payslipOvertime.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel81.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel81.setText("Overtime");
+        jLabel81.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel82.setBackground(new java.awt.Color(0, 0, 102));
-        jLabel82.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
         jLabel82.setText("                                                     DEDUCTIONS");
+        jLabel82.setBackground(new java.awt.Color(0, 0, 102));
         jLabel82.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
+        jLabel82.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
 
-        jLabel83.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel83.setText("Rice Subsidy");
+        jLabel83.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
         payslipRiceAllowance.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel85.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel85.setText("Phone Allowance");
+        jLabel85.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
         payslipPhoneAllowance.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel87.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel87.setText("Clothing Allowance");
+        jLabel87.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
         payslipClothingAllowance.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel89.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
         jLabel89.setText("TOTAL");
+        jLabel89.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
 
         payslipBenefitTotal.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel91.setBackground(new java.awt.Color(0, 0, 102));
-        jLabel91.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
         jLabel91.setText("                                                       BENEFITS");
+        jLabel91.setBackground(new java.awt.Color(0, 0, 102));
         jLabel91.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
+        jLabel91.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
 
-        jLabel92.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel92.setText("Philhealth");
+        jLabel92.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        payslipPhilhealth.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         payslipPhilhealth.setText("PAYSLIP NO");
+        payslipPhilhealth.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        payslipPagibig.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         payslipPagibig.setText("PAYSLIP NO");
+        payslipPagibig.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel95.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel95.setText("Pag-IbigPag-Ibig");
+        jLabel95.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        payslipTax.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         payslipTax.setText("PAYSLIP NO");
+        payslipTax.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel97.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel97.setText("Withholding Tax");
+        jLabel97.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel98.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
         jLabel98.setText("TOTAL DEDUCTIONS");
+        jLabel98.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
 
-        payslipDeductionTotal.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         payslipDeductionTotal.setText("PAYSLIP NO");
+        payslipDeductionTotal.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel100.setBackground(new java.awt.Color(0, 0, 102));
-        jLabel100.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
         jLabel100.setText("                                                     SUMMARY");
+        jLabel100.setBackground(new java.awt.Color(0, 0, 102));
         jLabel100.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 153), 1, true));
+        jLabel100.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
 
-        jLabel101.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel101.setText("Gross Income");
+        jLabel101.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        summaryGrossIncome.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         summaryGrossIncome.setText("PAYSLIP NO");
+        summaryGrossIncome.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        summaryBenefits.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         summaryBenefits.setText("PAYSLIP NO");
+        summaryBenefits.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel104.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel104.setText("Benefits");
+        jLabel104.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel105.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel105.setText("Total Deducations");
+        jLabel105.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        summaryTotalDeduction.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         summaryTotalDeduction.setText("PAYSLIP NO");
+        summaryTotalDeduction.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel107.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
         jLabel107.setText("TAKE HOME PAY");
+        jLabel107.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
 
-        summaryTakeHomePay.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         summaryTakeHomePay.setText("PAYSLIP NO");
+        summaryTakeHomePay.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
-        jLabel109.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
         jLabel109.setText("GROSS INCOME");
+        jLabel109.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
 
         payslipGrossIncome.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
 
@@ -987,74 +1444,74 @@ public javax.swing.JPanel getProfilePanel() {
         jSeparator2.setPreferredSize(new java.awt.Dimension(0, 1));
 
         jSeparator3.setBackground(new java.awt.Color(102, 102, 102));
-        jSeparator3.setForeground(new java.awt.Color(102, 102, 102));
         jSeparator3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        jSeparator3.setForeground(new java.awt.Color(102, 102, 102));
         jSeparator3.setPreferredSize(new java.awt.Dimension(0, 1));
 
         jSeparator4.setBackground(new java.awt.Color(102, 102, 102));
-        jSeparator4.setForeground(new java.awt.Color(102, 102, 102));
         jSeparator4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        jSeparator4.setForeground(new java.awt.Color(102, 102, 102));
 
         timeprogressbar.setRequestFocusEnabled(false);
         timeprogressbar.setStringPainted(true);
 
-        jLabel9.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 204, 102));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/check-box.png"))); // NOI18N
         jLabel9.setText(" Present");
+        jLabel9.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 204, 102));
 
+        jLabel10.setText("Time In : ");
         jLabel10.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Time In : ");
 
+        jLabel8.setText("Schedule Status :");
         jLabel8.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Schedule Status :");
 
+        jLabel11.setText("WORK");
         jLabel11.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 255, 51));
-        jLabel11.setText("WORK");
 
+        jLabel12.setText("Schedule :");
         jLabel12.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Schedule :");
 
+        Shift.setText("03:15AM - 12:15 PM");
         Shift.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         Shift.setForeground(new java.awt.Color(255, 255, 255));
-        Shift.setText("03:15AM - 12:15 PM");
 
+        Department.setText("Finance Department");
         Department.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         Department.setForeground(new java.awt.Color(255, 255, 255));
-        Department.setText("Finance Department");
 
+        PunchIn.setText("Time In");
         PunchIn.setBackground(new java.awt.Color(0, 255, 51));
         PunchIn.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         PunchIn.setForeground(new java.awt.Color(255, 255, 255));
-        PunchIn.setText("Time In");
         PunchIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PunchInActionPerformed(evt);
             }
         });
 
-        PunchOut.setBackground(new java.awt.Color(0, 0, 0,0));
         PunchOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/clock (4).png"))); // NOI18N
+        PunchOut.setBackground(new java.awt.Color(0, 0, 0,0));
         PunchOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PunchOutActionPerformed(evt);
             }
         });
 
+        jLabel13.setText("Time out");
         jLabel13.setFont(new java.awt.Font("Lucida Bright", 1, 10)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Time out");
 
         TimeInLabel.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         TimeInLabel.setForeground(new java.awt.Color(255, 255, 255));
 
+        jLabel56.setText("Time Out : ");
         jLabel56.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel56.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel56.setText("Time Out : ");
 
         TimeOutLabel.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         TimeOutLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -1154,123 +1611,36 @@ public javax.swing.JPanel getProfilePanel() {
 
         jPanel1.add(TimeKeeping_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 660, 150));
 
-        AttendancePanel.setBackground(new java.awt.Color(0, 0, 0,100));
-        AttendancePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-        AttendancePanel.setPreferredSize(new java.awt.Dimension(980, 520));
-
-        attendanceTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-        attendanceTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Date", "Time In", "Time Out", "Overtime", "Status"
-            }
-        ));
-        attendanceTable.setGridColor(new java.awt.Color(153, 153, 153));
-        attendanceTable.setName(""); // NOI18N
-        attendanceTable.setOpaque(false);
-        attendanceTable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane3.setViewportView(attendanceTable);
-
-        jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
-        jLabel1.setText("Attendance Record");
-
-        jButton2.setText("Apply Dispute");
-
-        OvertimeRequest.setText("Request Overtime");
-        OvertimeRequest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OvertimeRequestActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout AttendancePanelLayout = new javax.swing.GroupLayout(AttendancePanel);
-        AttendancePanel.setLayout(AttendancePanelLayout);
-        AttendancePanelLayout.setHorizontalGroup(
-            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AttendancePanelLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(AttendancePanelLayout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(OvertimeRequest))
-                    .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
-        AttendancePanelLayout.setVerticalGroup(
-            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AttendancePanelLayout.createSequentialGroup()
-                .addContainerGap(9, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(OvertimeRequest))
-                .addGap(7, 7, 7))
-        );
-
-        jPanel1.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, -1, -1));
-
         EmployeeDashboard_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
         EmployeeDashboard_MainDashboard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 1, true));
 
+        jLabel5.setText("Employee");
         jLabel5.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Employee");
         jLabel5.setIconTextGap(0);
 
+        jLabel6.setText("Dashboard");
         jLabel6.setFont(new java.awt.Font("Lucida Bright", 1, 17)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Dashboard");
 
         jSeparator1.setBackground(new java.awt.Color(255, 153, 51));
-        jSeparator1.setForeground(new java.awt.Color(255, 153, 0));
         jSeparator1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 51)));
+        jSeparator1.setForeground(new java.awt.Color(255, 153, 0));
 
+        jLabel7.setText("Welcome,");
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Welcome,");
 
         MainDashBoardFirstName.setBackground(new java.awt.Color(255, 255, 255));
         MainDashBoardFirstName.setFont(new java.awt.Font("Lucida Bright", 0, 14)); // NOI18N
         MainDashBoardFirstName.setForeground(new java.awt.Color(255, 255, 255));
 
+        LogOut.setText("Log Out");
         LogOut.setBackground(new java.awt.Color(255, 51, 51));
+        LogOut.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 51, 51), 1, true));
         LogOut.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         LogOut.setForeground(new java.awt.Color(255, 255, 255));
-        LogOut.setText("Log Out");
-        LogOut.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 51, 51), 1, true));
         LogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogOutActionPerformed(evt);
@@ -1335,60 +1705,60 @@ public javax.swing.JPanel getProfilePanel() {
         MenuBar_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
         MenuBar_MainDashboard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 1, true));
 
-        Home.setBackground(new java.awt.Color(0, 0, 0,100));
-        Home.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        Home.setForeground(new java.awt.Color(255, 255, 255));
         Home.setText("Home");
+        Home.setBackground(new java.awt.Color(0, 0, 0,100));
         Home.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Home.setBorderPainted(false);
+        Home.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        Home.setForeground(new java.awt.Color(255, 255, 255));
         Home.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HomeActionPerformed(evt);
             }
         });
 
-        ProfileButton.setBackground(new java.awt.Color(0, 0, 0,100));
-        ProfileButton.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        ProfileButton.setForeground(new java.awt.Color(255, 255, 255));
         ProfileButton.setText("Profile");
+        ProfileButton.setBackground(new java.awt.Color(0, 0, 0,100));
         ProfileButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         ProfileButton.setBorderPainted(false);
+        ProfileButton.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        ProfileButton.setForeground(new java.awt.Color(255, 255, 255));
         ProfileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ProfileButtonActionPerformed(evt);
             }
         });
 
-        AttendanceMainDashboardButtion.setBackground(new java.awt.Color(0, 0, 0,100));
-        AttendanceMainDashboardButtion.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        AttendanceMainDashboardButtion.setForeground(new java.awt.Color(255, 255, 255));
         AttendanceMainDashboardButtion.setText("Attendnce");
+        AttendanceMainDashboardButtion.setBackground(new java.awt.Color(0, 0, 0,100));
         AttendanceMainDashboardButtion.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         AttendanceMainDashboardButtion.setBorderPainted(false);
+        AttendanceMainDashboardButtion.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        AttendanceMainDashboardButtion.setForeground(new java.awt.Color(255, 255, 255));
         AttendanceMainDashboardButtion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AttendanceMainDashboardButtionActionPerformed(evt);
             }
         });
 
-        LeaveMainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
-        LeaveMainDashboard.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        LeaveMainDashboard.setForeground(new java.awt.Color(255, 255, 255));
         LeaveMainDashboard.setText("Leave");
+        LeaveMainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
         LeaveMainDashboard.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         LeaveMainDashboard.setBorderPainted(false);
+        LeaveMainDashboard.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        LeaveMainDashboard.setForeground(new java.awt.Color(255, 255, 255));
         LeaveMainDashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LeaveMainDashboardActionPerformed(evt);
             }
         });
 
-        PayslipMaindashboard.setBackground(new java.awt.Color(0, 0, 0,100));
-        PayslipMaindashboard.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        PayslipMaindashboard.setForeground(new java.awt.Color(255, 255, 255));
         PayslipMaindashboard.setText("Payslip");
+        PayslipMaindashboard.setBackground(new java.awt.Color(0, 0, 0,100));
         PayslipMaindashboard.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         PayslipMaindashboard.setBorderPainted(false);
+        PayslipMaindashboard.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        PayslipMaindashboard.setForeground(new java.awt.Color(255, 255, 255));
         PayslipMaindashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PayslipMaindashboardActionPerformed(evt);
@@ -1429,9 +1799,9 @@ public javax.swing.JPanel getProfilePanel() {
 
         PayrollHealth_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
 
+        jLabel14.setText("Payroll Health");
         jLabel14.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Payroll Health");
 
         jSeparator5.setBackground(new java.awt.Color(102, 102, 102));
         jSeparator5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
@@ -1443,17 +1813,17 @@ public javax.swing.JPanel getProfilePanel() {
 
         jSeparator8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 51, 0), 2, true));
 
+        NoOfDaysPresent.setText("0");
         NoOfDaysPresent.setFont(new java.awt.Font("Lucida Bright", 1, 48)); // NOI18N
         NoOfDaysPresent.setForeground(new java.awt.Color(255, 255, 255));
-        NoOfDaysPresent.setText("0");
 
+        NoOfDaysPresent1.setText("4");
         NoOfDaysPresent1.setFont(new java.awt.Font("Lucida Bright", 1, 48)); // NOI18N
         NoOfDaysPresent1.setForeground(new java.awt.Color(255, 255, 255));
-        NoOfDaysPresent1.setText("4");
 
+        NoOfDaysPresent2.setText("0");
         NoOfDaysPresent2.setFont(new java.awt.Font("Lucida Bright", 1, 48)); // NOI18N
         NoOfDaysPresent2.setForeground(new java.awt.Color(255, 255, 255));
-        NoOfDaysPresent2.setText("0");
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/circle.png"))); // NOI18N
 
@@ -1514,12 +1884,12 @@ public javax.swing.JPanel getProfilePanel() {
 
         EmployeeRecords_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 0,0));
-        jButton3.setFont(new java.awt.Font("Lucida Bright", 0, 36)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Employee Records");
+        jButton3.setBackground(new java.awt.Color(0, 0, 0,0));
         jButton3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton3.setBorderPainted(false);
+        jButton3.setFont(new java.awt.Font("Lucida Bright", 0, 36)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -1548,9 +1918,9 @@ public javax.swing.JPanel getProfilePanel() {
         Request_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
         Request_MainDashboard.setForeground(new java.awt.Color(255, 255, 255));
 
+        jLabel17.setText("My Requests");
         jLabel17.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("My Requests");
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/circle.png"))); // NOI18N
 
@@ -1559,47 +1929,47 @@ public javax.swing.JPanel getProfilePanel() {
         jSeparator9.setBackground(new java.awt.Color(102, 102, 102));
         jSeparator9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 2, true));
 
+        jLabel20.setText("Pending");
         jLabel20.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Pending");
 
+        jLabel21.setText("Approved");
         jLabel21.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("Approved");
 
+        jLabel22.setText("Denied");
         jLabel22.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("Denied");
 
+        jLabel23.setText("Leave");
         jLabel23.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setText("Leave");
 
+        jLabel24.setText("Correction");
         jLabel24.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setText("Correction");
 
+        jLabel25.setText("Overtime");
         jLabel25.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setText("Overtime");
 
-        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("-");
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setText("-");
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("-");
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("-");
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
         jLabel30.setText("-");
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setText("-");
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout Request_MainDashboardLayout = new javax.swing.GroupLayout(Request_MainDashboard);
         Request_MainDashboard.setLayout(Request_MainDashboardLayout);
@@ -1707,62 +2077,62 @@ public javax.swing.JPanel getProfilePanel() {
 
         jSeparator11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
-        jLabel37.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel37.setText("Position");
+        jLabel37.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel38.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel38.setText("Status");
+        jLabel38.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel39.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel39.setText("Birthdate");
+        jLabel39.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel40.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel40.setText("Phone Number");
+        jLabel40.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel41.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel41.setText("Address");
+        jLabel41.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel42.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
         jLabel42.setText("My Account Numbers");
+        jLabel42.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
 
-        jLabel43.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel43.setText("SSS");
+        jLabel43.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel44.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel44.setText("Pag-ibig");
+        jLabel44.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel45.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel45.setText("Phil-health");
+        jLabel45.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel46.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel46.setText("Tin No.");
+        jLabel46.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel47.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel47.setText(":");
+        jLabel47.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel48.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel48.setText(":");
+        jLabel48.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel49.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel49.setText(":");
+        jLabel49.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel50.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel50.setText(":");
+        jLabel50.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel51.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel51.setText(":");
+        jLabel51.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel52.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel52.setText(":");
+        jLabel52.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel53.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel53.setText(":");
+        jLabel53.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel54.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel54.setText(":");
+        jLabel54.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
-        jLabel55.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
         jLabel55.setText(":");
+        jLabel55.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
 
         jButton4.setText("Update");
 
@@ -1958,9 +2328,9 @@ public javax.swing.JPanel getProfilePanel() {
                         .addGap(24, 24, 24))))
         );
 
+        jLabel32.setText("Profile");
         jLabel32.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel32.setText("Profile");
 
         javax.swing.GroupLayout ProfilePanelLayout = new javax.swing.GroupLayout(ProfilePanel);
         ProfilePanel.setLayout(ProfilePanelLayout);
@@ -1987,160 +2357,6 @@ public javax.swing.JPanel getProfilePanel() {
         );
 
         jPanel1.add(ProfilePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
-
-        LeavePanel.setBackground(new java.awt.Color(0, 0, 0,100));
-        LeavePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-        LeavePanel.setPreferredSize(new java.awt.Dimension(1114, 520));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-
-        jLabel112.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        jLabel112.setText("Leave Type");
-
-        LeavePanelLeaveSelector.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        LeavePanelLeaveSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Leave Type", "Vacation Leave", "Sick Leave", "Emergency Leave" }));
-        LeavePanelLeaveSelector.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        LeavePanelLeaveSelector.setName("Choose the Type of Leave"); // NOI18N
-
-        jLabel113.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        jLabel113.setText("Reason");
-
-        LeavePanelReason.setColumns(20);
-        LeavePanelReason.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        LeavePanelReason.setRows(5);
-        LeavePanelReason.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel114.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        jLabel114.setText("Date");
-
-        LeavePanelSubmitButton.setText("Submit");
-        LeavePanelSubmitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LeavePanelSubmitButtonActionPerformed(evt);
-            }
-        });
-
-        jLabel62.setText("Start Date");
-
-        jLabel63.setText("End Date");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel112)
-                        .addComponent(jLabel114)
-                        .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(LeavePanelStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel113))
-                            .addGap(18, 18, 18)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(LeavePanelEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(157, 157, 157)
-                .addComponent(LeavePanelSubmitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-                .addGap(152, 152, 152))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel112)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel114)
-                .addGap(10, 10, 10)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LeavePanelStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LeavePanelEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel62)
-                    .addComponent(jLabel63))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel113)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(LeavePanelSubmitButton)
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-
-        jLabel111.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
-        jLabel111.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel111.setText("Leave Application");
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 51), 1, true));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel115.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        jLabel115.setText("Leave Balance");
-        jPanel3.add(jLabel115, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
-
-        jLabel122.setFont(new java.awt.Font("Lucida Bright", 1, 50)); // NOI18N
-        jLabel122.setText("14");
-        jPanel3.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
-
-        jLabel116.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        jLabel116.setText("Vacation Leave");
-        jPanel3.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, -1));
-
-        jLabel120.setFont(new java.awt.Font("Lucida Bright", 1, 50)); // NOI18N
-        jLabel120.setText("15");
-        jPanel3.add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, -1));
-
-        jLabel117.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        jLabel117.setText("Sick Leave");
-        jPanel3.add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
-
-        jLabel118.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new-moon (1).png"))); // NOI18N
-        jPanel3.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 76, -1, -1));
-
-        jLabel119.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new-moon (1).png"))); // NOI18N
-        jPanel3.add(jLabel119, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 76, -1, -1));
-
-        javax.swing.GroupLayout LeavePanelLayout = new javax.swing.GroupLayout(LeavePanel);
-        LeavePanel.setLayout(LeavePanelLayout);
-        LeavePanelLayout.setHorizontalGroup(
-            LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LeavePanelLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
-            .addGroup(LeavePanelLayout.createSequentialGroup()
-                .addGap(425, 425, 425)
-                .addComponent(jLabel111, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        LeavePanelLayout.setVerticalGroup(
-            LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LeavePanelLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jLabel111, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addGroup(LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(49, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(LeavePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/newBackground.jpg"))); // NOI18N
         Background.setText("jLabel1");
@@ -2201,7 +2417,8 @@ public javax.swing.JPanel getProfilePanel() {
             PayslipPanel.setVisible(false);
             ProfilePanel.setVisible(true);
             PayPeriodPanel.setVisible(false);
-            
+            OvertimePanel.setVisible(false);
+            LeaveListPanel.setVisible(false);
         } else {
             // Access denied, display an error message
             JOptionPane.showMessageDialog(this, "Invalid UserID! Access Denied.", "Login Error", JOptionPane.ERROR_MESSAGE);
@@ -2338,6 +2555,8 @@ if (accessGranted) {
     AttendancePanel.setVisible(true);
     LeavePanel.setVisible(false);
     PayPeriodPanel.setVisible(false);
+    OvertimePanel.setVisible(false);
+    LeaveListPanel.setVisible(false);
 } else {
     // Access denied, display an error message
     JOptionPane.showMessageDialog(this, "Access Denied. Employee ID not found.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -2358,7 +2577,8 @@ if (accessGranted) {
             AttendancePanel.setVisible(false);
             LeavePanel.setVisible(false);
             PayPeriodPanel.setVisible(false);
-
+            OvertimePanel.setVisible(false);
+            LeaveListPanel.setVisible(false);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_HomeActionPerformed
@@ -2375,7 +2595,8 @@ if (accessGranted) {
                 ProfilePanel.setVisible(false);
                 AttendancePanel.setVisible(false);
                 LeavePanel.setVisible(false);
-                
+                OvertimePanel.setVisible(false);
+                LeaveListPanel.setVisible(false);
          
     }//GEN-LAST:event_PayslipMaindashboardActionPerformed
 
@@ -2395,47 +2616,10 @@ login.setVisible(true);// TODO add your handling code here:
             AttendancePanel.setVisible(false);
             LeavePanel.setVisible(true);
             PayPeriodPanel.setVisible(false);
-            
+            OvertimePanel.setVisible(false);
+            LeaveListPanel.setVisible(false);
         
     }//GEN-LAST:event_LeaveMainDashboardActionPerformed
-
-    private void LeavePanelSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeavePanelSubmitButtonActionPerformed
-             Request request = new Request();
-              SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-              
-             Date startDate = LeavePanelStartDate.getDate();
-             Date endDate = LeavePanelEndDate.getDate();
-             String empID = MainDashboardempNo.getText();
-             String startdateFiled = dateFormat.format(startDate);
-             String enddateFiled = dateFormat.format(endDate);
-             String leaveType = LeavePanelLeaveSelector.getSelectedItem().toString();
-             String reason = LeavePanelReason.getText();
-
-            if (startDate.compareTo(endDate) >= 0) {
-                JOptionPane.showMessageDialog(this, "End date should be greater than Start Date");
-          } else {
-            int dialogResult = JOptionPane.showConfirmDialog(this, "Submit Request Form?", "Leave Request Confirmation", JOptionPane.YES_NO_OPTION);
-
-    if (dialogResult == JOptionPane.YES_OPTION) {
-        JOptionPane.showMessageDialog(this, "Submitted Successfully");
-        request.LeaveRequestwriteToCSV(empID, startdateFiled, enddateFiled, reason);
-        
-        
-    }
-}
-
-System.out.println("EmployeeID " + empID);
-System.out.println("LeaveType " + leaveType);
-System.out.println("startDate " + startdateFiled);
-System.out.println("endDate " + enddateFiled);
-System.out.println("Reason " + reason);
-              
-        
-              
-           
-
-  
-    }//GEN-LAST:event_LeavePanelSubmitButtonActionPerformed
 
     private void PayPeriodPanelButtonSept1to15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PayPeriodPanelButtonSept1to15ActionPerformed
 
@@ -2514,7 +2698,8 @@ try {
                 AttendancePanel.setVisible(false);
                 LeavePanel.setVisible(false);
                 PayPeriodPanel.setVisible(false);
-        }         
+                OvertimePanel.setVisible(false);
+        }       LeaveListPanel.setVisible(false);  
        
     } catch (ParseException e) {
         e.printStackTrace();
@@ -2601,7 +2786,8 @@ try {
                 AttendancePanel.setVisible(false);
                 LeavePanel.setVisible(false);
                 PayPeriodPanel.setVisible(false);
-        }         
+                OvertimePanel.setVisible(false);
+        }       LeaveListPanel.setVisible(false);  
        
     } catch (ParseException e) {
         e.printStackTrace();
@@ -2617,6 +2803,204 @@ try {
         
     }//GEN-LAST:event_OvertimeRequestActionPerformed
 
+    private void OvertTimeSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OvertTimeSubmitButtonActionPerformed
+
+        Request request = new Request();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+
+        String employeeID = MainDashboardempNo.getText(); //
+        String date = datePicker1.getDateStringOrEmptyString();
+        String StartTime = timePicker1.getTimeStringOrEmptyString();
+        String EndTime = timePicker2.getTimeStringOrEmptyString();
+        String Reason = OvertimeReason.getText();
+        
+        
+        int dialogResult = JOptionPane.showConfirmDialog(this, "Submit Request Form?", "Leave Request Confirmation", JOptionPane.YES_NO_OPTION);
+
+        if (dialogResult == JOptionPane.YES_OPTION) {
+        JOptionPane.showMessageDialog(this, "Submitted Successfully");
+        request.OvertimeRequestwriteToCSV(employeeID, date, StartTime, EndTime,Reason );
+        
+       
+        datePicker1.setText("");
+        timePicker1.setText("");
+        timePicker2.setText("");
+        OvertimeReason.setText("");
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OvertTimeSubmitButtonActionPerformed
+
+    private void OvertimeRequest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OvertimeRequest1ActionPerformed
+ // TODO add your handling code here:
+        OTRequestDialog.setVisible(true);
+        OTRequestDialog.setLocationRelativeTo(this);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OvertimeRequest1ActionPerformed
+
+    private void btnovertimerequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnovertimerequestActionPerformed
+      
+          String empID = MainDashboardempNo.getText().trim();
+   boolean accessGranted = false;
+
+   System.out.println("Employee ID from input: " + empID);
+
+   for (AttendanceRecord att : attendance) {
+     System.out.println("Employee ID from record: " + att.getEmpID());
+    if (att.getEmpID() == Integer.parseInt(empID)) {
+        accessGranted = true;
+        break;
+    }
+}
+
+// Grant or deny access based on the result
+if (accessGranted) {
+    DefaultTableModel model = (DefaultTableModel) overtimeListTable.getModel();
+    model.setRowCount(0);
+
+    // Populate the table with data from the CSV file
+    String csvFilePath = "src/Files/OvertimeRequest.csv";
+    boolean foundRecords = false;
+
+    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] data = line.split(",");
+            if (data.length >= 5 && data[0].equals(empID)) {
+                model.addRow(new Object[]{data[1], data[2], data[3], data[4]});
+                foundRecords = true;
+            }
+        }
+    } catch (IOException ex) {
+        ex.printStackTrace();
+    }
+
+    // Check if records were found for the employee
+    if (!foundRecords) {
+        JOptionPane.showMessageDialog(this, "No attendance records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+
+    // Show the AttendancePanel and hide other panels
+    TimeKeeping_MainDashboard.setVisible(false);
+    PayrollHealth_MainDashboard.setVisible(false);
+    EmployeeRecords_MainDashboard.setVisible(false);
+    Request_MainDashboard.setVisible(false);
+    PayslipPanel.setVisible(false);
+    ProfilePanel.setVisible(false);
+    AttendancePanel.setVisible(false);
+    LeavePanel.setVisible(false);
+    PayPeriodPanel.setVisible(false);
+    OvertimePanel.setVisible(true);
+     LeaveListPanel.setVisible(false);
+    
+} else {
+    // Access denied, display an error message
+    JOptionPane.showMessageDialog(this, "Access Denied. Employee ID not found.", "Error", JOptionPane.ERROR_MESSAGE);
+}
+
+
+
+
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_btnovertimerequestActionPerformed
+
+    private void LeavePanelSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeavePanelSubmitButtonActionPerformed
+        Request request = new Request();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+
+        Date startDate = LeavePanelStartDate.getDate();
+        Date endDate = LeavePanelEndDate.getDate();
+        String empID = MainDashboardempNo.getText();
+        String startdateFiled = dateFormat.format(startDate);
+        String enddateFiled = dateFormat.format(endDate);
+        String leaveType = LeavePanelLeaveSelector.getSelectedItem().toString();
+        String reason = LeavePanelReason.getText();
+
+        if (startDate.compareTo(endDate) >= 0) {
+            JOptionPane.showMessageDialog(this, "End date should be greater than Start Date");
+        } else {
+            int dialogResult = JOptionPane.showConfirmDialog(this, "Submit Request Form?", "Leave Request Confirmation", JOptionPane.YES_NO_OPTION);
+
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                JOptionPane.showMessageDialog(this, "Submitted Successfully");
+                request.LeaveRequestwriteToCSV(empID,leaveType, startdateFiled, enddateFiled, reason);
+
+                LeavePanelStartDate.setDateFormatString("");
+                LeavePanelEndDate.setDateFormatString("");
+                LeavePanelLeaveSelector.setSelectedIndex(0);
+                LeavePanelReason.setText("");
+            }
+        }
+
+        System.out.println("EmployeeID " + empID);
+        System.out.println("LeaveType " + leaveType);
+        System.out.println("startDate " + startdateFiled);
+        System.out.println("endDate " + enddateFiled);
+        System.out.println("Reason " + reason);
+
+    }//GEN-LAST:event_LeavePanelSubmitButtonActionPerformed
+
+    private void btnLeaveListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeaveListActionPerformed
+  String empID = MainDashboardempNo.getText().trim();
+   boolean accessGranted = false;
+
+   System.out.println("Employee ID from input: " + empID);
+
+   for (AttendanceRecord att : attendance) {
+     System.out.println("Employee ID from record: " + att.getEmpID());
+    if (att.getEmpID() == Integer.parseInt(empID)) {
+        accessGranted = true;
+        break;
+    }
+}
+
+// Grant or deny access based on the result
+if (accessGranted) {
+    DefaultTableModel model = (DefaultTableModel) LeaveListTable1.getModel();
+    model.setRowCount(0);
+
+    // Populate the table with data from the CSV file
+    String csvFilePath = "src/Files/LeaveRequests.csv";
+    boolean foundRecords = false;
+
+    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] data = line.split(",");
+            if (data.length >= 6 && data[0].equals(empID)) {
+                model.addRow(new Object[]{data[1], data[2], data[3], data[4],data[5]});
+                foundRecords = true;
+            }
+        }
+    } catch (IOException ex) {
+        ex.printStackTrace();
+    }
+
+    // Check if records were found for the employee
+    if (!foundRecords) {
+        JOptionPane.showMessageDialog(this, "No attendance records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+
+    // Show the AttendancePanel and hide other panels
+    TimeKeeping_MainDashboard.setVisible(false);
+    PayrollHealth_MainDashboard.setVisible(false);
+    EmployeeRecords_MainDashboard.setVisible(false);
+    Request_MainDashboard.setVisible(false);
+    PayslipPanel.setVisible(false);
+    ProfilePanel.setVisible(false);
+    AttendancePanel.setVisible(false);
+    LeavePanel.setVisible(false);
+    PayPeriodPanel.setVisible(false);
+    OvertimePanel.setVisible(false);
+    LeaveListPanel.setVisible(true);
+    
+} else {
+    // Access denied, display an error message
+    JOptionPane.showMessageDialog(this, "Access Denied. Employee ID not found.", "Error", JOptionPane.ERROR_MESSAGE);
+}
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLeaveListActionPerformed
+
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -2627,6 +3011,8 @@ try {
     private javax.swing.JPanel EmployeeDashboard_MainDashboard;
     private javax.swing.JPanel EmployeeRecords_MainDashboard;
     private javax.swing.JButton Home;
+    private javax.swing.JPanel LeaveListPanel;
+    private javax.swing.JTable LeaveListTable1;
     private javax.swing.JButton LeaveMainDashboard;
     private javax.swing.JPanel LeavePanel;
     private com.toedter.calendar.JDateChooser LeavePanelEndDate;
@@ -2642,7 +3028,11 @@ try {
     private javax.swing.JLabel NoOfDaysPresent1;
     private javax.swing.JLabel NoOfDaysPresent2;
     private javax.swing.JDialog OTRequestDialog;
+    private javax.swing.JButton OvertTimeSubmitButton;
+    private javax.swing.JPanel OvertimePanel;
+    private javax.swing.JTextArea OvertimeReason;
     private javax.swing.JButton OvertimeRequest;
+    private javax.swing.JButton OvertimeRequest1;
     private javax.swing.JPanel PayPeriodPanel;
     private javax.swing.JButton PayPeriodPanelButtonSept1to15;
     private javax.swing.JButton PayPeriodbtnSept16to30;
@@ -2669,12 +3059,14 @@ try {
     private javax.swing.JPanel TimeKeeping_MainDashboard;
     private javax.swing.JLabel TimeOutLabel;
     private javax.swing.JTable attendanceTable;
+    private javax.swing.JButton btnLeaveList;
+    private javax.swing.JButton btnovertimerequest;
     private com.github.lgooddatepicker.components.DatePicker datePicker1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -2696,6 +3088,7 @@ try {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel122;
+    private javax.swing.JLabel jLabel125;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -2770,6 +3163,7 @@ try {
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
@@ -2792,6 +3186,8 @@ try {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -2806,7 +3202,7 @@ try {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTable overtimeListTable;
     private javax.swing.JLabel payslipBenefitTotal;
     private javax.swing.JLabel payslipClothingAllowance;
     private javax.swing.JLabel payslipDailyRate;

@@ -1,2 +1,3 @@
-empID,LeaveTpe,Date Filed,StartDate,EndDate,Status
-1,03/03/2024,03/14/2024,03/15/2024,.,
+EmployeeID, LeaveTpe, Date Filed, StartDate, EndDate, Reason
+1,Vacation Leave,03/04/2024,03/07/2024,03/07/2024,Mama mo green
+3,Sick Leave,03/04/2024,03/03/2024,03/05/2024,Mama mo blue

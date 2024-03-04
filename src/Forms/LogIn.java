@@ -261,6 +261,8 @@ if (accessGranted) {
     dashboard.getAttendancePanel().setVisible(false);
     dashboard.getLeavePanel().setVisible(false);
     dashboard.getPayPeriodPanel().setVisible(false);
+    dashboard.getOvertimePanel().setVisible(false);
+    dashboard.getLeaveListPanel().setVisible(false);
     dashboard.setVisible(true);
 } else {
     // Access denied, display an error message
