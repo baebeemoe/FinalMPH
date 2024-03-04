@@ -135,6 +135,54 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        ProfilePanel = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jSeparator10 = new javax.swing.JSeparator();
+        profileFirstName = new javax.swing.JLabel();
+        ProfileEmpNo = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jSeparator11 = new javax.swing.JSeparator();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        ProfilePosition = new javax.swing.JLabel();
+        ProfileStatus = new javax.swing.JLabel();
+        ProfileBirthdate = new javax.swing.JLabel();
+        ProfilePhonenumber = new javax.swing.JLabel();
+        ProfileSSS = new javax.swing.JLabel();
+        ProfilePagIbig = new javax.swing.JLabel();
+        ProfilePhilhealth = new javax.swing.JLabel();
+        ProfileTinnumber = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ProfileAddress = new javax.swing.JTextArea();
+        jLabel32 = new javax.swing.JLabel();
+        OvertimePanel = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        overtimeListTable = new javax.swing.JTable();
+        jLabel80 = new javax.swing.JLabel();
+        OvertimeRequest1 = new javax.swing.JButton();
+        AttendancePanel = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        attendanceTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        btnovertimerequest = new javax.swing.JButton();
+        OvertimeRequest = new javax.swing.JButton();
         PayslipPanel = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
@@ -239,44 +287,6 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        ProfilePanel = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
-        jSeparator10 = new javax.swing.JSeparator();
-        profileFirstName = new javax.swing.JLabel();
-        ProfileEmpNo = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jSeparator11 = new javax.swing.JSeparator();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
-        jLabel51 = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
-        jLabel53 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
-        jLabel55 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        ProfilePosition = new javax.swing.JLabel();
-        ProfileStatus = new javax.swing.JLabel();
-        ProfileBirthdate = new javax.swing.JLabel();
-        ProfilePhonenumber = new javax.swing.JLabel();
-        ProfileSSS = new javax.swing.JLabel();
-        ProfilePagIbig = new javax.swing.JLabel();
-        ProfilePhilhealth = new javax.swing.JLabel();
-        ProfileTinnumber = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        ProfileAddress = new javax.swing.JTextArea();
-        jLabel32 = new javax.swing.JLabel();
         LeaveListPanel = new javax.swing.JPanel();
         jLabel125 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -303,13 +313,6 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel118 = new javax.swing.JLabel();
         jLabel119 = new javax.swing.JLabel();
         btnLeaveList = new javax.swing.JButton();
-        AttendancePanel = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        attendanceTable = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        btnovertimerequest = new javax.swing.JButton();
-        OvertimeRequest = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         PayPeriodPanel = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel68 = new javax.swing.JLabel();
@@ -317,12 +320,6 @@ public javax.swing.JPanel getProfilePanel() {
         PayPeriodPanelButtonSept1to15 = new javax.swing.JButton();
         PayPeriodbtnSept16to30 = new javax.swing.JButton();
         jLabel64 = new javax.swing.JLabel();
-        OvertimePanel = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        overtimeListTable = new javax.swing.JTable();
-        jLabel80 = new javax.swing.JLabel();
-        OvertimeRequest1 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         TimeKeeping_MainDashboard = new javax.swing.JPanel();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
@@ -470,6 +467,475 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("People Portal");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
+
+        ProfilePanel.setBackground(new java.awt.Color(0, 0, 0,100));
+        ProfilePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        ProfilePanel.setPreferredSize(new java.awt.Dimension(1114, 520));
+
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 51, 0), 1, true));
+        jPanel9.setForeground(new java.awt.Color(255, 255, 255));
+
+        jSeparator10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+
+        profileFirstName.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
+
+        ProfileEmpNo.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
+
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/profile (1).png"))); // NOI18N
+
+        jSeparator11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+
+        jLabel37.setText("Position");
+        jLabel37.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel38.setText("Status");
+        jLabel38.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel39.setText("Birthdate");
+        jLabel39.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel40.setText("Phone Number");
+        jLabel40.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel41.setText("Address");
+        jLabel41.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel42.setText("My Account Numbers");
+        jLabel42.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+
+        jLabel43.setText("SSS");
+        jLabel43.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel44.setText("Pag-ibig");
+        jLabel44.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel45.setText("Phil-health");
+        jLabel45.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel46.setText("Tin No.");
+        jLabel46.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel47.setText(":");
+        jLabel47.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel48.setText(":");
+        jLabel48.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel49.setText(":");
+        jLabel49.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel50.setText(":");
+        jLabel50.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel51.setText(":");
+        jLabel51.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel52.setText(":");
+        jLabel52.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel53.setText(":");
+        jLabel53.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel54.setText(":");
+        jLabel54.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        jLabel55.setText(":");
+        jLabel55.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        ProfilePosition.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        ProfileStatus.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        ProfileBirthdate.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        ProfilePhonenumber.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        ProfileSSS.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        ProfilePagIbig.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        ProfilePhilhealth.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        ProfileTinnumber.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+
+        ProfileAddress.setColumns(20);
+        ProfileAddress.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        ProfileAddress.setRows(5);
+        ProfileAddress.setWrapStyleWord(true);
+        ProfileAddress.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jScrollPane2.setViewportView(ProfileAddress);
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(profileFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ProfileEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel36))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(ProfilePosition, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(ProfileStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(ProfileBirthdate, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jLabel40)
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(ProfilePhonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(24, 24, 24)
+                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel45)
+                    .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel42)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(46, 46, 46)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(ProfilePhilhealth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ProfileTinnumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(46, 46, 46)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ProfileSSS, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ProfilePagIbig, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel36)
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(profileFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ProfileEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel37)
+                                    .addComponent(jLabel47)
+                                    .addComponent(ProfilePosition, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel38)
+                                    .addComponent(jLabel48)
+                                    .addComponent(ProfileStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel39)
+                                    .addComponent(jLabel49)
+                                    .addComponent(ProfileBirthdate, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel40)
+                                    .addComponent(jLabel50)
+                                    .addComponent(ProfilePhonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel41)
+                                    .addComponent(jLabel51)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(47, Short.MAX_VALUE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(jLabel43)
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel44)
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel45)
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel46))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(jLabel42)
+                                .addGap(44, 44, 44)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel52)
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addGap(4, 4, 4)
+                                        .addComponent(ProfileSSS, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(jLabel53))
+                                    .addComponent(ProfilePagIbig, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(5, 5, 5)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel54)
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addGap(4, 4, 4)
+                                        .addComponent(ProfilePhilhealth, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(jLabel55))
+                                    .addComponent(ProfileTinnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(24, 146, Short.MAX_VALUE))))
+        );
+
+        jLabel32.setText("Profile");
+        jLabel32.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout ProfilePanelLayout = new javax.swing.GroupLayout(ProfilePanel);
+        ProfilePanel.setLayout(ProfilePanelLayout);
+        ProfilePanelLayout.setHorizontalGroup(
+            ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ProfilePanelLayout.createSequentialGroup()
+                .addGroup(ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ProfilePanelLayout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jLabel32))
+                    .addGroup(ProfilePanelLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        ProfilePanelLayout.setVerticalGroup(
+            ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProfilePanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(ProfilePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
+
+        OvertimePanel.setBackground(new java.awt.Color(0, 0, 0,100));
+        OvertimePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        OvertimePanel.setPreferredSize(new java.awt.Dimension(980, 520));
+
+        overtimeListTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        overtimeListTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Date", "Start Time", "End Time", "Reason", "Status"
+            }
+        ));
+        overtimeListTable.setGridColor(new java.awt.Color(153, 153, 153));
+        overtimeListTable.setName(""); // NOI18N
+        overtimeListTable.setOpaque(false);
+        overtimeListTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane5.setViewportView(overtimeListTable);
+
+        jLabel80.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        jLabel80.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel80.setText("Overtime Request List");
+
+        OvertimeRequest1.setText("Request Overtime");
+        OvertimeRequest1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OvertimeRequest1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout OvertimePanelLayout = new javax.swing.GroupLayout(OvertimePanel);
+        OvertimePanel.setLayout(OvertimePanelLayout);
+        OvertimePanelLayout.setHorizontalGroup(
+            OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(OvertimePanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(OvertimePanelLayout.createSequentialGroup()
+                        .addComponent(OvertimeRequest1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 773, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+        OvertimePanelLayout.setVerticalGroup(
+            OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OvertimePanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel80)
+                .addGap(18, 18, 18)
+                .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(OvertimeRequest1))
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(OvertimePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 540));
+
+        AttendancePanel.setBackground(new java.awt.Color(0, 0, 0,100));
+        AttendancePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
+        AttendancePanel.setPreferredSize(new java.awt.Dimension(980, 520));
+
+        attendanceTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        attendanceTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Date", "Time In", "Time Out", "Overtime", "Status"
+            }
+        ));
+        attendanceTable.setGridColor(new java.awt.Color(153, 153, 153));
+        attendanceTable.setName(""); // NOI18N
+        attendanceTable.setOpaque(false);
+        attendanceTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(attendanceTable);
+
+        jLabel1.setText("Attendance Record");
+        jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+
+        btnovertimerequest.setText("Overtime Request List");
+        btnovertimerequest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnovertimerequestActionPerformed(evt);
+            }
+        });
+
+        OvertimeRequest.setText("Request Overtime");
+        OvertimeRequest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OvertimeRequestActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout AttendancePanelLayout = new javax.swing.GroupLayout(AttendancePanel);
+        AttendancePanel.setLayout(AttendancePanelLayout);
+        AttendancePanelLayout.setHorizontalGroup(
+            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AttendancePanelLayout.createSequentialGroup()
+                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AttendancePanelLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AttendancePanelLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnovertimerequest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(OvertimeRequest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(28, 28, 28)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 773, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        AttendancePanelLayout.setVerticalGroup(
+            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AttendancePanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(AttendancePanelLayout.createSequentialGroup()
+                        .addComponent(OvertimeRequest)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnovertimerequest)))
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 540));
 
         PayslipPanel.setBackground(new java.awt.Color(255, 255, 255));
         PayslipPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
@@ -1362,305 +1828,6 @@ public javax.swing.JPanel getProfilePanel() {
 
         jPanel1.add(Request_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 380, 300, 130));
 
-        ProfilePanel.setBackground(new java.awt.Color(0, 0, 0,100));
-        ProfilePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-        ProfilePanel.setPreferredSize(new java.awt.Dimension(1114, 520));
-
-        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 51, 0), 1, true));
-        jPanel9.setForeground(new java.awt.Color(255, 255, 255));
-
-        jSeparator10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-
-        profileFirstName.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
-
-        ProfileEmpNo.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
-
-        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/profile (1).png"))); // NOI18N
-
-        jSeparator11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-
-        jLabel37.setText("Position");
-        jLabel37.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel38.setText("Status");
-        jLabel38.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel39.setText("Birthdate");
-        jLabel39.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel40.setText("Phone Number");
-        jLabel40.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel41.setText("Address");
-        jLabel41.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel42.setText("My Account Numbers");
-        jLabel42.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
-
-        jLabel43.setText("SSS");
-        jLabel43.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel44.setText("Pag-ibig");
-        jLabel44.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel45.setText("Phil-health");
-        jLabel45.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel46.setText("Tin No.");
-        jLabel46.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel47.setText(":");
-        jLabel47.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel48.setText(":");
-        jLabel48.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel49.setText(":");
-        jLabel49.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel50.setText(":");
-        jLabel50.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel51.setText(":");
-        jLabel51.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel52.setText(":");
-        jLabel52.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel53.setText(":");
-        jLabel53.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel54.setText(":");
-        jLabel54.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jLabel55.setText(":");
-        jLabel55.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        jButton4.setText("Update");
-
-        ProfilePosition.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        ProfileStatus.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        ProfileBirthdate.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        ProfilePhonenumber.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        ProfileSSS.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        ProfilePagIbig.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        ProfilePhilhealth.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        ProfileTinnumber.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-
-        ProfileAddress.setColumns(20);
-        ProfileAddress.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
-        ProfileAddress.setRows(5);
-        ProfileAddress.setWrapStyleWord(true);
-        ProfileAddress.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jScrollPane2.setViewportView(ProfileAddress);
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(profileFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ProfileEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel36))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(89, 89, 89)
-                        .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(ProfilePosition, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(89, 89, 89)
-                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(ProfileStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(89, 89, 89)
-                        .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(ProfileBirthdate, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel40)
-                        .addGap(89, 89, 89)
-                        .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(ProfilePhonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(89, 89, 89)
-                        .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(24, 24, 24)
-                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel45)
-                    .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel42)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(46, 46, 46)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(ProfilePhilhealth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(ProfileTinnumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(46, 46, 46)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ProfileSSS, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ProfilePagIbig, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                                .addComponent(jButton4)
-                                .addGap(9, 9, 9)))))
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel36)
-                                    .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(profileFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ProfileEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(33, 33, 33)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel37)
-                                    .addComponent(jLabel47)
-                                    .addComponent(ProfilePosition, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel38)
-                                    .addComponent(jLabel48)
-                                    .addComponent(ProfileStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel39)
-                                    .addComponent(jLabel49)
-                                    .addComponent(ProfileBirthdate, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel40)
-                                    .addComponent(jLabel50)
-                                    .addComponent(ProfilePhonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel41)
-                                    .addComponent(jLabel51)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(47, Short.MAX_VALUE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(jLabel43)
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel44)
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel45)
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel46))
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(jLabel42)
-                                .addGap(44, 44, 44)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel52)
-                                    .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addComponent(ProfileSSS, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(jLabel53))
-                                    .addComponent(ProfilePagIbig, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(5, 5, 5)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel54)
-                                    .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addComponent(ProfilePhilhealth, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(jLabel55))
-                                    .addComponent(ProfileTinnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4)
-                        .addGap(24, 24, 24))))
-        );
-
-        jLabel32.setText("Profile");
-        jLabel32.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout ProfilePanelLayout = new javax.swing.GroupLayout(ProfilePanel);
-        ProfilePanel.setLayout(ProfilePanelLayout);
-        ProfilePanelLayout.setHorizontalGroup(
-            ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ProfilePanelLayout.createSequentialGroup()
-                .addGroup(ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ProfilePanelLayout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(jLabel32))
-                    .addGroup(ProfilePanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        ProfilePanelLayout.setVerticalGroup(
-            ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProfilePanelLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel32)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(ProfilePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
-
         LeaveListPanel.setBackground(new java.awt.Color(0, 0, 0,100));
         LeaveListPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
         LeaveListPanel.setPreferredSize(new java.awt.Dimension(1114, 520));
@@ -1900,106 +2067,6 @@ public javax.swing.JPanel getProfilePanel() {
 
         jPanel1.add(LeavePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
 
-        AttendancePanel.setBackground(new java.awt.Color(0, 0, 0,100));
-        AttendancePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-        AttendancePanel.setPreferredSize(new java.awt.Dimension(980, 520));
-
-        attendanceTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-        attendanceTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Date", "Time In", "Time Out", "Overtime", "Status"
-            }
-        ));
-        attendanceTable.setGridColor(new java.awt.Color(153, 153, 153));
-        attendanceTable.setName(""); // NOI18N
-        attendanceTable.setOpaque(false);
-        attendanceTable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane3.setViewportView(attendanceTable);
-
-        jLabel1.setText("Attendance Record");
-        jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
-
-        btnovertimerequest.setText("Overtime Request List");
-        btnovertimerequest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnovertimerequestActionPerformed(evt);
-            }
-        });
-
-        OvertimeRequest.setText("Request Overtime");
-        OvertimeRequest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OvertimeRequestActionPerformed(evt);
-            }
-        });
-
-        jButton6.setText("Apply Dispute");
-
-        javax.swing.GroupLayout AttendancePanelLayout = new javax.swing.GroupLayout(AttendancePanel);
-        AttendancePanel.setLayout(AttendancePanelLayout);
-        AttendancePanelLayout.setHorizontalGroup(
-            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AttendancePanelLayout.createSequentialGroup()
-                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AttendancePanelLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(AttendancePanelLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnovertimerequest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(OvertimeRequest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(28, 28, 28)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 773, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-        AttendancePanelLayout.setVerticalGroup(
-            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AttendancePanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(AttendancePanelLayout.createSequentialGroup()
-                        .addComponent(OvertimeRequest)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnovertimerequest)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton6)))
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 540));
-
         PayPeriodPanel.setBackground(new java.awt.Color(0, 0, 0));
         PayPeriodPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
         PayPeriodPanel.setPreferredSize(new java.awt.Dimension(1114, 520));
@@ -2086,95 +2153,6 @@ public javax.swing.JPanel getProfilePanel() {
         );
 
         jPanel1.add(PayPeriodPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
-
-        OvertimePanel.setBackground(new java.awt.Color(0, 0, 0,100));
-        OvertimePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-        OvertimePanel.setPreferredSize(new java.awt.Dimension(980, 520));
-
-        overtimeListTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-        overtimeListTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Date", "Start Time", "End Time", "Reason", "Status"
-            }
-        ));
-        overtimeListTable.setGridColor(new java.awt.Color(153, 153, 153));
-        overtimeListTable.setName(""); // NOI18N
-        overtimeListTable.setOpaque(false);
-        overtimeListTable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane5.setViewportView(overtimeListTable);
-
-        jLabel80.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
-        jLabel80.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel80.setText("Overtime Request List");
-
-        OvertimeRequest1.setText("Request Overtime");
-        OvertimeRequest1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OvertimeRequest1ActionPerformed(evt);
-            }
-        });
-
-        jButton8.setText("Apply Dispute");
-
-        javax.swing.GroupLayout OvertimePanelLayout = new javax.swing.GroupLayout(OvertimePanel);
-        OvertimePanel.setLayout(OvertimePanelLayout);
-        OvertimePanelLayout.setHorizontalGroup(
-            OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(OvertimePanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(OvertimePanelLayout.createSequentialGroup()
-                        .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(OvertimeRequest1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(28, 28, 28)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 773, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-        OvertimePanelLayout.setVerticalGroup(
-            OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OvertimePanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel80)
-                .addGap(18, 18, 18)
-                .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(OvertimePanelLayout.createSequentialGroup()
-                        .addComponent(OvertimeRequest1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton8)))
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(OvertimePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 540));
 
         TimeKeeping_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
 
@@ -3078,10 +3056,7 @@ if (accessGranted) {
     private javax.swing.JButton btnLeaveList;
     private javax.swing.JButton btnovertimerequest;
     private com.github.lgooddatepicker.components.DatePicker datePicker1;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
