@@ -66,8 +66,10 @@ public class Dashboard extends javax.swing.JFrame {
         return LeavePanel;
     }
     
-    
-       
+    public JPanel getEmployeeRecords_MainDashboard()
+       {
+        return EmployeeRecords_MainDashboard;
+    }
 public javax.swing.JPanel getProfilePanel() {
     return ProfilePanel;
 }

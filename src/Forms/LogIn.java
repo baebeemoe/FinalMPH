@@ -44,7 +44,7 @@ public class LogIn extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         UserId = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        password = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
@@ -103,15 +103,15 @@ public class LogIn extends javax.swing.JFrame {
         UserId.setBorder(null);
         UserId.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        jPasswordField1.setBackground(new java.awt.Color(0, 0, 0,0));
-        jPasswordField1.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
-        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField1.setBorder(null);
-        jPasswordField1.setCaretColor(new java.awt.Color(255, 255, 255));
-        jPasswordField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        password.setBackground(new java.awt.Color(0, 0, 0,0));
+        password.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
+        password.setForeground(new java.awt.Color(255, 255, 255));
+        password.setBorder(null);
+        password.setCaretColor(new java.awt.Color(255, 255, 255));
+        password.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                passwordActionPerformed(evt);
             }
         });
 
@@ -166,7 +166,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(84, 84, 84)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -193,7 +193,7 @@ public class LogIn extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(jLabel7))
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(3, 3, 3)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
@@ -224,52 +224,57 @@ public class LogIn extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_passwordActionPerformed
 
     private void LogInbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInbtnActionPerformed
-        Dashboard dashboard = new Dashboard();
-String userID = UserId.getText().trim();
+ Dashboard dashboard = new Dashboard();
+    String userID = UserId.getText().trim();
+    String pass = password.getText().trim();
 
-// Check if the userID exists in the employee records
-boolean accessGranted = false;
+    // Check if the userID exists in the employee records
+    boolean accessGranted = false;
 
-// Validate if the input is a valid integer
-try {
-    int parsedUserID = Integer.parseInt(userID);
-    
-    for (EmployeeRecords employee : employees) {
-        if (employee.getEmpNo() == parsedUserID) {
-            accessGranted = true;
-            dashboard.getMainDashBoardFirstName().setText(employee.getFirstName());
-            dashboard.getMainDashboardempNo().setText(userID);
-            break;
-        }
-    }
-} catch (NumberFormatException e) {
-    // Handle the case where the input is not a valid integer
-    JOptionPane.showMessageDialog(this, "Invalid UserID! Please enter a valid integer.", "Login Error", JOptionPane.ERROR_MESSAGE);
-}
-
-// Grant or deny access based on the result
-if (accessGranted) {
-    // Access granted, you can open the dashboard or perform any action here
-    this.dispose();
-    dashboard.getProfilePanel().setVisible(false);
-    dashboard.getPayslipPanel().setVisible(false);
-    dashboard.getAttendancePanel().setVisible(false);
-    dashboard.getLeavePanel().setVisible(false);
-    dashboard.getPayPeriodPanel().setVisible(false);
-    dashboard.getOvertimePanel().setVisible(false);
-    dashboard.getLeaveListPanel().setVisible(false);
-    
-    dashboard.setVisible(true);
-} else {
-    // Access denied, display an error message
-    JOptionPane.showMessageDialog(this, "Invalid UserID! Access Denied.", "Login Error", JOptionPane.ERROR_MESSAGE);
-}
+    // Validate if the input is a valid integer
+    try {
+        int parsedUserID = Integer.parseInt(userID);
         
+        for (EmployeeRecords employee : employees) {
+            if (employee.getEmpNo() == parsedUserID && employee.getPassword().equals(pass)) {
+                accessGranted = true;
+                dashboard.getMainDashBoardFirstName().setText(employee.getFirstName());
+                dashboard.getMainDashboardempNo().setText(userID);
+                if (employee.getRole().equals("Admin")) {
+                    dashboard.getEmployeeRecords_MainDashboard().setVisible(true);
+                } else {
+                    dashboard.getEmployeeRecords_MainDashboard().setVisible(false);
+                }
+                break;
+            }
+        }
+    } catch (NumberFormatException e) {
+        // Handle the case where the input is not a valid integer
+        JOptionPane.showMessageDialog(this, "Invalid UserID! Please enter a valid integer.", "Login Error", JOptionPane.ERROR_MESSAGE);
+    }
+
+    // Grant or deny access based on the result
+    if (accessGranted) {
+        // Access granted, you can open the dashboard or perform any action here
+        this.dispose();
+        dashboard.getProfilePanel().setVisible(false);
+        dashboard.getPayslipPanel().setVisible(false);
+        dashboard.getAttendancePanel().setVisible(false);
+        dashboard.getLeavePanel().setVisible(false);
+        dashboard.getPayPeriodPanel().setVisible(false);
+        dashboard.getOvertimePanel().setVisible(false);
+        dashboard.getLeaveListPanel().setVisible(false);
+        
+        dashboard.setVisible(true);
+    } else {
+        // Access denied, display an error message
+        JOptionPane.showMessageDialog(this, "Invalid UserID or Password! Access Denied.", "Login Error", JOptionPane.ERROR_MESSAGE);
+    }  
   
     }//GEN-LAST:event_LogInbtnActionPerformed
 
@@ -327,10 +332,10 @@ if (accessGranted) {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JPasswordField password;
     // End of variables declaration//GEN-END:variables
 }
 

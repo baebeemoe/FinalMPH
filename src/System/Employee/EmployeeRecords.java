@@ -26,6 +26,8 @@ public class EmployeeRecords {
     private double clothingAllowance;
     private double grossSalary;
     private double hourlyRate;
+    private String password;
+    private String role;
     
     
 
@@ -104,6 +106,16 @@ public class EmployeeRecords {
         return empNo;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+      
+      
+
     public EmployeeRecords(String[] data) {
         this.empNo = Integer.parseInt(data[0]);
         this.lastName = data[1];
@@ -124,6 +136,8 @@ public class EmployeeRecords {
         this.clothingAllowance = Double.parseDouble(data[16]);
         this.grossSalary = Double.parseDouble(data[17]);
         this.hourlyRate = Double.parseDouble(data[18]);
+        this.password = data[19];
+        this.role = data [20];
     }
     
   
