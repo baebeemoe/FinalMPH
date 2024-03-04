@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Forms;
 
 import javax.swing.*;
@@ -24,9 +19,8 @@ import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 
-
 public class EmployeeHSRDataBase extends javax.swing.JFrame {
-     private JTable table;
+    private JTable table;
     private DefaultTableModel model;
     private JTextField searchField;
 
@@ -45,25 +39,24 @@ public class EmployeeHSRDataBase extends javax.swing.JFrame {
         table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
         // Iterate over each column
-   for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
-    TableColumn column = table.getColumnModel().getColumn(columnIndex);
-    int preferredWidth = 0;
-    
-    // Iterate over each row in the column to find the maximum preferred width
-    for (int rowIndex = 0; rowIndex < table.getRowCount(); rowIndex++) {
-        TableCellRenderer cellRenderer = table.getCellRenderer(rowIndex, columnIndex);
-        Component cellComponent = table.prepareRenderer(cellRenderer, rowIndex, columnIndex);
-        preferredWidth = Math.max(preferredWidth, cellComponent.getPreferredSize().width);
-    }
-    
-    // Set the preferred width for the column
-    column.setPreferredWidth(preferredWidth + table.getIntercellSpacing().width);
-}
+        for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
+            TableColumn column = table.getColumnModel().getColumn(columnIndex);
+            int preferredWidth = 0;
+            
+            // Iterate over each row in the column to find the maximum preferred width
+            for (int rowIndex = 0; rowIndex < table.getRowCount(); rowIndex++) {
+                TableCellRenderer cellRenderer = table.getCellRenderer(rowIndex, columnIndex);
+                Component cellComponent = table.prepareRenderer(cellRenderer, rowIndex, columnIndex);
+                preferredWidth = Math.max(preferredWidth, cellComponent.getPreferredSize().width);
+            }
+            
+            // Set the preferred width for the column
+            column.setPreferredWidth(preferredWidth + table.getIntercellSpacing().width);
+        }
         
         table.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 14));
         table.setFont(new Font("SansSerif", Font.PLAIN, 12));
         table.setRowHeight(25);
-       
 
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setBounds(200, 50, 800, 450);
@@ -135,9 +128,17 @@ public class EmployeeHSRDataBase extends javax.swing.JFrame {
         displayCSVData("src/Files/EmployeeData.csv"); // Replace with your CSV file path
 
         setVisible(true);
+        
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                searchEmployee();
+            }
+        });
     }
-private void displayCSVData(String csvFile) {
-   model.setColumnIdentifiers(new String[]{"Employee #", "Last Name", "First Name", "Birthday", "Address",
+
+    private void displayCSVData(String csvFile) {
+        model.setColumnIdentifiers(new String[]{"Employee #", "Last Name", "First Name", "Birthday", "Address",
                 "Phone Number", "SSS #", "Philhealth #", "TIN #", "Pag-ibig #", "Status", "Position",
                 "Immediate Supervisor", "Basic Salary", "Rice Subsidy", "Phone Allowance", "Clothing Allowance",
                 "Gross Semi-monthly Rate", "Hourly Rate"});
@@ -171,7 +172,7 @@ private void displayCSVData(String csvFile) {
                 }
             }
         });
-}
+    }
 
 
 
