@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import  System.Employee.Request;
 
 
 public class LogIn extends javax.swing.JFrame {
@@ -230,8 +231,10 @@ public class LogIn extends javax.swing.JFrame {
 
     private void LogInbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInbtnActionPerformed
  Dashboard dashboard = new Dashboard();
+ Request request = new Request();
     String userID = UserId.getText().trim();
     String pass = password.getText().trim();
+    String csvFile = "src/Files/LeaveRequests.csv";
 
     // Check if the userID exists in the employee records
     boolean accessGranted = false;
@@ -245,6 +248,7 @@ public class LogIn extends javax.swing.JFrame {
                 accessGranted = true;
                 dashboard.getMainDashBoardFirstName().setText(employee.getFirstName());
                 dashboard.getMainDashboardempNo().setText(userID);
+                dashboard.getLblPending().setText(String.valueOf(request.countRequest(csvFile,parsedUserID)));
                 if (employee.getRole().equals("Admin")) {
                     dashboard.getEmployeeRecords_MainDashboard().setVisible(true);
                 } else {
@@ -262,6 +266,7 @@ public class LogIn extends javax.swing.JFrame {
     if (accessGranted) {
         // Access granted, you can open the dashboard or perform any action here
         this.dispose();
+        
         dashboard.getProfilePanel().setVisible(false);
         dashboard.getPayslipPanel().setVisible(false);
         dashboard.getAttendancePanel().setVisible(false);

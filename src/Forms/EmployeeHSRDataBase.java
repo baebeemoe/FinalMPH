@@ -145,6 +145,9 @@ public class EmployeeHSRDataBase extends javax.swing.JFrame {
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             String line;
+            
+            // Skip the first line (header)
+            br.readLine();
             while ((line = br.readLine()) != null) {
                 model.addRow(line.split(";"));
             }
