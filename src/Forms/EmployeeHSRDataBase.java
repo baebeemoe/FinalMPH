@@ -215,9 +215,13 @@ public class EmployeeHSRDataBase extends javax.swing.JFrame {
     private void deleteSelectedEmployee() {
         int selectedRow = table.getSelectedRow();
         if (selectedRow != -1) {
+            int response = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete this employee?", "Confirm Deletion", JOptionPane.YES_NO_OPTION);
+        if (response == JOptionPane.YES_OPTION) {
+            
             model.removeRow(selectedRow);
             updateCSVFile();
         }
+    }
     }
 
     private void updateSelectedEmployee() {
