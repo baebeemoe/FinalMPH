@@ -60,7 +60,7 @@ public class Request {
     
     }
     
-    public void OvertimeRequestwriteToCSV(String employeeID, String Date, String startTime, String endTime, String reason){
+    public void OvertimeRequestwriteToCSV(String employeeID, String Date, String startTime, String endTime, String reason, String status){
         
         try {
             File file = new File("src/Files/OvertimeRequest.csv");

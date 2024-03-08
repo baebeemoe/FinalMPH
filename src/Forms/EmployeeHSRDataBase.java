@@ -125,7 +125,7 @@ public class EmployeeHSRDataBase extends javax.swing.JFrame {
 
         mainPanel.add(buttonPanel);
 
-        displayCSVData("src/Files/EmployeeData.csv"); // Replace with your CSV file path
+        displayCSVData("src/Files/EmployeeData.csv"); // Display once run
 
         setVisible(true);
         
