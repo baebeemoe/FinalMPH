@@ -2632,7 +2632,6 @@ if (accessGranted) {
         
             TimeKeeping_MainDashboard.setVisible(true);
             PayrollHealth_MainDashboard.setVisible(true);
-          
             Request_MainDashboard.setVisible(true);
             PayslipPanel.setVisible(false);
             ProfilePanel.setVisible(false);

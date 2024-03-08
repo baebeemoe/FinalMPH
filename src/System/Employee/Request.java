@@ -32,14 +32,14 @@ public class Request {
 
     
    
-    public void LeaveRequestwriteToCSV(String employeeID,String leaveType, String startDate, String endDate, String reason) {
+    public void LeaveRequestwriteToCSV(String employeeID,String leaveType, String startDate, String endDate, String reason, String status) {
     try {
         File file = new File("src/Files/LeaveRequests.csv");
         boolean isNewFile = !file.exists();
         FileWriter writer = new FileWriter(file, true); // Append to existing file
         
         if (isNewFile) {
-            writer.append("EmployeeID, LeaveTpe, Date Filed, StartDate, EndDate, Reason\n");
+            writer.append("EmployeeID, LeaveTpe, Date Filed, StartDate, EndDate, Reason, Status\n");
         }
         
             SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
@@ -48,7 +48,7 @@ public class Request {
         
             Date currentDate = new Date(); // Get current date
             String dateFiled = dateFormat.format(currentDate);
-          writer.append(employeeID  + "," + leaveType + "," + dateFiled + "," + startDate + "," + endDate + "," + reason + "\n");
+          writer.append(employeeID  + "," + leaveType + "," + dateFiled + "," + startDate + "," + endDate + "," + reason + status +"\n");
         
 
         writer.close();
@@ -69,11 +69,11 @@ public class Request {
             
             
             if (isNewFile) {
-            writer.append("EmployeeID, Date, StartTime, EndTime, Reason\n");
+            writer.append("EmployeeID, Date, StartTime, EndTime, Reason, Satus\n");
             }
             
             
-            writer.append(employeeID  + "," + Date + "," + startTime + "," + endTime + "," + reason +"\n");
+            writer.append(employeeID  + "," + Date + "," + startTime + "," + endTime + "," + reason +  status + "\n");
              
             writer.close();
             System.out.println("Data written to CSV successfully.");
