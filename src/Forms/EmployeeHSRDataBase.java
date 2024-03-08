@@ -36,7 +36,7 @@ public class EmployeeHSRDataBase extends javax.swing.JFrame {
 
         model = new DefaultTableModel();
         table = new JTable(model);
-        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         
         // Iterate over each column
         for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {

@@ -26,6 +26,7 @@ public class AttendanceRecord {
     
     
     
+    
 //Set up getter
     public int getEmpID() {
         return empID;

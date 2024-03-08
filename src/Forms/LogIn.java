@@ -251,8 +251,12 @@ public class LogIn extends javax.swing.JFrame {
                 dashboard.getLblPending().setText(String.valueOf(request.countRequest(csvFile,parsedUserID)));
                 if (employee.getRole().equals("Admin")) {
                     dashboard.getEmployeeRecords_MainDashboard().setVisible(true);
+                } else if (employee.getRole().equals("Payroll")) { 
+                    dashboard.getPayrollRecords_MainDashboard().setVisible(true);
+                    dashboard.getEmployeeRecords_MainDashboard().setVisible(false);
                 } else {
                     dashboard.getEmployeeRecords_MainDashboard().setVisible(false);
+                    dashboard.getPayrollRecords_MainDashboard().setVisible(false);
                 }
                 break;
             }
