@@ -251,6 +251,7 @@ public class LogIn extends javax.swing.JFrame {
                 dashboard.getLblPending().setText(String.valueOf(request.countRequest(csvFile,parsedUserID)));
                 if (employee.getRole().equals("Admin")) {
                     dashboard.getEmployeeRecords_MainDashboard().setVisible(true);
+                    dashboard.getPayrollRecords_MainDashboard().setVisible(false);
                 } else if (employee.getRole().equals("Payroll")) { 
                     dashboard.getPayrollRecords_MainDashboard().setVisible(true);
                     dashboard.getEmployeeRecords_MainDashboard().setVisible(false);
@@ -278,7 +279,7 @@ public class LogIn extends javax.swing.JFrame {
         dashboard.getPayPeriodPanel().setVisible(false);
         dashboard.getOvertimePanel().setVisible(false);
         dashboard.getLeaveListPanel().setVisible(false);
-        
+       
         dashboard.setVisible(true);
     } else {
         // Access denied, display an error message

@@ -27,7 +27,7 @@ public class EmployeeHSRDataBase extends javax.swing.JFrame {
     public EmployeeHSRDataBase() {
         super("EmployeeHSRDataBase");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1050, 580);
+        setSize(1300, 700);
 
         JPanel mainPanel = new JPanel(null);
         mainPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -38,17 +38,17 @@ public class EmployeeHSRDataBase extends javax.swing.JFrame {
         table = new JTable(model);
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         
-        // Iterate over each column
-        for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
-            TableColumn column = table.getColumnModel().getColumn(columnIndex);
-            int preferredWidth = 0;
-            
-            // Iterate over each row in the column to find the maximum preferred width
-            for (int rowIndex = 0; rowIndex < table.getRowCount(); rowIndex++) {
-                TableCellRenderer cellRenderer = table.getCellRenderer(rowIndex, columnIndex);
-                Component cellComponent = table.prepareRenderer(cellRenderer, rowIndex, columnIndex);
-                preferredWidth = Math.max(preferredWidth, cellComponent.getPreferredSize().width);
-            }
+       // Iterate over each column
+for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
+    TableColumn column = table.getColumnModel().getColumn(columnIndex);
+    int preferredWidth =0;
+    
+    // Iterate over each row in the column to find the maximum preferred width
+    for (int rowIndex = 0; rowIndex < table.getRowCount(); rowIndex++) {
+        TableCellRenderer cellRenderer = table.getCellRenderer(rowIndex, columnIndex);
+        Component cellComponent = table.prepareRenderer(cellRenderer, rowIndex, columnIndex);
+        preferredWidth = Math.max(preferredWidth, cellComponent.getPreferredSize().width);
+    }
             
             // Set the preferred width for the column
             column.setPreferredWidth(preferredWidth + table.getIntercellSpacing().width);
@@ -59,7 +59,7 @@ public class EmployeeHSRDataBase extends javax.swing.JFrame {
         table.setRowHeight(25);
 
         JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(200, 50, 800, 450);
+        scrollPane.setBounds(200, 50, 1070, 500);
         mainPanel.add(scrollPane);
 
         JPanel topPanel = new JPanel();
