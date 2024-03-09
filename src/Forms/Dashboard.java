@@ -98,6 +98,20 @@ public javax.swing.JPanel getProfilePanel() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        otRequestDialog = new javax.swing.JDialog();
+        otRequestDlgPnl = new javax.swing.JPanel();
+        requestOTLbl = new java.awt.Label();
+        otRequestFieldsPnl = new javax.swing.JPanel();
+        dateOTRequestLbl = new java.awt.Label();
+        datePickerOT = new com.github.lgooddatepicker.components.DatePicker();
+        startTimeOTLbl = new java.awt.Label();
+        startTimePickerOT = new com.github.lgooddatepicker.components.TimePicker();
+        endTimeOTLbl = new java.awt.Label();
+        endTimePickerOT = new com.github.lgooddatepicker.components.TimePicker();
+        reasonOTRequestLbl = new java.awt.Label();
+        reasonTextOT = new java.awt.TextArea();
+        cancelBtnOT = new javax.swing.JButton();
+        submitBtnOT = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         AttendancePanel = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -305,6 +319,148 @@ public javax.swing.JPanel getProfilePanel() {
             }
         ));
         jScrollPane1.setViewportView(jTable1);
+
+        otRequestDialog.setBackground(new java.awt.Color(51, 51, 51));
+        otRequestDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 360));
+        otRequestDialog.setMinimumSize(new java.awt.Dimension(400, 320));
+        otRequestDialog.setUndecorated(true);
+        otRequestDialog.setPreferredSize(new java.awt.Dimension(400, 400));
+        otRequestDialog.setResizable(false);
+        otRequestDialog.setSize(new java.awt.Dimension(450, 340));
+
+        otRequestDlgPnl.setBackground(new java.awt.Color(51, 51, 51));
+        otRequestDlgPnl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
+        otRequestDlgPnl.setPreferredSize(new java.awt.Dimension(450, 320));
+        otRequestDlgPnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        requestOTLbl.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
+        requestOTLbl.setForeground(new java.awt.Color(255, 255, 255));
+        requestOTLbl.setName(""); // NOI18N
+        requestOTLbl.setText("Request Overtime");
+        otRequestDlgPnl.add(requestOTLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        otRequestFieldsPnl.setBackground(new java.awt.Color(51, 51, 51));
+        otRequestFieldsPnl.setLayout(new java.awt.GridBagLayout());
+
+        dateOTRequestLbl.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        dateOTRequestLbl.setForeground(new java.awt.Color(255, 255, 255));
+        dateOTRequestLbl.setText("Date");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        otRequestFieldsPnl.add(dateOTRequestLbl, gridBagConstraints);
+
+        datePickerOT.setBackground(new java.awt.Color(51, 51, 51));
+        datePickerOT.setOpaque(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        otRequestFieldsPnl.add(datePickerOT, gridBagConstraints);
+
+        startTimeOTLbl.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        startTimeOTLbl.setForeground(new java.awt.Color(255, 255, 255));
+        startTimeOTLbl.setText("Start Time");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        otRequestFieldsPnl.add(startTimeOTLbl, gridBagConstraints);
+
+        startTimePickerOT.setBackground(new java.awt.Color(51, 51, 51));
+        startTimePickerOT.setOpaque(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        otRequestFieldsPnl.add(startTimePickerOT, gridBagConstraints);
+
+        endTimeOTLbl.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        endTimeOTLbl.setForeground(new java.awt.Color(255, 255, 255));
+        endTimeOTLbl.setText("End Time");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        otRequestFieldsPnl.add(endTimeOTLbl, gridBagConstraints);
+
+        endTimePickerOT.setOpaque(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        otRequestFieldsPnl.add(endTimePickerOT, gridBagConstraints);
+
+        reasonOTRequestLbl.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        reasonOTRequestLbl.setForeground(new java.awt.Color(255, 255, 255));
+        reasonOTRequestLbl.setText("Reason");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        otRequestFieldsPnl.add(reasonOTRequestLbl, gridBagConstraints);
+
+        reasonTextOT.setBackground(new java.awt.Color(51, 51, 51));
+        reasonTextOT.setForeground(new java.awt.Color(255, 255, 255));
+        reasonTextOT.setPreferredSize(new java.awt.Dimension(160, 80));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.RELATIVE;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 180;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        otRequestFieldsPnl.add(reasonTextOT, gridBagConstraints);
+
+        otRequestDlgPnl.add(otRequestFieldsPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+
+        cancelBtnOT.setBackground(new java.awt.Color(51, 51, 51));
+        cancelBtnOT.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        cancelBtnOT.setForeground(new java.awt.Color(255, 102, 0));
+        cancelBtnOT.setText("CANCEL");
+        cancelBtnOT.setBorderPainted(false);
+        cancelBtnOT.setOpaque(true);
+        cancelBtnOT.setPreferredSize(new java.awt.Dimension(180, 36));
+        cancelBtnOT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelBtnOTActionPerformed(evt);
+            }
+        });
+        otRequestDlgPnl.add(cancelBtnOT, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 84, -1));
+
+        submitBtnOT.setBackground(new java.awt.Color(255, 153, 0));
+        submitBtnOT.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        submitBtnOT.setForeground(new java.awt.Color(255, 255, 255));
+        submitBtnOT.setText("SUBMIT");
+        submitBtnOT.setBorderPainted(false);
+        submitBtnOT.setPreferredSize(new java.awt.Dimension(180, 36));
+        submitBtnOT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitBtnOTActionPerformed(evt);
+            }
+        });
+        otRequestDlgPnl.add(submitBtnOT, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 84, -1));
+
+        javax.swing.GroupLayout otRequestDialogLayout = new javax.swing.GroupLayout(otRequestDialog.getContentPane());
+        otRequestDialog.getContentPane().setLayout(otRequestDialogLayout);
+        otRequestDialogLayout.setHorizontalGroup(
+            otRequestDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(otRequestDlgPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        otRequestDialogLayout.setVerticalGroup(
+            otRequestDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(otRequestDlgPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1366, 768));
@@ -2485,6 +2641,8 @@ public javax.swing.JPanel getProfilePanel() {
 
     private void requestOvertimeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestOvertimeBtnActionPerformed
         // TODO add your handling code here:
+        otRequestDialog.setVisible(true);
+        otRequestDialog.setLocationRelativeTo(this);
     }//GEN-LAST:event_requestOvertimeBtnActionPerformed
 
     private void LeavePanelSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeavePanelSubmitButtonActionPerformed
@@ -2541,7 +2699,41 @@ System.out.println("Reason " + reason);
 
     private void otRequestListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_otRequestListActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_otRequestListActionPerformed
+
+    private void submitBtnOTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnOTActionPerformed
+        // TODO add your handling code here:
+        Request request = new Request();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+
+        String employeeID = MainDashboardempNo.getText(); //
+        String date = datePickerOT.getDateStringOrEmptyString();
+        String startTime = startTimePickerOT.getTimeStringOrEmptyString();
+        String endTime = endTimePickerOT.getTimeStringOrEmptyString();
+        String reason = reasonTextOT.getText();
+        String status ="Pending";
+        
+        
+        int dialogResult = JOptionPane.showConfirmDialog(this, "Submit Request Form?", "Leave Request Confirmation", JOptionPane.YES_NO_OPTION);
+
+        if (dialogResult == JOptionPane.YES_OPTION) {
+        JOptionPane.showMessageDialog(this, "Submitted Successfully");
+        request.OvertimeRequestwriteToCSV(employeeID, date, startTime, endTime, reason, status );
+        otRequestDialog.dispose();
+        
+       
+        datePickerOT.setText("");
+        startTimePickerOT.setText("");
+        endTimePickerOT.setText("");
+        reasonTextOT.setText("");
+        }
+    }//GEN-LAST:event_submitBtnOTActionPerformed
+
+    private void cancelBtnOTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnOTActionPerformed
+        // TODO add your handling code here:
+        otRequestDialog.dispose();
+    }//GEN-LAST:event_cancelBtnOTActionPerformed
 
     private void displayPayslip(String cutoffDate) {
         try {
@@ -2746,7 +2938,12 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel TimeOutLabel;
     private javax.swing.JButton applyDisputeBtn;
     private javax.swing.JTable attendanceTable;
+    private javax.swing.JButton cancelBtnOT;
     private javax.swing.JComboBox<String> cutoffSelector;
+    private java.awt.Label dateOTRequestLbl;
+    private com.github.lgooddatepicker.components.DatePicker datePickerOT;
+    private java.awt.Label endTimeOTLbl;
+    private com.github.lgooddatepicker.components.TimePicker endTimePickerOT;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -2865,6 +3062,9 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel labelSSSNo;
     private javax.swing.JLabel labelStatus;
     private javax.swing.JLabel labelTIN;
+    private javax.swing.JDialog otRequestDialog;
+    private javax.swing.JPanel otRequestDlgPnl;
+    private javax.swing.JPanel otRequestFieldsPnl;
     private javax.swing.JButton otRequestList;
     private javax.swing.JPanel payPanelBenefits;
     private javax.swing.JPanel payPanelEarnings;
@@ -2890,7 +3090,13 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel payslipStartDate;
     private javax.swing.JLabel payslipTax;
     private javax.swing.JLabel profileFirstName;
+    private java.awt.Label reasonOTRequestLbl;
+    private java.awt.TextArea reasonTextOT;
+    private java.awt.Label requestOTLbl;
     private javax.swing.JButton requestOvertimeBtn;
+    private java.awt.Label startTimeOTLbl;
+    private com.github.lgooddatepicker.components.TimePicker startTimePickerOT;
+    private javax.swing.JButton submitBtnOT;
     private javax.swing.JLabel summaryBenefits;
     private javax.swing.JLabel summaryGrossIncome;
     private javax.swing.JLabel summaryTakeHomePay;
