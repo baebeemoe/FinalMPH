@@ -28,6 +28,7 @@ import System.Employee.Earning;
 import System.Employee.Deduction;
 import System.Employee.Request;
 import Forms.EmployeePayroll;
+import Forms.Requests;
 
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
@@ -61,6 +62,10 @@ public class Dashboard extends javax.swing.JFrame {
     public JPanel getPayrollRecords_MainDashboard(){
     
    return PayrollRecords_MainDashboard;
+    }
+
+    public JPanel getRequests_MainDashboard1() {
+        return Requests_MainDashboard1;
     }
     
     
@@ -325,6 +330,8 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel118 = new javax.swing.JLabel();
         jLabel119 = new javax.swing.JLabel();
         btnLeaveList = new javax.swing.JButton();
+        Requests_MainDashboard1 = new javax.swing.JPanel();
+        btnRequetsLists = new javax.swing.JButton();
         EmployeeRecords_MainDashboard = new javax.swing.JPanel();
         btnHRSemployeeDatabase = new javax.swing.JButton();
         PayPeriodPanel = new javax.swing.JPanel();
@@ -1814,12 +1821,12 @@ public javax.swing.JPanel getProfilePanel() {
 
         PayrollRecords_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
 
-        btnPayrollemployeeDatabase1.setBackground(new java.awt.Color(0, 0, 0,0));
-        btnPayrollemployeeDatabase1.setFont(new java.awt.Font("Lucida Bright", 0, 36)); // NOI18N
-        btnPayrollemployeeDatabase1.setForeground(new java.awt.Color(255, 255, 255));
         btnPayrollemployeeDatabase1.setText("Payroll Records");
+        btnPayrollemployeeDatabase1.setBackground(new java.awt.Color(0, 0, 0,0));
         btnPayrollemployeeDatabase1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnPayrollemployeeDatabase1.setBorderPainted(false);
+        btnPayrollemployeeDatabase1.setFont(new java.awt.Font("Lucida Bright", 0, 36)); // NOI18N
+        btnPayrollemployeeDatabase1.setForeground(new java.awt.Color(255, 255, 255));
         btnPayrollemployeeDatabase1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPayrollemployeeDatabase1ActionPerformed(evt);
@@ -2083,6 +2090,39 @@ public javax.swing.JPanel getProfilePanel() {
         );
 
         jPanel1.add(LeavePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 990, 530));
+
+        Requests_MainDashboard1.setBackground(new java.awt.Color(0, 0, 0,100));
+
+        btnRequetsLists.setBackground(new java.awt.Color(0, 0, 0,0));
+        btnRequetsLists.setFont(new java.awt.Font("Lucida Bright", 0, 36)); // NOI18N
+        btnRequetsLists.setForeground(new java.awt.Color(255, 255, 255));
+        btnRequetsLists.setText("Requests List");
+        btnRequetsLists.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnRequetsLists.setBorderPainted(false);
+        btnRequetsLists.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRequetsListsActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Requests_MainDashboard1Layout = new javax.swing.GroupLayout(Requests_MainDashboard1);
+        Requests_MainDashboard1.setLayout(Requests_MainDashboard1Layout);
+        Requests_MainDashboard1Layout.setHorizontalGroup(
+            Requests_MainDashboard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Requests_MainDashboard1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(btnRequetsLists, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        Requests_MainDashboard1Layout.setVerticalGroup(
+            Requests_MainDashboard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Requests_MainDashboard1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnRequetsLists, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(Requests_MainDashboard1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, 660, -1));
 
         EmployeeRecords_MainDashboard.setBackground(new java.awt.Color(0, 0, 0,100));
 
@@ -2621,12 +2661,19 @@ if (accessGranted) {
         if (employee.getRole().equals("Admin")) {
                   EmployeeRecords_MainDashboard.setVisible(true);
                    PayrollRecords_MainDashboard.setVisible(false);
+                    Requests_MainDashboard1.setVisible(false);
                 } else if (employee.getRole().equals("Payroll")) { 
                     PayrollRecords_MainDashboard.setVisible(true);
                   EmployeeRecords_MainDashboard.setVisible(false);
+                   Requests_MainDashboard1.setVisible(false);
+                } else if (employee.getRole().equals("Supervisor")) { 
+                    PayrollRecords_MainDashboard.setVisible(false);
+                  EmployeeRecords_MainDashboard.setVisible(false);
+                   Requests_MainDashboard1.setVisible(true);
                 } else {
                   EmployeeRecords_MainDashboard.setVisible(false);
                     PayrollRecords_MainDashboard.setVisible(false);
+                    Requests_MainDashboard1.setVisible(false);
                 }
         }
         
@@ -2661,7 +2708,7 @@ if (accessGranted) {
                 OvertimePanel.setVisible(false);
                 LeaveListPanel.setVisible(false);
                 PayrollRecords_MainDashboard.setVisible(false);
-         
+                Requests_MainDashboard1.setVisible(false);
     }//GEN-LAST:event_PayslipMaindashboardActionPerformed
 
     private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
@@ -2683,7 +2730,7 @@ login.setVisible(true);// TODO add your handling code here:
             OvertimePanel.setVisible(false);
             LeaveListPanel.setVisible(false);
             PayrollRecords_MainDashboard.setVisible(false);
-        
+            Requests_MainDashboard1.setVisible(false);
     }//GEN-LAST:event_LeaveMainDashboardActionPerformed
 
     private void PayPeriodPanelButtonSept1to15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PayPeriodPanelButtonSept1to15ActionPerformed
@@ -2765,7 +2812,7 @@ try {
                 PayPeriodPanel.setVisible(false);
                 OvertimePanel.setVisible(false);
                PayrollRecords_MainDashboard.setVisible(false);
-           
+              Requests_MainDashboard1.setVisible(false);
                 
                 
         }
@@ -2858,7 +2905,7 @@ try {
                 OvertimePanel.setVisible(false);
                LeaveListPanel.setVisible(false);  
                 PayrollRecords_MainDashboard.setVisible(false);
-                
+                 Requests_MainDashboard1.setVisible(false);
         }
        
     } catch (ParseException e) {
@@ -2964,7 +3011,7 @@ if (accessGranted) {
     OvertimePanel.setVisible(true);
      LeaveListPanel.setVisible(false);
      PayrollRecords_MainDashboard.setVisible(false);
-    
+     Requests_MainDashboard1.setVisible(false);
 } else {
     // Access denied, display an error message
     JOptionPane.showMessageDialog(this, "Access Denied. Employee ID not found.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -3067,7 +3114,7 @@ if (accessGranted) {
     OvertimePanel.setVisible(false);
     LeaveListPanel.setVisible(true);
    PayrollRecords_MainDashboard.setVisible(false);
-    
+    Requests_MainDashboard1.setVisible(false);
     
 } else {
     // Access denied, display an error message
@@ -3089,6 +3136,15 @@ if (accessGranted) {
 
 
     }//GEN-LAST:event_btnPayrollemployeeDatabase1ActionPerformed
+
+    private void btnRequetsListsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequetsListsActionPerformed
+
+   Requests requests = new Requests();
+            this.setVisible(true);
+            requests.setVisible(true);
+            
+  
+    }//GEN-LAST:event_btnRequetsListsActionPerformed
 
   
 
@@ -3144,6 +3200,7 @@ if (accessGranted) {
     private javax.swing.JButton PunchIn;
     private javax.swing.JButton PunchOut;
     private javax.swing.JPanel Request_MainDashboard;
+    private javax.swing.JPanel Requests_MainDashboard1;
     private javax.swing.JLabel Shift;
     private javax.swing.JLabel TimeInLabel;
     private javax.swing.JPanel TimeKeeping_MainDashboard;
@@ -3152,6 +3209,7 @@ if (accessGranted) {
     private javax.swing.JButton btnHRSemployeeDatabase;
     private javax.swing.JButton btnLeaveList;
     private javax.swing.JButton btnPayrollemployeeDatabase1;
+    private javax.swing.JButton btnRequetsLists;
     private javax.swing.JButton btnovertimerequest;
     private com.github.lgooddatepicker.components.DatePicker datePicker1;
     private javax.swing.JButton jButton5;
