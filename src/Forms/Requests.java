@@ -5,6 +5,22 @@
  */
 package Forms;
 
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Component;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.IOException;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JTable;
+import java.io.FileWriter;
+
 /**
  *
  * @author Default
@@ -33,9 +49,9 @@ public class Requests extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         LeavePane = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        LeaveTable = new javax.swing.JTable();
         OverTimePane = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        OvertimeTable = new javax.swing.JTable();
         btnOvertimeRequest = new javax.swing.JButton();
         btnLeaveRequest = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -50,7 +66,7 @@ public class Requests extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        LeaveTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -61,11 +77,11 @@ public class Requests extends javax.swing.JFrame {
                 "EmployeeID", "Leave Type", "Date Filed", "Start Date", "End Date", "Reason", "Status"
             }
         ));
-        LeavePane.setViewportView(jTable1);
+        LeavePane.setViewportView(LeaveTable);
 
         jPanel2.add(LeavePane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1145, 528));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        OvertimeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -76,7 +92,7 @@ public class Requests extends javax.swing.JFrame {
                 "EmployeeID", "Date", "Start Time", "End Time", "Reason", "Status"
             }
         ));
-        OverTimePane.setViewportView(jTable2);
+        OverTimePane.setViewportView(OvertimeTable);
 
         jPanel2.add(OverTimePane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1145, 528));
 
@@ -98,6 +114,11 @@ public class Requests extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
         jButton3.setText("Save");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,13 +175,164 @@ public class Requests extends javax.swing.JFrame {
 
     private void btnLeaveRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeaveRequestActionPerformed
 LeavePane.setVisible(true);       
-OverTimePane.setVisible(false);// TODO add your handling code here:
+OverTimePane.setVisible(false);
+
+DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
+    model.setRowCount(0);
+    
+  // Populate the table with data from the CSV file
+    String csvFilePath = "src/Files/LeaveRequests.csv";
+    boolean foundRecords = false;
+
+    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+        
+       // Skip the first line
+        String headerLine = br.readLine();
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] data = line.split(",");
+            if (data.length >= 6) {
+                model.addRow(new Object[]{data[0], data[1], data[2], data[3],data[4],data [5]});
+                foundRecords = true;
+            }
+        }
+    } catch (IOException ex) {
+        ex.printStackTrace();
+    }    
+    
+    // Add dropdown button in the last column
+   // Add dropdown button in the last column
+    TableColumn lastColumn = LeaveTable.getColumnModel().getColumn(model.getColumnCount() - 1);
+    lastColumn.setCellRenderer(new DefaultTableCellRenderer() {
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            Component component = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+            if (value != null && value.equals("Approved")) {
+                setText("Approved");
+            } else if (value != null && value.equals("Denied")) {
+                setText("Denied");
+           
+            } else {
+                setText("Pending");
+            }
+            return component;
+        }
+    });
+
+    lastColumn.setCellEditor(new DefaultCellEditor(new JComboBox(new String[]{"Pending ", "Approved", "Denied"})));
+
+
+
+// TODO add your handling code here:
     }//GEN-LAST:event_btnLeaveRequestActionPerformed
 
     private void btnOvertimeRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOvertimeRequestActionPerformed
- LeavePane.setVisible(false);       
-OverTimePane.setVisible(true);// TODO add your handling code here:
+LeavePane.setVisible(false);       
+OverTimePane.setVisible(true);
+DefaultTableModel model = (DefaultTableModel) OvertimeTable.getModel();
+    model.setRowCount(0);
+    
+  // Populate the table with data from the CSV file
+    String csvFilePath = "src/Files/OvertimeRequest.csv";
+    boolean foundRecords = false;
+
+    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+         // Skip the first line
+        String headerLine = br.readLine();
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] data = line.split(",");
+            if (data.length >= 5) {
+                model.addRow(new Object[]{data[0], data[1], data[2], data[3],data[4]});
+                foundRecords = true;
+            }
+        }
+    } catch (IOException ex) {
+        ex.printStackTrace();
+    }    
+    
+    // Add dropdown button in the last column
+   // Add dropdown button in the last column
+    TableColumn lastColumn = OvertimeTable.getColumnModel().getColumn(model.getColumnCount() -1
+    );
+    lastColumn.setCellRenderer(new DefaultTableCellRenderer() {
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            Component component = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+            if (value != null && value.equals("Approved")) {
+                setText("Approved");
+            } else if (value != null && value.equals("Denied")) {
+                setText("Denied");
+            } else {
+                setText("Pending");
+            }
+            return component;
+        }
+    });
+
+    lastColumn.setCellEditor(new DefaultCellEditor(new JComboBox(new String[]{"Pending ", "Approved", "Denied"})));
+
     }//GEN-LAST:event_btnOvertimeRequestActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+                if (OverTimePane.isVisible()) {
+                    saveData( "src/Files/OvertimeRequest.csv");
+                } else if (LeavePane.isVisible()) {
+                    saveData( "src/Files/LeaveRequests.csv");
+                }
+      
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+  private void saveData(String fileName) {
+    String csvFilePath = "";
+    DefaultTableModel model = null;
+
+    if (OverTimePane.isVisible()) {
+        csvFilePath = fileName;
+        model = (DefaultTableModel) OvertimeTable.getModel();
+    } else if (LeavePane.isVisible()) {
+        csvFilePath = fileName;
+        model = (DefaultTableModel) LeaveTable.getModel();
+    }
+
+    if (model == null) {
+        System.out.println("No table is visible.");
+        return;
+    }
+
+    try (FileWriter writer = new FileWriter(csvFilePath)) {
+        int rowCount = model.getRowCount();
+        int columnCount = model.getColumnCount();
+
+        // Write column headers
+        for (int i = 0; i < columnCount; i++) {
+            writer.write(model.getColumnName(i));
+            if (i < columnCount - 1) {
+                writer.write(",");
+            }
+        }
+        writer.write("\n");
+
+        // Write data rows
+        for (int i = 0; i < rowCount; i++) {
+            for (int j = 0; j < columnCount; j++) {
+                Object value = model.getValueAt(i, j);
+                if (value != null) {
+                    writer.write(value.toString());
+                }
+                if (j < columnCount - 1) {
+                    writer.write(",");
+                }
+            }
+            writer.write("\n");
+        }
+
+        writer.flush();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
 
     /**
      * @param args the command line arguments
@@ -199,14 +371,14 @@ OverTimePane.setVisible(true);// TODO add your handling code here:
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane LeavePane;
+    private javax.swing.JTable LeaveTable;
     private javax.swing.JScrollPane OverTimePane;
+    private javax.swing.JTable OvertimeTable;
     private javax.swing.JButton btnLeaveRequest;
     private javax.swing.JButton btnOvertimeRequest;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }

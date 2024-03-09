@@ -2988,7 +2988,7 @@ if (accessGranted) {
         String enddateFiled = dateFormat.format(endDate);
         String leaveType = LeavePanelLeaveSelector.getSelectedItem().toString();
         String reason = LeavePanelReason.getText();
-
+        String status = "";
         if (startDate.compareTo(endDate) >= 0) {
             JOptionPane.showMessageDialog(this, "End date should be greater than Start Date");
         } else {
@@ -2996,7 +2996,7 @@ if (accessGranted) {
 
             if (dialogResult == JOptionPane.YES_OPTION) {
                 JOptionPane.showMessageDialog(this, "Submitted Successfully");
-                request.LeaveRequestwriteToCSV(empID,leaveType, startdateFiled, enddateFiled, reason);
+                request.LeaveRequestwriteToCSV(empID,leaveType, startdateFiled, enddateFiled, reason, status);
 
                 LeavePanelStartDate.setDateFormatString("");
                 LeavePanelEndDate.setDateFormatString("");

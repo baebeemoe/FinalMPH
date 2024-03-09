@@ -48,7 +48,7 @@ public class Request {
         
             Date currentDate = new Date(); // Get current date
             String dateFiled = dateFormat.format(currentDate);
-          writer.append(employeeID  + "," + leaveType + "," + dateFiled + "," + startDate + "," + endDate + "," + reason + status +"\n");
+          writer.append(employeeID  + "," + leaveType + "," + dateFiled + "," + startDate + "," + endDate + "," + reason + "," + status +"\n");
         
 
         writer.close();
@@ -73,7 +73,7 @@ public class Request {
             }
             
             
-            writer.append(employeeID  + "," + Date + "," + startTime + "," + endTime + "," + reason +  status + "\n");
+            writer.append(employeeID  + "," + Date + "," + startTime + "," + endTime + "," + reason + "," +  status + "\n");
              
             writer.close();
             System.out.println("Data written to CSV successfully.");
