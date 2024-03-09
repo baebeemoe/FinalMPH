@@ -191,8 +191,8 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
         String line;
         while ((line = br.readLine()) != null) {
             String[] data = line.split(",");
-            if (data.length >= 6) {
-                model.addRow(new Object[]{data[0], data[1], data[2], data[3],data[4],data [5]});
+            if (data.length >= 7) {
+                model.addRow(new Object[]{data[0], data[1], data[2], data[3],data[4],data [5],data[6]});
                 foundRecords = true;
             }
         }
@@ -242,8 +242,8 @@ DefaultTableModel model = (DefaultTableModel) OvertimeTable.getModel();
         String line;
         while ((line = br.readLine()) != null) {
             String[] data = line.split(",");
-            if (data.length >= 5) {
-                model.addRow(new Object[]{data[0], data[1], data[2], data[3],data[4]});
+            if (data.length >= 6) {
+                model.addRow(new Object[]{data[0], data[1], data[2], data[3],data[4],data[5]});
                 foundRecords = true;
             }
         }
