@@ -102,7 +102,9 @@ public javax.swing.JPanel getProfilePanel() {
         AttendancePanel = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         attendanceTable = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        requestOvertimeBtn = new javax.swing.JButton();
+        applyDisputeBtn = new javax.swing.JButton();
+        otRequestList = new javax.swing.JButton();
         PayslipPanel = new javax.swing.JPanel();
         PayslipViewPanel = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
@@ -356,15 +358,39 @@ public javax.swing.JPanel getProfilePanel() {
         attendanceTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(attendanceTable);
 
-        jButton2.setBackground(new java.awt.Color(255, 153, 0));
-        jButton2.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("APPLY DISPUTE");
-        jButton2.setBorderPainted(false);
-        jButton2.setPreferredSize(new java.awt.Dimension(180, 36));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        requestOvertimeBtn.setBackground(new java.awt.Color(255, 153, 0));
+        requestOvertimeBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        requestOvertimeBtn.setForeground(new java.awt.Color(255, 255, 255));
+        requestOvertimeBtn.setText("REQUEST OVERTIME");
+        requestOvertimeBtn.setBorderPainted(false);
+        requestOvertimeBtn.setPreferredSize(new java.awt.Dimension(180, 36));
+        requestOvertimeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                requestOvertimeBtnActionPerformed(evt);
+            }
+        });
+
+        applyDisputeBtn.setBackground(new java.awt.Color(255, 153, 0));
+        applyDisputeBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        applyDisputeBtn.setForeground(new java.awt.Color(255, 255, 255));
+        applyDisputeBtn.setText("APPLY DISPUTE");
+        applyDisputeBtn.setBorderPainted(false);
+        applyDisputeBtn.setPreferredSize(new java.awt.Dimension(180, 36));
+        applyDisputeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                applyDisputeBtnActionPerformed(evt);
+            }
+        });
+
+        otRequestList.setBackground(new java.awt.Color(255, 153, 0));
+        otRequestList.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        otRequestList.setForeground(new java.awt.Color(255, 255, 255));
+        otRequestList.setText("OVERTIME REQUEST LIST");
+        otRequestList.setBorderPainted(false);
+        otRequestList.setPreferredSize(new java.awt.Dimension(180, 36));
+        otRequestList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                otRequestListActionPerformed(evt);
             }
         });
 
@@ -373,20 +399,28 @@ public javax.swing.JPanel getProfilePanel() {
         AttendancePanelLayout.setHorizontalGroup(
             AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AttendancePanelLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 921, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(431, 431, 431))
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(requestOvertimeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(applyDisputeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(otRequestList, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 773, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10))
         );
         AttendancePanelLayout.setVerticalGroup(
             AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AttendancePanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AttendancePanelLayout.createSequentialGroup()
+                        .addComponent(requestOvertimeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(otRequestList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(applyDisputeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(92, 92, 92))
         );
 
         jPanel1.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
@@ -2449,9 +2483,9 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel6.setText("Payslip");
     }//GEN-LAST:event_PayslipMaindashboardMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void requestOvertimeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestOvertimeBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_requestOvertimeBtnActionPerformed
 
     private void LeavePanelSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeavePanelSubmitButtonActionPerformed
         // TODO add your handling code here:
@@ -2500,6 +2534,14 @@ System.out.println("Reason " + reason);
         String selectedCutOff = (String) cutoffSelector.getSelectedItem();
         displayPayslip(selectedCutOff);
     }//GEN-LAST:event_viewPayslipButtonActionPerformed
+
+    private void applyDisputeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_applyDisputeBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_applyDisputeBtnActionPerformed
+
+    private void otRequestListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_otRequestListActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_otRequestListActionPerformed
 
     private void displayPayslip(String cutoffDate) {
         try {
@@ -2702,9 +2744,9 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel TimeInLabel;
     private javax.swing.JPanel TimeKeeping_MainDashboard;
     private javax.swing.JLabel TimeOutLabel;
+    private javax.swing.JButton applyDisputeBtn;
     private javax.swing.JTable attendanceTable;
     private javax.swing.JComboBox<String> cutoffSelector;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -2823,6 +2865,7 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel labelSSSNo;
     private javax.swing.JLabel labelStatus;
     private javax.swing.JLabel labelTIN;
+    private javax.swing.JButton otRequestList;
     private javax.swing.JPanel payPanelBenefits;
     private javax.swing.JPanel payPanelEarnings;
     private javax.swing.JPanel payPanelEmpInfo;
@@ -2847,6 +2890,7 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel payslipStartDate;
     private javax.swing.JLabel payslipTax;
     private javax.swing.JLabel profileFirstName;
+    private javax.swing.JButton requestOvertimeBtn;
     private javax.swing.JLabel summaryBenefits;
     private javax.swing.JLabel summaryGrossIncome;
     private javax.swing.JLabel summaryTakeHomePay;
