@@ -264,6 +264,7 @@ public class LogIn extends javax.swing.JFrame {
                 } else {
                     dashboard.getEmployeeRecords_MainDashboard().setVisible(false);
                     dashboard.getPayrollRecords_MainDashboard().setVisible(false);
+                    dashboard.getRequests_MainDashboard1().setVisible(false);
                 }
                 break;
             }

@@ -29,10 +29,14 @@ import System.Employee.Deduction;
 import System.Employee.Request;
 import Forms.EmployeePayroll;
 import Forms.Requests;
-
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
 import Forms.EmployeeHSRDataBase;
+import java.io.File;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
 import javax.swing.table.TableColumn;
@@ -147,6 +151,14 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel78 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         OvertimeReason = new javax.swing.JTextArea();
+        ChangePasswordDialog = new javax.swing.JDialog();
+        lblChangePassword = new javax.swing.JLabel();
+        panel1 = new java.awt.Panel();
+        tfnewpassword = new javax.swing.JTextField();
+        jLabel86 = new javax.swing.JLabel();
+        jLabel88 = new javax.swing.JLabel();
+        tfconfirmPassword = new javax.swing.JTextField();
+        btnchangepassword = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -211,6 +223,7 @@ public javax.swing.JPanel getProfilePanel() {
         ProfileTinnumber = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         ProfileAddress = new javax.swing.JTextArea();
+        btnprofileChangePass = new javax.swing.JButton();
         jLabel32 = new javax.swing.JLabel();
         OvertimePanel = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -462,6 +475,95 @@ public javax.swing.JPanel getProfilePanel() {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        ChangePasswordDialog.setBackground(new java.awt.Color(51, 204, 255));
+        ChangePasswordDialog.setMinimumSize(new java.awt.Dimension(466, 330));
+        ChangePasswordDialog.setPreferredSize(new java.awt.Dimension(466, 317));
+        ChangePasswordDialog.setResizable(false);
+
+        lblChangePassword.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        lblChangePassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblChangePassword.setText("Change your password");
+
+        panel1.setBackground(new java.awt.Color(0, 204, 255));
+
+        tfnewpassword.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
+        tfnewpassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 255, 0), 1, true));
+
+        jLabel86.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        jLabel86.setText("New Password");
+
+        jLabel88.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        jLabel88.setText("Confirm Password");
+
+        tfconfirmPassword.setFont(new java.awt.Font("Lucida Bright", 0, 12)); // NOI18N
+        tfconfirmPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 51)));
+
+        btnchangepassword.setBackground(new java.awt.Color(51, 255, 255));
+        btnchangepassword.setFont(new java.awt.Font("Lucida Bright", 1, 12)); // NOI18N
+        btnchangepassword.setText("Change my password");
+        btnchangepassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnchangepasswordActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
+        panel1.setLayout(panel1Layout);
+        panel1Layout.setHorizontalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addComponent(jLabel86)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnchangepassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfnewpassword)
+                        .addComponent(jLabel88, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(tfconfirmPassword, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addGap(81, 81, 81))
+        );
+        panel1Layout.setVerticalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel86)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfnewpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel88)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfconfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(btnchangepassword)
+                .addContainerGap(69, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout ChangePasswordDialogLayout = new javax.swing.GroupLayout(ChangePasswordDialog.getContentPane());
+        ChangePasswordDialog.getContentPane().setLayout(ChangePasswordDialogLayout);
+        ChangePasswordDialogLayout.setHorizontalGroup(
+            ChangePasswordDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ChangePasswordDialogLayout.createSequentialGroup()
+                .addGroup(ChangePasswordDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ChangePasswordDialogLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ChangePasswordDialogLayout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(lblChangePassword)))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+        ChangePasswordDialogLayout.setVerticalGroup(
+            ChangePasswordDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ChangePasswordDialogLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblChangePassword)
+                .addGap(19, 19, 19)
+                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -829,6 +931,13 @@ public javax.swing.JPanel getProfilePanel() {
         ProfileAddress.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jScrollPane2.setViewportView(ProfileAddress);
 
+        btnprofileChangePass.setText("Change Password");
+        btnprofileChangePass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnprofileChangePassActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -892,20 +1001,22 @@ public javax.swing.JPanel getProfilePanel() {
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(46, 46, 46)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(ProfilePhilhealth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(ProfileTinnumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(46, 46, 46)
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(ProfileSSS, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ProfilePagIbig, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(ProfilePagIbig, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(46, 46, 46)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnprofileChangePass)
+                                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(ProfilePhilhealth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(ProfileTinnumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
@@ -949,45 +1060,48 @@ public javax.swing.JPanel getProfilePanel() {
                             .addComponent(jLabel41)
                             .addComponent(jLabel51)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(jLabel43)
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel44)
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel45)
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel46))
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(jLabel42)
-                                .addGap(44, 44, 44)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel52)
-                                    .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addComponent(ProfileSSS, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(jLabel53))
-                                    .addComponent(ProfilePagIbig, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(5, 5, 5)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel54)
-                                    .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addComponent(ProfilePhilhealth, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(jLabel55))
-                                    .addComponent(ProfileTinnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(47, Short.MAX_VALUE))
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
+                            .addGap(73, 73, 73)
+                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel9Layout.createSequentialGroup()
+                                    .addComponent(jLabel43)
+                                    .addGap(10, 10, 10)
+                                    .addComponent(jLabel44)
+                                    .addGap(10, 10, 10)
+                                    .addComponent(jLabel45)
+                                    .addGap(10, 10, 10)
+                                    .addComponent(jLabel46))
+                                .addGroup(jPanel9Layout.createSequentialGroup()
+                                    .addComponent(jLabel42)
+                                    .addGap(44, 44, 44)
+                                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel52)
+                                        .addGroup(jPanel9Layout.createSequentialGroup()
+                                            .addGap(4, 4, 4)
+                                            .addComponent(ProfileSSS, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(10, 10, 10)
+                                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel9Layout.createSequentialGroup()
+                                            .addGap(1, 1, 1)
+                                            .addComponent(jLabel53))
+                                        .addComponent(ProfilePagIbig, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(5, 5, 5)
+                                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel54)
+                                        .addGroup(jPanel9Layout.createSequentialGroup()
+                                            .addGap(4, 4, 4)
+                                            .addComponent(ProfilePhilhealth, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(10, 10, 10)
+                                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel9Layout.createSequentialGroup()
+                                            .addGap(1, 1, 1)
+                                            .addComponent(jLabel55))
+                                        .addComponent(ProfileTinnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(btnprofileChangePass)
+                .addContainerGap())
         );
 
         jLabel32.setText("Profile");
@@ -1006,7 +1120,7 @@ public javax.swing.JPanel getProfilePanel() {
                     .addGroup(ProfilePanelLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         ProfilePanelLayout.setVerticalGroup(
             ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2093,12 +2207,12 @@ public javax.swing.JPanel getProfilePanel() {
 
         Requests_MainDashboard1.setBackground(new java.awt.Color(0, 0, 0,100));
 
-        btnRequetsLists.setBackground(new java.awt.Color(0, 0, 0,0));
-        btnRequetsLists.setFont(new java.awt.Font("Lucida Bright", 0, 36)); // NOI18N
-        btnRequetsLists.setForeground(new java.awt.Color(255, 255, 255));
         btnRequetsLists.setText("Requests List");
+        btnRequetsLists.setBackground(new java.awt.Color(0, 0, 0,0));
         btnRequetsLists.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnRequetsLists.setBorderPainted(false);
+        btnRequetsLists.setFont(new java.awt.Font("Lucida Bright", 0, 36)); // NOI18N
+        btnRequetsLists.setForeground(new java.awt.Color(255, 255, 255));
         btnRequetsLists.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRequetsListsActionPerformed(evt);
@@ -2489,7 +2603,9 @@ public javax.swing.JPanel getProfilePanel() {
             PayPeriodPanel.setVisible(false);
             OvertimePanel.setVisible(false);
             LeaveListPanel.setVisible(false);
-            
+            EmployeeRecords_MainDashboard.setVisible(false);
+            PayrollRecords_MainDashboard.setVisible(false);
+            Requests_MainDashboard1.setVisible(false);
             
         } else {
             // Access denied, display an error message
@@ -2653,12 +2769,13 @@ if (accessGranted) {
 
     private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
         String empID = MainDashboardempNo.getText().trim();   
+        
         int employeeID = Integer.parseInt(empID);
         for (EmployeeRecords employee : employees)
         
         if (employeeID == employee.getEmpNo()){    
             
-        if (employee.getRole().equals("Admin")) {
+        if       (employee.getRole().equals("Admin")) {
                   EmployeeRecords_MainDashboard.setVisible(true);
                    PayrollRecords_MainDashboard.setVisible(false);
                     Requests_MainDashboard1.setVisible(false);
@@ -2672,8 +2789,8 @@ if (accessGranted) {
                    Requests_MainDashboard1.setVisible(true);
                 } else {
                   EmployeeRecords_MainDashboard.setVisible(false);
-                    PayrollRecords_MainDashboard.setVisible(false);
-                    Requests_MainDashboard1.setVisible(false);
+                  PayrollRecords_MainDashboard.setVisible(false);
+                  Requests_MainDashboard1.setVisible(false);
                 }
         }
         
@@ -2713,7 +2830,8 @@ if (accessGranted) {
 
     private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
 LogIn login = new LogIn();  
-login.setVisible(true);// TODO add your handling code here:
+login.setVisible(true);
+this.show(false);// TODO add your handling code here:
     }//GEN-LAST:event_LogOutActionPerformed
 
     private void LeaveMainDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaveMainDashboardActionPerformed
@@ -3146,12 +3264,71 @@ if (accessGranted) {
   
     }//GEN-LAST:event_btnRequetsListsActionPerformed
 
+    private void btnchangepasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnchangepasswordActionPerformed
+
+    String empID = MainDashboardempNo.getText().trim();
+    String newPassword = tfnewpassword.getText();
+    String confirmPassword = tfconfirmPassword.getText();
+    
+    if (newPassword.equals(confirmPassword)) {
+            // Path to the CSV file
+            String csvFilePath = "src/Files/EmployeeData.csv";
+    
+     try {
+                // Read the CSV file
+                File file = new File(csvFilePath);
+                BufferedReader br = new BufferedReader(new FileReader(file));
+                StringBuilder sb = new StringBuilder();
+                // Read and store the header line
+                String header = br.readLine();
+                sb.append(header).append("\n");
+                String line;
+                while ((line = br.readLine()) != null) {
+                    // Skip the header line
+                
+                    String[] data = line.split(";");
+                    // Assuming employee number is stored in the first column
+                    int employeeID = Integer.parseInt(data[0]);
+                    if (employeeID == Integer.parseInt(empID)) {
+                        // Update password (assuming password is stored in second last column)
+                        data[data.length - 2] = newPassword;
+                    }
+                    sb.append(String.join(";", data)).append("\n");
+                }
+                br.close();
+
+                // Write the updated data back to the CSV file
+                BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+                bw.write(sb.toString());
+                bw.close();
+
+                JOptionPane.showMessageDialog(null, "Password updated successfully.");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Passwords do not match. Please try again.");
+        }
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnchangepasswordActionPerformed
+
+    private void btnprofileChangePassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprofileChangePassActionPerformed
+    
+        ChangePasswordDialog.setVisible(true);
+        ChangePasswordDialog.setLocationRelativeTo(this);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnprofileChangePassActionPerformed
+
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AttendanceMainDashboardButtion;
     private javax.swing.JPanel AttendancePanel;
     private javax.swing.JLabel Background;
+    private javax.swing.JDialog ChangePasswordDialog;
     private javax.swing.JLabel Department;
     private javax.swing.JPanel EmployeeDashboard_MainDashboard;
     private javax.swing.JPanel EmployeeRecords_MainDashboard;
@@ -3210,7 +3387,9 @@ if (accessGranted) {
     private javax.swing.JButton btnLeaveList;
     private javax.swing.JButton btnPayrollemployeeDatabase1;
     private javax.swing.JButton btnRequetsLists;
+    private javax.swing.JButton btnchangepassword;
     private javax.swing.JButton btnovertimerequest;
+    private javax.swing.JButton btnprofileChangePass;
     private com.github.lgooddatepicker.components.DatePicker datePicker1;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
@@ -3314,7 +3493,9 @@ if (accessGranted) {
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel91;
@@ -3346,8 +3527,10 @@ if (accessGranted) {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JLabel lblChangePassword;
     private javax.swing.JLabel lblPending;
     private javax.swing.JTable overtimeListTable;
+    private java.awt.Panel panel1;
     private javax.swing.JLabel payslipBenefitTotal;
     private javax.swing.JLabel payslipClothingAllowance;
     private javax.swing.JLabel payslipDailyRate;
@@ -3373,6 +3556,8 @@ if (accessGranted) {
     private javax.swing.JLabel summaryGrossIncome;
     private javax.swing.JLabel summaryTakeHomePay;
     private javax.swing.JLabel summaryTotalDeduction;
+    private javax.swing.JTextField tfconfirmPassword;
+    private javax.swing.JTextField tfnewpassword;
     private com.github.lgooddatepicker.components.TimePicker timePicker1;
     private com.github.lgooddatepicker.components.TimePicker timePicker2;
     private javax.swing.JProgressBar timeprogressbar;
