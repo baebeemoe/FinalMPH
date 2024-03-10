@@ -6,6 +6,7 @@
 package Forms;
 
 import System.Employee.EmployeeRecords;
+import System.Employee.Request;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -50,7 +51,7 @@ public class LogIn extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(8, 0), new java.awt.Dimension(8, 0), new java.awt.Dimension(8, 32767));
-        jPasswordField1 = new javax.swing.JPasswordField();
+        password = new javax.swing.JPasswordField();
         LogInbtn = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
@@ -128,19 +129,19 @@ public class LogIn extends javax.swing.JFrame {
         jPanel4.add(jLabel7);
         jPanel4.add(filler2);
 
-        jPasswordField1.setBackground(new java.awt.Color(0, 0, 0,0));
-        jPasswordField1.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField1.setBorder(null);
-        jPasswordField1.setCaretColor(new java.awt.Color(255, 255, 255));
-        jPasswordField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPasswordField1.setPreferredSize(new java.awt.Dimension(240, 36));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        password.setBackground(new java.awt.Color(0, 0, 0,0));
+        password.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        password.setForeground(new java.awt.Color(255, 255, 255));
+        password.setBorder(null);
+        password.setCaretColor(new java.awt.Color(255, 255, 255));
+        password.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        password.setPreferredSize(new java.awt.Dimension(240, 36));
+        password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                passwordActionPerformed(evt);
             }
         });
-        jPanel4.add(jPasswordField1);
+        jPanel4.add(password);
 
         LogInbtn.setBackground(new java.awt.Color(255, 102, 0));
         LogInbtn.setFont(new java.awt.Font("Poppins Medium", 0, 18)); // NOI18N
@@ -343,49 +344,67 @@ public class LogIn extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_passwordActionPerformed
 
     private void LogInbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInbtnActionPerformed
         Dashboard dashboard = new Dashboard();
-String userID = UserId.getText().trim();
+        Request request = new Request();
+        String userID = UserId.getText().trim();
+        String pass = password.getText().trim();
+        String csvFile = "src/Files/LeaveRequests.csv";
 
-// Check if the userID exists in the employee records
-boolean accessGranted = false;
+        // Check if the userID exists in the employee records
+        boolean accessGranted = false;
 
-// Validate if the input is a valid integer
-try {
-    int parsedUserID = Integer.parseInt(userID);
+        // Validate if the input is a valid integer
+        try {
+            int parsedUserID = Integer.parseInt(userID);
     
-    for (EmployeeRecords employee : employees) {
-        if (employee.getEmpNo() == parsedUserID) {
-            accessGranted = true;
-            dashboard.getMainDashBoardFirstName().setText(employee.getFirstName());
-            dashboard.getMainDashboardempNo().setText(userID);
-            break;
+            for (EmployeeRecords employee : employees) {
+                if (employee.getEmpNo() == parsedUserID && employee.getPassword().equals(pass)) {
+                accessGranted = true;
+                dashboard.getMainDashBoardFirstName().setText(employee.getFirstName());
+                dashboard.getMainDashboardempNo().setText(userID);
+                dashboard.getLblPending().setText(String.valueOf(request.countRequest(csvFile,parsedUserID)));
+                if (employee.getRole().equals("Admin")) {
+//                    dashboard.getEmployeeRecords_MainDashboard().setVisible(true);
+//                    dashboard.getPayrollRecords_MainDashboard().setVisible(false);
+//                    dashboard.getRequests_MainDashboard1().setVisible(false);
+                } else if (employee.getRole().equals("Payroll")) { 
+//                    dashboard.getPayrollRecords_MainDashboard().setVisible(true);
+//                    dashboard.getEmployeeRecords_MainDashboard().setVisible(false);
+//                    dashboard.getRequests_MainDashboard1().setVisible(false);
+                } else if (employee.getRole().equals("Supervisor")) { 
+//                    dashboard.getPayrollRecords_MainDashboard().setVisible(false);
+//                    dashboard.getEmployeeRecords_MainDashboard().setVisible(false);
+//                     dashboard.getRequests_MainDashboard1().setVisible(true);
+                } else {
+//                    dashboard.getEmployeeRecords_MainDashboard().setVisible(false);
+//                    dashboard.getPayrollRecords_MainDashboard().setVisible(false);
+                }
+                break;
+            }
+            }
+        } catch (NumberFormatException e) {
+        // Handle the case where the input is not a valid integer
+            JOptionPane.showMessageDialog(this, "Invalid UserID! Please enter a valid integer.", "Login Error", JOptionPane.ERROR_MESSAGE);
         }
-    }
-} catch (NumberFormatException e) {
-    // Handle the case where the input is not a valid integer
-    JOptionPane.showMessageDialog(this, "Invalid UserID! Please enter a valid integer.", "Login Error", JOptionPane.ERROR_MESSAGE);
-}
 
-// Grant or deny access based on the result
-if (accessGranted) {
-    // Access granted, you can open the dashboard or perform any action here
-    this.dispose();
-    dashboard.getProfilePanel().setVisible(false);
-    dashboard.getPayslipPanel().setVisible(false);
-    dashboard.getAttendancePanel().setVisible(false);
-    dashboard.getLeavePanel().setVisible(false);
-    dashboard.setVisible(true);
-} else {
-    // Access denied, display an error message
-    JOptionPane.showMessageDialog(this, "Invalid UserID! Access Denied.", "Login Error", JOptionPane.ERROR_MESSAGE);
-}
-        
-  
+        // Grant or deny access based on the result
+        if (accessGranted) {
+            // Access granted, you can open the dashboard or perform any action here
+        this.dispose();
+        dashboard.getProfilePanel().setVisible(false);
+        dashboard.getPayslipPanel().setVisible(false);
+        dashboard.getAttendancePanel().setVisible(false);
+        dashboard.getLeavePanel().setVisible(false);
+        dashboard.setVisible(true);
+        } else {
+        // Access denied, display an error message
+            JOptionPane.showMessageDialog(this, "Invalid UserID! Access Denied.", "Login Error", JOptionPane.ERROR_MESSAGE);
+        }     
     }//GEN-LAST:event_LogInbtnActionPerformed
 
     private void LogInbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInbtnMouseEntered
@@ -443,8 +462,8 @@ if (accessGranted) {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPasswordField password;
     // End of variables declaration//GEN-END:variables
 }
 

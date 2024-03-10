@@ -45,6 +45,10 @@ public class Dashboard extends javax.swing.JFrame {
         attendance = AttendanceRecord.readAttendanceFromCSV("src/Files/Attendance.csv");
     }
 
+    public JLabel getLblPending() {
+        return lblPending;
+    }
+    
     public JPanel getAttendancePanel() {
         return AttendancePanel;
     }
@@ -247,7 +251,7 @@ public javax.swing.JPanel getProfilePanel() {
         jLabel17 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
+        lblPending = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
@@ -329,7 +333,6 @@ public javax.swing.JPanel getProfilePanel() {
         otRequestDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 360));
         otRequestDialog.setMinimumSize(new java.awt.Dimension(400, 320));
         otRequestDialog.setUndecorated(true);
-        otRequestDialog.setPreferredSize(new java.awt.Dimension(400, 400));
         otRequestDialog.setResizable(false);
         otRequestDialog.setSize(new java.awt.Dimension(450, 340));
 
@@ -1124,11 +1127,11 @@ public javax.swing.JPanel getProfilePanel() {
         gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         PayslipListPanel.add(cutoffSelector, gridBagConstraints);
 
+        viewPayslipButton.setText("VIEW PAYSLIP");
         viewPayslipButton.setBackground(new java.awt.Color(255, 153, 0));
+        viewPayslipButton.setBorderPainted(false);
         viewPayslipButton.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         viewPayslipButton.setForeground(new java.awt.Color(255, 255, 255));
-        viewPayslipButton.setText("VIEW PAYSLIP");
-        viewPayslipButton.setBorderPainted(false);
         viewPayslipButton.setPreferredSize(new java.awt.Dimension(120, 28));
         viewPayslipButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1761,16 +1764,16 @@ public javax.swing.JPanel getProfilePanel() {
         jPanel8.setOpaque(false);
         jPanel8.setLayout(new java.awt.GridLayout(3, 4));
 
+        jLabel23.setText("Leave");
         jLabel23.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setText("Leave");
         jPanel8.add(jLabel23);
 
-        jLabel26.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel26.setText("-");
-        jPanel8.add(jLabel26);
+        lblPending.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPending.setText("-");
+        lblPending.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        lblPending.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel8.add(lblPending);
 
         jLabel30.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
@@ -3040,7 +3043,6 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
@@ -3119,6 +3121,7 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel labelSSSNo;
     private javax.swing.JLabel labelStatus;
     private javax.swing.JLabel labelTIN;
+    private javax.swing.JLabel lblPending;
     private javax.swing.JPanel otPanel;
     private javax.swing.JDialog otRequestDialog;
     private javax.swing.JPanel otRequestDlgPnl;

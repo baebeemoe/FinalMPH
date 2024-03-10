@@ -5,7 +5,9 @@
  */
 package System.Employee;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
@@ -77,10 +79,42 @@ public class Request {
         }
     }
     
-    
-    
-    
-    
-    
-    
+    public String formatTime(String time) {
+        SimpleDateFormat inputFormat = new SimpleDateFormat("MM/dd/yyyy, hh:mm a");
+        SimpleDateFormat outputFormat = new SimpleDateFormat("hh:mm a");
+        try {
+            Date date = inputFormat.parse(time);
+            return outputFormat.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return time;
     }
+    
+    
+   public int countRequest(String csvFile, int employeeID) {
+    int count = 0;
+    String line;
+    String delimiter = ",";
+    try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+        // Skip header line
+        br.readLine();
+        while ((line = br.readLine()) != null) {
+            String[] data = line.split(delimiter);
+            if (data.length == 6) { // Check if data has exactly six elements
+                int csvEmployeeID = Integer.parseInt(data[0]);
+                // Check if the current row corresponds to the employeeID
+                if (csvEmployeeID == employeeID) {
+                    count++;
+                }
+            } else {
+                // Handle cases where the data format is incorrect
+                System.out.println("Incorrect data format: " + line);
+            }
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    return count;
+}
+}
