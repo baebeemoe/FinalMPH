@@ -27,11 +27,11 @@ public class EmployeeHSRDataBase extends javax.swing.JFrame {
     public EmployeeHSRDataBase() {
         super("EmployeeHSRDataBase");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1300, 700);
+        setSize(1920, 700);
 
         JPanel mainPanel = new JPanel(null);
         mainPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-        mainPanel.setBackground(new Color(200, 230, 255));
+        mainPanel.setBackground(new Color(51,51,51));
         setContentPane(mainPanel);
 
         model = new DefaultTableModel();
@@ -41,7 +41,7 @@ public class EmployeeHSRDataBase extends javax.swing.JFrame {
        // Iterate over each column
 for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
     TableColumn column = table.getColumnModel().getColumn(columnIndex);
-    int preferredWidth =0;
+    int preferredWidth = 0;
     
     // Iterate over each row in the column to find the maximum preferred width
     for (int rowIndex = 0; rowIndex < table.getRowCount(); rowIndex++) {
@@ -54,31 +54,41 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
             column.setPreferredWidth(preferredWidth + table.getIntercellSpacing().width);
         }
         
-        table.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 14));
-        table.setFont(new Font("SansSerif", Font.PLAIN, 12));
+        table.getTableHeader().setFont(new Font("Open Sans", Font.BOLD, 14));
+        table.setFont(new Font("Open Sans", Font.PLAIN, 14));
         table.setRowHeight(25);
+        
 
         JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(200, 50, 1070, 500);
+        scrollPane.setBounds(200, 50, 1660, 540);
         mainPanel.add(scrollPane);
 
         JPanel topPanel = new JPanel();
-        topPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        topPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
         searchField = new JTextField(60);
-        JButton searchButton = new JButton("Search");
-        topPanel.add(new JLabel("Search:"));
+        JButton searchButton = new JButton("SEARCH");
+        searchButton.setBackground(new java.awt.Color(255, 153, 0));
+        searchButton.setBorderPainted(false);
+        searchButton.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        searchButton.setForeground(new java.awt.Color(255, 255, 255));
+        searchButton.setPreferredSize(new java.awt.Dimension(100, 28));
         topPanel.add(searchField);
         topPanel.add(searchButton);
-        topPanel.setBounds(200,10, 800, 50);
-        topPanel.setBackground(new Color(200, 230, 255));
+        topPanel.setBounds(200,10, 840, 50);
+        topPanel.setBackground(new Color(51,51,51));
         mainPanel.add(topPanel);
 
         JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new GridLayout(0, 1, 5, 5));
-        buttonPanel.setBounds(30, 50, 150, 200);
-        buttonPanel.setBackground(new Color(200, 230, 255));
+        buttonPanel.setLayout(new GridLayout(0, 1, 0, 12));
+        buttonPanel.setBounds(30, 50, 160, 200);
+        buttonPanel.setBackground(new Color(51,51,51));
         
-        JButton addEmployeeButton = new JButton("Add Employee");
+        JButton addEmployeeButton = new JButton("ADD EMPLOYEE");
+        addEmployeeButton.setBackground(new java.awt.Color(255, 153, 0));
+        addEmployeeButton.setBorderPainted(false);
+        addEmployeeButton.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        addEmployeeButton.setForeground(new java.awt.Color(255, 255, 255));
+        addEmployeeButton.setPreferredSize(new java.awt.Dimension(160, 28));
         addEmployeeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -87,7 +97,12 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
         });
         buttonPanel.add(addEmployeeButton);
 
-        JButton deleteEmployeeButton = new JButton("Delete Employee");
+        JButton deleteEmployeeButton = new JButton("DELETE EMPLOYEE");
+        deleteEmployeeButton.setBackground(new java.awt.Color(255, 153, 0));
+        deleteEmployeeButton.setBorderPainted(false);
+        deleteEmployeeButton.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        deleteEmployeeButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteEmployeeButton.setPreferredSize(new java.awt.Dimension(160, 28));
         deleteEmployeeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -96,7 +111,12 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
         });
         buttonPanel.add(deleteEmployeeButton);
 
-        JButton updateEmployeeButton = new JButton("Update Employee");
+        JButton updateEmployeeButton = new JButton("UPDATE EMPLOYEE");
+        updateEmployeeButton.setBackground(new java.awt.Color(255, 153, 0));
+        updateEmployeeButton.setBorderPainted(false);
+        updateEmployeeButton.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        updateEmployeeButton.setForeground(new java.awt.Color(255, 255, 255));
+        updateEmployeeButton.setPreferredSize(new java.awt.Dimension(160, 28));
         updateEmployeeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -105,7 +125,12 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
         });
         buttonPanel.add(updateEmployeeButton);
 
-        JButton viewEmployeeButton = new JButton("View Employee");
+        JButton viewEmployeeButton = new JButton("VIEW EMPLOYEE");
+        viewEmployeeButton.setBackground(new java.awt.Color(255, 153, 0));
+        viewEmployeeButton.setBorderPainted(false);
+        viewEmployeeButton.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        viewEmployeeButton.setForeground(new java.awt.Color(255, 255, 255));
+        viewEmployeeButton.setPreferredSize(new java.awt.Dimension(160, 28));
         viewEmployeeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -114,7 +139,12 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
         });
         buttonPanel.add(viewEmployeeButton);
 
-        JButton importCSVButton = new JButton("Import CSV");
+        JButton importCSVButton = new JButton("IMPORT CSV");
+        importCSVButton.setBackground(new java.awt.Color(255, 153, 0));
+        importCSVButton.setBorderPainted(false);
+        importCSVButton.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        importCSVButton.setForeground(new java.awt.Color(255, 255, 255));
+        importCSVButton.setPreferredSize(new java.awt.Dimension(160, 28));
         importCSVButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
