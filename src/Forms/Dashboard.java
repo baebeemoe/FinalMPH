@@ -24,6 +24,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
@@ -114,11 +115,15 @@ public javax.swing.JPanel getProfilePanel() {
         submitBtnOT = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         AttendancePanel = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        attTabbedPane = new javax.swing.JTabbedPane();
+        attListPanel = new javax.swing.JPanel();
+        attScrollPane = new javax.swing.JScrollPane();
         attendanceTable = new javax.swing.JTable();
-        requestOvertimeBtn = new javax.swing.JButton();
         applyDisputeBtn = new javax.swing.JButton();
-        otRequestList = new javax.swing.JButton();
+        otPanel = new javax.swing.JPanel();
+        otScrollPane = new javax.swing.JScrollPane();
+        otRequestTable = new javax.swing.JTable();
+        requestOvertimeBtn = new javax.swing.JButton();
         PayslipPanel = new javax.swing.JPanel();
         PayslipViewPanel = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
@@ -424,11 +429,11 @@ public javax.swing.JPanel getProfilePanel() {
 
         otRequestDlgPnl.add(otRequestFieldsPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
+        cancelBtnOT.setText("CANCEL");
         cancelBtnOT.setBackground(new java.awt.Color(51, 51, 51));
+        cancelBtnOT.setBorderPainted(false);
         cancelBtnOT.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         cancelBtnOT.setForeground(new java.awt.Color(255, 102, 0));
-        cancelBtnOT.setText("CANCEL");
-        cancelBtnOT.setBorderPainted(false);
         cancelBtnOT.setOpaque(true);
         cancelBtnOT.setPreferredSize(new java.awt.Dimension(180, 36));
         cancelBtnOT.addActionListener(new java.awt.event.ActionListener() {
@@ -469,13 +474,16 @@ public javax.swing.JPanel getProfilePanel() {
         jPanel1.setPreferredSize(new java.awt.Dimension(1366, 768));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        AttendancePanel.setBackground(new java.awt.Color(34, 34, 50, 220));
+        AttendancePanel.setBackground(new java.awt.Color(34, 34, 50));
         AttendancePanel.setPreferredSize(new java.awt.Dimension(980, 520));
+        AttendancePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        attendanceTable.setBackground(new java.awt.Color(255, 255, 255));
+        attTabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        attTabbedPane.setBackground(new java.awt.Color(51, 51, 51));
+        attTabbedPane.setForeground(new java.awt.Color(255, 255, 255));
+        attTabbedPane.setOpaque(true);
+
         attendanceTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-        attendanceTable.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        attendanceTable.setForeground(new java.awt.Color(0, 0, 0));
         attendanceTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -508,29 +516,20 @@ public javax.swing.JPanel getProfilePanel() {
                 "Date", "Time In", "Time Out", "Overtime"
             }
         ));
+        attendanceTable.setBackground(new java.awt.Color(255, 255, 255));
+        attendanceTable.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        attendanceTable.setForeground(new java.awt.Color(0, 0, 0));
         attendanceTable.setGridColor(new java.awt.Color(153, 153, 153));
         attendanceTable.setName(""); // NOI18N
         attendanceTable.setOpaque(false);
         attendanceTable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane3.setViewportView(attendanceTable);
+        attScrollPane.setViewportView(attendanceTable);
 
-        requestOvertimeBtn.setBackground(new java.awt.Color(255, 153, 0));
-        requestOvertimeBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        requestOvertimeBtn.setForeground(new java.awt.Color(255, 255, 255));
-        requestOvertimeBtn.setText("REQUEST OVERTIME");
-        requestOvertimeBtn.setBorderPainted(false);
-        requestOvertimeBtn.setPreferredSize(new java.awt.Dimension(180, 36));
-        requestOvertimeBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestOvertimeBtnActionPerformed(evt);
-            }
-        });
-
+        applyDisputeBtn.setText("APPLY DISPUTE");
         applyDisputeBtn.setBackground(new java.awt.Color(255, 153, 0));
+        applyDisputeBtn.setBorderPainted(false);
         applyDisputeBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         applyDisputeBtn.setForeground(new java.awt.Color(255, 255, 255));
-        applyDisputeBtn.setText("APPLY DISPUTE");
-        applyDisputeBtn.setBorderPainted(false);
         applyDisputeBtn.setPreferredSize(new java.awt.Dimension(180, 36));
         applyDisputeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -538,46 +537,78 @@ public javax.swing.JPanel getProfilePanel() {
             }
         });
 
-        otRequestList.setBackground(new java.awt.Color(255, 153, 0));
-        otRequestList.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        otRequestList.setForeground(new java.awt.Color(255, 255, 255));
-        otRequestList.setText("OVERTIME REQUEST LIST");
-        otRequestList.setBorderPainted(false);
-        otRequestList.setPreferredSize(new java.awt.Dimension(180, 36));
-        otRequestList.addActionListener(new java.awt.event.ActionListener() {
+        javax.swing.GroupLayout attListPanelLayout = new javax.swing.GroupLayout(attListPanel);
+        attListPanel.setLayout(attListPanelLayout);
+        attListPanelLayout.setHorizontalGroup(
+            attListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(attListPanelLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(attListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(applyDisputeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(attScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+        attListPanelLayout.setVerticalGroup(
+            attListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, attListPanelLayout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(attScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(applyDisputeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
+        );
+
+        attTabbedPane.addTab("Attendance", attListPanel);
+
+        otRequestTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Date", "Start Time", "End Time", "Reason", "Status"
+            }
+        ));
+        otScrollPane.setViewportView(otRequestTable);
+
+        requestOvertimeBtn.setText("REQUEST OVERTIME");
+        requestOvertimeBtn.setBackground(new java.awt.Color(255, 153, 0));
+        requestOvertimeBtn.setBorderPainted(false);
+        requestOvertimeBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        requestOvertimeBtn.setForeground(new java.awt.Color(255, 255, 255));
+        requestOvertimeBtn.setPreferredSize(new java.awt.Dimension(180, 36));
+        requestOvertimeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                otRequestListActionPerformed(evt);
+                requestOvertimeBtnActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout AttendancePanelLayout = new javax.swing.GroupLayout(AttendancePanel);
-        AttendancePanel.setLayout(AttendancePanelLayout);
-        AttendancePanelLayout.setHorizontalGroup(
-            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AttendancePanelLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(requestOvertimeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(applyDisputeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(otRequestList, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 773, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10))
+        javax.swing.GroupLayout otPanelLayout = new javax.swing.GroupLayout(otPanel);
+        otPanel.setLayout(otPanelLayout);
+        otPanelLayout.setHorizontalGroup(
+            otPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(otPanelLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(otPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(requestOvertimeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(otScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
-        AttendancePanelLayout.setVerticalGroup(
-            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AttendancePanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AttendancePanelLayout.createSequentialGroup()
-                        .addComponent(requestOvertimeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(otRequestList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(applyDisputeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(92, 92, 92))
+        otPanelLayout.setVerticalGroup(
+            otPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(otPanelLayout.createSequentialGroup()
+                .addGap(0, 31, Short.MAX_VALUE)
+                .addComponent(otScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(requestOvertimeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49))
         );
+
+        attTabbedPane.addTab("Overtime Request", otPanel);
+
+        AttendancePanel.add(attTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 520));
 
         jPanel1.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
 
@@ -586,31 +617,31 @@ public javax.swing.JPanel getProfilePanel() {
 
         PayslipViewPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel33.setFont(new java.awt.Font("Poppins", 1, 24)); // NOI18N
         jLabel33.setText("MotorPH");
+        jLabel33.setFont(new java.awt.Font("Poppins", 1, 24)); // NOI18N
 
-        jLabel34.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
         jLabel34.setText(" 7 Jupiter Avenue cor. F. Sandoval Jr., Bagong Nayon, Quezon City");
+        jLabel34.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
 
-        jLabel35.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
         jLabel35.setText("Phone: (028) 911-5071 / (028) 911-5072 / (028) 911-5073 ");
+        jLabel35.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
 
-        jLabel57.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
         jLabel57.setText(" Email: corporate@motorph.com\t\t\t");
+        jLabel57.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
 
+        jLabel73.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel73.setText("EARNINGS");
         jLabel73.setBackground(new java.awt.Color(102, 102, 102));
         jLabel73.setFont(new java.awt.Font("Poppins", 1, 12)); // NOI18N
         jLabel73.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel73.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel73.setText("EARNINGS");
         jLabel73.setOpaque(true);
         jLabel73.setPreferredSize(new java.awt.Dimension(460, 20));
 
+        jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel58.setText("EMPLOYEE PAYSLIP");
         jLabel58.setBackground(new java.awt.Color(51, 51, 51));
         jLabel58.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
         jLabel58.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel58.setText("EMPLOYEE PAYSLIP");
         jLabel58.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel58.setOpaque(true);
         jLabel58.setPreferredSize(new java.awt.Dimension(460, 24));
@@ -827,27 +858,27 @@ public javax.swing.JPanel getProfilePanel() {
         payslipGrossIncome.setText("PAYSLIP NO");
         payPanelEarnings.add(payslipGrossIncome);
 
+        jLabel75.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel75.setText("BENEFITS");
         jLabel75.setBackground(new java.awt.Color(102, 102, 102));
         jLabel75.setFont(new java.awt.Font("Poppins", 1, 12)); // NOI18N
         jLabel75.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel75.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel75.setText("BENEFITS");
         jLabel75.setOpaque(true);
         jLabel75.setPreferredSize(new java.awt.Dimension(460, 20));
 
+        jLabel77.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel77.setText("DEDUCTIONS");
         jLabel77.setBackground(new java.awt.Color(102, 102, 102));
         jLabel77.setFont(new java.awt.Font("Poppins", 1, 12)); // NOI18N
         jLabel77.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel77.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel77.setText("DEDUCTIONS");
         jLabel77.setOpaque(true);
         jLabel77.setPreferredSize(new java.awt.Dimension(460, 20));
 
+        jLabel78.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel78.setText("SUMMARY");
         jLabel78.setBackground(new java.awt.Color(102, 102, 102));
         jLabel78.setFont(new java.awt.Font("Poppins", 1, 12)); // NOI18N
         jLabel78.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel78.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel78.setText("SUMMARY");
         jLabel78.setOpaque(true);
         jLabel78.setPreferredSize(new java.awt.Dimension(460, 20));
 
@@ -1080,11 +1111,11 @@ public javax.swing.JPanel getProfilePanel() {
         gridBagConstraints.insets = new java.awt.Insets(4, 12, 4, 4);
         PayslipListPanel.add(jLabel15, gridBagConstraints);
 
+        cutoffSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select cut-off dates", "09/01/2022 - 09/15/2022", "09/16/2022 - 09/31/2022" }));
         cutoffSelector.setBackground(new java.awt.Color(102, 102, 102));
+        cutoffSelector.setBorder(null);
         cutoffSelector.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         cutoffSelector.setForeground(new java.awt.Color(255, 255, 255));
-        cutoffSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select cut-off dates", "09/01/2022 - 09/15/2022", "09/16/2022 - 09/31/2022" }));
-        cutoffSelector.setBorder(null);
         cutoffSelector.setOpaque(true);
         cutoffSelector.setPreferredSize(new java.awt.Dimension(200, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1231,19 +1262,19 @@ public javax.swing.JPanel getProfilePanel() {
 
         jPanel5.setOpaque(false);
 
+        jLabel2.setText("Motor");
         jLabel2.setFont(new java.awt.Font("Poppins", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Motor");
         jLabel2.setIconTextGap(0);
 
+        jLabel3.setText("PH");
         jLabel3.setFont(new java.awt.Font("Poppins", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel3.setText("PH");
         jLabel3.setIconTextGap(0);
 
+        jLabel4.setText("People Portal");
         jLabel4.setFont(new java.awt.Font("Poppins", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("People Portal");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1324,12 +1355,12 @@ public javax.swing.JPanel getProfilePanel() {
         });
         jPanel6.add(ProfileButton);
 
-        AttendanceMainDashboardButton.setBackground(new java.awt.Color(34, 34, 50));
-        AttendanceMainDashboardButton.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        AttendanceMainDashboardButton.setForeground(new java.awt.Color(255, 255, 255));
         AttendanceMainDashboardButton.setText("Attendance");
+        AttendanceMainDashboardButton.setBackground(new java.awt.Color(34, 34, 50));
         AttendanceMainDashboardButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         AttendanceMainDashboardButton.setBorderPainted(false);
+        AttendanceMainDashboardButton.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        AttendanceMainDashboardButton.setForeground(new java.awt.Color(255, 255, 255));
         AttendanceMainDashboardButton.setPreferredSize(new java.awt.Dimension(160, 52));
         AttendanceMainDashboardButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1424,61 +1455,61 @@ public javax.swing.JPanel getProfilePanel() {
         TimeKeeping_MainDashboard.setBackground(new java.awt.Color(34, 34, 50, 220));
         TimeKeeping_MainDashboard.setPreferredSize(new java.awt.Dimension(600, 260));
 
-        jProgressBar1.setBackground(new java.awt.Color(51, 51, 51));
-        jProgressBar1.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
-        jProgressBar1.setForeground(new java.awt.Color(255, 153, 0));
         jProgressBar1.setValue(20);
+        jProgressBar1.setBackground(new java.awt.Color(51, 51, 51));
         jProgressBar1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
         jProgressBar1.setFocusable(false);
+        jProgressBar1.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
+        jProgressBar1.setForeground(new java.awt.Color(255, 153, 0));
         jProgressBar1.setOpaque(true);
         jProgressBar1.setRequestFocusEnabled(false);
         jProgressBar1.setStringPainted(true);
 
+        jLabel10.setText("Time in : ");
         jLabel10.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Time in : ");
 
+        TimeInLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TimeInLabel.setBackground(new java.awt.Color(0, 0, 0));
         TimeInLabel.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         TimeInLabel.setForeground(new java.awt.Color(255, 255, 255));
-        TimeInLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TimeInLabel.setPreferredSize(new java.awt.Dimension(60, 16));
 
+        jLabel56.setText("Time out : ");
         jLabel56.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         jLabel56.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel56.setText("Time out : ");
 
+        TimeOutLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TimeOutLabel.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         TimeOutLabel.setForeground(new java.awt.Color(255, 255, 255));
-        TimeOutLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TimeOutLabel.setPreferredSize(new java.awt.Dimension(60, 16));
 
         jPanel7.setOpaque(false);
 
-        jLabel9.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 204, 0));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/check-box.png"))); // NOI18N
         jLabel9.setText(" Present");
+        jLabel9.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 204, 0));
 
         jSeparator4.setBackground(new java.awt.Color(102, 102, 102));
-        jSeparator4.setForeground(new java.awt.Color(102, 102, 102));
         jSeparator4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        jSeparator4.setForeground(new java.awt.Color(102, 102, 102));
 
+        jLabel8.setText("Schedule Status :");
         jLabel8.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Schedule Status :");
 
+        jLabel11.setText("WORK");
         jLabel11.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 204, 0));
-        jLabel11.setText("WORK");
 
+        jLabel12.setText("Schedule :");
         jLabel12.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Schedule :");
 
+        Shift.setText("03:15AM - 12:15 PM");
         Shift.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         Shift.setForeground(new java.awt.Color(255, 255, 255));
-        Shift.setText("03:15AM - 12:15 PM");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1517,16 +1548,16 @@ public javax.swing.JPanel getProfilePanel() {
                 .addContainerGap())
         );
 
+        jLabel13.setText("Attendance");
         jLabel13.setBackground(new java.awt.Color(0,0,0,0));
         jLabel13.setFont(new java.awt.Font("Poppins", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Attendance");
 
-        TimeButton.setBackground(new java.awt.Color(255, 102, 0));
-        TimeButton.setForeground(new java.awt.Color(255, 255, 255));
         TimeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/enterw24px.png"))); // NOI18N
         TimeButton.setText("Time in");
+        TimeButton.setBackground(new java.awt.Color(255, 102, 0));
         TimeButton.setBorderPainted(false);
+        TimeButton.setForeground(new java.awt.Color(255, 255, 255));
         TimeButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         TimeButton.setIconTextGap(8);
         TimeButton.setPreferredSize(new java.awt.Dimension(110, 52));
@@ -1591,9 +1622,9 @@ public javax.swing.JPanel getProfilePanel() {
         PayrollHealth_MainDashboard.setBackground(new java.awt.Color(34, 34, 50, 220));
         PayrollHealth_MainDashboard.setPreferredSize(new java.awt.Dimension(360, 200));
 
+        jLabel14.setText("Payroll Health");
         jLabel14.setFont(new java.awt.Font("Poppins", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Payroll Health");
 
         jSeparator6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 51), 2, true));
 
@@ -1602,28 +1633,28 @@ public javax.swing.JPanel getProfilePanel() {
 
         jSeparator8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 51, 0), 2, true));
 
+        NoOfDaysPresent.setText("0");
         NoOfDaysPresent.setFont(new java.awt.Font("Poppins", 0, 48)); // NOI18N
         NoOfDaysPresent.setForeground(new java.awt.Color(255, 255, 255));
-        NoOfDaysPresent.setText("0");
         NoOfDaysPresent.setToolTipText("Absences");
 
+        NoOfDaysPresent1.setText("4");
         NoOfDaysPresent1.setFont(new java.awt.Font("Poppins", 0, 48)); // NOI18N
         NoOfDaysPresent1.setForeground(new java.awt.Color(255, 255, 255));
-        NoOfDaysPresent1.setText("4");
         NoOfDaysPresent1.setToolTipText("Days Worked");
 
+        NoOfDaysPresent2.setText("0");
         NoOfDaysPresent2.setFont(new java.awt.Font("Poppins", 0, 48)); // NOI18N
         NoOfDaysPresent2.setForeground(new java.awt.Color(255, 255, 255));
-        NoOfDaysPresent2.setText("0");
 
-        jLabel121.setForeground(new java.awt.Color(255, 255, 255));
         jLabel121.setText("Days Worked");
+        jLabel121.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel123.setForeground(new java.awt.Color(255, 255, 255));
         jLabel123.setText("Absences");
+        jLabel123.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel124.setForeground(new java.awt.Color(255, 255, 255));
         jLabel124.setText("Leaves");
+        jLabel124.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout PayrollHealth_MainDashboardLayout = new javax.swing.GroupLayout(PayrollHealth_MainDashboard);
         PayrollHealth_MainDashboard.setLayout(PayrollHealth_MainDashboardLayout);
@@ -1685,12 +1716,12 @@ public javax.swing.JPanel getProfilePanel() {
         EmployeeRecords_MainDashboard.setForeground(new java.awt.Color(255, 255, 255));
         EmployeeRecords_MainDashboard.setPreferredSize(new java.awt.Dimension(600, 92));
 
-        jButton3.setBackground(new java.awt.Color(102, 102, 102));
-        jButton3.setFont(new java.awt.Font("Open Sans", 0, 36)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Employee Records");
+        jButton3.setBackground(new java.awt.Color(102, 102, 102));
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
+        jButton3.setFont(new java.awt.Font("Open Sans", 0, 36)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setMinimumSize(new java.awt.Dimension(200, 50));
         jButton3.setOpaque(true);
         jButton3.setPreferredSize(new java.awt.Dimension(540, 50));
@@ -1723,9 +1754,9 @@ public javax.swing.JPanel getProfilePanel() {
         Request_MainDashboard.setForeground(new java.awt.Color(255, 255, 255));
         Request_MainDashboard.setPreferredSize(new java.awt.Dimension(360, 240));
 
+        jLabel17.setText("My Requests");
         jLabel17.setFont(new java.awt.Font("Poppins", 0, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("My Requests");
 
         jPanel8.setOpaque(false);
         jPanel8.setLayout(new java.awt.GridLayout(3, 4));
@@ -1801,17 +1832,17 @@ public javax.swing.JPanel getProfilePanel() {
 
         jPanel10.setOpaque(false);
 
+        jLabel20.setText("Pending");
         jLabel20.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Pending");
 
+        jLabel21.setText("Approved");
         jLabel21.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("Approved");
 
+        jLabel22.setText("Denied");
         jLabel22.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("Denied");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -1878,13 +1909,13 @@ public javax.swing.JPanel getProfilePanel() {
         jSeparator10.setOpaque(true);
         jSeparator10.setPreferredSize(new java.awt.Dimension(1, 300));
 
+        profileFirstName.setText("Name");
         profileFirstName.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         profileFirstName.setForeground(new java.awt.Color(255, 255, 255));
-        profileFirstName.setText("Name");
 
+        ProfileEmpNo.setText("Employee No.");
         ProfileEmpNo.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         ProfileEmpNo.setForeground(new java.awt.Color(255, 255, 255));
-        ProfileEmpNo.setText("Employee No.");
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/profile (1).png"))); // NOI18N
 
@@ -1892,9 +1923,9 @@ public javax.swing.JPanel getProfilePanel() {
         jSeparator11.setForeground(new java.awt.Color(255, 153, 0));
         jSeparator11.setOpaque(true);
 
+        jLabel42.setText("My Account Numbers");
         jLabel42.setFont(new java.awt.Font("Poppins", 0, 18)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel42.setText("My Account Numbers");
 
         jPanel11.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         jPanel11.setOpaque(false);
@@ -2102,11 +2133,11 @@ public javax.swing.JPanel getProfilePanel() {
         gridBagConstraints.insets = new java.awt.Insets(8, 0, 8, 0);
         jPanel12.add(ProfileTinnumber, gridBagConstraints);
 
+        jButton4.setText("UPDATE");
         jButton4.setBackground(new java.awt.Color(255, 153, 0));
+        jButton4.setBorderPainted(false);
         jButton4.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("UPDATE");
-        jButton4.setBorderPainted(false);
         jButton4.setMaximumSize(new java.awt.Dimension(83, 32));
         jButton4.setPreferredSize(new java.awt.Dimension(83, 32));
 
@@ -2194,45 +2225,45 @@ public javax.swing.JPanel getProfilePanel() {
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
+        jLabel112.setText("Leave Type");
         jLabel112.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         jLabel112.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel112.setText("Leave Type");
 
+        LeavePanelLeaveSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Leave Type", "Vacation Leave", "Sick Leave", "Emergency Leave" }));
         LeavePanelLeaveSelector.setBackground(new java.awt.Color(102, 102, 102));
+        LeavePanelLeaveSelector.setBorder(null);
         LeavePanelLeaveSelector.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         LeavePanelLeaveSelector.setForeground(new java.awt.Color(255, 255, 255));
-        LeavePanelLeaveSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Leave Type", "Vacation Leave", "Sick Leave", "Emergency Leave" }));
-        LeavePanelLeaveSelector.setBorder(null);
         LeavePanelLeaveSelector.setName("Choose the Type of Leave"); // NOI18N
         LeavePanelLeaveSelector.setOpaque(true);
         LeavePanelLeaveSelector.setPreferredSize(new java.awt.Dimension(290, 28));
 
+        jLabel113.setText("Reason");
         jLabel113.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         jLabel113.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel113.setText("Reason");
 
         LeavePanelStartDate.setBackground(new java.awt.Color(102, 102, 102));
-        LeavePanelStartDate.setForeground(new java.awt.Color(255, 255, 255));
         LeavePanelStartDate.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        LeavePanelStartDate.setForeground(new java.awt.Color(255, 255, 255));
         LeavePanelStartDate.setMinSelectableDate(new java.util.Date(-62135794718000L));
         LeavePanelStartDate.setPreferredSize(new java.awt.Dimension(290, 28));
 
-        LeavePanelReason.setBackground(new java.awt.Color(102, 102, 102));
         LeavePanelReason.setColumns(20);
         LeavePanelReason.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        LeavePanelReason.setForeground(new java.awt.Color(255, 255, 255));
         LeavePanelReason.setRows(5);
+        LeavePanelReason.setBackground(new java.awt.Color(102, 102, 102));
         LeavePanelReason.setBorder(javax.swing.BorderFactory.createEmptyBorder(8, 8, 8, 8));
+        LeavePanelReason.setForeground(new java.awt.Color(255, 255, 255));
 
+        jLabel114.setText("Start Date");
         jLabel114.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         jLabel114.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel114.setText("Start Date");
 
+        LeavePanelSubmitButton.setText("SUBMIT");
         LeavePanelSubmitButton.setBackground(new java.awt.Color(255, 153, 0));
+        LeavePanelSubmitButton.setBorderPainted(false);
         LeavePanelSubmitButton.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         LeavePanelSubmitButton.setForeground(new java.awt.Color(255, 255, 255));
-        LeavePanelSubmitButton.setText("SUBMIT");
-        LeavePanelSubmitButton.setBorderPainted(false);
         LeavePanelSubmitButton.setMaximumSize(new java.awt.Dimension(100, 36));
         LeavePanelSubmitButton.setPreferredSize(new java.awt.Dimension(100, 36));
         LeavePanelSubmitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -2241,19 +2272,19 @@ public javax.swing.JPanel getProfilePanel() {
             }
         });
 
+        jLabel115.setText("Leave Request");
         jLabel115.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         jLabel115.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel115.setText("Leave Request");
 
         LeavePanelEndDate.setBackground(new java.awt.Color(102, 102, 102));
-        LeavePanelEndDate.setForeground(new java.awt.Color(255, 255, 255));
         LeavePanelEndDate.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        LeavePanelEndDate.setForeground(new java.awt.Color(255, 255, 255));
         LeavePanelEndDate.setMinSelectableDate(new java.util.Date(-62135794718000L));
         LeavePanelEndDate.setPreferredSize(new java.awt.Dimension(290, 28));
 
+        jLabel119.setText("End Date");
         jLabel119.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         jLabel119.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel119.setText("End Date");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -2454,30 +2485,10 @@ public javax.swing.JPanel getProfilePanel() {
 
         // Grant or deny access based on the result
         if (accessGranted) {
-            DefaultTableModel model = (DefaultTableModel) attendanceTable.getModel();
+            populateAttTableFromCSV("src/Files/Attendance.csv", attendanceTable, empID);
+            populateOTTableFromCSV("src/Files/OvertimeRequest.csv", otRequestTable, empID);
+            DefaultTableModel model = new DefaultTableModel();
             model.setRowCount(0);
-
-        // Populate the table with data from the CSV file
-        String csvFilePath = "src/Files/Attendance.csv";
-        boolean foundRecords = false;
-
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(",");
-                if (data.length >= 5 && data[0].equals(empID)) {
-                    model.addRow(new Object[]{data[1], data[2], data[3], data[4]});
-                    foundRecords = true;
-                }
-            }
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
-        // Check if records were found for the employee
-        if (!foundRecords) {
-            JOptionPane.showMessageDialog(this, "No attendance records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
 
         // Show the AttendancePanel and hide other panels
         TimeKeeping_MainDashboard.setVisible(false);
@@ -2488,15 +2499,61 @@ public javax.swing.JPanel getProfilePanel() {
         ProfilePanel.setVisible(false);
         AttendancePanel.setVisible(true);
         LeavePanel.setVisible(false);
+        otPanel.setVisible(false);
     } else {
     // Access denied, display an error message
         JOptionPane.showMessageDialog(this, "Access Denied. Employee ID not found.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
-
-            
-            
+        }         
     }//GEN-LAST:event_AttendanceMainDashboardButtonActionPerformed
 
+    private void populateAttTableFromCSV(String csvFilePath, JTable table, String empID) {
+    boolean foundRecords = false;
+    DefaultTableModel model = (DefaultTableModel) table.getModel();
+    model.setRowCount(0);
+
+    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] data = line.split(",");
+            if (data.length >= 5 && data[0].equals(empID)) {
+                model.addRow(new Object[]{data[1], data[2], data[3], data[4]});
+                foundRecords = true;
+            }
+        }
+    } catch (IOException ex) {
+        ex.printStackTrace();
+    }
+
+    // Check if records were found for the employee
+    if (!foundRecords) {
+        JOptionPane.showMessageDialog(this, "No records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }
+    
+    private void populateOTTableFromCSV(String csvFilePath, JTable table, String empID) {
+    boolean foundRecords = false;
+    DefaultTableModel model = (DefaultTableModel) table.getModel();
+    model.setRowCount(0);
+
+    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] data = line.split(",");
+            if (data.length >= 5 && data[0].equals(empID)) {
+                model.addRow(new Object[]{data[1], data[2], data[3], data[4], data[5]});
+                foundRecords = true;
+            }
+        }
+    } catch (IOException ex) {
+        ex.printStackTrace();
+    }
+
+    // Check if records were found for the employee
+    if (!foundRecords) {
+        JOptionPane.showMessageDialog(this, "No records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
+    
     private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
 
             TimeKeeping_MainDashboard.setVisible(true);
@@ -2697,11 +2754,6 @@ System.out.println("Reason " + reason);
         // TODO add your handling code here:
     }//GEN-LAST:event_applyDisputeBtnActionPerformed
 
-    private void otRequestListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_otRequestListActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_otRequestListActionPerformed
-
     private void submitBtnOTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnOTActionPerformed
         // TODO add your handling code here:
         Request request = new Request();
@@ -2714,13 +2766,16 @@ System.out.println("Reason " + reason);
         String reason = reasonTextOT.getText();
         String status ="Pending";
         
+        if (employeeID.isEmpty() || date.isEmpty() || startTime.isEmpty() || endTime.isEmpty() || reason.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Error", JOptionPane.ERROR_MESSAGE);
+        return; // Stop further execution
+        }
         
         int dialogResult = JOptionPane.showConfirmDialog(this, "Submit Request Form?", "Leave Request Confirmation", JOptionPane.YES_NO_OPTION);
 
         if (dialogResult == JOptionPane.YES_OPTION) {
         JOptionPane.showMessageDialog(this, "Submitted Successfully");
         request.OvertimeRequestwriteToCSV(employeeID, date, startTime, endTime, reason, status );
-        otRequestDialog.dispose();
         
        
         datePickerOT.setText("");
@@ -2937,6 +2992,9 @@ System.out.println("Reason " + reason);
     private javax.swing.JPanel TimeKeeping_MainDashboard;
     private javax.swing.JLabel TimeOutLabel;
     private javax.swing.JButton applyDisputeBtn;
+    private javax.swing.JPanel attListPanel;
+    private javax.swing.JScrollPane attScrollPane;
+    private javax.swing.JTabbedPane attTabbedPane;
     private javax.swing.JTable attendanceTable;
     private javax.swing.JButton cancelBtnOT;
     private javax.swing.JComboBox<String> cutoffSelector;
@@ -3043,7 +3101,6 @@ System.out.println("Reason " + reason);
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -3062,10 +3119,12 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel labelSSSNo;
     private javax.swing.JLabel labelStatus;
     private javax.swing.JLabel labelTIN;
+    private javax.swing.JPanel otPanel;
     private javax.swing.JDialog otRequestDialog;
     private javax.swing.JPanel otRequestDlgPnl;
     private javax.swing.JPanel otRequestFieldsPnl;
-    private javax.swing.JButton otRequestList;
+    private javax.swing.JTable otRequestTable;
+    private javax.swing.JScrollPane otScrollPane;
     private javax.swing.JPanel payPanelBenefits;
     private javax.swing.JPanel payPanelEarnings;
     private javax.swing.JPanel payPanelEmpInfo;
