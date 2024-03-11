@@ -631,7 +631,7 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
 
         PayslipPanel.setBackground(new java.awt.Color(51, 51, 51));
-        PayslipPanel.setPreferredSize(new java.awt.Dimension(980, 600));
+        PayslipPanel.setPreferredSize(new java.awt.Dimension(980, 560));
 
         PayslipViewPanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1113,9 +1113,9 @@ public class Dashboard extends javax.swing.JFrame {
         PayslipListPanel.setOpaque(false);
         PayslipListPanel.setLayout(new java.awt.GridBagLayout());
 
+        jLabel1.setText("Cut off Dates");
         jLabel1.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Cut off Dates");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
         gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
@@ -1129,7 +1129,7 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(4, 12, 4, 4);
         PayslipListPanel.add(jLabel15, gridBagConstraints);
 
-        cutoffSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select cut-off dates", "09/01/2022 - 09/15/2022", "09/16/2022 - 09/31/2022" }));
+        cutoffSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "09/01/2022 - 09/15/2022", "09/16/2022 - 09/31/2022" }));
         cutoffSelector.setBackground(new java.awt.Color(102, 102, 102));
         cutoffSelector.setBorder(null);
         cutoffSelector.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
@@ -2458,11 +2458,11 @@ public class Dashboard extends javax.swing.JFrame {
         RequestList_MainDashboard.setForeground(new java.awt.Color(255, 255, 255));
         RequestList_MainDashboard.setPreferredSize(new java.awt.Dimension(600, 92));
 
+        requestListBtn.setText("Manage Requests");
         requestListBtn.setBackground(new java.awt.Color(255, 153, 0));
+        requestListBtn.setBorderPainted(false);
         requestListBtn.setFont(new java.awt.Font("Poppins", 0, 18)); // NOI18N
         requestListBtn.setForeground(new java.awt.Color(255, 255, 255));
-        requestListBtn.setText("Manage Requests");
-        requestListBtn.setBorderPainted(false);
         requestListBtn.setMinimumSize(new java.awt.Dimension(200, 40));
         requestListBtn.setOpaque(true);
         requestListBtn.setPreferredSize(new java.awt.Dimension(540, 52));

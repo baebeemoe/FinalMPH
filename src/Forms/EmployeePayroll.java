@@ -76,7 +76,7 @@ private AttendanceRecord[] attendance;
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 24), new java.awt.Dimension(0, 28), new java.awt.Dimension(32767, 24));
         managePayrollLbl = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 24), new java.awt.Dimension(0, 16), new java.awt.Dimension(32767, 24));
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        payrollTabbedPane = new javax.swing.JTabbedPane();
         PanelRunPayroll = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         RunPayrollTable = new javax.swing.JTable();
@@ -97,10 +97,10 @@ private AttendanceRecord[] attendance;
         managePayrollLbl.setForeground(new java.awt.Color(255, 255, 255));
         managePayrollLbl.setText("Manage Payroll");
 
-        jTabbedPane1.setBackground(new java.awt.Color(51, 51, 51));
-        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
-        jTabbedPane1.setOpaque(true);
-        jTabbedPane1.setPreferredSize(new java.awt.Dimension(1415, 665));
+        payrollTabbedPane.setBackground(new java.awt.Color(51, 51, 51));
+        payrollTabbedPane.setForeground(new java.awt.Color(255, 255, 255));
+        payrollTabbedPane.setOpaque(true);
+        payrollTabbedPane.setPreferredSize(new java.awt.Dimension(1415, 665));
 
         PanelRunPayroll.setBackground(new java.awt.Color(51, 51, 51));
         PanelRunPayroll.setMaximumSize(new java.awt.Dimension(1500, 700));
@@ -138,7 +138,7 @@ private AttendanceRecord[] attendance;
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Run Payroll", PanelRunPayroll);
+        payrollTabbedPane.addTab("Run Payroll", PanelRunPayroll);
 
         PanelMonthlyPayrollReport.setBackground(new java.awt.Color(51, 51, 51));
         PanelMonthlyPayrollReport.setForeground(new java.awt.Color(255, 255, 255));
@@ -171,7 +171,7 @@ private AttendanceRecord[] attendance;
         });
         PanelMonthlyPayrollReport.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 227, -1));
 
-        jTabbedPane1.addTab("Monthly Payroll Report", PanelMonthlyPayrollReport);
+        payrollTabbedPane.addTab("Monthly Payroll Report", PanelMonthlyPayrollReport);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -185,7 +185,7 @@ private AttendanceRecord[] attendance;
                         .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, 1428, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1415, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(payrollTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1415, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -197,7 +197,7 @@ private AttendanceRecord[] attendance;
                 .addGap(0, 0, 0)
                 .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(payrollTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -402,7 +402,7 @@ private AttendanceRecord[] attendance;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel managePayrollLbl;
+    private javax.swing.JTabbedPane payrollTabbedPane;
     // End of variables declaration//GEN-END:variables
 }
