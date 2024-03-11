@@ -1734,15 +1734,14 @@ public class Dashboard extends javax.swing.JFrame {
         EmployeeRecords_MainDashboard.setForeground(new java.awt.Color(255, 255, 255));
         EmployeeRecords_MainDashboard.setPreferredSize(new java.awt.Dimension(600, 92));
 
-        hrsBtn.setText("Employee Records");
-        hrsBtn.setBackground(new java.awt.Color(102, 102, 102));
-        hrsBtn.setBorder(null);
+        hrsBtn.setText("Manage Employee Information");
+        hrsBtn.setBackground(new java.awt.Color(255, 153, 0));
         hrsBtn.setBorderPainted(false);
-        hrsBtn.setFont(new java.awt.Font("Open Sans", 0, 36)); // NOI18N
+        hrsBtn.setFont(new java.awt.Font("Poppins", 0, 18)); // NOI18N
         hrsBtn.setForeground(new java.awt.Color(255, 255, 255));
-        hrsBtn.setMinimumSize(new java.awt.Dimension(200, 50));
+        hrsBtn.setMinimumSize(new java.awt.Dimension(200, 28));
         hrsBtn.setOpaque(true);
-        hrsBtn.setPreferredSize(new java.awt.Dimension(540, 50));
+        hrsBtn.setPreferredSize(new java.awt.Dimension(540, 52));
         hrsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hrsBtnActionPerformed(evt);
@@ -1754,16 +1753,16 @@ public class Dashboard extends javax.swing.JFrame {
         EmployeeRecords_MainDashboardLayout.setHorizontalGroup(
             EmployeeRecords_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EmployeeRecords_MainDashboardLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(30, 30, 30)
                 .addComponent(hrsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         EmployeeRecords_MainDashboardLayout.setVerticalGroup(
             EmployeeRecords_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EmployeeRecords_MainDashboardLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(hrsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(20, 20, 20)
+                .addComponent(hrsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jPanel1.add(EmployeeRecords_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, -1, -1));
@@ -2422,15 +2421,14 @@ public class Dashboard extends javax.swing.JFrame {
         PayrollRecords_MainDashboard.setForeground(new java.awt.Color(255, 255, 255));
         PayrollRecords_MainDashboard.setPreferredSize(new java.awt.Dimension(600, 92));
 
-        payrollBtn.setText("Employee Records");
-        payrollBtn.setBackground(new java.awt.Color(102, 102, 102));
-        payrollBtn.setBorder(null);
+        payrollBtn.setText("Manage Payroll");
+        payrollBtn.setBackground(new java.awt.Color(255, 153, 0));
         payrollBtn.setBorderPainted(false);
-        payrollBtn.setFont(new java.awt.Font("Open Sans", 0, 36)); // NOI18N
+        payrollBtn.setFont(new java.awt.Font("Poppins", 0, 18)); // NOI18N
         payrollBtn.setForeground(new java.awt.Color(255, 255, 255));
-        payrollBtn.setMinimumSize(new java.awt.Dimension(200, 50));
+        payrollBtn.setMinimumSize(new java.awt.Dimension(200, 40));
         payrollBtn.setOpaque(true);
-        payrollBtn.setPreferredSize(new java.awt.Dimension(540, 50));
+        payrollBtn.setPreferredSize(new java.awt.Dimension(540, 52));
         payrollBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 payrollBtnActionPerformed(evt);
@@ -2449,9 +2447,9 @@ public class Dashboard extends javax.swing.JFrame {
         PayrollRecords_MainDashboardLayout.setVerticalGroup(
             PayrollRecords_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PayrollRecords_MainDashboardLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(payrollBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(21, 21, 21)
+                .addComponent(payrollBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jPanel1.add(PayrollRecords_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, -1, -1));
@@ -2460,15 +2458,14 @@ public class Dashboard extends javax.swing.JFrame {
         RequestList_MainDashboard.setForeground(new java.awt.Color(255, 255, 255));
         RequestList_MainDashboard.setPreferredSize(new java.awt.Dimension(600, 92));
 
-        requestListBtn.setBackground(new java.awt.Color(102, 102, 102));
-        requestListBtn.setFont(new java.awt.Font("Open Sans", 0, 36)); // NOI18N
+        requestListBtn.setBackground(new java.awt.Color(255, 153, 0));
+        requestListBtn.setFont(new java.awt.Font("Poppins", 0, 18)); // NOI18N
         requestListBtn.setForeground(new java.awt.Color(255, 255, 255));
-        requestListBtn.setText("Employee Records");
-        requestListBtn.setBorder(null);
+        requestListBtn.setText("Manage Requests");
         requestListBtn.setBorderPainted(false);
-        requestListBtn.setMinimumSize(new java.awt.Dimension(200, 50));
+        requestListBtn.setMinimumSize(new java.awt.Dimension(200, 40));
         requestListBtn.setOpaque(true);
-        requestListBtn.setPreferredSize(new java.awt.Dimension(540, 50));
+        requestListBtn.setPreferredSize(new java.awt.Dimension(540, 52));
         requestListBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestListBtnActionPerformed(evt);
@@ -2480,16 +2477,16 @@ public class Dashboard extends javax.swing.JFrame {
         RequestList_MainDashboardLayout.setHorizontalGroup(
             RequestList_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RequestList_MainDashboardLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(28, 28, 28)
                 .addComponent(requestListBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         RequestList_MainDashboardLayout.setVerticalGroup(
             RequestList_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RequestList_MainDashboardLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(requestListBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(19, 19, 19)
+                .addComponent(requestListBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel1.add(RequestList_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, -1, -1));
@@ -2507,7 +2504,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void hrsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hrsBtnActionPerformed
         // TODO add your handling code here:
-        EmployeeHSRDataBase employeeDataBase = new EmployeeHSRDataBase();
+        EmployeeHRSDataBase employeeDataBase = new EmployeeHRSDataBase();
         this.setVisible(true);
         employeeDataBase.setVisible(true);
     }//GEN-LAST:event_hrsBtnActionPerformed

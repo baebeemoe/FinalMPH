@@ -19,12 +19,12 @@ import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 
-public class EmployeeHSRDataBase extends javax.swing.JFrame {
+public class EmployeeHRSDataBase extends javax.swing.JFrame {
     private JTable table;
     private DefaultTableModel model;
     private JTextField searchField;
 
-    public EmployeeHSRDataBase() {
+    public EmployeeHRSDataBase() {
         super("EmployeeHSRDataBase");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1920, 700);
@@ -352,7 +352,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(EmployeeHSRDataBase::new);
+        SwingUtilities.invokeLater(EmployeeHRSDataBase::new);
     }
 
     private void importCSV() {
