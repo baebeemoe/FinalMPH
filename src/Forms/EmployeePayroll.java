@@ -33,6 +33,7 @@ import System.Employee.AttendanceRecord;
 import System.Employee.Benefit;
 import System.Employee.Deduction;
 import System.Employee.EmployeeRecords;
+import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.BorderLayout;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -57,9 +58,9 @@ private AttendanceRecord[] attendance;
         String csvFileName = "src/Files/EmployeeData.csv";
         employees = EmployeeRecords.readEmployeesFromCSV(csvFileName);
         attendance = AttendanceRecord.readAttendanceFromCSV("src/Files/Attendance.csv");
-        PanelMonthlyPayrollReport.setVisible(false);
-        RunPayrollTable.setVisible(true);
-        displayCSVData(csvFileName); 
+//        PanelMonthlyPayrollReport.setVisible(false);
+//        RunPayrollTable.setVisible(true);
+         displayProcessPayrollData(csvFileName);
     }
 
     /**
@@ -71,41 +72,42 @@ private AttendanceRecord[] attendance;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 24), new java.awt.Dimension(0, 28), new java.awt.Dimension(32767, 24));
+        managePayrollLbl = new javax.swing.JLabel();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 24), new java.awt.Dimension(0, 16), new java.awt.Dimension(32767, 24));
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         PanelRunPayroll = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         RunPayrollTable = new javax.swing.JTable();
         PanelMonthlyPayrollReport = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        RunPayrollTable1 = new javax.swing.JTable();
+        PayrollReportTable = new javax.swing.JTable();
         jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(0, 204, 255));
+        setBackground(new java.awt.Color(51, 51, 51));
+        setMaximumSize(new java.awt.Dimension(1500, 700));
+        setPreferredSize(new java.awt.Dimension(1490, 800));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
-        jLabel1.setText("Employee List");
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1490, 800));
 
-        jButton1.setText("Monthly Payroll Report");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        managePayrollLbl.setFont(new java.awt.Font("Poppins", 0, 18)); // NOI18N
+        managePayrollLbl.setForeground(new java.awt.Color(255, 255, 255));
+        managePayrollLbl.setText("Manage Payroll");
 
-        jButton2.setText("Run Payroll");
-        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        jTabbedPane1.setBackground(new java.awt.Color(51, 51, 51));
+        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
+        jTabbedPane1.setOpaque(true);
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(1415, 665));
 
-        PanelRunPayroll.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
+        PanelRunPayroll.setBackground(new java.awt.Color(51, 51, 51));
+        PanelRunPayroll.setMaximumSize(new java.awt.Dimension(1500, 700));
+        PanelRunPayroll.setPreferredSize(new java.awt.Dimension(1428, 626));
 
+        RunPayrollTable.setBackground(new java.awt.Color(255, 255, 255));
+        RunPayrollTable.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         RunPayrollTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -124,21 +126,28 @@ private AttendanceRecord[] attendance;
         PanelRunPayrollLayout.setHorizontalGroup(
             PanelRunPayrollLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelRunPayrollLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         PanelRunPayrollLayout.setVerticalGroup(
             PanelRunPayrollLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelRunPayrollLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 549, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        PanelMonthlyPayrollReport.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
+        jTabbedPane1.addTab("Run Payroll", PanelRunPayroll);
 
-        RunPayrollTable1.setModel(new javax.swing.table.DefaultTableModel(
+        PanelMonthlyPayrollReport.setBackground(new java.awt.Color(51, 51, 51));
+        PanelMonthlyPayrollReport.setForeground(new java.awt.Color(255, 255, 255));
+        PanelMonthlyPayrollReport.setOpaque(false);
+        PanelMonthlyPayrollReport.setPreferredSize(new java.awt.Dimension(1428, 618));
+        PanelMonthlyPayrollReport.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        PayrollReportTable.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        PayrollReportTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -149,8 +158,10 @@ private AttendanceRecord[] attendance;
                 "Employee #", "Full Name", "Department", "Gross Income", "SSS No.", "SSS Contribution", "Philhealth No.", "Philhealth Contribution  ", "Pag-ibig No.  ", "Pag-Ibig Contribution  ", "TIN", "Withholding  Tax  ", "Net Pay  "
             }
         ));
-        RunPayrollTable1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        jScrollPane2.setViewportView(RunPayrollTable1);
+        PayrollReportTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        jScrollPane2.setViewportView(PayrollReportTable);
+
+        PanelMonthlyPayrollReport.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 1368, 574));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Month", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -158,25 +169,35 @@ private AttendanceRecord[] attendance;
                 jComboBox1ActionPerformed(evt);
             }
         });
+        PanelMonthlyPayrollReport.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 227, -1));
 
-        javax.swing.GroupLayout PanelMonthlyPayrollReportLayout = new javax.swing.GroupLayout(PanelMonthlyPayrollReport);
-        PanelMonthlyPayrollReport.setLayout(PanelMonthlyPayrollReportLayout);
-        PanelMonthlyPayrollReportLayout.setHorizontalGroup(
-            PanelMonthlyPayrollReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelMonthlyPayrollReportLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(PanelMonthlyPayrollReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1368, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+        jTabbedPane1.addTab("Monthly Payroll Report", PanelMonthlyPayrollReport);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, 1428, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(managePayrollLbl)
+                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, 1428, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1415, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
-        PanelMonthlyPayrollReportLayout.setVerticalGroup(
-            PanelMonthlyPayrollReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelMonthlyPayrollReportLayout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(managePayrollLbl)
+                .addGap(0, 0, 0)
+                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,59 +205,28 @@ private AttendanceRecord[] attendance;
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 728, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 669, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(PanelRunPayroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PanelMonthlyPayrollReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(9, 10, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(592, 592, 592))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PanelRunPayroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(PanelMonthlyPayrollReport, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-
-      PanelMonthlyPayrollReport.setVisible(false);
-      PanelRunPayroll.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       PanelMonthlyPayrollReport.setVisible(true);
-      PanelRunPayroll.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+    
+    private void displayProcessPayrollData(String csvFileName) throws ParseException {
+        displayCSVData(csvFileName);
+    }
+    
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
     String selectedMonth = (String) jComboBox1.getSelectedItem();
     Deduction deduction = new Deduction();
-    DefaultTableModel model = (DefaultTableModel) RunPayrollTable1.getModel();
+    DefaultTableModel model = (DefaultTableModel) PayrollReportTable.getModel();
     model.setRowCount(0);
     
     //Iterate over each column
@@ -253,13 +243,13 @@ private AttendanceRecord[] attendance;
             
         }
             
-        RunPayrollTable1.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 14));
-        RunPayrollTable1.setFont(new Font("SansSerif", Font.PLAIN, 12));
-        RunPayrollTable1.setRowHeight(25);
+        PayrollReportTable.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 14));
+        PayrollReportTable.setFont(new Font("SansSerif", Font.PLAIN, 12));
+        PayrollReportTable.setRowHeight(25);
         
     
         model.setColumnIdentifiers(new String[]{"Employee #", "Full Name", "Position", "Gross Income", "SSS No","SSS Contributon",
-            "Philheath No","Philheath Contribtion", "Pag-ibig No", "Pag-ibig Contribution", "Tin No", "Withholdong","NetPay"
+            "Philheath No","Philheath Contribtion", "Pag-ibig No", "Pag-ibig Contribution", "TIN", "Withholding","NetPay"
                });
         
         for (EmployeeRecords employee : employees)
@@ -290,8 +280,8 @@ private AttendanceRecord[] attendance;
       // Set custom cell renderer for all columns
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
-        for (int i = 0; i < RunPayrollTable1.getColumnCount(); i++) {
-            RunPayrollTable1.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        for (int i = 0; i < PayrollReportTable.getColumnCount(); i++) {
+            PayrollReportTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
          
      }
@@ -387,27 +377,7 @@ private AttendanceRecord[] attendance;
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EmployeePayroll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EmployeePayroll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EmployeePayroll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EmployeePayroll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+        FlatLightLaf.setup();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -424,13 +394,15 @@ private AttendanceRecord[] attendance;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelMonthlyPayrollReport;
     private javax.swing.JPanel PanelRunPayroll;
+    private javax.swing.JTable PayrollReportTable;
     private javax.swing.JTable RunPayrollTable;
-    private javax.swing.JTable RunPayrollTable1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel managePayrollLbl;
     // End of variables declaration//GEN-END:variables
 }

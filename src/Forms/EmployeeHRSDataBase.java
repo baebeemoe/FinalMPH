@@ -25,7 +25,7 @@ public class EmployeeHRSDataBase extends javax.swing.JFrame {
     private JTextField searchField;
 
     public EmployeeHRSDataBase() {
-        super("EmployeeHSRDataBase");
+        super("Manage Employee Information");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1920, 700);
 
