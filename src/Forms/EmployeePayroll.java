@@ -85,7 +85,7 @@ private AttendanceRecord[] attendance;
         PayrollReportTable = new javax.swing.JTable();
         jComboBox1 = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
         setMaximumSize(new java.awt.Dimension(1500, 700));
         setPreferredSize(new java.awt.Dimension(1490, 800));

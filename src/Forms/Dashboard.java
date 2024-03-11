@@ -2829,10 +2829,10 @@ public class Dashboard extends javax.swing.JFrame {
         ex.printStackTrace();
     }
 
-//    // Check if records were found for the employee
-//    if (!foundRecords) {
-//        JOptionPane.showMessageDialog(this, "No records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
-//    }
+//    Check if records were found for the employee
+    if (!foundRecords) {
+        JOptionPane.showMessageDialog(this, "No records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
 }
     
     private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
@@ -2928,7 +2928,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         // Check if records were found for the employee
         if (!foundRecords) {
-            JOptionPane.showMessageDialog(this, "No attendance records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "No leave records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
     // Show the AttendancePanel and hide other panels
