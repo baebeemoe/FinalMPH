@@ -34,6 +34,9 @@ public class Requests extends javax.swing.JFrame {
         initComponents();
         LeavePane.setVisible(true);       
         OverTimePane.setVisible(false);
+        
+        // Load data immediately when the frame is created
+        loadLeaveRequestsData();
     }
 
     /**
@@ -54,7 +57,7 @@ public class Requests extends javax.swing.JFrame {
         OvertimeTable = new javax.swing.JTable();
         btnOvertimeRequest = new javax.swing.JButton();
         btnLeaveRequest = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        saveRequestUpdateBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,11 +100,11 @@ public class Requests extends javax.swing.JFrame {
 
         jPanel2.add(OverTimePane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1145, 520));
 
-        btnOvertimeRequest.setText("OVERTIME REQUESTS");
         btnOvertimeRequest.setBackground(new java.awt.Color(255, 153, 0));
-        btnOvertimeRequest.setBorderPainted(false);
         btnOvertimeRequest.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         btnOvertimeRequest.setForeground(new java.awt.Color(255, 255, 255));
+        btnOvertimeRequest.setText("OVERTIME REQUESTS");
+        btnOvertimeRequest.setBorderPainted(false);
         btnOvertimeRequest.setPreferredSize(new java.awt.Dimension(566, 28));
         btnOvertimeRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,11 +112,11 @@ public class Requests extends javax.swing.JFrame {
             }
         });
 
-        btnLeaveRequest.setText("LEAVE REQUESTS");
         btnLeaveRequest.setBackground(new java.awt.Color(255, 153, 0));
-        btnLeaveRequest.setBorderPainted(false);
         btnLeaveRequest.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         btnLeaveRequest.setForeground(new java.awt.Color(255, 255, 255));
+        btnLeaveRequest.setText("LEAVE REQUESTS");
+        btnLeaveRequest.setBorderPainted(false);
         btnLeaveRequest.setPreferredSize(new java.awt.Dimension(566, 28));
         btnLeaveRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,14 +124,14 @@ public class Requests extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("SAVE");
-        jButton3.setBackground(new java.awt.Color(255, 153, 0));
-        jButton3.setBorderPainted(false);
-        jButton3.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        saveRequestUpdateBtn.setBackground(new java.awt.Color(255, 153, 0));
+        saveRequestUpdateBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        saveRequestUpdateBtn.setForeground(new java.awt.Color(255, 255, 255));
+        saveRequestUpdateBtn.setText("SAVE");
+        saveRequestUpdateBtn.setBorderPainted(false);
+        saveRequestUpdateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                saveRequestUpdateBtnActionPerformed(evt);
             }
         });
 
@@ -147,7 +150,7 @@ public class Requests extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(572, 572, 572)
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(saveRequestUpdateBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(598, 598, 598))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(550, 550, 550)
@@ -166,7 +169,7 @@ public class Requests extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
-                .addComponent(jButton3)
+                .addComponent(saveRequestUpdateBtn)
                 .addContainerGap())
         );
 
@@ -185,9 +188,9 @@ public class Requests extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLeaveRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeaveRequestActionPerformed
-LeavePane.setVisible(true);       
-OverTimePane.setVisible(false);
+    private void loadLeaveRequestsData() {
+        LeavePane.setVisible(true);       
+        OverTimePane.setVisible(false);
 
 DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
     model.setRowCount(0);
@@ -232,10 +235,11 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
     });
 
     lastColumn.setCellEditor(new DefaultCellEditor(new JComboBox(new String[]{"Pending ", "Approved", "Denied"})));
-
-
-
-// TODO add your handling code here:
+    } 
+    
+    private void btnLeaveRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeaveRequestActionPerformed
+    // TODO add your handling code here:
+        loadLeaveRequestsData();
     }//GEN-LAST:event_btnLeaveRequestActionPerformed
 
     private void btnOvertimeRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOvertimeRequestActionPerformed
@@ -286,14 +290,14 @@ DefaultTableModel model = (DefaultTableModel) OvertimeTable.getModel();
 
     }//GEN-LAST:event_btnOvertimeRequestActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void saveRequestUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveRequestUpdateBtnActionPerformed
                 if (OverTimePane.isVisible()) {
                     saveData( "src/Files/OvertimeRequest.csv");
                 } else if (LeavePane.isVisible()) {
                     saveData( "src/Files/LeaveRequests.csv");
                 }
       
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_saveRequestUpdateBtnActionPerformed
 
   private void saveData(String fileName) {
     String csvFilePath = "";
@@ -388,9 +392,9 @@ DefaultTableModel model = (DefaultTableModel) OvertimeTable.getModel();
     private javax.swing.JTable OvertimeTable;
     private javax.swing.JButton btnLeaveRequest;
     private javax.swing.JButton btnOvertimeRequest;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton saveRequestUpdateBtn;
     // End of variables declaration//GEN-END:variables
 }

@@ -69,6 +69,10 @@ public class Dashboard extends javax.swing.JFrame {
        {
         return EmployeeRecords_MainDashboard;
     }
+    
+    public JPanel getRequestList_MainDashboard() {
+        return RequestList_MainDashboard;
+    }
        
     public javax.swing.JPanel getProfilePanel() {
         return ProfilePanel;
@@ -323,6 +327,8 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel118 = new javax.swing.JLabel();
         PayrollRecords_MainDashboard = new javax.swing.JPanel();
         payrollBtn = new javax.swing.JButton();
+        RequestList_MainDashboard = new javax.swing.JPanel();
+        requestListBtn = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -2416,12 +2422,12 @@ public class Dashboard extends javax.swing.JFrame {
         PayrollRecords_MainDashboard.setForeground(new java.awt.Color(255, 255, 255));
         PayrollRecords_MainDashboard.setPreferredSize(new java.awt.Dimension(600, 92));
 
-        payrollBtn.setBackground(new java.awt.Color(102, 102, 102));
-        payrollBtn.setFont(new java.awt.Font("Open Sans", 0, 36)); // NOI18N
-        payrollBtn.setForeground(new java.awt.Color(255, 255, 255));
         payrollBtn.setText("Employee Records");
+        payrollBtn.setBackground(new java.awt.Color(102, 102, 102));
         payrollBtn.setBorder(null);
         payrollBtn.setBorderPainted(false);
+        payrollBtn.setFont(new java.awt.Font("Open Sans", 0, 36)); // NOI18N
+        payrollBtn.setForeground(new java.awt.Color(255, 255, 255));
         payrollBtn.setMinimumSize(new java.awt.Dimension(200, 50));
         payrollBtn.setOpaque(true);
         payrollBtn.setPreferredSize(new java.awt.Dimension(540, 50));
@@ -2449,6 +2455,44 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         jPanel1.add(PayrollRecords_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, -1, -1));
+
+        RequestList_MainDashboard.setBackground(new java.awt.Color(34, 34, 50, 220));
+        RequestList_MainDashboard.setForeground(new java.awt.Color(255, 255, 255));
+        RequestList_MainDashboard.setPreferredSize(new java.awt.Dimension(600, 92));
+
+        requestListBtn.setBackground(new java.awt.Color(102, 102, 102));
+        requestListBtn.setFont(new java.awt.Font("Open Sans", 0, 36)); // NOI18N
+        requestListBtn.setForeground(new java.awt.Color(255, 255, 255));
+        requestListBtn.setText("Employee Records");
+        requestListBtn.setBorder(null);
+        requestListBtn.setBorderPainted(false);
+        requestListBtn.setMinimumSize(new java.awt.Dimension(200, 50));
+        requestListBtn.setOpaque(true);
+        requestListBtn.setPreferredSize(new java.awt.Dimension(540, 50));
+        requestListBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                requestListBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout RequestList_MainDashboardLayout = new javax.swing.GroupLayout(RequestList_MainDashboard);
+        RequestList_MainDashboard.setLayout(RequestList_MainDashboardLayout);
+        RequestList_MainDashboardLayout.setHorizontalGroup(
+            RequestList_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RequestList_MainDashboardLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(requestListBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        RequestList_MainDashboardLayout.setVerticalGroup(
+            RequestList_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RequestList_MainDashboardLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(requestListBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(RequestList_MainDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, -1, -1));
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/main-bg.jpg"))); // NOI18N
         Background.setText("jLabel1");
@@ -2854,6 +2898,14 @@ System.out.println("Reason " + reason);
         }
     }//GEN-LAST:event_payrollBtnActionPerformed
 
+    private void requestListBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestListBtnActionPerformed
+        // TODO add your handling code here:
+        Requests requests = new Requests();
+        this.setVisible(true);
+        requests.setVisible(true);
+        
+    }//GEN-LAST:event_requestListBtnActionPerformed
+
     private void displayPayslip(String cutoffDate) {
         try {
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
@@ -3050,6 +3102,7 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel ProfileSSS;
     private javax.swing.JLabel ProfileStatus;
     private javax.swing.JLabel ProfileTinnumber;
+    private javax.swing.JPanel RequestList_MainDashboard;
     private javax.swing.JPanel Request_MainDashboard;
     private javax.swing.JLabel Shift;
     private javax.swing.JToggleButton TimeButton;
@@ -3217,6 +3270,7 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel profileFirstName;
     private java.awt.Label reasonOTRequestLbl;
     private java.awt.TextArea reasonTextOT;
+    private javax.swing.JButton requestListBtn;
     private java.awt.Label requestOTLbl;
     private javax.swing.JButton requestOvertimeBtn;
     private java.awt.Label startTimeOTLbl;
