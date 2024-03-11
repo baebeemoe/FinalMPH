@@ -371,18 +371,19 @@ public class LogIn extends javax.swing.JFrame {
                 if (employee.getRole().equals("Admin")) {
                     dashboard.getEmployeeRecords_MainDashboard().setVisible(true);
                     dashboard.getPayrollRecords_MainDashboard().setVisible(false);
-//                dashboard.getRequests_MainDashboard1().setVisible(false);
+                    dashboard.getRequestList_MainDashboard().setVisible(false);
                 } else if (employee.getRole().equals("Payroll")) { 
                     dashboard.getPayrollRecords_MainDashboard().setVisible(true);
                     dashboard.getEmployeeRecords_MainDashboard().setVisible(false);
-//                  dashboard.getRequests_MainDashboard1().setVisible(false);
+                    dashboard.getRequestList_MainDashboard().setVisible(false);
                 } else if (employee.getRole().equals("Supervisor")) { 
                     dashboard.getPayrollRecords_MainDashboard().setVisible(false);
                     dashboard.getEmployeeRecords_MainDashboard().setVisible(false);
-//                  dashboard.getRequests_MainDashboard1().setVisible(true);
+                    dashboard.getRequestList_MainDashboard().setVisible(true);
                 } else {
                     dashboard.getEmployeeRecords_MainDashboard().setVisible(false);
                     dashboard.getPayrollRecords_MainDashboard().setVisible(false);
+                    dashboard.getRequestList_MainDashboard().setVisible(false);
                 }
                 break;
             }
