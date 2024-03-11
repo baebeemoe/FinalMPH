@@ -58,11 +58,12 @@ public class Requests extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setForeground(new java.awt.Color(255, 153, 0));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
         jLabel1.setText("List of Requests");
+        jLabel1.setFont(new java.awt.Font("Poppins", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -79,7 +80,7 @@ public class Requests extends javax.swing.JFrame {
         ));
         LeavePane.setViewportView(LeaveTable);
 
-        jPanel2.add(LeavePane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1145, 528));
+        jPanel2.add(LeavePane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1145, 520));
 
         OvertimeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,26 +95,37 @@ public class Requests extends javax.swing.JFrame {
         ));
         OverTimePane.setViewportView(OvertimeTable);
 
-        jPanel2.add(OverTimePane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1145, 528));
+        jPanel2.add(OverTimePane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1145, 520));
 
-        btnOvertimeRequest.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
-        btnOvertimeRequest.setText("Overtime Requests");
+        btnOvertimeRequest.setText("OVERTIME REQUESTS");
+        btnOvertimeRequest.setBackground(new java.awt.Color(255, 153, 0));
+        btnOvertimeRequest.setBorderPainted(false);
+        btnOvertimeRequest.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        btnOvertimeRequest.setForeground(new java.awt.Color(255, 255, 255));
+        btnOvertimeRequest.setPreferredSize(new java.awt.Dimension(566, 28));
         btnOvertimeRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOvertimeRequestActionPerformed(evt);
             }
         });
 
-        btnLeaveRequest.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
-        btnLeaveRequest.setText("Leave Requests");
+        btnLeaveRequest.setText("LEAVE REQUESTS");
+        btnLeaveRequest.setBackground(new java.awt.Color(255, 153, 0));
+        btnLeaveRequest.setBorderPainted(false);
+        btnLeaveRequest.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        btnLeaveRequest.setForeground(new java.awt.Color(255, 255, 255));
+        btnLeaveRequest.setPreferredSize(new java.awt.Dimension(566, 28));
         btnLeaveRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLeaveRequestActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
-        jButton3.setText("Save");
+        jButton3.setText("SAVE");
+        jButton3.setBackground(new java.awt.Color(255, 153, 0));
+        jButton3.setBorderPainted(false);
+        jButton3.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -125,33 +137,32 @@ public class Requests extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(506, 506, 506)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnLeaveRequest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnOvertimeRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(btnLeaveRequest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnOvertimeRequest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(572, 572, 572)
                 .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(598, 598, 598))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(550, 550, 550)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLeaveRequest)
-                    .addComponent(btnOvertimeRequest))
+                    .addComponent(btnLeaveRequest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOvertimeRequest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
