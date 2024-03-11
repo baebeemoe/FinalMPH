@@ -10,7 +10,10 @@ import System.Employee.Request;
 import System.Employee.Earning;
 import java.awt.Color;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -128,6 +131,16 @@ public class Dashboard extends javax.swing.JFrame {
         reasonTextOT = new java.awt.TextArea();
         cancelBtnOT = new javax.swing.JButton();
         submitBtnOT = new javax.swing.JButton();
+        changePassDialog = new javax.swing.JDialog();
+        changePassPnl = new javax.swing.JPanel();
+        requestOTLbl1 = new java.awt.Label();
+        changePassFieldsPnl = new javax.swing.JPanel();
+        newPassLbl = new java.awt.Label();
+        tfNewPass = new javax.swing.JPasswordField();
+        confirmPassLbl = new java.awt.Label();
+        tfConfirmPass = new javax.swing.JPasswordField();
+        cancelPassBtn = new javax.swing.JButton();
+        updatePassBtn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         AttendancePanel = new javax.swing.JPanel();
         attTabbedPane = new javax.swing.JTabbedPane();
@@ -306,7 +319,7 @@ public class Dashboard extends javax.swing.JFrame {
         ProfilePhilhealth = new javax.swing.JLabel();
         labelTIN = new javax.swing.JLabel();
         ProfileTinnumber = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        changePassBtn = new javax.swing.JButton();
         LeavePanel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel112 = new javax.swing.JLabel();
@@ -483,6 +496,98 @@ public class Dashboard extends javax.swing.JFrame {
         otRequestDialogLayout.setVerticalGroup(
             otRequestDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(otRequestDlgPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        changePassDialog.setBackground(new java.awt.Color(51, 51, 51));
+        changePassDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 360));
+        changePassDialog.setMinimumSize(new java.awt.Dimension(386, 205));
+        changePassDialog.setUndecorated(true);
+        changePassDialog.setResizable(false);
+        changePassDialog.setSize(new java.awt.Dimension(386, 205));
+
+        changePassPnl.setBackground(new java.awt.Color(51, 51, 51));
+        changePassPnl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
+        changePassPnl.setPreferredSize(new java.awt.Dimension(450, 320));
+        changePassPnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        requestOTLbl1.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
+        requestOTLbl1.setForeground(new java.awt.Color(255, 255, 255));
+        requestOTLbl1.setName(""); // NOI18N
+        requestOTLbl1.setText("Change Password");
+        changePassPnl.add(requestOTLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        changePassFieldsPnl.setBackground(new java.awt.Color(51, 51, 51));
+        changePassFieldsPnl.setLayout(new java.awt.GridBagLayout());
+
+        newPassLbl.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        newPassLbl.setForeground(new java.awt.Color(255, 255, 255));
+        newPassLbl.setText("New Password");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        changePassFieldsPnl.add(newPassLbl, gridBagConstraints);
+
+        tfNewPass.setText("jPasswordField1");
+        tfNewPass.setPreferredSize(new java.awt.Dimension(180, 22));
+        changePassFieldsPnl.add(tfNewPass, new java.awt.GridBagConstraints());
+
+        confirmPassLbl.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        confirmPassLbl.setForeground(new java.awt.Color(255, 255, 255));
+        confirmPassLbl.setText("Confirm Password");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        changePassFieldsPnl.add(confirmPassLbl, gridBagConstraints);
+
+        tfConfirmPass.setText("jPasswordField1");
+        tfConfirmPass.setPreferredSize(new java.awt.Dimension(180, 22));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        changePassFieldsPnl.add(tfConfirmPass, gridBagConstraints);
+
+        changePassPnl.add(changePassFieldsPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+
+        cancelPassBtn.setBackground(new java.awt.Color(51, 51, 51));
+        cancelPassBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        cancelPassBtn.setForeground(new java.awt.Color(255, 102, 0));
+        cancelPassBtn.setText("CANCEL");
+        cancelPassBtn.setBorderPainted(false);
+        cancelPassBtn.setOpaque(true);
+        cancelPassBtn.setPreferredSize(new java.awt.Dimension(180, 36));
+        cancelPassBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelPassBtnActionPerformed(evt);
+            }
+        });
+        changePassPnl.add(cancelPassBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 84, -1));
+
+        updatePassBtn.setBackground(new java.awt.Color(255, 153, 0));
+        updatePassBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        updatePassBtn.setForeground(new java.awt.Color(255, 255, 255));
+        updatePassBtn.setText("UPDATE PASSWORD");
+        updatePassBtn.setBorderPainted(false);
+        updatePassBtn.setPreferredSize(new java.awt.Dimension(180, 36));
+        updatePassBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatePassBtnActionPerformed(evt);
+            }
+        });
+        changePassPnl.add(updatePassBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 150, -1));
+
+        javax.swing.GroupLayout changePassDialogLayout = new javax.swing.GroupLayout(changePassDialog.getContentPane());
+        changePassDialog.getContentPane().setLayout(changePassDialogLayout);
+        changePassDialogLayout.setHorizontalGroup(
+            changePassDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(changePassPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        changePassDialogLayout.setVerticalGroup(
+            changePassDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(changePassPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -2150,13 +2255,18 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(8, 0, 8, 0);
         jPanel12.add(ProfileTinnumber, gridBagConstraints);
 
-        jButton4.setText("UPDATE");
-        jButton4.setBackground(new java.awt.Color(255, 153, 0));
-        jButton4.setBorderPainted(false);
-        jButton4.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setMaximumSize(new java.awt.Dimension(83, 32));
-        jButton4.setPreferredSize(new java.awt.Dimension(83, 32));
+        changePassBtn.setText("CHANGE PASSWORD");
+        changePassBtn.setBackground(new java.awt.Color(255, 153, 0));
+        changePassBtn.setBorderPainted(false);
+        changePassBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        changePassBtn.setForeground(new java.awt.Color(255, 255, 255));
+        changePassBtn.setMaximumSize(new java.awt.Dimension(83, 32));
+        changePassBtn.setPreferredSize(new java.awt.Dimension(180, 32));
+        changePassBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changePassBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -2175,9 +2285,6 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jSeparator11))
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(375, 375, 375)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2186,35 +2293,38 @@ public class Dashboard extends javax.swing.JFrame {
                                 .addComponent(jLabel42))
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addGap(45, 45, 45)
-                                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(42, Short.MAX_VALUE))
+                                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(113, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(changePassBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39))))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(jLabel42)
-                .addGap(54, 54, 54)
-                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
-            .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(59, 59, 59)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel36)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(profileFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ProfileEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel42)
+                        .addGap(54, 54, 54)
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(85, 85, 85)
+                        .addComponent(changePassBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel9Layout.createSequentialGroup()
+                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel36)
+                                .addGroup(jPanel9Layout.createSequentialGroup()
+                                    .addGap(18, 18, 18)
+                                    .addComponent(profileFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ProfileEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(18, 18, 18)
+                            .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -2552,6 +2662,9 @@ public class Dashboard extends javax.swing.JFrame {
             Request_MainDashboard.setVisible(false);
             PayslipPanel.setVisible(false);
             ProfilePanel.setVisible(true);
+            EmployeeRecords_MainDashboard.setVisible(false);
+            PayrollRecords_MainDashboard.setVisible(false);
+            RequestList_MainDashboard.setVisible(false);
             
         } else {
             // Access denied, display an error message
@@ -2903,6 +3016,64 @@ System.out.println("Reason " + reason);
         
     }//GEN-LAST:event_requestListBtnActionPerformed
 
+    private void changePassBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePassBtnActionPerformed
+        // TODO add your handling code here:
+        changePassDialog.setVisible(true);
+        changePassDialog.setLocationRelativeTo(this);
+    }//GEN-LAST:event_changePassBtnActionPerformed
+
+    private void cancelPassBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelPassBtnActionPerformed
+        // TODO add your handling code here:
+        changePassDialog.dispose();
+    }//GEN-LAST:event_cancelPassBtnActionPerformed
+
+    private void updatePassBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePassBtnActionPerformed
+        // TODO add your handling code here:
+        String empID = MainDashboardempNo.getText().trim();
+    String newPassword = tfNewPass.getText();
+    String confirmPassword = tfConfirmPass.getText();
+    
+    if (newPassword.equals(confirmPassword)) {
+            // Path to the CSV file
+            String csvFilePath = "src/Files/EmployeeData.csv";
+    
+     try {
+                // Read the CSV file
+                File file = new File(csvFilePath);
+                BufferedReader br = new BufferedReader(new FileReader(file));
+                StringBuilder sb = new StringBuilder();
+                // Read and store the header line
+                String header = br.readLine();
+                sb.append(header).append("\n");
+                String line;
+                while ((line = br.readLine()) != null) {
+                    // Skip the header line
+                
+                    String[] data = line.split(";");
+                    // Assuming employee number is stored in the first column
+                    int employeeID = Integer.parseInt(data[0]);
+                    if (employeeID == Integer.parseInt(empID)) {
+                        // Update password (assuming password is stored in second last column)
+                        data[data.length - 2] = newPassword;
+                    }
+                    sb.append(String.join(";", data)).append("\n");
+                }
+                br.close();
+
+                // Write the updated data back to the CSV file
+                BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+                bw.write(sb.toString());
+                bw.close();
+
+                JOptionPane.showMessageDialog(null, "Password updated successfully.");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Passwords do not match. Please try again.");
+        }
+    }//GEN-LAST:event_updatePassBtnActionPerformed
+
     private void displayPayslip(String cutoffDate) {
         try {
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
@@ -3112,13 +3283,18 @@ System.out.println("Reason " + reason);
     private javax.swing.JTabbedPane attTabbedPane;
     private javax.swing.JTable attendanceTable;
     private javax.swing.JButton cancelBtnOT;
+    private javax.swing.JButton cancelPassBtn;
+    private javax.swing.JButton changePassBtn;
+    private javax.swing.JDialog changePassDialog;
+    private javax.swing.JPanel changePassFieldsPnl;
+    private javax.swing.JPanel changePassPnl;
+    private java.awt.Label confirmPassLbl;
     private javax.swing.JComboBox<String> cutoffSelector;
     private java.awt.Label dateOTRequestLbl;
     private com.github.lgooddatepicker.components.DatePicker datePickerOT;
     private java.awt.Label endTimeOTLbl;
     private com.github.lgooddatepicker.components.TimePicker endTimePickerOT;
     private javax.swing.JButton hrsBtn;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel101;
@@ -3234,6 +3410,7 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel labelStatus;
     private javax.swing.JLabel labelTIN;
     private javax.swing.JLabel lblPending;
+    private java.awt.Label newPassLbl;
     private javax.swing.JPanel otPanel;
     private javax.swing.JDialog otRequestDialog;
     private javax.swing.JPanel otRequestDlgPnl;
@@ -3269,6 +3446,7 @@ System.out.println("Reason " + reason);
     private java.awt.TextArea reasonTextOT;
     private javax.swing.JButton requestListBtn;
     private java.awt.Label requestOTLbl;
+    private java.awt.Label requestOTLbl1;
     private javax.swing.JButton requestOvertimeBtn;
     private java.awt.Label startTimeOTLbl;
     private com.github.lgooddatepicker.components.TimePicker startTimePickerOT;
@@ -3277,6 +3455,9 @@ System.out.println("Reason " + reason);
     private javax.swing.JLabel summaryGrossIncome;
     private javax.swing.JLabel summaryTakeHomePay;
     private javax.swing.JLabel summaryTotalDeduction;
+    private javax.swing.JPasswordField tfConfirmPass;
+    private javax.swing.JPasswordField tfNewPass;
+    private javax.swing.JButton updatePassBtn;
     private javax.swing.JButton viewPayslipButton;
     // End of variables declaration//GEN-END:variables
 
