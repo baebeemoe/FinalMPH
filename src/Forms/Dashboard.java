@@ -256,7 +256,6 @@ public class Dashboard extends javax.swing.JFrame {
         LeaveMainDashboard = new javax.swing.JButton();
         PayslipMaindashboard = new javax.swing.JButton();
         TimeKeeping_MainDashboard = new javax.swing.JPanel();
-        jProgressBar1 = new javax.swing.JProgressBar();
         jLabel10 = new javax.swing.JLabel();
         TimeInLabel = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
@@ -1734,34 +1733,24 @@ public class Dashboard extends javax.swing.JFrame {
         TimeKeeping_MainDashboard.setBackground(new java.awt.Color(34, 34, 50, 220));
         TimeKeeping_MainDashboard.setPreferredSize(new java.awt.Dimension(600, 260));
 
-        jProgressBar1.setValue(20);
-        jProgressBar1.setBackground(new java.awt.Color(51, 51, 51));
-        jProgressBar1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 153, 0), 1, true));
-        jProgressBar1.setFocusable(false);
-        jProgressBar1.setFont(new java.awt.Font("Open Sans", 0, 10)); // NOI18N
-        jProgressBar1.setForeground(new java.awt.Color(255, 153, 0));
-        jProgressBar1.setOpaque(true);
-        jProgressBar1.setRequestFocusEnabled(false);
-        jProgressBar1.setStringPainted(true);
-
         jLabel10.setText("Time in : ");
-        jLabel10.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
 
         TimeInLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TimeInLabel.setBackground(new java.awt.Color(0, 0, 0));
-        TimeInLabel.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
+        TimeInLabel.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
         TimeInLabel.setForeground(new java.awt.Color(255, 255, 255));
-        TimeInLabel.setPreferredSize(new java.awt.Dimension(60, 16));
+        TimeInLabel.setPreferredSize(new java.awt.Dimension(100, 20));
 
         jLabel56.setText("Time out : ");
-        jLabel56.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        jLabel56.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         jLabel56.setForeground(new java.awt.Color(255, 255, 255));
 
         TimeOutLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TimeOutLabel.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
+        TimeOutLabel.setFont(new java.awt.Font("Open Sans", 1, 14)); // NOI18N
         TimeOutLabel.setForeground(new java.awt.Color(255, 255, 255));
-        TimeOutLabel.setPreferredSize(new java.awt.Dimension(60, 16));
+        TimeOutLabel.setPreferredSize(new java.awt.Dimension(100, 20));
 
         jPanel7.setOpaque(false);
 
@@ -1834,8 +1823,9 @@ public class Dashboard extends javax.swing.JFrame {
 
         TimeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/enterw24px.png"))); // NOI18N
         TimeButton.setText("Time in");
-        TimeButton.setBackground(new java.awt.Color(255, 102, 0));
+        TimeButton.setBackground(new java.awt.Color(255, 153, 0));
         TimeButton.setBorderPainted(false);
+        TimeButton.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
         TimeButton.setForeground(new java.awt.Color(255, 255, 255));
         TimeButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         TimeButton.setIconTextGap(8);
@@ -1857,42 +1847,40 @@ public class Dashboard extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addComponent(jLabel13))
                     .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jProgressBar1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(TimeButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                        .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                                .addGap(34, 34, 34)
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 297, Short.MAX_VALUE)
+                                .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, TimeKeeping_MainDashboardLayout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(164, 164, 164)
+                        .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TimeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
                                 .addComponent(jLabel56)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         TimeKeeping_MainDashboardLayout.setVerticalGroup(
             TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TimeKeeping_MainDashboardLayout.createSequentialGroup()
+            .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TimeButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TimeKeeping_MainDashboardLayout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel56, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(TimeOutLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel10)
+                    .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel56)))
                 .addGap(46, 46, 46))
         );
 
@@ -3524,7 +3512,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
