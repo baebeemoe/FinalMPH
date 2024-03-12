@@ -17,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 
 public class LogIn extends javax.swing.JFrame {
@@ -36,6 +37,15 @@ public class LogIn extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        forgotPWDialog = new javax.swing.JDialog();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        forgotUserId = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        forgotPWSubmitBtn = new javax.swing.JButton();
+        cancelForgotPWBtn = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -53,7 +63,7 @@ public class LogIn extends javax.swing.JFrame {
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(8, 0), new java.awt.Dimension(8, 0), new java.awt.Dimension(8, 32767));
         password = new javax.swing.JPasswordField();
         LogInbtn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        forgotPWBtn = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -61,6 +71,129 @@ public class LogIn extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         Background = new javax.swing.JLabel();
+
+        forgotPWDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        forgotPWDialog.setTitle("Forgot Password");
+        forgotPWDialog.setMaximumSize(new java.awt.Dimension(372, 280));
+        forgotPWDialog.setMinimumSize(new java.awt.Dimension(372, 320));
+        forgotPWDialog.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
+        forgotPWDialog.setPreferredSize(new java.awt.Dimension(372, 300));
+        forgotPWDialog.setResizable(false);
+        forgotPWDialog.setSize(new java.awt.Dimension(380, 320));
+
+        jPanel10.setBackground(new java.awt.Color(34, 34, 50, 220));
+        jPanel10.setPreferredSize(new java.awt.Dimension(361, 272));
+
+        jLabel9.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Please enter your Employee ID to send");
+
+        jPanel11.setBackground(new java.awt.Color(0, 0, 0));
+
+        forgotUserId.setBackground(new java.awt.Color(51, 51, 51));
+        forgotUserId.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        forgotUserId.setForeground(new java.awt.Color(255, 255, 255));
+        forgotUserId.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 8, 1, 8));
+        forgotUserId.setCaretColor(new java.awt.Color(255, 255, 255));
+        forgotUserId.setMargin(new java.awt.Insets(2, 8, 2, 8));
+        forgotUserId.setMinimumSize(new java.awt.Dimension(240, 36));
+        forgotUserId.setPreferredSize(new java.awt.Dimension(240, 36));
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(forgotUserId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(forgotUserId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jLabel12.setFont(new java.awt.Font("Poppins", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Forgot Password");
+
+        forgotPWSubmitBtn.setBackground(new java.awt.Color(255, 153, 0));
+        forgotPWSubmitBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        forgotPWSubmitBtn.setForeground(new java.awt.Color(255, 255, 255));
+        forgotPWSubmitBtn.setText("SUBMIT");
+        forgotPWSubmitBtn.setBorderPainted(false);
+        forgotPWSubmitBtn.setMaximumSize(new java.awt.Dimension(100, 36));
+        forgotPWSubmitBtn.setPreferredSize(new java.awt.Dimension(100, 36));
+        forgotPWSubmitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                forgotPWSubmitBtnActionPerformed(evt);
+            }
+        });
+
+        cancelForgotPWBtn.setBackground(new java.awt.Color(102, 102, 102));
+        cancelForgotPWBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        cancelForgotPWBtn.setForeground(new java.awt.Color(255, 255, 255));
+        cancelForgotPWBtn.setText("CANCEL");
+        cancelForgotPWBtn.setBorderPainted(false);
+        cancelForgotPWBtn.setMaximumSize(new java.awt.Dimension(100, 36));
+        cancelForgotPWBtn.setPreferredSize(new java.awt.Dimension(100, 36));
+        cancelForgotPWBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelForgotPWBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("a password reset request to the Administrator.");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel12)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(cancelForgotPWBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(forgotPWSubmitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel10))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel12)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
+                .addGap(30, 30, 30)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(forgotPWSubmitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelForgotPWBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout forgotPWDialogLayout = new javax.swing.GroupLayout(forgotPWDialog.getContentPane());
+        forgotPWDialog.getContentPane().setLayout(forgotPWDialogLayout);
+        forgotPWDialogLayout.setHorizontalGroup(
+            forgotPWDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 361, Short.MAX_VALUE)
+            .addGroup(forgotPWDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        forgotPWDialogLayout.setVerticalGroup(
+            forgotPWDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 296, Short.MAX_VALUE)
+            .addGroup(forgotPWDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -169,14 +302,19 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(51, 153, 255));
-        jButton1.setText("Forgotten your password?");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setRequestFocusEnabled(false);
-        jButton1.setRolloverEnabled(false);
+        forgotPWBtn.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        forgotPWBtn.setForeground(new java.awt.Color(51, 153, 255));
+        forgotPWBtn.setText("Forgotten your password?");
+        forgotPWBtn.setBorder(null);
+        forgotPWBtn.setBorderPainted(false);
+        forgotPWBtn.setContentAreaFilled(false);
+        forgotPWBtn.setRequestFocusEnabled(false);
+        forgotPWBtn.setRolloverEnabled(false);
+        forgotPWBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                forgotPWBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -189,7 +327,7 @@ public class LogIn extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LogInbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(forgotPWBtn))
                 .addGap(60, 60, 60))
         );
         jPanel2Layout.setVerticalGroup(
@@ -204,7 +342,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(LogInbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(forgotPWBtn)
                 .addContainerGap(55, Short.MAX_VALUE))
         );
 
@@ -418,6 +556,45 @@ public class LogIn extends javax.swing.JFrame {
         LogInbtn.setBackground(new java.awt.Color(255, 102, 0));
     }//GEN-LAST:event_LogInbtnMouseExited
 
+    private void forgotPWBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPWBtnActionPerformed
+        // TODO add your handling code here:
+        forgotPWDialog.setVisible(true);
+        forgotPWDialog.pack();
+        forgotPWDialog.setLocationRelativeTo(null);
+    }//GEN-LAST:event_forgotPWBtnActionPerformed
+
+    private void forgotPWSubmitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPWSubmitBtnActionPerformed
+        // TODO add your handling code here:
+        String userID = forgotUserId.getText().trim();
+        // Check if input is a valid integer
+        try {
+            int parsedUserID = Integer.parseInt(userID);
+            boolean userExists = false;
+            for (EmployeeRecords employee : employees) {
+                if (employee.getEmpNo() == parsedUserID) {
+                userExists = true;
+                // If user exists, show message
+                JOptionPane.showMessageDialog(this, "Password reset request sent for Employee ID: " + parsedUserID, "Password Reset Request", JOptionPane.INFORMATION_MESSAGE);
+                forgotUserId.setText("");
+                forgotPWDialog.dispose();
+                break; // No need to continue looping
+                }
+            }
+            if (!userExists) {
+            JOptionPane.showMessageDialog(this, "This Employee ID does not exist!", "ID Not Found", JOptionPane.ERROR_MESSAGE);
+        }
+
+        } catch(NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid Employee ID!", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }//GEN-LAST:event_forgotPWSubmitBtnActionPerformed
+
+    private void cancelForgotPWBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelForgotPWBtnActionPerformed
+        // TODO add your handling code here:
+        forgotPWDialog.dispose();
+    }//GEN-LAST:event_cancelForgotPWBtnActionPerformed
+
     public JTextField getUserId() {
         return UserId;
     }
@@ -443,10 +620,16 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JLabel Background;
     private javax.swing.JButton LogInbtn;
     private javax.swing.JTextField UserId;
+    private javax.swing.JButton cancelForgotPWBtn;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton forgotPWBtn;
+    private javax.swing.JDialog forgotPWDialog;
+    private javax.swing.JButton forgotPWSubmitBtn;
+    private javax.swing.JTextField forgotUserId;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -454,7 +637,10 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

@@ -26,8 +26,9 @@ public class EmployeeHRSDataBase extends javax.swing.JFrame {
 
     public EmployeeHRSDataBase() {
         super("Manage Employee Information");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(1920, 700);
+        
 
         JPanel mainPanel = new JPanel(null);
         mainPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
