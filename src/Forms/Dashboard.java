@@ -2900,30 +2900,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         // Grant or deny access based on the result
         if (accessGranted) {
-            DefaultTableModel model = (DefaultTableModel) leaveReqTbl.getModel();
-            model.setRowCount(0);
-
-        // Populate the table with data from the CSV file
-            String csvFilePath = "src/Files/LeaveRequests.csv";
-            boolean foundRecords = false;
-
-            try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
-                String line;
-                while ((line = br.readLine()) != null) {
-                    String[] data = line.split(",");
-                    if (data.length >= 7 && data[0].equals(empID)) {
-                    model.addRow(new Object[]{data[2], data[1], data[3], data[4],data[5],data[6]});
-                    foundRecords = true;
-                    }
-                }
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-
-        // Check if records were found for the employee
-        if (!foundRecords) {
-            JOptionPane.showMessageDialog(this, "No leave records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+            populateLeaveTable(empID);
 
     // Show the AttendancePanel and hide other panels
     TimeKeeping_MainDashboard.setVisible(false);
@@ -2944,6 +2921,32 @@ public class Dashboard extends javax.swing.JFrame {
 }
     }//GEN-LAST:event_LeaveMainDashboardActionPerformed
 
+    private void populateLeaveTable (String empID) {
+        DefaultTableModel model = (DefaultTableModel) leaveReqTbl.getModel();
+        model.setRowCount(0); // Clear existing data
+
+        String csvFilePath = "src/Files/LeaveRequests.csv";
+        boolean foundRecords = false;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                if (data.length >= 7 && data[0].equals(empID)) {
+                    model.addRow(new Object[]{data[2], data[1], data[3], data[4], data[5], data[6]});
+                    foundRecords = true;
+                }
+            }
+        } catch (IOException ex) {
+        ex.printStackTrace();
+        }
+
+        if (!foundRecords) {
+            // Optional: Display message if no records found for the employee
+            JOptionPane.showMessageDialog(this, "No leave requests found for " + empID);
+        }
+    }
+    
     private void HomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseEntered
         // TODO add your handling code here:
         Home.setBackground(Color.BLACK);
@@ -3029,16 +3032,23 @@ public class Dashboard extends javax.swing.JFrame {
     private void LeavePanelSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeavePanelSubmitButtonActionPerformed
         // TODO add your handling code here:
         Request request = new Request();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-
+        
         Date startDate = LeavePanelStartDate.getDate();
         Date endDate = LeavePanelEndDate.getDate();
         String empID = MainDashboardempNo.getText();
-        String startdateFiled = dateFormat.format(startDate);
-        String enddateFiled = dateFormat.format(endDate);
         String leaveType = LeavePanelLeaveSelector.getSelectedItem().toString();
         String reason = LeavePanelReason.getText();
         String status = "Pending";
+        
+        if (startDate == null || endDate == null || leaveType.equals("Choose Leave Type") || reason.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please fill in all fields.");
+        return; // Stop further execution
+        }
+        
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        String startdateFiled = dateFormat.format(startDate);
+        String enddateFiled = dateFormat.format(endDate);
+               
         if (startDate.compareTo(endDate) >= 0) {
             JOptionPane.showMessageDialog(this, "End date should be greater than Start Date");
         } else {
@@ -3052,6 +3062,7 @@ public class Dashboard extends javax.swing.JFrame {
                 LeavePanelEndDate.setDateFormatString("");
                 LeavePanelLeaveSelector.setSelectedIndex(0);
                 LeavePanelReason.setText("");
+                populateLeaveTable(empID);
             }
         }
 
