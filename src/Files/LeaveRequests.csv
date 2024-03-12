@@ -5,3 +5,4 @@ EmployeeID,Leave Type,Date Filed,Start Date,End Date,Reason,Status
 2,Vacation Leave,03/12/2024,03/13/2024,03/15/2024,Vacation,Pending
 2,Vacation Leave,03/12/2024,03/28/2024,03/29/2024,Vacation,Pending
 2,Vacation Leave,03/12/2024,03/29/2024,03/31/2024,Graduation,Pending
+1,Vacation Leave,03/12/2024,03/14/2024,03/15/2024,Vacation,Approved

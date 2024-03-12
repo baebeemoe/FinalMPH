@@ -111,7 +111,7 @@ public class Request {
                 }
             } else {
                 // Handle cases where the data format is incorrect
-                System.out.println("Incorrect data format: " + line);
+//                System.out.println("Incorrect data format: " + line);
             }
         }
     } catch (IOException e) {

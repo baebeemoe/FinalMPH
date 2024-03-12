@@ -480,11 +480,11 @@ public class Dashboard extends javax.swing.JFrame {
         });
         otRequestDlgPnl.add(cancelBtnOT, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 84, -1));
 
+        submitBtnOT.setText("SUBMIT");
         submitBtnOT.setBackground(new java.awt.Color(255, 153, 0));
+        submitBtnOT.setBorderPainted(false);
         submitBtnOT.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         submitBtnOT.setForeground(new java.awt.Color(255, 255, 255));
-        submitBtnOT.setText("SUBMIT");
-        submitBtnOT.setBorderPainted(false);
         submitBtnOT.setPreferredSize(new java.awt.Dimension(180, 36));
         submitBtnOT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -750,15 +750,15 @@ public class Dashboard extends javax.swing.JFrame {
         leaveReqDialog.getContentPane().setLayout(leaveReqDialogLayout);
         leaveReqDialogLayout.setHorizontalGroup(
             leaveReqDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 361, Short.MAX_VALUE)
+            .addGap(0, 360, Short.MAX_VALUE)
             .addGroup(leaveReqDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(leaveReqFormPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE))
+                .addComponent(leaveReqFormPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE))
         );
         leaveReqDialogLayout.setVerticalGroup(
             leaveReqDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 515, Short.MAX_VALUE)
+            .addGap(0, 520, Short.MAX_VALUE)
             .addGroup(leaveReqDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(leaveReqFormPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(leaveReqFormPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1878,9 +1878,8 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel10)
                     .addComponent(TimeInLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(TimeKeeping_MainDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                        .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel56)))
+                    .addComponent(TimeOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel56))
                 .addGap(46, 46, 46))
         );
 
@@ -3110,6 +3109,7 @@ public class Dashboard extends javax.swing.JFrame {
         if (dialogResult == JOptionPane.YES_OPTION) {
         JOptionPane.showMessageDialog(this, "Submitted Successfully");
         request.OvertimeRequestwriteToCSV(employeeID, date, startTime, endTime, reason, status );
+        populateOTTableFromCSV("src/Files/OvertimeRequest.csv", otRequestTable, employeeID);
         
        
         datePickerOT.setText("");

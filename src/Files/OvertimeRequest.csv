@@ -5,3 +5,5 @@ EmployeeID,Date,Start Time,End Time,Reason,Status
 1,2024-03-23,13:00,15:00,Maintenance,Pending 
 4,2024-03-16,16:00,17:00,Maintenance,Denied
 2,2024-03-18,13:00,16:00,Maintenance,Pending
+1,2024-03-08,16:00,17:00,Make up hours,Pending
+2,2024-03-09,08:00,09:00,On call,Pending
