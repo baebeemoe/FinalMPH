@@ -535,7 +535,6 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         changePassFieldsPnl.add(newPassLbl, gridBagConstraints);
 
-        tfNewPass.setText("jPasswordField1");
         tfNewPass.setPreferredSize(new java.awt.Dimension(180, 22));
         changePassFieldsPnl.add(tfNewPass, new java.awt.GridBagConstraints());
 
@@ -549,7 +548,6 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         changePassFieldsPnl.add(confirmPassLbl, gridBagConstraints);
 
-        tfConfirmPass.setText("jPasswordField1");
         tfConfirmPass.setPreferredSize(new java.awt.Dimension(180, 22));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;

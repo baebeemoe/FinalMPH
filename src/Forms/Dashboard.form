@@ -384,7 +384,6 @@
                 </Component>
                 <Component class="javax.swing.JPasswordField" name="tfNewPass">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jPasswordField1"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[180, 22]"/>
                     </Property>
@@ -413,7 +412,6 @@
                 </Component>
                 <Component class="javax.swing.JPasswordField" name="tfConfirmPass">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jPasswordField1"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[180, 22]"/>
                     </Property>
