@@ -3146,10 +3146,15 @@ public class Dashboard extends javax.swing.JFrame {
     private void updatePassBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePassBtnActionPerformed
         // TODO add your handling code here:
         String empID = MainDashboardempNo.getText().trim();
-    String newPassword = tfNewPass.getText();
-    String confirmPassword = tfConfirmPass.getText();
+        String newPassword = tfNewPass.getText();
+        String confirmPassword = tfConfirmPass.getText();
     
-    if (newPassword.equals(confirmPassword)) {
+        if (newPassword.isEmpty() || confirmPassword.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Please fill in all fields.");
+        return; // Stop further execution
+        }
+        
+        if (newPassword.equals(confirmPassword)) {
             // Path to the CSV file
             String csvFilePath = "src/Files/EmployeeData.csv";
     
