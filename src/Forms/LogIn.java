@@ -75,13 +75,14 @@ public class LogIn extends javax.swing.JFrame {
         forgotPWDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         forgotPWDialog.setTitle("Forgot Password");
         forgotPWDialog.setMaximumSize(new java.awt.Dimension(372, 280));
-        forgotPWDialog.setMinimumSize(new java.awt.Dimension(372, 320));
-        forgotPWDialog.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
-        forgotPWDialog.setPreferredSize(new java.awt.Dimension(372, 300));
+        forgotPWDialog.setMinimumSize(new java.awt.Dimension(372, 260));
+        forgotPWDialog.setUndecorated(true);
+        forgotPWDialog.setPreferredSize(new java.awt.Dimension(372, 280));
         forgotPWDialog.setResizable(false);
-        forgotPWDialog.setSize(new java.awt.Dimension(380, 320));
+        forgotPWDialog.setSize(new java.awt.Dimension(380, 260));
 
         jPanel10.setBackground(new java.awt.Color(34, 34, 50, 220));
+        jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
         jPanel10.setPreferredSize(new java.awt.Dimension(361, 272));
 
         jLabel9.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
@@ -177,7 +178,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(forgotPWSubmitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cancelForgotPWBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout forgotPWDialogLayout = new javax.swing.GroupLayout(forgotPWDialog.getContentPane());
@@ -574,7 +575,7 @@ public class LogIn extends javax.swing.JFrame {
                 if (employee.getEmpNo() == parsedUserID) {
                 userExists = true;
                 // If user exists, show message
-                JOptionPane.showMessageDialog(this, "Password reset request sent for Employee ID: " + parsedUserID, "Password Reset Request", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Password reset request sent for\nEmployee ID: " + parsedUserID + "\nPlease check your email for further details.", "Password Reset Request", JOptionPane.INFORMATION_MESSAGE);
                 forgotUserId.setText("");
                 forgotPWDialog.dispose();
                 break; // No need to continue looping

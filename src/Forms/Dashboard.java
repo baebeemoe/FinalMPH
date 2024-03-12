@@ -153,13 +153,13 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel115 = new javax.swing.JLabel();
         LeavePanelEndDate = new com.toedter.calendar.JDateChooser();
         jLabel119 = new javax.swing.JLabel();
+        cancelLeaveReqBtn = new javax.swing.JButton();
         MainPanel = new javax.swing.JPanel();
         AttendancePanel = new javax.swing.JPanel();
         attTabbedPane = new javax.swing.JTabbedPane();
         attListPanel = new javax.swing.JPanel();
         attScrollPane = new javax.swing.JScrollPane();
         attendanceTable = new javax.swing.JTable();
-        applyDisputeBtn = new javax.swing.JButton();
         otPanel = new javax.swing.JPanel();
         otScrollPane = new javax.swing.JScrollPane();
         otRequestTable = new javax.swing.JTable();
@@ -303,7 +303,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         ProfilePanel = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
+        profileInnerPnl = new javax.swing.JPanel();
         jSeparator10 = new javax.swing.JSeparator();
         profileFirstName = new javax.swing.JLabel();
         ProfileEmpNo = new javax.swing.JLabel();
@@ -363,6 +363,7 @@ public class Dashboard extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        otRequestDialog.setTitle("Overtime Request");
         otRequestDialog.setBackground(new java.awt.Color(51, 51, 51));
         otRequestDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 360));
         otRequestDialog.setMinimumSize(new java.awt.Dimension(400, 320));
@@ -504,6 +505,7 @@ public class Dashboard extends javax.swing.JFrame {
             .addComponent(otRequestDlgPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        changePassDialog.setTitle("Change Password");
         changePassDialog.setBackground(new java.awt.Color(51, 51, 51));
         changePassDialog.setBounds(new java.awt.Rectangle(0, 0, 400, 360));
         changePassDialog.setMinimumSize(new java.awt.Dimension(386, 205));
@@ -556,11 +558,11 @@ public class Dashboard extends javax.swing.JFrame {
 
         changePassPnl.add(changePassFieldsPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
+        cancelPassBtn.setText("CANCEL");
         cancelPassBtn.setBackground(new java.awt.Color(51, 51, 51));
+        cancelPassBtn.setBorderPainted(false);
         cancelPassBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         cancelPassBtn.setForeground(new java.awt.Color(255, 102, 0));
-        cancelPassBtn.setText("CANCEL");
-        cancelPassBtn.setBorderPainted(false);
         cancelPassBtn.setOpaque(true);
         cancelPassBtn.setPreferredSize(new java.awt.Dimension(180, 36));
         cancelPassBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -594,10 +596,14 @@ public class Dashboard extends javax.swing.JFrame {
             .addComponent(changePassPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        leaveReqDialog.setMinimumSize(new java.awt.Dimension(370, 540));
-        leaveReqDialog.setPreferredSize(new java.awt.Dimension(400, 515));
+        leaveReqDialog.setTitle("Leave Request");
+        leaveReqDialog.setMinimumSize(new java.awt.Dimension(360, 520));
+        leaveReqDialog.setUndecorated(true);
+        leaveReqDialog.setPreferredSize(new java.awt.Dimension(360, 520));
 
         leaveReqFormPnl.setBackground(new java.awt.Color(51, 51, 51));
+        leaveReqFormPnl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
+        leaveReqFormPnl.setPreferredSize(new java.awt.Dimension(340, 515));
 
         jLabel112.setText("Leave Type");
         jLabel112.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -660,17 +666,28 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel119.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         jLabel119.setForeground(new java.awt.Color(255, 255, 255));
 
+        cancelLeaveReqBtn.setBackground(new java.awt.Color(51, 51, 51));
+        cancelLeaveReqBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        cancelLeaveReqBtn.setForeground(new java.awt.Color(255, 102, 0));
+        cancelLeaveReqBtn.setText("CANCEL");
+        cancelLeaveReqBtn.setBorderPainted(false);
+        cancelLeaveReqBtn.setOpaque(true);
+        cancelLeaveReqBtn.setPreferredSize(new java.awt.Dimension(180, 36));
+        cancelLeaveReqBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelLeaveReqBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout leaveReqFormPnlLayout = new javax.swing.GroupLayout(leaveReqFormPnl);
         leaveReqFormPnl.setLayout(leaveReqFormPnlLayout);
         leaveReqFormPnlLayout.setHorizontalGroup(
             leaveReqFormPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(leaveReqFormPnlLayout.createSequentialGroup()
-                .addGroup(leaveReqFormPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(leaveReqFormPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(leaveReqFormPnlLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addGroup(leaveReqFormPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(LeavePanelSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(leaveReqFormPnlLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(jLabel115))
@@ -694,8 +711,13 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(jLabel114))
                     .addGroup(leaveReqFormPnlLayout.createSequentialGroup()
                         .addGap(36, 36, 36)
-                        .addComponent(jLabel119)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                        .addComponent(jLabel119))
+                    .addGroup(javax.swing.GroupLayout.Alignment.CENTER, leaveReqFormPnlLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cancelLeaveReqBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(LeavePanelSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         leaveReqFormPnlLayout.setVerticalGroup(
             leaveReqFormPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -719,17 +741,19 @@ public class Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(LeavePanelSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGroup(leaveReqFormPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LeavePanelSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelLeaveReqBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout leaveReqDialogLayout = new javax.swing.GroupLayout(leaveReqDialog.getContentPane());
         leaveReqDialog.getContentPane().setLayout(leaveReqDialogLayout);
         leaveReqDialogLayout.setHorizontalGroup(
             leaveReqDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 356, Short.MAX_VALUE)
+            .addGap(0, 361, Short.MAX_VALUE)
             .addGroup(leaveReqDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(leaveReqFormPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(leaveReqFormPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE))
         );
         leaveReqDialogLayout.setVerticalGroup(
             leaveReqDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -796,27 +820,13 @@ public class Dashboard extends javax.swing.JFrame {
         attendanceTable.getTableHeader().setReorderingAllowed(false);
         attScrollPane.setViewportView(attendanceTable);
 
-        applyDisputeBtn.setText("APPLY DISPUTE");
-        applyDisputeBtn.setBackground(new java.awt.Color(255, 153, 0));
-        applyDisputeBtn.setBorderPainted(false);
-        applyDisputeBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        applyDisputeBtn.setForeground(new java.awt.Color(255, 255, 255));
-        applyDisputeBtn.setPreferredSize(new java.awt.Dimension(180, 36));
-        applyDisputeBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                applyDisputeBtnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout attListPanelLayout = new javax.swing.GroupLayout(attListPanel);
         attListPanel.setLayout(attListPanelLayout);
         attListPanelLayout.setHorizontalGroup(
             attListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(attListPanelLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addGroup(attListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(applyDisputeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(attScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(attScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         attListPanelLayout.setVerticalGroup(
@@ -824,9 +834,7 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, attListPanelLayout.createSequentialGroup()
                 .addContainerGap(30, Short.MAX_VALUE)
                 .addComponent(attScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(applyDisputeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
+                .addGap(104, 104, 104))
         );
 
         attTabbedPane.addTab("Attendance", attListPanel);
@@ -2170,9 +2178,9 @@ public class Dashboard extends javax.swing.JFrame {
         ProfilePanel.setBackground(new java.awt.Color(34, 34, 50, 220));
         ProfilePanel.setPreferredSize(new java.awt.Dimension(980, 520));
 
-        jPanel9.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel9.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel9.setPreferredSize(new java.awt.Dimension(936, 463));
+        profileInnerPnl.setBackground(new java.awt.Color(51, 51, 51));
+        profileInnerPnl.setForeground(new java.awt.Color(0, 0, 0));
+        profileInnerPnl.setPreferredSize(new java.awt.Dimension(936, 463));
 
         jSeparator10.setBackground(new java.awt.Color(255, 153, 0));
         jSeparator10.setForeground(new java.awt.Color(255, 153, 0));
@@ -2416,55 +2424,55 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
+        javax.swing.GroupLayout profileInnerPnlLayout = new javax.swing.GroupLayout(profileInnerPnl);
+        profileInnerPnl.setLayout(profileInnerPnlLayout);
+        profileInnerPnlLayout.setHorizontalGroup(
+            profileInnerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(profileInnerPnlLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(profileInnerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(profileInnerPnlLayout.createSequentialGroup()
+                        .addGroup(profileInnerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(profileFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ProfileEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(46, 46, 46)
                         .addComponent(jLabel36))
                     .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSeparator11))
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(profileInnerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(profileInnerPnlLayout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(profileInnerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(profileInnerPnlLayout.createSequentialGroup()
                                 .addGap(145, 145, 145)
                                 .addComponent(jLabel42))
-                            .addGroup(jPanel9Layout.createSequentialGroup()
+                            .addGroup(profileInnerPnlLayout.createSequentialGroup()
                                 .addGap(45, 45, 45)
                                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(113, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profileInnerPnlLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(changePassBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39))))
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
+        profileInnerPnlLayout.setVerticalGroup(
+            profileInnerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(profileInnerPnlLayout.createSequentialGroup()
                 .addGap(59, 59, 59)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(profileInnerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(profileInnerPnlLayout.createSequentialGroup()
                         .addComponent(jLabel42)
                         .addGap(54, 54, 54)
                         .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(85, 85, 85)
                         .addComponent(changePassBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(profileInnerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel9Layout.createSequentialGroup()
-                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(profileInnerPnlLayout.createSequentialGroup()
+                            .addGroup(profileInnerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel36)
-                                .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGroup(profileInnerPnlLayout.createSequentialGroup()
                                     .addGap(18, 18, 18)
                                     .addComponent(profileFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2482,14 +2490,14 @@ public class Dashboard extends javax.swing.JFrame {
             ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ProfilePanelLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(profileInnerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         ProfilePanelLayout.setVerticalGroup(
             ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProfilePanelLayout.createSequentialGroup()
                 .addContainerGap(29, Short.MAX_VALUE)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(profileInnerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
 
@@ -3081,10 +3089,6 @@ public class Dashboard extends javax.swing.JFrame {
         displayPayslip(selectedCutOff);
     }//GEN-LAST:event_viewPayslipButtonActionPerformed
 
-    private void applyDisputeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_applyDisputeBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_applyDisputeBtnActionPerformed
-
     private void submitBtnOTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnOTActionPerformed
         // TODO add your handling code here:
         Request request = new Request();
@@ -3203,6 +3207,11 @@ public class Dashboard extends javax.swing.JFrame {
         leaveReqDialog.setVisible(true);
         leaveReqDialog.setLocationRelativeTo(this);
     }//GEN-LAST:event_reqLeaveBtnActionPerformed
+
+    private void cancelLeaveReqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelLeaveReqBtnActionPerformed
+        // TODO add your handling code here:
+        leaveReqDialog.dispose();
+    }//GEN-LAST:event_cancelLeaveReqBtnActionPerformed
 
     private void displayPayslip(String cutoffDate) {
         try {
@@ -3408,12 +3417,12 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel TimeInLabel;
     private javax.swing.JPanel TimeKeeping_MainDashboard;
     private javax.swing.JLabel TimeOutLabel;
-    private javax.swing.JButton applyDisputeBtn;
     private javax.swing.JPanel attListPanel;
     private javax.swing.JScrollPane attScrollPane;
     private javax.swing.JTabbedPane attTabbedPane;
     private javax.swing.JTable attendanceTable;
     private javax.swing.JButton cancelBtnOT;
+    private javax.swing.JButton cancelLeaveReqBtn;
     private javax.swing.JButton cancelPassBtn;
     private javax.swing.JButton changePassBtn;
     private javax.swing.JDialog changePassDialog;
@@ -3515,7 +3524,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -3577,6 +3585,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel payslipStartDate;
     private javax.swing.JLabel payslipTax;
     private javax.swing.JLabel profileFirstName;
+    private javax.swing.JPanel profileInnerPnl;
     private java.awt.Label reasonOTRequestLbl;
     private java.awt.TextArea reasonTextOT;
     private javax.swing.JButton reqLeaveBtn;
