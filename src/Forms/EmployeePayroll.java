@@ -35,6 +35,8 @@ import System.Employee.Deduction;
 import System.Employee.EmployeeRecords;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.BorderLayout;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
@@ -55,9 +57,9 @@ private AttendanceRecord[] attendance;
     
         initComponents();
         // Load employee records from CSV when the form is initialized
-        String csvFileName = "src/Files/EmployeeData.csv";
+        String csvFileName = "/Files/EmployeeData.csv";
         employees = EmployeeRecords.readEmployeesFromCSV(csvFileName);
-        attendance = AttendanceRecord.readAttendanceFromCSV("src/Files/Attendance.csv");
+        attendance = AttendanceRecord.readAttendanceFromCSV("/Files/Attendance.csv");
 //        PanelMonthlyPayrollReport.setVisible(false);
 //        RunPayrollTable.setVisible(true);
          displayProcessPayrollData(csvFileName);
@@ -254,8 +256,9 @@ private AttendanceRecord[] attendance;
         
         for (EmployeeRecords employee : employees)
      if (selectedMonth.equals("September")) {
-         String csvfile = "src/Files/EmployeeData.csv";
-         try (BufferedReader br = new BufferedReader(new FileReader(csvfile))) {
+         String csvFile = "/Files/EmployeeData.csv";
+         try (InputStream inputStream = getClass().getResourceAsStream(csvFile);
+         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
              String line;
            
             //Skip the first line (header)
@@ -329,7 +332,8 @@ private AttendanceRecord[] attendance;
                });
        
         for (EmployeeRecords employee : employees)
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+        try (InputStream inputStream = getClass().getResourceAsStream(csvFile);
+         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
              String line;
            
             //Skip the first line (header)
