@@ -15,6 +15,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -44,8 +46,8 @@ public class Dashboard extends javax.swing.JFrame {
         initComponents();
         
         // Load employee records from CSV when the form is initialized
-        employees = EmployeeRecords.readEmployeesFromCSV("src/Files/EmployeeData.csv");
-        attendance = AttendanceRecord.readAttendanceFromCSV("src/Files/Attendance.csv");
+        employees = EmployeeRecords.readEmployeesFromCSV("/Files/EmployeeData.csv");
+        attendance = AttendanceRecord.readAttendanceFromCSV("/Files/Attendance.csv");
     }
 
     public JLabel getLblPending() {
@@ -2759,8 +2761,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         // Grant or deny access based on the result
         if (accessGranted) {
-            populateAttTableFromCSV("src/Files/Attendance.csv", attendanceTable, empID);
-            populateOTTableFromCSV("src/Files/OvertimeRequest.csv", otRequestTable, empID);
+            populateAttTableFromCSV("/Files/Attendance.csv", attendanceTable, empID);
+            populateOTTableFromCSV("/Files/OvertimeRequest.csv", otRequestTable, empID);
             DefaultTableModel model = new DefaultTableModel();
             model.setRowCount(0);
 
@@ -2785,7 +2787,8 @@ public class Dashboard extends javax.swing.JFrame {
     DefaultTableModel model = (DefaultTableModel) table.getModel();
     model.setRowCount(0);
 
-    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+    try (InputStream inputStream = getClass().getResourceAsStream(csvFilePath);
+     BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
         String line;
         while ((line = br.readLine()) != null) {
             String[] data = line.split(",");
@@ -2809,7 +2812,8 @@ public class Dashboard extends javax.swing.JFrame {
     DefaultTableModel model = (DefaultTableModel) table.getModel();
     model.setRowCount(0);
 
-    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+    try (InputStream inputStream = getClass().getResourceAsStream(csvFilePath);
+     BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
         String line;
         while ((line = br.readLine()) != null) {
             String[] data = line.split(",");
@@ -2924,10 +2928,11 @@ public class Dashboard extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) leaveReqTbl.getModel();
         model.setRowCount(0); // Clear existing data
 
-        String csvFilePath = "src/Files/LeaveRequests.csv";
+        String csvFilePath = "/Files/LeaveRequests.csv";
         boolean foundRecords = false;
 
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+        try (InputStream inputStream = getClass().getResourceAsStream(csvFilePath);
+        BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
@@ -3198,6 +3203,8 @@ public class Dashboard extends javax.swing.JFrame {
                 bw.close();
 
                 JOptionPane.showMessageDialog(null, "Password updated successfully.");
+                tfNewPass.setText("");
+                tfConfirmPass.setText("");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -3223,7 +3230,7 @@ public class Dashboard extends javax.swing.JFrame {
         String[] dates = cutoffDate.split(" - ");
         String startDateString = dates[0];
         String endDateString = dates[1];
-        PayPeriod payperiod = new PayPeriod("10001", dateFormat.parse(startDateString), dateFormat.parse(endDateString), "src/Files/Attendance.csv");
+        PayPeriod payperiod = new PayPeriod("10001", dateFormat.parse(startDateString), dateFormat.parse(endDateString), "/Files/Attendance.csv");
         String empID = MainDashboardempNo.getText();
         Benefit benefit = new Benefit();
         Earning earning = new Earning();

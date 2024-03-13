@@ -3,7 +3,10 @@ package System.Employee;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.*;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EmployeeRecords {
     
@@ -140,47 +143,49 @@ public class EmployeeRecords {
     
   
     public static EmployeeRecords[] readEmployeesFromCSV(String filePath) {
-        String line = "";
+        String line;
         String csvSplitBy = ";";
-        EmployeeRecords[] employees = null;
+        List<EmployeeRecords> employeeList = new ArrayList<>();
         BufferedReader br = null;
 
-        try {
-            br = new BufferedReader(new FileReader(filePath));
+    try {
+        // Open the CSV file using InputStream
+        InputStream inputStream = EmployeeRecords.class.getResourceAsStream(filePath);
+        if (inputStream == null) {
+            System.err.println("File not found: " + filePath);
+            return new EmployeeRecords[0]; // or throw an exception
+        }
+        br = new BufferedReader(new InputStreamReader(inputStream));
 
-            // Skip the first line (column headers)
-            br.readLine();
+        // Skip the first line (column headers)
+        br.readLine();
 
-            // Determine number of lines (employees) in the CSV file
-            int numEmployees = (int) br.lines().count();
-            employees = new EmployeeRecords[numEmployees];
-
-            // Reset BufferedReader to start of file
-            br.close();
-            br = new BufferedReader(new FileReader(filePath));
-
-            // Skip the first line again before reading data
-            br.readLine();
-
-            int index = 0;
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(csvSplitBy);
-                employees[index] = new EmployeeRecords(data);
-                index++;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (br != null) {
-                try {
-                    br.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+        // Read data from CSV file
+        while ((line = br.readLine()) != null) {
+            String[] data = line.split(csvSplitBy);
+            employeeList.add(new EmployeeRecords(data));
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    } finally {
+        if (br != null) {
+            try {
+                br.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
-        return employees;
-    } 
+    }
+
+    // Convert List<EmployeeRecords> to array
+    return employeeList.toArray(new EmployeeRecords[0]);
+    }
+
+    // Constructor to initialize EmployeeRecords object from data
+//    public EmployeeRecords(String[] data) {
+//        // Initialize EmployeeRecords object from data array
+//    }
+     
     
     private String formatDouble(double value) {
         DecimalFormat df = new DecimalFormat("#.00");

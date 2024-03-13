@@ -29,7 +29,7 @@ public class LogIn extends javax.swing.JFrame {
         initComponents();
         
         // Load employee records from CSV when the form is initialized
-        employees = EmployeeRecords.readEmployeesFromCSV("src/Files/EmployeeData.csv");
+        employees = EmployeeRecords.readEmployeesFromCSV("/Files/EmployeeData.csv");
        
     }
    
@@ -492,7 +492,7 @@ public class LogIn extends javax.swing.JFrame {
         Request request = new Request();
         String userID = UserId.getText().trim();
         String pass = password.getText().trim();
-        String csvFile = "src/Files/LeaveRequests.csv";
+        String csvFile = "/Files/LeaveRequests.csv";
 
         // Check if the userID exists in the employee records
         boolean accessGranted = false;

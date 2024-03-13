@@ -12,6 +12,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import Forms.Dashboard;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  *
@@ -49,7 +51,8 @@ public class PayPeriod {
         String line;
         String delimiter = ",";
         Dashboard dashboard = new Dashboard();
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+        try (InputStream inputStream = getClass().getResourceAsStream(csvFile);
+         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
             // Skip header line
             br.readLine();
             while ((line = br.readLine()) != null) {
@@ -79,7 +82,8 @@ public class PayPeriod {
     String line;
     String delimiter = ",";
     
-    try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+    try (InputStream inputStream = getClass().getResourceAsStream(csvFile);
+         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
         // Skip header line
         br.readLine();
         while ((line = br.readLine()) != null) {

@@ -20,6 +20,8 @@ import javax.swing.table.TableColumn;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JTable;
 import java.io.FileWriter;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  *
@@ -196,23 +198,24 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
     model.setRowCount(0);
     
   // Populate the table with data from the CSV file
-    String csvFilePath = "src/Files/LeaveRequests.csv";
+   String csvFilePath = "/Files/LeaveRequests.csv"; // Adjust path as necessary
     boolean foundRecords = false;
 
-    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
-        
-       // Skip the first line
-        String headerLine = br.readLine();
-        String line;
-        while ((line = br.readLine()) != null) {
-            String[] data = line.split(",");
-            if (data.length >= 7) {
-                model.addRow(new Object[]{data[0], data[1], data[2], data[3],data[4],data [5],data[6]});
-                foundRecords = true;
-            }
+    try (InputStream inputStream = Requests.class.getResourceAsStream(csvFilePath);
+        BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+
+    // Skip the first line
+    String headerLine = br.readLine();
+    String line;
+    while ((line = br.readLine()) != null) {
+        String[] data = line.split(",");
+        if (data.length >= 7) {
+            model.addRow(new Object[]{data[0], data[1], data[2], data[3], data[4], data[5], data[6]});
+            foundRecords = true;
         }
+    }
     } catch (IOException ex) {
-        ex.printStackTrace();
+    ex.printStackTrace();
     }    
     
     // Add dropdown button in the last column
@@ -243,28 +246,29 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
     }//GEN-LAST:event_btnLeaveRequestActionPerformed
 
     private void btnOvertimeRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOvertimeRequestActionPerformed
-LeavePane.setVisible(false);       
-OverTimePane.setVisible(true);
-DefaultTableModel model = (DefaultTableModel) OvertimeTable.getModel();
-    model.setRowCount(0);
+        LeavePane.setVisible(false);       
+        OverTimePane.setVisible(true);
+        DefaultTableModel model = (DefaultTableModel) OvertimeTable.getModel();
+        model.setRowCount(0);
     
   // Populate the table with data from the CSV file
-    String csvFilePath = "src/Files/OvertimeRequest.csv";
-    boolean foundRecords = false;
+        String csvFilePath = "/Files/OvertimeRequest.csv";
+        boolean foundRecords = false;
 
-    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+        try (InputStream inputStream = Requests.class.getResourceAsStream(csvFilePath);
+        BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
          // Skip the first line
-        String headerLine = br.readLine();
-        String line;
-        while ((line = br.readLine()) != null) {
-            String[] data = line.split(",");
-            if (data.length >= 6) {
-                model.addRow(new Object[]{data[0], data[1], data[2], data[3],data[4],data[5]});
-                foundRecords = true;
+            String headerLine = br.readLine();
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                if (data.length >= 6) {
+                    model.addRow(new Object[]{data[0], data[1], data[2], data[3],data[4],data[5]});
+                    foundRecords = true;
+                }
             }
-        }
-    } catch (IOException ex) {
-        ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
     }    
     
     // Add dropdown button in the last column

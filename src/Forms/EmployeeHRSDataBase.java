@@ -15,6 +15,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
@@ -156,7 +158,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
 
         mainPanel.add(buttonPanel);
 
-        displayCSVData("src/Files/EmployeeData.csv"); // Display once run
+        displayCSVData("/Files/EmployeeData.csv"); // Display once run
 
         setVisible(true);
         
@@ -170,42 +172,44 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
 
     private void displayCSVData(String csvFile) {
         model.setColumnIdentifiers(new String[]{"Employee #", "Last Name", "First Name", "Birthday", "Address",
-                "Phone Number", "SSS #", "Philhealth #", "TIN #", "Pag-ibig #", "Status", "Position",
-                "Immediate Supervisor", "Basic Salary", "Rice Subsidy", "Phone Allowance", "Clothing Allowance",
-                "Gross Semi-monthly Rate", "Hourly Rate"});
+            "Phone Number", "SSS #", "Philhealth #", "TIN #", "Pag-ibig #", "Status", "Position",
+            "Immediate Supervisor", "Basic Salary", "Rice Subsidy", "Phone Allowance", "Clothing Allowance",
+            "Gross Semi-monthly Rate", "Hourly Rate"});
 
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            String line;
-            
-            // Skip the first line (header)
-            br.readLine();
-            while ((line = br.readLine()) != null) {
-                model.addRow(line.split(";"));
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+    try (InputStream inputStream = getClass().getResourceAsStream(csvFile);
+         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+
+        String line;
+        
+        // Skip the first line (header)
+        br.readLine();
+        while ((line = br.readLine()) != null) {
+            model.addRow(line.split(";"));
         }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
 
-        // Center align cells
-        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
-        for (int i = 0; i < table.getColumnCount(); i++) {
-            table.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
-        }
+    // Center align cells
+    DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+    centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+    for (int i = 0; i < table.getColumnCount(); i++) {
+        table.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+    }
 
-        // Enable row selection
-        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    // Enable row selection
+    table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
-        // Add mouse listener to handle row selection for deletion and updating
-        table.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                int selectedRow = table.getSelectedRow();
-                if (selectedRow != -1 && e.getClickCount() == 2) {
-                    updateSelectedEmployee();
-                }
+    // Add mouse listener to handle row selection for deletion and updating
+    table.addMouseListener(new MouseAdapter() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            int selectedRow = table.getSelectedRow();
+            if (selectedRow != -1 && e.getClickCount() == 2) {
+                updateSelectedEmployee();
             }
-        });
+        }
+    });
     }
 
 
