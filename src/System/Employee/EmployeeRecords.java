@@ -146,8 +146,8 @@ public class EmployeeRecords {
         }
         br = new BufferedReader(new InputStreamReader(inputStream));
 
-        // Skip the first line (column headers)
-        br.readLine();
+//        // Skip the first line (column headers)
+//        br.readLine();
 
         // Read data from CSV file
         while ((line = br.readLine()) != null) {
