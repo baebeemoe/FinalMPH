@@ -178,6 +178,10 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
             }
         });
     }
+    
+    public void updateDataTable() {
+        displayCSVData("/Files/EmployeeData.csv");
+    }
 
     private void displayCSVData(String csvFile) {
         model.setColumnIdentifiers(new String[]{"Employee #", "Last Name", "First Name", "Birthday", "Address",
@@ -458,10 +462,10 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
                         }
 
                         // Display success message
-                        JOptionPane.showMessageDialog(this, "Added " + uniqueRows.size() + " rows successfully.");
+                        JOptionPane.showMessageDialog(this, "Added " + uniqueRows.size() + " row/s successfully.");
 
                         // Refresh the table to reflect the changes
-                        model.fireTableDataChanged(); // Replace "yourTableName" with the actual name of your table component
+                        updateDataTable();
                     } catch (IOException e) {
                         JOptionPane.showMessageDialog(this, "Error appending data: " + e.getMessage());
                         e.printStackTrace();
