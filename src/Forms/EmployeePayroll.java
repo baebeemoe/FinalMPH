@@ -333,8 +333,8 @@ private AttendanceRecord[] attendance;
        
         for (EmployeeRecords employee : employees)
         try (InputStream inputStream = getClass().getResourceAsStream(csvFile);
-            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
-            String line;
+         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+             String line;
            
             //Skip the first line (header)
             br.readLine();

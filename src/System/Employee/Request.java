@@ -7,11 +7,9 @@ package System.Employee;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -34,33 +32,30 @@ public class Request {
    
     public void LeaveRequestwriteToCSV(String employeeID,String leaveType, String startDate, String endDate, String reason, String status) {
     try {
-            File file = new File("/Files/LeaveRequests.csv");
-            boolean isNewFile = !file.exists();
-            
-            // Create parent directories if they don't exist
-            if (!file.getParentFile().exists()) {
-                file.getParentFile().mkdirs();
-            }
-            
-            OutputStream outputStream = new FileOutputStream(file, true); // Append to existing file
-
-            if (isNewFile) {
-                String header = "EmployeeID, LeaveType, DateFiled, StartDate, EndDate, Reason, Status\n";
-                outputStream.write(header.getBytes());
-            }
-
+        File file = new File("src/Files/LeaveRequests.csv");
+        boolean isNewFile = !file.exists();
+        FileWriter writer = new FileWriter(file, true); // Append to existing file
+        
+        if (isNewFile) {
+            writer.append("EmployeeID, LeaveTpe, Date Filed, StartDate, EndDate, Reason, Status\n");
+        }
+        
             SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+       
+
+        
             Date currentDate = new Date(); // Get current date
             String dateFiled = dateFormat.format(currentDate);
+          writer.append(employeeID  + "," + leaveType + "," + dateFiled + "," + startDate + "," + endDate + "," + reason + "," + status +"\n");
+        
 
-            String data = employeeID + "," + leaveType + "," + dateFiled + "," + startDate + "," + endDate + "," + reason + "," + status + "\n";
-            outputStream.write(data.getBytes());
-
-            outputStream.close();
-            System.out.println("Data written to CSV successfully.");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        writer.close();
+        System.out.println("Data written to CSV successfully.");
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    
+    
     }
     
     public void OvertimeRequestwriteToCSV(String employeeID, String Date, String startTime, String endTime, String reason, String status){
