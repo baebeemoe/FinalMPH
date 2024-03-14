@@ -17,6 +17,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+import java.util.Objects;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
@@ -25,6 +29,7 @@ public class EmployeeHRSDataBase extends javax.swing.JFrame {
     private JTable table;
     private DefaultTableModel model;
     private JTextField searchField;
+    private Object[][] originalData;
 
     public EmployeeHRSDataBase() {
         super("Manage Employee Information");
@@ -180,12 +185,24 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
          BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
 
         String line;
-        
+        List<Object[]> rows = new ArrayList<>();
         // Skip the first line (header)
         br.readLine();
         while ((line = br.readLine()) != null) {
-            model.addRow(line.split(";"));
+            String[] data = line.split(";");
+            Object[] rowData = Arrays.copyOf(data, Math.min(data.length, 19));
+            rows.add(rowData);
         }
+        
+        for (Object[] rowData : rows) {
+            model.addRow(rowData);
+        }
+        
+        originalData = new Object[rows.size()][];
+        for (int i = 0; i < rows.size(); i++) {
+            originalData[i] = rows.get(i);
+        }
+        
     } catch (IOException e) {
         e.printStackTrace();
     }
@@ -290,22 +307,33 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
             }
         }
     }
-
+    
+    
+    
     private void updateCSVFile() {
-        try (FileWriter writer = new FileWriter("src/Files/EmployeeData.csv")) {
-            for (int i = 0; i < model.getRowCount(); i++) {
-                for (int j = 0; j < model.getColumnCount(); j++) {
-                    writer.write(model.getValueAt(i, j).toString());
-                    if (j < model.getColumnCount() - 1) {
-                        writer.write(";");
-                    }
+       try (FileWriter writer = new FileWriter("src/Files/EmployeeData.csv")) {
+        for (int i = 0; i < model.getRowCount(); i++) {
+            for (int j = 0; j < 19; j++) { // Iterate only over the first 19 columns
+                Object originalValue = originalData[i][j]; // Assuming originalData is a 2D array containing original values
+                Object newValue = model.getValueAt(i, j);
+
+                // Check if the value has changed
+                if (!Objects.equals(originalValue, newValue)) {
+                    writer.write(newValue.toString());
+                } else {
+                    writer.write(originalValue.toString());
                 }
-                writer.write("\n");
+
+                if (j < 18) { // Check if it's not the last column
+                    writer.write(";");
+                }
             }
-            writer.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
+            writer.write("\n");
         }
+        writer.flush();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
     }
 
     private void searchEmployee() {
