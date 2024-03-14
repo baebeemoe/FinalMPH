@@ -573,11 +573,11 @@ public class Dashboard extends javax.swing.JFrame {
         });
         changePassPnl.add(cancelPassBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 84, -1));
 
+        updatePassBtn.setText("UPDATE PASSWORD");
         updatePassBtn.setBackground(new java.awt.Color(255, 153, 0));
+        updatePassBtn.setBorderPainted(false);
         updatePassBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         updatePassBtn.setForeground(new java.awt.Color(255, 255, 255));
-        updatePassBtn.setText("UPDATE PASSWORD");
-        updatePassBtn.setBorderPainted(false);
         updatePassBtn.setPreferredSize(new java.awt.Dimension(180, 36));
         updatePassBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -600,7 +600,6 @@ public class Dashboard extends javax.swing.JFrame {
         leaveReqDialog.setTitle("Leave Request");
         leaveReqDialog.setMinimumSize(new java.awt.Dimension(360, 520));
         leaveReqDialog.setUndecorated(true);
-        leaveReqDialog.setPreferredSize(new java.awt.Dimension(360, 520));
 
         leaveReqFormPnl.setBackground(new java.awt.Color(51, 51, 51));
         leaveReqFormPnl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
@@ -667,11 +666,11 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel119.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         jLabel119.setForeground(new java.awt.Color(255, 255, 255));
 
+        cancelLeaveReqBtn.setText("CANCEL");
         cancelLeaveReqBtn.setBackground(new java.awt.Color(51, 51, 51));
+        cancelLeaveReqBtn.setBorderPainted(false);
         cancelLeaveReqBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         cancelLeaveReqBtn.setForeground(new java.awt.Color(255, 102, 0));
-        cancelLeaveReqBtn.setText("CANCEL");
-        cancelLeaveReqBtn.setBorderPainted(false);
         cancelLeaveReqBtn.setOpaque(true);
         cancelLeaveReqBtn.setPreferredSize(new java.awt.Dimension(180, 36));
         cancelLeaveReqBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -764,6 +763,7 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("MotorPH People Portal");
         setSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -2555,11 +2555,11 @@ public class Dashboard extends javax.swing.JFrame {
 
         leaveReqHistoryPnl.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 870, 250));
 
+        reqLeaveBtn.setText("REQUEST LEAVE");
         reqLeaveBtn.setBackground(new java.awt.Color(255, 153, 0));
+        reqLeaveBtn.setBorderPainted(false);
         reqLeaveBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         reqLeaveBtn.setForeground(new java.awt.Color(255, 255, 255));
-        reqLeaveBtn.setText("REQUEST LEAVE");
-        reqLeaveBtn.setBorderPainted(false);
         reqLeaveBtn.setPreferredSize(new java.awt.Dimension(180, 36));
         reqLeaveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -11,15 +11,22 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
+import java.util.List;
+import java.util.Set;
 
 public class EmployeeHRSDataBase extends javax.swing.JFrame {
     private JTable table;
@@ -212,8 +219,12 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
     });
     }
 
-
-
+    private void askToAddEmployee() {
+        int choice = JOptionPane.showConfirmDialog(null, "Do you want to add an employee?", "Add Employee", JOptionPane.YES_NO_OPTION);
+        if (choice == JOptionPane.YES_OPTION) {
+            addEmployee();
+        }
+    }
 
     private void addEmployee() {
         JTextField[] fields = new JTextField[19];
@@ -361,17 +372,96 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
     }
 
     private void importCSV() {
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Select CSV File to Import");
-        fileChooser.setFileFilter(new FileNameExtensionFilter("CSV files", "csv"));
+    JFileChooser fileChooser = new JFileChooser();
+    fileChooser.setDialogTitle("Select CSV File to Import");
+    fileChooser.setFileFilter(new FileNameExtensionFilter("CSV files", "csv"));
 
-        int userSelection = fileChooser.showOpenDialog(this);
-        if (userSelection == JFileChooser.APPROVE_OPTION) {
-            File fileToImport = fileChooser.getSelectedFile();
-            String filePath = fileToImport.getAbsolutePath();
-            displayCSVData(filePath);
+    int userSelection = fileChooser.showOpenDialog(this);
+    if (userSelection == JFileChooser.APPROVE_OPTION) {
+        File fileToImport = fileChooser.getSelectedFile();
+        String filePath = fileToImport.getAbsolutePath();
+        
+        try {
+            // Read the new CSV data
+            List<String> newRows = readCSV(filePath);
+
+            // Read existing CSV data
+            List<String> existingRows = readCSV("src/Files/EmployeeData.csv");
+
+            // Prepare a set of unique keys (combining 1st and 2nd column)
+            Set<String> existingKeys = new HashSet<>();
+            for (String row : existingRows) {
+                String[] columns = row.split(";");
+                if (columns.length >= 2) {
+                    String key = (columns[0].trim() + columns[1].trim()).toLowerCase(); // Combine 1st and 2nd column and convert to lowercase
+                    existingKeys.add(key);
+                }
+            }
+
+            // Filter out duplicates based on the 1st and 2nd column
+            List<String> uniqueRows = new ArrayList<>();
+            for (String newRow : newRows) {
+                String[] columns = newRow.split(";");
+                if (columns.length >= 2) {
+                    String key = (columns[0].trim() + columns[1].trim()).toLowerCase(); // Combine 1st and 2nd column and convert to lowercase
+                    if (!existingKeys.contains(key)) {
+                        uniqueRows.add(newRow);
+                        existingKeys.add(key); // Add the key to prevent duplicates in the future
+                    }
+                }
+            }
+            
+            // Determine the number of duplicates
+            int numOfDuplicates = newRows.size() - uniqueRows.size();
+
+            // Ask for confirmation
+            int confirmOption = JOptionPane.showConfirmDialog(this, "Add " + uniqueRows.size() + " rows to the table?" + 
+                                                                (numOfDuplicates > 0 ? "\n" + numOfDuplicates + " duplicates found and will not be copied." : ""),
+                                                                "Confirmation", JOptionPane.YES_NO_OPTION);
+            if (confirmOption == JOptionPane.YES_OPTION) {
+                // Append unique rows to existing data
+                if (!uniqueRows.isEmpty()) {
+                    FileWriter writer = new FileWriter("src/Files/EmployeeData.csv", true);
+                    BufferedWriter bufferedWriter = new BufferedWriter(writer);
+                    PrintWriter out = new PrintWriter(bufferedWriter);
+
+                    // Move to next line
+                    if (!existingRows.isEmpty()) {
+                        out.println();
+                    }
+
+                    for (String row : uniqueRows) {
+                        out.println(row);
+                    }
+
+                    out.flush();
+                    out.close();
+                    JOptionPane.showMessageDialog(this, "Added " + uniqueRows.size() + " rows successfully.");
+                    table.repaint();
+                    
+                } else {
+                    JOptionPane.showMessageDialog(this, "No new data to import.");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Import canceled by user.");
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error importing data: " + e.getMessage());
+            e.printStackTrace();
         }
     }
+}
+
+private List<String> readCSV(String filePath) throws IOException {
+    List<String> rows = new ArrayList<>();
+    BufferedReader csvReader = new BufferedReader(new FileReader(filePath));
+    String row;
+    while ((row = csvReader.readLine()) != null) {
+        rows.add(row);
+    }
+    csvReader.close();
+    return rows;
+}
     
     private void showCustomMessage(String message, String title) {
     JDialog dialog = new JDialog(this, title, true);
