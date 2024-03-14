@@ -180,6 +180,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
     }
     
     public void updateDataTable() {
+        model.setRowCount(0);
         displayCSVData("/Files/EmployeeData.csv");
     }
 
@@ -195,7 +196,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
         String line;
         List<Object[]> rows = new ArrayList<>();
         // Skip the first line (header)
-        br.readLine();
+        
         while ((line = br.readLine()) != null) {
             String[] data = line.split(";");
             Object[] rowData = Arrays.copyOf(data, Math.min(data.length, 19));
@@ -319,22 +320,19 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
     
     
     private void updateCSVFile() {
-       try (FileWriter writer = new FileWriter("src/Files/EmployeeData.csv")) {
+    try (FileWriter writer = new FileWriter("src/Files/EmployeeData.csv")) {
         for (int i = 0; i < model.getRowCount(); i++) {
             for (int j = 0; j < 19; j++) { // Iterate only over the first 19 columns
-                Object originalValue = originalData[i][j]; // Assuming originalData is a 2D array containing original values
                 Object newValue = model.getValueAt(i, j);
-
-                // Check if the value has changed
-                if (!Objects.equals(originalValue, newValue)) {
-                    writer.write(newValue.toString());
-                } else {
-                    writer.write(originalValue.toString());
-                }
-
+                writer.write(newValue.toString());
                 if (j < 18) { // Check if it's not the last column
                     writer.write(";");
                 }
+            }
+            // Append remaining columns from the original data
+            for (int j = 19; j < originalData[i].length; j++) {
+                Object originalValue = originalData[i][j];
+                writer.write(";" + originalValue.toString());
             }
             writer.write("\n");
         }
@@ -342,7 +340,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
     } catch (IOException e) {
         e.printStackTrace();
     }
-    }
+}
 
     private void searchEmployee() {
         String searchTerm = searchField.getText().trim().toLowerCase();

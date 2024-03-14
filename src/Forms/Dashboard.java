@@ -8,6 +8,7 @@ import System.Employee.Deduction;
 import System.Employee.PayPeriod;
 import System.Employee.Request;
 import System.Employee.Earning;
+import System.Employee.User;
 import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -40,6 +41,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private EmployeeRecords[] employees;
     private AttendanceRecord[] attendance;
+    private User[] user;
     private PayPeriod payperiod;
     
     public Dashboard() {
@@ -48,6 +50,7 @@ public class Dashboard extends javax.swing.JFrame {
         // Load employee records from CSV when the form is initialized
         employees = EmployeeRecords.readEmployeesFromCSV("/Files/EmployeeData.csv");
         attendance = AttendanceRecord.readAttendanceFromCSV("/Files/Attendance.csv");
+        user = User.readUserFromCSV("/Files/User.csv");
     }
 
     public JLabel getLblPending() {
@@ -3172,42 +3175,41 @@ public class Dashboard extends javax.swing.JFrame {
         
         if (newPassword.equals(confirmPassword)) {
             // Path to the CSV file
-            String csvFilePath = "src/Files/EmployeeData.csv";
+            String csvFilePath = "src/Files/User.csv";
     
-     try {
-                // Read the CSV file
-                File file = new File(csvFilePath);
-                BufferedReader br = new BufferedReader(new FileReader(file));
-                StringBuilder sb = new StringBuilder();
-                // Read and store the header line
-                String header = br.readLine();
-                sb.append(header).append("\n");
-                String line;
-                while ((line = br.readLine()) != null) {
-                    // Skip the header line
-                
-                    String[] data = line.split(";");
-                    // Assuming employee number is stored in the first column
-                    int employeeID = Integer.parseInt(data[0]);
-                    if (employeeID == Integer.parseInt(empID)) {
-                        // Update password (assuming password is stored in second last column)
-                        data[data.length - 2] = newPassword;
-                    }
-                    sb.append(String.join(";", data)).append("\n");
-                }
-                br.close();
-
-                // Write the updated data back to the CSV file
-                BufferedWriter bw = new BufferedWriter(new FileWriter(file));
-                bw.write(sb.toString());
-                bw.close();
-
-                JOptionPane.showMessageDialog(null, "Password updated successfully.");
-                tfNewPass.setText("");
-                tfConfirmPass.setText("");
-            } catch (IOException e) {
-                e.printStackTrace();
+        try {
+        // Read the CSV file
+        File file = new File(csvFilePath);
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        StringBuilder sb = new StringBuilder();
+    
+        String line;
+    
+        while ((line = br.readLine()) != null) {
+            String[] data = line.split(";");
+            // Assuming employee number is stored in the first column
+            int employeeID = Integer.parseInt(data[0]);
+        
+            if (employeeID == Integer.parseInt(empID)) {
+            // Update password (assuming password is stored in second last column)
+            data[data.length - 2] = newPassword;
             }
+        
+            sb.append(String.join(";", data)).append("\n");
+        }
+        br.close();
+
+        // Write the updated data back to the CSV file
+        BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+        bw.write(sb.toString());
+        bw.close();
+
+        JOptionPane.showMessageDialog(null, "Password updated successfully.");
+        tfNewPass.setText("");
+        tfConfirmPass.setText("");
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
         } else {
             JOptionPane.showMessageDialog(null, "Passwords do not match. Please try again.");
         }

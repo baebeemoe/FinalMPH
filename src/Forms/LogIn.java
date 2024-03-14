@@ -7,6 +7,7 @@ package Forms;
 
 import System.Employee.EmployeeRecords;
 import System.Employee.Request;
+import System.Employee.User;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -23,6 +24,7 @@ import javax.swing.SwingUtilities;
 public class LogIn extends javax.swing.JFrame {
 
     private EmployeeRecords[] employees;
+    private User[] user;
    
     public LogIn() {
        
@@ -30,6 +32,7 @@ public class LogIn extends javax.swing.JFrame {
         
         // Load employee records from CSV when the form is initialized
         employees = EmployeeRecords.readEmployeesFromCSV("/Files/EmployeeData.csv");
+        user = User.readUserFromCSV("/Files/User.csv");
        
     }
    
@@ -501,21 +504,22 @@ public class LogIn extends javax.swing.JFrame {
         try {
             int parsedUserID = Integer.parseInt(userID);
     
-            for (EmployeeRecords employee : employees) {
-                if (employee.getEmpNo() == parsedUserID && employee.getPassword().equals(pass)) {
+            for (User user : user)
+            for (EmployeeRecords employee : employees){
+                if (user.getEmpNo() == parsedUserID && user.getPassword().equals(pass) && employee.getEmpNo() == user.getEmpNo()) {
                 accessGranted = true;
                 dashboard.getMainDashBoardFirstName().setText(employee.getFirstName());
                 dashboard.getMainDashboardempNo().setText(userID);
                 dashboard.getLblPending().setText(String.valueOf(request.countRequest(csvFile,parsedUserID)));
-                if (employee.getRole().equals("Admin")) {
+                if (user.getRole().equals("Admin")) {
                     dashboard.getEmployeeRecords_MainDashboard().setVisible(true);
                     dashboard.getPayrollRecords_MainDashboard().setVisible(false);
                     dashboard.getRequestList_MainDashboard().setVisible(false);
-                } else if (employee.getRole().equals("Payroll")) { 
+                } else if (user.getRole().equals("Payroll")) { 
                     dashboard.getPayrollRecords_MainDashboard().setVisible(true);
                     dashboard.getEmployeeRecords_MainDashboard().setVisible(false);
                     dashboard.getRequestList_MainDashboard().setVisible(false);
-                } else if (employee.getRole().equals("Supervisor")) { 
+                } else if (user.getRole().equals("Supervisor")) { 
                     dashboard.getPayrollRecords_MainDashboard().setVisible(false);
                     dashboard.getEmployeeRecords_MainDashboard().setVisible(false);
                     dashboard.getRequestList_MainDashboard().setVisible(true);
