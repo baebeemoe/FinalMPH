@@ -13,7 +13,7 @@ The program will take input and produce output via the GUI components such as wi
 
 
 # Documentations
-[OOP Terminal Assessment Documentation](https://baebeemoe.github.io/contrast/) <br />
+[OOP Terminal Assessment Documentation](https://baebeemoe.github.io/maskitirs/) <br />
 
 
 
