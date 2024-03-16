@@ -2886,7 +2886,8 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
         LogIn login = new LogIn();  
-        login.setVisible(true);// TODO add your handling code here:
+        login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_LogOutActionPerformed
 
     private void LeaveMainDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaveMainDashboardActionPerformed
