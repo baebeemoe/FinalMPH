@@ -8,6 +8,7 @@ import System.Employee.Deduction;
 import System.Employee.PayPeriod;
 import System.Employee.Request;
 import System.Employee.Earning;
+import System.Employee.SessionManager;
 import System.Employee.User;
 import java.awt.Color;
 import java.io.BufferedReader;
@@ -2836,18 +2837,39 @@ public class Dashboard extends javax.swing.JFrame {
 }
     
     private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
+            
+            int currentUserId = Integer.parseInt(getMainDashboardempNo().getText().trim());
+            String accessRole = SessionManager.getCurrentUserRole(currentUserId);
 
-            TimeKeeping_MainDashboard.setVisible(true);
-            PayrollHealth_MainDashboard.setVisible(true);
-            EmployeeRecords_MainDashboard.setVisible(true);
-            Request_MainDashboard.setVisible(true);
-            PayslipPanel.setVisible(false);
-            ProfilePanel.setVisible(false);
-            AttendancePanel.setVisible(false);
-            LeavePanel.setVisible(false);
+            // Adjust visibility based on access role
+            if (accessRole.equals("Admin")) {
+            getEmployeeRecords_MainDashboard().setVisible(true);
+            getPayrollRecords_MainDashboard().setVisible(false);
+            getRequestList_MainDashboard().setVisible(false);
+            } else if (accessRole.equals("Payroll")) {
+            getPayrollRecords_MainDashboard().setVisible(true);
+            getEmployeeRecords_MainDashboard().setVisible(false);
+            getRequestList_MainDashboard().setVisible(false);
+            } else if (accessRole.equals("Supervisor")) {
+            getPayrollRecords_MainDashboard().setVisible(false);
+            getEmployeeRecords_MainDashboard().setVisible(false);
+            getRequestList_MainDashboard().setVisible(true);
+            } else {
+            getEmployeeRecords_MainDashboard().setVisible(false);
+            getPayrollRecords_MainDashboard().setVisible(false);
+            getRequestList_MainDashboard().setVisible(false);
+    }
 
 
         // TODO add your handling code here:
+        TimeKeeping_MainDashboard.setVisible(true);
+        PayrollHealth_MainDashboard.setVisible(true);
+        Request_MainDashboard.setVisible(true);
+        PayslipPanel.setVisible(false);
+        PayslipViewPanel.setVisible(false);
+        ProfilePanel.setVisible(false);
+        AttendancePanel.setVisible(false);
+        LeavePanel.setVisible(false);
     }//GEN-LAST:event_HomeActionPerformed
 
     private void PayslipMaindashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PayslipMaindashboardActionPerformed
@@ -3118,9 +3140,8 @@ public class Dashboard extends javax.swing.JFrame {
         if (dialogResult == JOptionPane.YES_OPTION) {
         JOptionPane.showMessageDialog(this, "Submitted Successfully");
         request.OvertimeRequestwriteToCSV(employeeID, date, startTime, endTime, reason, status );
-        populateOTTableFromCSV("src/Files/OvertimeRequest.csv", otRequestTable, employeeID);
-        
-       
+        populateOTTableFromCSV("/Files/OvertimeRequest.csv", otRequestTable, employeeID);
+               
         datePickerOT.setText("");
         startTimePickerOT.setText("");
         endTimePickerOT.setText("");
