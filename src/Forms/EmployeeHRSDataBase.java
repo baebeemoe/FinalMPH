@@ -241,9 +241,9 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
 
 
     private void addEmployee() {
-        JTextField[] fields = new JTextField[19];
-        JPanel panel = new JPanel(new GridLayout(19, 2, 5, 5));
-        panel.setPreferredSize(new Dimension(400, 600));
+        JTextField[] fields = new JTextField[13];
+        JPanel panel = new JPanel(new GridLayout(13, 2, 5, 5));
+        panel.setPreferredSize(new Dimension(400, 400));
         String[] labels = {"Employee #", "Last Name", "First Name", "Birthday", "Address",
                 "Phone Number", "SSS #", "Philhealth #", "TIN #", "Pag-ibig #", "Status", "Position",
                 "Immediate Supervisor"};
