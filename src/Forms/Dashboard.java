@@ -168,6 +168,9 @@ public class Dashboard extends javax.swing.JFrame {
         LeavePanelEndDate = new com.toedter.calendar.JDateChooser();
         jLabel119 = new javax.swing.JLabel();
         cancelLeaveReqBtn = new javax.swing.JButton();
+        loadingScreen = new javax.swing.JDialog();
+        genPayslipPnl = new javax.swing.JPanel();
+        generatingPayslipLbl = new java.awt.Label();
         MainPanel = new javax.swing.JPanel();
         AttendancePanel = new javax.swing.JPanel();
         attTabbedPane = new javax.swing.JTabbedPane();
@@ -772,6 +775,36 @@ public class Dashboard extends javax.swing.JFrame {
             .addGap(0, 520, Short.MAX_VALUE)
             .addGroup(leaveReqDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(leaveReqFormPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE))
+        );
+
+        loadingScreen.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        loadingScreen.setTitle("Loding");
+        loadingScreen.setBackground(new java.awt.Color(51, 51, 51));
+        loadingScreen.setBounds(new java.awt.Rectangle(0, 0, 400, 360));
+        loadingScreen.setMinimumSize(new java.awt.Dimension(386, 205));
+        loadingScreen.setResizable(false);
+        loadingScreen.setSize(new java.awt.Dimension(386, 205));
+
+        genPayslipPnl.setBackground(new java.awt.Color(51, 51, 51));
+        genPayslipPnl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
+        genPayslipPnl.setPreferredSize(new java.awt.Dimension(450, 320));
+        genPayslipPnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        generatingPayslipLbl.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
+        generatingPayslipLbl.setForeground(new java.awt.Color(255, 255, 255));
+        generatingPayslipLbl.setName(""); // NOI18N
+        generatingPayslipLbl.setText("Generating payslip...");
+        genPayslipPnl.add(generatingPayslipLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, -1, -1));
+
+        javax.swing.GroupLayout loadingScreenLayout = new javax.swing.GroupLayout(loadingScreen.getContentPane());
+        loadingScreen.getContentPane().setLayout(loadingScreenLayout);
+        loadingScreenLayout.setHorizontalGroup(
+            loadingScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(genPayslipPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        loadingScreenLayout.setVerticalGroup(
+            loadingScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(genPayslipPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -3172,9 +3205,22 @@ public class Dashboard extends javax.swing.JFrame {
     private void viewPayslipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPayslipButtonActionPerformed
         // TODO add your handling code here:
         String selectedCutOff = (String) cutoffSelector.getSelectedItem();
+        showLoadingScreen();
         displayPayslip(selectedCutOff);
+        hideLoadingScreen();
     }//GEN-LAST:event_viewPayslipButtonActionPerformed
-
+    
+    private void showLoadingScreen() {
+        loadingScreen.setVisible(true);
+        loadingScreen.setLocationRelativeTo(PayslipViewPanel);
+    }
+    
+    private void hideLoadingScreen() {
+        if (loadingScreen != null) {
+            loadingScreen.dispose();
+        }
+    }
+    
     private void submitBtnOTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnOTActionPerformed
         // TODO add your handling code here:
         Request request = new Request();
@@ -3311,6 +3357,9 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void displayPayslip(String cutoffDate) {
         try {
+            
+        Thread.sleep(3000); // 3-second delay
+        
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         String[] dates = cutoffDate.split(" - ");
         String startDateString = dates[0];
@@ -3390,7 +3439,7 @@ public class Dashboard extends javax.swing.JFrame {
                 PayslipViewPanel.setVisible(true);
         }         
 
-    } catch (ParseException e) {
+    } catch (InterruptedException | ParseException e) {
         e.printStackTrace();
         // Handle ParseException (e.g., display an error message)
     }
@@ -3530,6 +3579,8 @@ public class Dashboard extends javax.swing.JFrame {
     private com.github.lgooddatepicker.components.DatePicker datePickerOT;
     private java.awt.Label endTimeOTLbl;
     private com.github.lgooddatepicker.components.TimePicker endTimePickerOT;
+    private javax.swing.JPanel genPayslipPnl;
+    private java.awt.Label generatingPayslipLbl;
     private javax.swing.JButton hrsBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -3648,6 +3699,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel leaveReqHistoryLbl;
     private javax.swing.JPanel leaveReqHistoryPnl;
     private javax.swing.JTable leaveReqTbl;
+    private javax.swing.JDialog loadingScreen;
     private java.awt.Label newPassLbl;
     private javax.swing.JPanel otPanel;
     private javax.swing.JDialog otRequestDialog;
