@@ -289,6 +289,7 @@ private PayRate[] pay;
     
     for (EmployeeRecords employee : employees)
     for (PayRate pay : pay) {
+        if (employee.getEmpNo() == pay.getEmpNo()) {
         String fullName = employee.getFullName();
         String position = employee.getPosition();
         double grossSalary = pay.getGrossSalary();
@@ -305,6 +306,7 @@ private PayRate[] pay;
                 employee.getPhilHealth(), "Php " + df.format(deduction.calculatePhilhealthContribution(pay)),
                 employee.getPagIbig(), "Php " + df.format(deduction.calculatePagibigContribution(pay)),
                 employee.getTin(), "Php " + df.format(deduction.calculateTax(pay)), "Php " + formattedTakeHomePay});
+        }
     }
 
     // Set custom cell renderer for all columns

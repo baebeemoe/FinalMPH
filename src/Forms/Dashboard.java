@@ -3325,8 +3325,7 @@ public class Dashboard extends javax.swing.JFrame {
         for (EmployeeRecords employee : employees)
         for (AttendanceRecord att : attendance)
         for (PayRate pay : pay){
-            if (att.getEmpID() == Integer.parseInt(empID)) 
-                if (employee.getEmpNo() == Integer.parseInt(empID)){
+            if (att.getEmpID() == Integer.parseInt(empID) && employee.getEmpNo() == Integer.parseInt(empID)){
                 accessGranted = true; 
 
 
