@@ -106,6 +106,12 @@ public class EmployeeRecords {
       public int getEmpNo() {
         return empNo;
     }
+      
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+      
+    
    
 
     public EmployeeRecords(String[] data) {

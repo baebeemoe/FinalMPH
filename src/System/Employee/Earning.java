@@ -30,7 +30,7 @@ public double overTime (EmployeeRecords employee, PayPeriod payperiod, Attendanc
 }   
   
     
-public double GrossSalary (EmployeeRecords employee, PayPeriod payperiod, AttendanceRecord attendance){
+public double grossSalary (EmployeeRecords employee, PayPeriod payperiod, AttendanceRecord attendance){
     double salary = 0;
     double dailyRate = dailyRate(employee);
     int daysWorked = daysWorked (payperiod, attendance);

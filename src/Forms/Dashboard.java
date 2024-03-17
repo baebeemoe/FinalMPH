@@ -3290,7 +3290,7 @@ public class Dashboard extends javax.swing.JFrame {
                 payslipDailyRate.setText(String.valueOf("Php" + " " + earning.dailyRate(employee)));
                 payslipOvertime.setText(String.valueOf("Php" + " " +earning.overTime(employee, payperiod,att)));
                 payslipDaysWorked.setText(String.valueOf(earning.daysWorked(payperiod,att) + " " + "Days"));
-                payslipGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.GrossSalary(employee, payperiod,att))));
+                payslipGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.grossSalary(employee, payperiod,att))));
 
                 //Benefits
                 payslipRiceAllowance.setText("Php" + " " + employee.getFormattedDouble(employee.getRiceSubsidy()));
@@ -3308,9 +3308,9 @@ public class Dashboard extends javax.swing.JFrame {
 
                //Summary
 
-               double takehomepay = earning.GrossSalary(employee, payperiod,att)+ benefit.getTotalBenefits(employee)+ deduction.totalDeduction(employee);
+               double takehomepay = earning.grossSalary(employee, payperiod,att)+ benefit.getTotalBenefits(employee)+ deduction.totalDeduction(employee);
 
-               summaryGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.GrossSalary(employee, payperiod,att))));
+               summaryGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.grossSalary(employee, payperiod,att))));
                summaryBenefits.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(benefit.getTotalBenefits(employee))));
                summaryTotalDeduction.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.totalDeduction(employee))));
                summaryTakeHomePay.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(takehomepay)));

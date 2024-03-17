@@ -37,8 +37,13 @@ import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.BorderLayout;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -60,9 +65,12 @@ private AttendanceRecord[] attendance;
         String csvFileName = "/Files/EmployeeData.csv";
         employees = EmployeeRecords.readEmployeesFromCSV(csvFileName);
         attendance = AttendanceRecord.readAttendanceFromCSV("/Files/Attendance.csv");
+        monthSelectorPayReport.setModel((new javax.swing.DefaultComboBoxModel<>(getMonths())));
+        
 //        PanelMonthlyPayrollReport.setVisible(false);
 //        RunPayrollTable.setVisible(true);
          displayProcessPayrollData(csvFileName);
+         
     }
 
     /**
@@ -85,7 +93,7 @@ private AttendanceRecord[] attendance;
         PanelMonthlyPayrollReport = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         PayrollReportTable = new javax.swing.JTable();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        monthSelectorPayReport = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
@@ -165,13 +173,12 @@ private AttendanceRecord[] attendance;
 
         PanelMonthlyPayrollReport.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 1368, 574));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Month", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        monthSelectorPayReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                monthSelectorPayReportActionPerformed(evt);
             }
         });
-        PanelMonthlyPayrollReport.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 227, -1));
+        PanelMonthlyPayrollReport.add(monthSelectorPayReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 227, -1));
 
         payrollTabbedPane.addTab("Monthly Payroll Report", PanelMonthlyPayrollReport);
 
@@ -221,81 +228,88 @@ private AttendanceRecord[] attendance;
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
+    private String[] getMonths() {
+    // Get the current date
+        LocalDate currentDate = LocalDate.now();
+    
+    // Create an array to hold month names
+        String[] months = new String[13]; // 13 because we want to include the option "Select Month"
+        months[0] = "Select Month"; // Add the first option
+    
+    // Populate the array with month names
+        for (int i = 1; i <= 12; i++) {
+            months[i] = capitalizeFirstLetter(currentDate.getMonth().minus(i - 1).toString().toLowerCase());
+        }
+    
+        return months;
+    }
+    
+    // Helper method to capitalize the first letter of a string
+    private String capitalizeFirstLetter(String str) {
+        return Character.toUpperCase(str.charAt(0)) + str.substring(1);
+    }
+    
     private void displayProcessPayrollData(String csvFileName) throws ParseException {
         displayCSVData(csvFileName);
     }
     
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-    String selectedMonth = (String) jComboBox1.getSelectedItem();
-    Deduction deduction = new Deduction();
-    DefaultTableModel model = (DefaultTableModel) PayrollReportTable.getModel();
-    model.setRowCount(0);
-    
-    //Iterate over each column
-        for (int columnIndex = 0; columnIndex < RunPayrollTable.getColumnCount(); columnIndex++) {
-            TableColumn column = RunPayrollTable.getColumnModel().getColumn(columnIndex);
-            int preferredWidth = 0;
-            
-            // Iterate over each row in the column to find the maximum preferred width
-            for (int rowIndex = 0; rowIndex < RunPayrollTable.getRowCount(); rowIndex++) {
-                TableCellRenderer cellRenderer = RunPayrollTable.getCellRenderer(rowIndex, columnIndex);
-                Component cellComponent = RunPayrollTable.prepareRenderer(cellRenderer, rowIndex, columnIndex);
-                preferredWidth = Math.max(preferredWidth, cellComponent.getPreferredSize().width);
-            }
-            
-        }
-            
+    private void monthSelectorPayReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monthSelectorPayReportActionPerformed
+        String selectedMonth = (String) monthSelectorPayReport.getSelectedItem();
+        Deduction deduction = new Deduction();
+        DefaultTableModel model = (DefaultTableModel) PayrollReportTable.getModel();
+        model.setRowCount(0);
+
+        // Set table properties
         PayrollReportTable.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 14));
         PayrollReportTable.setFont(new Font("SansSerif", Font.PLAIN, 12));
         PayrollReportTable.setRowHeight(25);
-        
-    
-        model.setColumnIdentifiers(new String[]{"Employee #", "Full Name", "Position", "Gross Income", "SSS No","SSS Contributon",
-            "Philheath No","Philheath Contribtion", "Pag-ibig No", "Pag-ibig Contribution", "TIN", "Withholding","NetPay"
-               });
-        
-        for (EmployeeRecords employee : employees)
-     if (selectedMonth.equals("September")) {
-         String csvFile = "/Files/EmployeeData.csv";
-         try (InputStream inputStream = getClass().getResourceAsStream(csvFile);
-         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
-             String line;
-           
-            //Skip the first line (header)
-            br.readLine();
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(";");
-                String fullName = data[1] + " " + data [2];
-                
-                double grossSalary = employee.getGrossSalary();
-                double totalDeduction = deduction.totalDeduction(employee);
-                double takehomepay = grossSalary - totalDeduction;
-             
-               model.addRow(new Object[]{data[0], fullName ,data[11], "Php" + " " +grossSalary*2 ,employee.getSss(),"Php" + " " +deduction.calculateSssContribution(employee)
-                       ,employee.getPhilHealth(), "Php" + " " +deduction.calculatePhilhealthContribution(employee),employee.getPagIbig(),"Php" + " " + deduction.calculatePagibigContribution(employee),employee.getTin(),"Php" + " " +deduction.calculateTax(employee) , "Php" + " " +takehomepay});
-            }
-            
-            break;
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-      // Set custom cell renderer for all columns
-        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
-        for (int i = 0; i < PayrollReportTable.getColumnCount(); i++) {
-            PayrollReportTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
-        }
-         
-     }
-   
-   
- 
-   
- 
-    }//GEN-LAST:event_jComboBox1ActionPerformed
 
+        // Set column identifiers
+        model.setColumnIdentifiers(new String[]{"Employee #", "Full Name", "Position", "Gross Income", "SSS No","SSS Contributon",
+            "Philheath No","Philheath Contribtion", "Pag-ibig No", "Pag-ibig Contribution", "TIN", "Withholding","NetPay"});
+
+        // Check if the selected month is the current month
+        LocalDate currentDate = LocalDate.now();
+        Month currentMonth = currentDate.getMonth();
+        if (currentMonth.name().equalsIgnoreCase(selectedMonth)) {
+            // Display a message saying the report will be available on the first day of the next month
+            JOptionPane.showMessageDialog(this, "The report for the current month will be available on the first day of the next month.");
+        } else {
+            // Call populateReportTable method to fill the table
+            List<EmployeeRecords> employeeList = Arrays.asList(employees);
+            populateReportTable(employeeList, deduction, model, PayrollReportTable);
+        }
+    }//GEN-LAST:event_monthSelectorPayReportActionPerformed
+
+    private void populateReportTable(List<EmployeeRecords> employees, Deduction deduction, DefaultTableModel model, JTable PayrollReportTable) {
+       DecimalFormat df = new DecimalFormat("#,##0.00");
     
+    for (EmployeeRecords employee : employees) {
+        String fullName = employee.getFullName();
+        String position = employee.getPosition();
+        double grossSalary = employee.getGrossSalary();
+        double totalDeduction = deduction.totalDeduction(employee);
+        double takehomepay = grossSalary - totalDeduction;
+        
+        String formattedGrossSalary = df.format(grossSalary);
+        String formattedTotalDeduction = df.format(totalDeduction);
+        String formattedTakeHomePay = df.format(takehomepay);
+
+        // Add this row to the table for the current employee
+       model.addRow(new Object[]{employee.getEmpNo(), fullName, position, "Php " + formattedGrossSalary,
+                employee.getSss(), "Php " + df.format(deduction.calculateSssContribution(employee)),
+                employee.getPhilHealth(), "Php " + df.format(deduction.calculatePhilhealthContribution(employee)),
+                employee.getPagIbig(), "Php " + df.format(deduction.calculatePagibigContribution(employee)),
+                employee.getTin(), "Php " + df.format(deduction.calculateTax(employee)), "Php " + formattedTakeHomePay});
+    }
+
+    // Set custom cell renderer for all columns
+    DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+    centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+    for (int i = 0; i < PayrollReportTable.getColumnCount(); i++) {
+        PayrollReportTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+    }
+}
     
     
     
@@ -337,7 +351,7 @@ private AttendanceRecord[] attendance;
              String line;
            
             //Skip the first line (header)
-            br.readLine();
+            
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(";");
                 
@@ -402,11 +416,11 @@ private AttendanceRecord[] attendance;
     private javax.swing.JTable RunPayrollTable;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel managePayrollLbl;
+    private javax.swing.JComboBox<String> monthSelectorPayReport;
     private javax.swing.JTabbedPane payrollTabbedPane;
     // End of variables declaration//GEN-END:variables
 }
