@@ -23,7 +23,12 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -2786,50 +2791,94 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_AttendanceMainDashboardButtonActionPerformed
 
     private void populateAttTableFromCSV(String csvFilePath, JTable table, String empID) {
-    boolean foundRecords = false;
-    DefaultTableModel model = (DefaultTableModel) table.getModel();
-    model.setRowCount(0);
+        boolean foundRecords = false;
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        model.setRowCount(0);
 
-    try (InputStream inputStream = getClass().getResourceAsStream(csvFilePath);
-     BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
-        String line;
-        while ((line = br.readLine()) != null) {
-            String[] data = line.split(",");
-            if (data.length >= 5 && data[0].equals(empID)) {
-                model.addRow(new Object[]{data[1], data[2], data[3], data[4]});
+        List<List<Object>> rowDataList = new ArrayList<>();
+
+        try (InputStream inputStream = getClass().getResourceAsStream(csvFilePath);
+            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                if (data.length >= 5 && data[0].equals(empID)) {
+                rowDataList.add(Arrays.asList(data[1], data[2], data[3], data[4]));
                 foundRecords = true;
+                }
             }
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
-    } catch (IOException ex) {
-        ex.printStackTrace();
-    }
+
+        // Sort the rowDataList based on the date (data[1])
+        Collections.sort(rowDataList, new Comparator<List<Object>>() {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+            public int compare(List<Object> o1, List<Object> o2) {
+                try {
+                    Date date1 = dateFormat.parse((String)o1.get(0));
+                    Date date2 = dateFormat.parse((String)o2.get(0));
+                    return date2.compareTo(date1); // Sort in descending order
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                    return 0;
+                }
+            }
+        });
+
+    // Populate the sorted data into the table model
+        for (List<Object> rowData : rowDataList) {
+            model.addRow(rowData.toArray());
+        }
 
     // Check if records were found for the employee
-    if (!foundRecords) {
-        JOptionPane.showMessageDialog(this, "No records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
+        if (!foundRecords) {
+            JOptionPane.showMessageDialog(this, "No records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     private void populateOTTableFromCSV(String csvFilePath, JTable table, String empID) {
-    boolean foundRecords = false;
-    DefaultTableModel model = (DefaultTableModel) table.getModel();
-    model.setRowCount(0);
+        boolean foundRecords = false;
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        model.setRowCount(0);
+    
+        List<List<Object>> rowOTDataList = new ArrayList<>();
 
-    try (InputStream inputStream = getClass().getResourceAsStream(csvFilePath);
-     BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
-        String line;
-        while ((line = br.readLine()) != null) {
-            String[] data = line.split(",");
-            if (data.length >= 5 && data[0].equals(empID)) {
-                model.addRow(new Object[]{data[1], data[2], data[3], data[4], data[5]});
-                foundRecords = true;
+        try (InputStream inputStream = getClass().getResourceAsStream(csvFilePath);
+            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                if (data.length >= 5 && data[0].equals(empID)) {
+                    rowOTDataList.add(Arrays.asList(data[1], data[2], data[3], data[4], data[5]));
+                    foundRecords = true;
+                }
             }
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
-    } catch (IOException ex) {
-        ex.printStackTrace();
-    }
 
-//    Check if records were found for the employee
+        // Sort the rowDataList based on the date (data[1])
+        Collections.sort(rowOTDataList, new Comparator<List<Object>>() {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            public int compare(List<Object> o1, List<Object> o2) {
+                try {
+                    Date date1 = dateFormat.parse((String)o1.get(0)); // Second column contains the date
+                    Date date2 = dateFormat.parse((String)o2.get(0));
+                    return date2.compareTo(date1); // Sort in descending order
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                    return 0;
+                }
+            }
+        });
+
+        // Populate the sorted data into the table model
+        for (List<Object> rowData : rowOTDataList) {
+            model.addRow(rowData.toArray());
+        }
+
+    // Check if records were found for the employee
     if (!foundRecords) {
         JOptionPane.showMessageDialog(this, "No records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
     }
