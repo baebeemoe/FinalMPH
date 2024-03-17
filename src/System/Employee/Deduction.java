@@ -5,11 +5,11 @@
  */
 package System.Employee;
 
-import System.Employee.EmployeeRecords;
+import System.Employee.PayRate;
 public class Deduction {
 
-public double calculateSssContribution(EmployeeRecords employee) {
-        double basicSalary = (double)employee.getBasicSalary();
+public double calculateSssContribution(PayRate pay) {
+        double basicSalary = (double)pay.getBasicSalary();
         double salary = basicSalary;
         boolean con1 = salary <= 3250.0;
         boolean con2 = salary > 3250.0 && salary <= 3750.0;
@@ -146,24 +146,24 @@ public double calculateSssContribution(EmployeeRecords employee) {
         }
     }
 
-    public double calculatePhilhealthContribution(EmployeeRecords employee) {
-        return (double)employee.getBasicSalary() * 0.03 / 2.0;
+    public double calculatePhilhealthContribution(PayRate pay) {
+        return (double)pay.getBasicSalary() * 0.03 / 2.0;
     }
 
-    public double calculatePagibigContribution(EmployeeRecords employee) {
-        return (double)employee.getBasicSalary() < 1500.0 ? (double)employee.getBasicSalary() * 0.01 : 100.0;
+    public double calculatePagibigContribution(PayRate pay) {
+        return (double)pay.getBasicSalary() < 1500.0 ? (double)pay.getBasicSalary() * 0.01 : 100.0;
     }
 
-    public double calculateTotalGovernmentDeduction(EmployeeRecords employee){
-    double sssDeduction = calculateSssContribution(employee);
-    double philhealthContribution = calculatePhilhealthContribution(employee);
-    double pagibigContribution = calculatePagibigContribution(employee);
+    public double calculateTotalGovernmentDeduction(PayRate pay){
+    double sssDeduction = calculateSssContribution(pay);
+    double philhealthContribution = calculatePhilhealthContribution(pay);
+    double pagibigContribution = calculatePagibigContribution(pay);
 
     return sssDeduction + philhealthContribution + pagibigContribution;
     }
-    public  double calculateTax(EmployeeRecords employee ) {
-        double grossSalary = (double)employee.getGrossSalary();
-        double totalDeductionBeforeTax = calculateTotalGovernmentDeduction(employee);
+    public  double calculateTax(PayRate pay) {
+        double grossSalary = (double)pay.getGrossSalary();
+        double totalDeductionBeforeTax = calculateTotalGovernmentDeduction(pay);
         double salary = grossSalary - totalDeductionBeforeTax;
         double taxRate = 0.0;
         if (salary > 20832.0 && salary <= 33333.0) {
@@ -180,10 +180,10 @@ public double calculateSssContribution(EmployeeRecords employee) {
         return taxRate;
     }
     
-    public double totalDeduction(EmployeeRecords employee){
+    public double totalDeduction(PayRate pay){
         double total = 0;
-        double contribution = calculateTotalGovernmentDeduction(employee);
-        double tax = calculateTax( employee );
+        double contribution = calculateTotalGovernmentDeduction(pay);
+        double tax = calculateTax(pay);
         total = contribution + tax;
     return total;
     }

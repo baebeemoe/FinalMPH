@@ -5,12 +5,12 @@
  */
 package System.Employee;
 
-import System.Employee.EmployeeRecords;
+import System.Employee.PayRate;
 public class Benefit {
     
-    public double getTotalBenefits(EmployeeRecords employee) {
+    public double getTotalBenefits(PayRate pay) {
         double totalBenefits;
-               totalBenefits = employee.getClothingAllowance()+ employee.getPhoneAllowance() + employee.getRiceSubsidy();
+               totalBenefits = pay.getClothingAllowance()+ pay.getPhoneAllowance() + pay.getRiceSubsidy();
         return totalBenefits;
     }
     

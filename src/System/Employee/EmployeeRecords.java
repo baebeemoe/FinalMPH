@@ -23,12 +23,6 @@ public class EmployeeRecords {
     private String status;
     private String position;
     private String supervisor;
-    private double basicSalary;
-    private double riceSubsidy;
-    private double phoneAllowance;
-    private double clothingAllowance;
-    private double grossSalary;
-    private double hourlyRate;
     
     
 
@@ -80,30 +74,7 @@ public class EmployeeRecords {
         return supervisor;
     }
 
-    public double getBasicSalary() {
-        return basicSalary;
-    }
-
-    public double getRiceSubsidy() {
-        return riceSubsidy;
-    }
-
-    public double getPhoneAllowance() {
-        return phoneAllowance;
-    }
-
-    public double getClothingAllowance() {
-        return clothingAllowance;
-    }
-
-    public double getGrossSalary() {
-        return grossSalary;
-    }
-
-    public double getHourlyRate() {
-        return hourlyRate;
-    }
-      public int getEmpNo() {
+    public int getEmpNo() {
         return empNo;
     }
       
@@ -128,12 +99,6 @@ public class EmployeeRecords {
         this.status = data[10];
         this.position = data[11];
         this.supervisor = data[12];
-        this.basicSalary = Double.parseDouble(data[13]);
-        this.riceSubsidy = Double.parseDouble(data[14]);
-        this.phoneAllowance = Double.parseDouble(data[15]);
-        this.clothingAllowance = Double.parseDouble(data[16]);
-        this.grossSalary = Double.parseDouble(data[17]);
-        this.hourlyRate = Double.parseDouble(data[18]);
     }
     
   
@@ -192,11 +157,5 @@ public class EmployeeRecords {
         return formatDouble(value);
     }
     
-    
-    public double Dailyrate(){
-        double dailyRate = 0;
-        dailyRate = hourlyRate * 8;
-        return dailyRate;
-    } 
    
 }

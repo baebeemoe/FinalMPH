@@ -187,8 +187,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
     private void displayCSVData(String csvFile) {
         model.setColumnIdentifiers(new String[]{"Employee #", "Last Name", "First Name", "Birthday", "Address",
             "Phone Number", "SSS #", "Philhealth #", "TIN #", "Pag-ibig #", "Status", "Position",
-            "Immediate Supervisor", "Basic Salary", "Rice Subsidy", "Phone Allowance", "Clothing Allowance",
-            "Gross Semi-monthly Rate", "Hourly Rate"});
+            "Immediate Supervisor"});
 
     try (InputStream inputStream = getClass().getResourceAsStream(csvFile);
          BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
@@ -199,7 +198,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
         
         while ((line = br.readLine()) != null) {
             String[] data = line.split(";");
-            Object[] rowData = Arrays.copyOf(data, Math.min(data.length, 19));
+            Object[] rowData = Arrays.copyOf(data, Math.min(data.length, 13));
             rows.add(rowData);
         }
         
@@ -247,8 +246,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
         panel.setPreferredSize(new Dimension(400, 600));
         String[] labels = {"Employee #", "Last Name", "First Name", "Birthday", "Address",
                 "Phone Number", "SSS #", "Philhealth #", "TIN #", "Pag-ibig #", "Status", "Position",
-                "Immediate Supervisor", "Basic Salary", "Rice Subsidy", "Phone Allowance", "Clothing Allowance",
-                "Gross Semi-monthly Rate", "Hourly Rate"};
+                "Immediate Supervisor"};
         for (int i = 0; i < labels.length; i++) {
             panel.add(new JLabel(labels[i]));
             fields[i] = new JTextField();
@@ -293,8 +291,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
             panel.setPreferredSize(new Dimension(400, 600));
             String[] labels = {"Employee #", "Last Name", "First Name", "Birthday", "Address",
                     "Phone Number", "SSS #", "Philhealth #", "TIN #", "Pag-ibig #", "Status", "Position",
-                    "Immediate Supervisor", "Basic Salary", "Rice Subsidy", "Phone Allowance", "Clothing Allowance",
-                    "Gross Semi-monthly Rate", "Hourly Rate"};
+                    "Immediate Supervisor"};
             for (int i = 0; i < labels.length; i++) {
                 panel.add(new JLabel(labels[i]));
                 fields[i] = new JTextField(model.getValueAt(selectedRow, i).toString());
@@ -322,7 +319,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
     private void updateCSVFile() {
     try (FileWriter writer = new FileWriter("src/Files/EmployeeData.csv")) {
         for (int i = 0; i < model.getRowCount(); i++) {
-            for (int j = 0; j < 19; j++) { // Iterate only over the first 19 columns
+            for (int j = 0; j < 13; j++) { // Iterate only over the first 19 columns
                 Object newValue = model.getValueAt(i, j);
                 writer.write(newValue.toString());
                 if (j < 18) { // Check if it's not the last column
@@ -330,7 +327,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
                 }
             }
             // Append remaining columns from the original data
-            for (int j = 19; j < originalData[i].length; j++) {
+            for (int j = 13; j < originalData[i].length; j++) {
                 Object originalValue = originalData[i][j];
                 writer.write(";" + originalValue.toString());
             }

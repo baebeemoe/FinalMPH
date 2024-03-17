@@ -8,34 +8,37 @@ package System.Employee;
 
 public class Earning {
  
-    public double monthlyRate (EmployeeRecords employee){
-    double monthlyRate = employee.getBasicSalary();
+    public double monthlyRate (PayRate pay){
+    double monthlyRate = pay.getBasicSalary();
     return monthlyRate;    
-} 
-    
-public double dailyRate (EmployeeRecords employee){
-    double dailyRate = employee.getHourlyRate()*8;
-    return dailyRate;
-}    
-
-public int daysWorked (PayPeriod payperiod, AttendanceRecord attendance){
-    int daysWorked = payperiod.countDays(attendance);
-    return daysWorked;
 }
     
-public double overTime (EmployeeRecords employee, PayPeriod payperiod, AttendanceRecord attendance) {
-    double overTime = payperiod.calculateTotalOvertime(attendance) * employee.getHourlyRate();
-    return overTime;
+    public double hourlyRate (PayRate pay) {
+        double hourlyRate = (pay.getBasicSalary()/20)/8;
+        return hourlyRate;
+    }
     
-}   
-  
+    public double dailyRate (PayRate pay){
+        double dailyRate = this.hourlyRate(pay)*8;
+        return dailyRate;
+    }    
+
+    public int daysWorked (PayPeriod payperiod, AttendanceRecord attendance){
+        int daysWorked = payperiod.countDays(attendance);
+        return daysWorked;
+    }
     
-public double grossSalary (EmployeeRecords employee, PayPeriod payperiod, AttendanceRecord attendance){
-    double salary = 0;
-    double dailyRate = dailyRate(employee);
-    int daysWorked = daysWorked (payperiod, attendance);
-    double overtime = overTime(employee,payperiod, attendance);
-    salary = (dailyRate * daysWorked) + overtime;
+    public double overTime (EmployeeRecords employee, PayPeriod payperiod, AttendanceRecord attendance, PayRate pay) {
+        double overTime = payperiod.calculateTotalOvertime(attendance) * pay.getHourlyRate();
+        return overTime;
+    } 
+    
+    public double grossSalary (EmployeeRecords employee, PayPeriod payperiod, AttendanceRecord attendance, PayRate pay){
+        double salary = 0;
+        double dailyRate = dailyRate(pay);
+        int daysWorked = daysWorked (payperiod, attendance);
+        double overtime = overTime(employee, payperiod, attendance, pay);
+        salary = (dailyRate * daysWorked) + overtime;
     
     return salary;
 }    

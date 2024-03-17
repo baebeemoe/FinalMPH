@@ -8,6 +8,7 @@ import System.Employee.Deduction;
 import System.Employee.PayPeriod;
 import System.Employee.Request;
 import System.Employee.Earning;
+import System.Employee.PayRate;
 import System.Employee.SessionManager;
 import System.Employee.User;
 import java.awt.Color;
@@ -48,6 +49,7 @@ public class Dashboard extends javax.swing.JFrame {
     private EmployeeRecords[] employees;
     private AttendanceRecord[] attendance;
     private User[] user;
+    private PayRate[] pay;
     private PayPeriod payperiod;
     
     public Dashboard() {
@@ -57,6 +59,7 @@ public class Dashboard extends javax.swing.JFrame {
         employees = EmployeeRecords.readEmployeesFromCSV("/Files/EmployeeData.csv");
         attendance = AttendanceRecord.readAttendanceFromCSV("/Files/Attendance.csv");
         user = User.readUserFromCSV("/Files/User.csv");
+        pay = PayRate.readPayFromCSV("/Files/PayRate.csv");
     }
 
     public JLabel getLblPending() {
@@ -3320,7 +3323,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         boolean accessGranted = false;
         for (EmployeeRecords employee : employees)
-        for (AttendanceRecord att : attendance) {
+        for (AttendanceRecord att : attendance)
+        for (PayRate pay : pay){
             if (att.getEmpID() == Integer.parseInt(empID)) 
                 if (employee.getEmpNo() == Integer.parseInt(empID)){
                 accessGranted = true; 
@@ -3335,33 +3339,33 @@ public class Dashboard extends javax.swing.JFrame {
                 payslipPosition.setText(employee.getPosition());
 
                 //Earnings
-                payslipMonthlyRate.setText(String.valueOf("Php" + " " +employee.getBasicSalary()));
-                payslipDailyRate.setText(String.valueOf("Php" + " " + earning.dailyRate(employee)));
-                payslipOvertime.setText(String.valueOf("Php" + " " +earning.overTime(employee, payperiod,att)));
+                payslipMonthlyRate.setText(String.valueOf("Php" + " " + pay.getBasicSalary()));
+                payslipDailyRate.setText(String.valueOf("Php" + " " + earning.dailyRate(pay)));
+                payslipOvertime.setText(String.valueOf("Php" + " " + earning.overTime(employee, payperiod, att, pay)));
                 payslipDaysWorked.setText(String.valueOf(earning.daysWorked(payperiod,att) + " " + "Days"));
-                payslipGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.grossSalary(employee, payperiod,att))));
+                payslipGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.grossSalary(employee, payperiod, att, pay))));
 
                 //Benefits
-                payslipRiceAllowance.setText("Php" + " " + employee.getFormattedDouble(employee.getRiceSubsidy()));
-                payslipPhoneAllowance.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(employee.getPhoneAllowance())));
-                payslipClothingAllowance.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(employee.getClothingAllowance())));
-                payslipBenefitTotal.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(benefit.getTotalBenefits(employee))));
+                payslipRiceAllowance.setText("Php" + " " + employee.getFormattedDouble(pay.getRiceSubsidy()));
+                payslipPhoneAllowance.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(pay.getPhoneAllowance())));
+                payslipClothingAllowance.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(pay.getClothingAllowance())));
+                payslipBenefitTotal.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(benefit.getTotalBenefits(pay))));
 
                 //Deductions
-                payslipSSS.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculateSssContribution(employee))));
-                payslipPhilhealth.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculatePhilhealthContribution(employee))));
-                payslipPagibig.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculatePagibigContribution(employee))));
-                payslipTax.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculateTax(employee))));
-                payslipDeductionTotal.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.totalDeduction(employee))));
+                payslipSSS.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculateSssContribution(pay))));
+                payslipPhilhealth.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculatePhilhealthContribution(pay))));
+                payslipPagibig.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculatePagibigContribution(pay))));
+                payslipTax.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.calculateTax(pay))));
+                payslipDeductionTotal.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.totalDeduction(pay))));
 
 
                //Summary
 
-               double takehomepay = earning.grossSalary(employee, payperiod,att)+ benefit.getTotalBenefits(employee)+ deduction.totalDeduction(employee);
+               double takehomepay = earning.grossSalary(employee, payperiod, att, pay)+ benefit.getTotalBenefits(pay)+ deduction.totalDeduction(pay);
 
-               summaryGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.grossSalary(employee, payperiod,att))));
-               summaryBenefits.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(benefit.getTotalBenefits(employee))));
-               summaryTotalDeduction.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.totalDeduction(employee))));
+               summaryGrossIncome.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(earning.grossSalary(employee, payperiod, att, pay))));
+               summaryBenefits.setText(String.valueOf("Php" + " " + employee.getFormattedDouble(benefit.getTotalBenefits(pay))));
+               summaryTotalDeduction.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(deduction.totalDeduction(pay))));
                summaryTakeHomePay.setText("Php" + " " + String.valueOf(employee.getFormattedDouble(takehomepay)));
 
 

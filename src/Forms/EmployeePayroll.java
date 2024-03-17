@@ -33,6 +33,7 @@ import System.Employee.AttendanceRecord;
 import System.Employee.Benefit;
 import System.Employee.Deduction;
 import System.Employee.EmployeeRecords;
+import System.Employee.PayRate;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.BorderLayout;
 import java.io.InputStream;
@@ -55,6 +56,7 @@ public class EmployeePayroll extends javax.swing.JFrame {
 private DefaultTableModel model;
 private EmployeeRecords[] employees;
 private AttendanceRecord[] attendance;
+private PayRate[] pay;
     /**
      * Creates new form EmployeePayroll
      */
@@ -65,6 +67,7 @@ private AttendanceRecord[] attendance;
         String csvFileName = "/Files/EmployeeData.csv";
         employees = EmployeeRecords.readEmployeesFromCSV(csvFileName);
         attendance = AttendanceRecord.readAttendanceFromCSV("/Files/Attendance.csv");
+        pay = PayRate.readPayFromCSV("/Files/PayRate.csv");
         monthSelectorPayReport.setModel((new javax.swing.DefaultComboBoxModel<>(getMonths())));
         
 //        PanelMonthlyPayrollReport.setVisible(false);
@@ -284,11 +287,12 @@ private AttendanceRecord[] attendance;
     private void populateReportTable(List<EmployeeRecords> employees, Deduction deduction, DefaultTableModel model, JTable PayrollReportTable) {
        DecimalFormat df = new DecimalFormat("#,##0.00");
     
-    for (EmployeeRecords employee : employees) {
+    for (EmployeeRecords employee : employees)
+    for (PayRate pay : pay) {
         String fullName = employee.getFullName();
         String position = employee.getPosition();
-        double grossSalary = employee.getGrossSalary();
-        double totalDeduction = deduction.totalDeduction(employee);
+        double grossSalary = pay.getGrossSalary();
+        double totalDeduction = deduction.totalDeduction(pay);
         double takehomepay = grossSalary - totalDeduction;
         
         String formattedGrossSalary = df.format(grossSalary);
@@ -297,10 +301,10 @@ private AttendanceRecord[] attendance;
 
         // Add this row to the table for the current employee
        model.addRow(new Object[]{employee.getEmpNo(), fullName, position, "Php " + formattedGrossSalary,
-                employee.getSss(), "Php " + df.format(deduction.calculateSssContribution(employee)),
-                employee.getPhilHealth(), "Php " + df.format(deduction.calculatePhilhealthContribution(employee)),
-                employee.getPagIbig(), "Php " + df.format(deduction.calculatePagibigContribution(employee)),
-                employee.getTin(), "Php " + df.format(deduction.calculateTax(employee)), "Php " + formattedTakeHomePay});
+                employee.getSss(), "Php " + df.format(deduction.calculateSssContribution(pay)),
+                employee.getPhilHealth(), "Php " + df.format(deduction.calculatePhilhealthContribution(pay)),
+                employee.getPagIbig(), "Php " + df.format(deduction.calculatePagibigContribution(pay)),
+                employee.getTin(), "Php " + df.format(deduction.calculateTax(pay)), "Php " + formattedTakeHomePay});
     }
 
     // Set custom cell renderer for all columns
@@ -346,6 +350,7 @@ private AttendanceRecord[] attendance;
                });
        
         for (EmployeeRecords employee : employees)
+        for (PayRate pay : pay)
         try (InputStream inputStream = getClass().getResourceAsStream(csvFile);
          BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
              String line;
@@ -355,8 +360,8 @@ private AttendanceRecord[] attendance;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(";");
                 
-                double grossSalary = employee.getGrossSalary();
-                double totalDeduction = deduction.totalDeduction(employee);
+                double grossSalary = pay.getGrossSalary();
+                double totalDeduction = deduction.totalDeduction(pay);
                 double takehomepay = grossSalary - totalDeduction;
              
                model.addRow(new Object[]{data[0], data[1], data[2], data[10],data[11], "Php" + " " + takehomepay});
