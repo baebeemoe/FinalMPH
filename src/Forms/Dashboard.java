@@ -3358,7 +3358,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void displayPayslip(String cutoffDate) {
         try {
             
-        Thread.sleep(3000); // 3-second delay
+        Thread.sleep(2000); // 3-second delay
         
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         String[] dates = cutoffDate.split(" - ");

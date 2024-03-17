@@ -1,7 +1,7 @@
 EmployeeID,Leave Type,Date Filed,Start Date,End Date,Reason,Status
 1,Sick Leave,03/09/2024,03/13/2024,03/15/2024,asd,Approved
-2,Emergency Leave,03/09/2024,03/06/2024,03/15/2024,asdad,Pending
-2,Vacation Leave,03/12/2024,03/25/2024,03/29/2024,Trip,Pending
+2,Emergency Leave,03/09/2024,03/06/2024,03/15/2024,asdad,Approved
+2,Vacation Leave,03/12/2024,03/25/2024,03/29/2024,Trip,Denied
 2,Vacation Leave,03/12/2024,03/13/2024,03/15/2024,Vacation,Pending
 2,Vacation Leave,03/12/2024,03/28/2024,03/29/2024,Vacation,Pending
 2,Vacation Leave,03/12/2024,03/29/2024,03/31/2024,Graduation,Pending

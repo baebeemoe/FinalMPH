@@ -22,6 +22,7 @@ import javax.swing.JTable;
 import java.io.FileWriter;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -251,30 +252,31 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
         DefaultTableModel model = (DefaultTableModel) OvertimeTable.getModel();
         model.setRowCount(0);
     
-  // Populate the table with data from the CSV file
-        String csvFilePath = "/Files/OvertimeRequest.csv";
-        boolean foundRecords = false;
+        // Populate the table with data from the CSV file
+        populateOTTable(model, "/Files/OvertimeRequest.csv");
+    }//GEN-LAST:event_btnOvertimeRequestActionPerformed
 
-        try (InputStream inputStream = Requests.class.getResourceAsStream(csvFilePath);
-        BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
-         // Skip the first line
-            String headerLine = br.readLine();
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(",");
-                if (data.length >= 6) {
-                    model.addRow(new Object[]{data[0], data[1], data[2], data[3],data[4],data[5]});
-                    foundRecords = true;
-                }
+    private void populateOTTable(DefaultTableModel model, String csvFilePath) {
+    boolean foundRecords = false;
+    
+    try (InputStream inputStream = Requests.class.getResourceAsStream(csvFilePath);
+         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+        // Skip the first line
+        String headerLine = br.readLine();
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] data = line.split(",");
+            if (data.length >= 6) {
+                model.addRow(new Object[]{data[0], data[1], data[2], data[3], data[4], data[5]});
+                foundRecords = true;
             }
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        }
+    } catch (IOException ex) {
+        ex.printStackTrace();
     }    
     
     // Add dropdown button in the last column
-   // Add dropdown button in the last column
-    TableColumn lastColumn = OvertimeTable.getColumnModel().getColumn(model.getColumnCount() -1
-    );
+    TableColumn lastColumn = OvertimeTable.getColumnModel().getColumn(model.getColumnCount() - 1);
     lastColumn.setCellRenderer(new DefaultTableCellRenderer() {
         @Override
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
@@ -291,9 +293,8 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
     });
 
     lastColumn.setCellEditor(new DefaultCellEditor(new JComboBox(new String[]{"Pending ", "Approved", "Denied"})));
-
-    }//GEN-LAST:event_btnOvertimeRequestActionPerformed
-
+}
+    
     private void saveRequestUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveRequestUpdateBtnActionPerformed
                 if (OverTimePane.isVisible()) {
                     saveData( "src/Files/OvertimeRequest.csv");
@@ -303,7 +304,7 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
       
     }//GEN-LAST:event_saveRequestUpdateBtnActionPerformed
 
-  private void saveData(String fileName) {
+    private void saveData(String fileName) {
     String csvFilePath = "";
     DefaultTableModel model = null;
 
@@ -351,7 +352,81 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
     } catch (IOException e) {
         e.printStackTrace();
     }
+
+    // Show a dialog box depending on the selected status
+    int selectedRow = OverTimePane.isVisible() ? OvertimeTable.getSelectedRow() : LeaveTable.getSelectedRow();
+    Object statusValue = model.getValueAt(selectedRow, model.getColumnCount() - 1);
+
+    if (statusValue != null) {
+        String message = "";
+        if (statusValue.equals("Approved")) {
+            message = "Request approved.";
+        } else if (statusValue.equals("Denied")) {
+            message = "Request denied.";
+        } else {
+            // Handle other statuses if needed
+        }
+        
+        // Show dialog box and remove the Save button after selecting "Yes"
+        int option = JOptionPane.showConfirmDialog(this, message + "\nSave the update?", "Confirmation", JOptionPane.YES_NO_OPTION);
+        if (option == JOptionPane.YES_OPTION) {
+            JOptionPane.showMessageDialog(this, "Update saved.");
+            model.fireTableDataChanged();
+            
+        }
+    }
 }
+    
+    
+//  private void saveData(String fileName) {
+//    String csvFilePath = "";
+//    DefaultTableModel model = null;
+//
+//    if (OverTimePane.isVisible()) {
+//        csvFilePath = fileName;
+//        model = (DefaultTableModel) OvertimeTable.getModel();
+//    } else if (LeavePane.isVisible()) {
+//        csvFilePath = fileName;
+//        model = (DefaultTableModel) LeaveTable.getModel();
+//    }
+//
+//    if (model == null) {
+//        System.out.println("No table is visible.");
+//        return;
+//    }
+//
+//    try (FileWriter writer = new FileWriter(csvFilePath)) {
+//        int rowCount = model.getRowCount();
+//        int columnCount = model.getColumnCount();
+//
+//        // Write column headers
+//        for (int i = 0; i < columnCount; i++) {
+//            writer.write(model.getColumnName(i));
+//            if (i < columnCount - 1) {
+//                writer.write(",");
+//            }
+//        }
+//        writer.write("\n");
+//
+//        // Write data rows
+//        for (int i = 0; i < rowCount; i++) {
+//            for (int j = 0; j < columnCount; j++) {
+//                Object value = model.getValueAt(i, j);
+//                if (value != null) {
+//                    writer.write(value.toString());
+//                }
+//                if (j < columnCount - 1) {
+//                    writer.write(",");
+//                }
+//            }
+//            writer.write("\n");
+//        }
+//
+//        writer.flush();
+//    } catch (IOException e) {
+//        e.printStackTrace();
+//    }
+//}
 
 
     /**
