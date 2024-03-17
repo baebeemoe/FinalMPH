@@ -577,11 +577,11 @@ public class Dashboard extends javax.swing.JFrame {
         });
         changePassPnl.add(cancelPassBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 84, -1));
 
+        updatePassBtn.setText("UPDATE PASSWORD");
         updatePassBtn.setBackground(new java.awt.Color(255, 153, 0));
+        updatePassBtn.setBorderPainted(false);
         updatePassBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         updatePassBtn.setForeground(new java.awt.Color(255, 255, 255));
-        updatePassBtn.setText("UPDATE PASSWORD");
-        updatePassBtn.setBorderPainted(false);
         updatePassBtn.setPreferredSize(new java.awt.Dimension(180, 36));
         updatePassBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -604,7 +604,6 @@ public class Dashboard extends javax.swing.JFrame {
         leaveReqDialog.setTitle("Leave Request");
         leaveReqDialog.setMinimumSize(new java.awt.Dimension(360, 520));
         leaveReqDialog.setUndecorated(true);
-        leaveReqDialog.setPreferredSize(new java.awt.Dimension(360, 520));
 
         leaveReqFormPnl.setBackground(new java.awt.Color(51, 51, 51));
         leaveReqFormPnl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
@@ -671,11 +670,11 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel119.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         jLabel119.setForeground(new java.awt.Color(255, 255, 255));
 
+        cancelLeaveReqBtn.setText("CANCEL");
         cancelLeaveReqBtn.setBackground(new java.awt.Color(51, 51, 51));
+        cancelLeaveReqBtn.setBorderPainted(false);
         cancelLeaveReqBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         cancelLeaveReqBtn.setForeground(new java.awt.Color(255, 102, 0));
-        cancelLeaveReqBtn.setText("CANCEL");
-        cancelLeaveReqBtn.setBorderPainted(false);
         cancelLeaveReqBtn.setOpaque(true);
         cancelLeaveReqBtn.setPreferredSize(new java.awt.Dimension(180, 36));
         cancelLeaveReqBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -1395,7 +1394,7 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(4, 12, 4, 4);
         PayslipListPanel.add(jLabel15, gridBagConstraints);
 
-        cutoffSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "09/01/2022 - 09/15/2022", "09/16/2022 - 09/31/2022" }));
+        cutoffSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "03/01/2024 - 03/15/2024", "02/16/2024 - 02/29/2024", "02/01/2024 - 02/15/2024" }));
         cutoffSelector.setBackground(new java.awt.Color(102, 102, 102));
         cutoffSelector.setBorder(null);
         cutoffSelector.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
@@ -2559,11 +2558,11 @@ public class Dashboard extends javax.swing.JFrame {
 
         leaveReqHistoryPnl.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 870, 250));
 
+        reqLeaveBtn.setText("REQUEST LEAVE");
         reqLeaveBtn.setBackground(new java.awt.Color(255, 153, 0));
+        reqLeaveBtn.setBorderPainted(false);
         reqLeaveBtn.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         reqLeaveBtn.setForeground(new java.awt.Color(255, 255, 255));
-        reqLeaveBtn.setText("REQUEST LEAVE");
-        reqLeaveBtn.setBorderPainted(false);
         reqLeaveBtn.setPreferredSize(new java.awt.Dimension(180, 36));
         reqLeaveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3087,12 +3086,18 @@ public class Dashboard extends javax.swing.JFrame {
             if (dialogResult == JOptionPane.YES_OPTION) {
                 JOptionPane.showMessageDialog(this, "Submitted Successfully");
                 request.LeaveRequestwriteToCSV(empID,leaveType, startdateFiled, enddateFiled, reason, status);
-
+                
+                // Populate the table with the newly submitted leave request
+                DefaultTableModel model = (DefaultTableModel) leaveReqTbl.getModel();
+                String submissionDate = dateFormat.format(new Date()); // Current date as submission date
+                model.addRow(new Object[]{submissionDate, leaveType, startdateFiled, enddateFiled, reason, status});
+                
                 LeavePanelStartDate.setDateFormatString("");
                 LeavePanelEndDate.setDateFormatString("");
                 LeavePanelLeaveSelector.setSelectedIndex(0);
                 LeavePanelReason.setText("");
-                populateLeaveTable(empID);
+                
+                leaveReqDialog.dispose();
             }
         }
 
@@ -3140,12 +3145,16 @@ public class Dashboard extends javax.swing.JFrame {
         if (dialogResult == JOptionPane.YES_OPTION) {
         JOptionPane.showMessageDialog(this, "Submitted Successfully");
         request.OvertimeRequestwriteToCSV(employeeID, date, startTime, endTime, reason, status );
-        populateOTTableFromCSV("/Files/OvertimeRequest.csv", otRequestTable, employeeID);
+        
+        DefaultTableModel model = (DefaultTableModel) otRequestTable.getModel();
+        model.addRow(new Object[]{date, startTime, endTime, reason, status});
                
         datePickerOT.setText("");
         startTimePickerOT.setText("");
         endTimePickerOT.setText("");
         reasonTextOT.setText("");
+        
+        otRequestDialog.dispose();
         }
     }//GEN-LAST:event_submitBtnOTActionPerformed
 

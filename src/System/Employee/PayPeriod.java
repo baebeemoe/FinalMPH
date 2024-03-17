@@ -60,7 +60,7 @@ public class PayPeriod {
                 if (data.length == 5) { // Check if data has exactly five elements
                      int employeeID =Integer.parseInt( data[0]); // Assuming index 0 holds the employee ID
                      int empID = attendance.getEmpID();
-                     System.out.println("Incorrect data format: " + empID);
+//                     System.out.println("Incorrect data format: " + empID);
                     Date date = dateFormat.parse(data[1]);
                     // Check if the date falls within the pay period
                     if (employeeID == empID && date.compareTo(this.startDate) >= 0 && date.compareTo(this.endDate) <= 0) {
