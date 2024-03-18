@@ -3238,7 +3238,7 @@ public class Dashboard extends javax.swing.JFrame {
         return; // Stop further execution
         }
         
-        int dialogResult = JOptionPane.showConfirmDialog(this, "Submit Request Form?", "Leave Request Confirmation", JOptionPane.YES_NO_OPTION);
+        int dialogResult = JOptionPane.showConfirmDialog(this, "Submit Request Form?", "Overtime Request Confirmation", JOptionPane.YES_NO_OPTION);
 
         if (dialogResult == JOptionPane.YES_OPTION) {
         JOptionPane.showMessageDialog(this, "Submitted Successfully");
