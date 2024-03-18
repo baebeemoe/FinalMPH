@@ -122,6 +122,12 @@ public class EmployeeRecords {
 
         // Read data from CSV file
         while ((line = br.readLine()) != null) {
+            
+            // Skip empty lines
+            if (line.trim().isEmpty()) {
+                continue; // Skip empty lines
+            }
+            
             String[] data = line.split(csvSplitBy);
             employeeList.add(new EmployeeRecords(data));
         }

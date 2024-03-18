@@ -197,6 +197,10 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
         // Skip the first line (header)
         
         while ((line = br.readLine()) != null) {
+            // Skip empty lines
+            if (line.trim().isEmpty()) {
+                continue;
+            }
             String[] data = line.split(";");
             Object[] rowData = Arrays.copyOf(data, Math.min(data.length, 13));
             rows.add(rowData);
@@ -286,8 +290,8 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
     private void updateSelectedEmployee() {
         int selectedRow = table.getSelectedRow();
         if (selectedRow != -1) {
-            JTextField[] fields = new JTextField[19];
-            JPanel panel = new JPanel(new GridLayout(19, 2, 5, 5));
+            JTextField[] fields = new JTextField[13];
+            JPanel panel = new JPanel(new GridLayout(13, 2, 5, 5));
             panel.setPreferredSize(new Dimension(400, 600));
             String[] labels = {"Employee #", "Last Name", "First Name", "Birthday", "Address",
                     "Phone Number", "SSS #", "Philhealth #", "TIN #", "Pag-ibig #", "Status", "Position",
@@ -322,7 +326,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
             for (int j = 0; j < 13; j++) { // Iterate only over the first 19 columns
                 Object newValue = model.getValueAt(i, j);
                 writer.write(newValue.toString());
-                if (j < 18) { // Check if it's not the last column
+                if (j < 12) { // Check if it's not the last column
                     writer.write(";");
                 }
             }
@@ -407,6 +411,8 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
 
             // Read existing CSV data
             List<String> existingRows = readCSV("src/Files/EmployeeData.csv");
+            
+            
 
             // Prepare a set of unique keys (combining 1st and 2nd column)
             Set<String> existingKeys = new HashSet<>();
@@ -447,7 +453,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
                          PrintWriter out = new PrintWriter(bufferedWriter)) {
 
                         // Move to next line if there are existing rows
-                        if (!existingRows.isEmpty()) {
+                        if (!existingRows.isEmpty() || !uniqueRows.isEmpty()) {
                             out.println();
                         }
 
@@ -461,6 +467,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
 
                         // Refresh the table to reflect the changes
                         updateDataTable();
+                        model.fireTableDataChanged();
                     } catch (IOException e) {
                         JOptionPane.showMessageDialog(this, "Error appending data: " + e.getMessage());
                         e.printStackTrace();
@@ -471,12 +478,15 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
             } else {
                 JOptionPane.showMessageDialog(this, "Import canceled by user.");
             }
+            
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error importing data: " + e.getMessage());
             e.printStackTrace();
         }
     }
 }
+    
+    
 
 private List<String> readCSV(String filePath) throws IOException {
     List<String> rows = new ArrayList<>();

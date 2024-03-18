@@ -57,6 +57,12 @@ public class User {
 
         // Read data from CSV file
         while ((line = br.readLine()) != null) {
+            
+            // Skip empty lines
+            if (line.trim().isEmpty()) {
+                continue; // Skip empty lines
+            }
+            
             String[] data = line.split(csvSplitBy);
             userList.add(new User(data));
         }
