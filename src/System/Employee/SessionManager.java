@@ -16,7 +16,7 @@ public class SessionManager {
     // Constructor for SessionManager to initialize user array
     static {
         // Initialize users array by reading from CSV
-        users = User.readUserFromCSV("permanent_storage/user/user.csv");
+        users = User.readUserFromCSV("/Files/User.csv");
     }
     
      private static User getUserByEmpNo(int empNo) {

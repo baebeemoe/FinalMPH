@@ -167,7 +167,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
 
         mainPanel.add(buttonPanel);
 
-        displayCSVData("permanent_storage/employee/employeeData.csv"); // Display once run
+        displayCSVData("/Files/EmployeeData.csv"); // Display once run
 
         setVisible(true);
         
@@ -181,7 +181,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
     
     public void updateDataTable() {
         model.setRowCount(0);
-        displayCSVData("permanent_storage/employee/employeeData.csv");
+        displayCSVData("/Files/EmployeeData.csv");
     }
 
     private void displayCSVData(String csvFile) {
@@ -189,7 +189,8 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
             "Phone Number", "SSS #", "Philhealth #", "TIN #", "Pag-ibig #", "Status", "Position",
             "Immediate Supervisor"});
 
-    try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+    try (InputStream inputStream = getClass().getResourceAsStream(csvFile);
+         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
 
         String line;
         List<Object[]> rows = new ArrayList<>();
@@ -264,7 +265,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
                     newEmployee.append(";");
                 }
             }
-            try (FileWriter writer = new FileWriter("permanent_storage/employee/employeeData.csv", true)) {
+            try (FileWriter writer = new FileWriter("src/Files/EmployeeData.csv", true)) {
                 writer.write(newEmployee.toString() + "\n");
                 writer.flush();
             } catch (IOException e) {
@@ -320,7 +321,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
     
     
     private void updateCSVFile() {
-    try (FileWriter writer = new FileWriter("permanent_storage/employee/employeeData.csv")) {
+    try (FileWriter writer = new FileWriter("src/Files/EmployeeData.csv")) {
         for (int i = 0; i < model.getRowCount(); i++) {
             for (int j = 0; j < 13; j++) { // Iterate only over the first 19 columns
                 Object newValue = model.getValueAt(i, j);
@@ -409,7 +410,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
             List<String> newRows = readCSV(filePath);
 
             // Read existing CSV data
-            List<String> existingRows = readCSV("permanent_storage/employee/employeeData.csv");
+            List<String> existingRows = readCSV("src/Files/EmployeeData.csv");
             
             
 
@@ -447,7 +448,7 @@ for (int columnIndex = 0; columnIndex < table.getColumnCount(); columnIndex++) {
                 // Append unique rows to existing data
                 if (!uniqueRows.isEmpty()) {
                     // Append unique rows to the CSV file
-                    try (FileWriter writer = new FileWriter("permanent_storage/employee/employeeData.csv", true);
+                    try (FileWriter writer = new FileWriter("src/Files/EmployeeData.csv", true);
                          BufferedWriter bufferedWriter = new BufferedWriter(writer);
                          PrintWriter out = new PrintWriter(bufferedWriter)) {
 

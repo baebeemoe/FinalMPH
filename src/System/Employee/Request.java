@@ -15,7 +15,6 @@ import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -34,24 +33,22 @@ public class Request {
     
    
     public void LeaveRequestwriteToCSV(String employeeID,String leaveType, String startDate, String endDate, String reason, String status) {
-        String dataType = "leave";
+    try {
+        File file = new File("src/Files/LeaveRequests.csv");
+        boolean isNewFile = !file.exists();
+        FileWriter writer = new FileWriter(file, true); // Append to existing file
         
-        // Get the directory where the JAR file is located
-        String jarPath = Request.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-        File jarDirectory = new File(jarPath).getParentFile();
+        if (isNewFile) {
+            writer.append("EmployeeID, LeaveTpe, Date Filed, StartDate, EndDate, Reason, Status\n");
+        }
+        
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+       
 
-        //Create a file for overtime data
-        File leaveFile = new File(jarDirectory, "leave_data.csv");
         
-        try {
-        FileWriter writer = new FileWriter(leaveFile, true);// Append if there is an existing file
-        
-              
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-             
-        Date currentDate = new Date(); // Get current date
-        String dateFiled = dateFormat.format(currentDate);
-        writer.append(employeeID  + "," + leaveType + "," + dateFiled + "," + startDate + "," + endDate + "," + reason + "," + status +"\n");
+            Date currentDate = new Date(); // Get current date
+            String dateFiled = dateFormat.format(currentDate);
+          writer.append(employeeID  + "," + leaveType + "," + dateFiled + "," + startDate + "," + endDate + "," + reason + "," + status +"\n");
         
 
         writer.close();
@@ -59,59 +56,31 @@ public class Request {
     } catch (IOException e) {
         e.printStackTrace();
     }
-        
-        // Call method to persist data to permanent storage
-            DataPersistenceManager dataPersistenceManager = new DataPersistenceManager(leaveFile, dataType);
-            dataPersistenceManager.persistToPermanentStorage();
     
     
     }
     
     public void OvertimeRequestwriteToCSV(String employeeID, String Date, String startTime, String endTime, String reason, String status){
-        String dataType = "overtime";
-        
-        // Get the directory where the JAR file is located
-        String jarPath = Request.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-        File jarDirectory = new File(jarPath).getParentFile();
-
-        //Create a file for overtime data
-        File overtimeFile = new File(jarDirectory, "overtime_data.csv");
         
         try {
-        // Read existing data if the file exists
-        StringBuilder existingData = new StringBuilder();
-            if (overtimeFile.exists()) {
-                BufferedReader reader = new BufferedReader(new FileReader(overtimeFile));
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    existingData.append(line).append("\n");
-                }
-            reader.close();
-        }
-
-        // Append new data to existing data
-        StringBuilder newData = new StringBuilder();
-        newData.append(employeeID).append(",").append(Date).append(",").append(startTime).append(",").append(endTime).append(",").append(reason).append(",").append(status).append("\n");
-
-        // Write combined data back to the file
-        FileWriter writer = new FileWriter(overtimeFile);
-        writer.write(existingData.toString());
-        writer.write(newData.toString());
-        writer.close();
-
-        System.out.println("Data written to CSV successfully.");
+            File file = new File("src/Files/OvertimeRequest.csv");
+            boolean isNewFile = !file.exists();
+            FileWriter  writer = new FileWriter(file, true);// Append if there is an existing file 
+            
+            
+            if (isNewFile) {
+            writer.append("EmployeeID, Date, StartTime, EndTime, Reason, Status\n");
+            }
+            
+            
+            writer.append(employeeID  + "," + Date + "," + startTime + "," + endTime + "," + reason + "," +  status + "\n");
+             
+            writer.close();
+            System.out.println("Data written to CSV successfully.");
+            
         } catch (IOException e) {
         e.printStackTrace();
         }
-        
-        
-        
-        // Call method to persist data to permanent storage
-            DataPersistenceManager dataPersistenceManager = new DataPersistenceManager(overtimeFile, dataType);
-            dataPersistenceManager.persistToPermanentStorage();
-        
-    
-        
     }
     
     public String formatTime(String time) {

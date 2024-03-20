@@ -5,7 +5,6 @@
 package System.Employee;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -46,9 +45,13 @@ public class User {
         BufferedReader br = null;
 
     try {
-        // Open the CSV file using FileReader
-        FileReader fileReader = new FileReader(filePath);
-        br = new BufferedReader(fileReader);
+        // Open the CSV file using InputStream
+        InputStream inputStream = User.class.getResourceAsStream(filePath);
+        if (inputStream == null) {
+            System.err.println("File not found: " + filePath);
+            return new User[0]; // or throw an exception
+        }
+        br = new BufferedReader(new InputStreamReader(inputStream));
 
         
 

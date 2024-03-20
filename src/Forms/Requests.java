@@ -5,13 +5,11 @@
  */
 package Forms;
 
-import System.Employee.DataPersistenceManager;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Component;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JButton;
@@ -31,9 +29,6 @@ import javax.swing.JOptionPane;
  * @author Default
  */
 public class Requests extends javax.swing.JFrame {
-    
-    private File overtimeTemporaryFile = null;
-    private File leaveTemporaryFile = null;
 
     /**
      * Creates new form Requests
@@ -204,13 +199,14 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
     model.setRowCount(0);
     
   // Populate the table with data from the CSV file
-    String csvFilePath = "permanent_storage/leave/leave.csv"; // Adjust path as necessary
+   String csvFilePath = "/Files/LeaveRequests.csv"; // Adjust path as necessary
     boolean foundRecords = false;
 
-    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+    try (InputStream inputStream = Requests.class.getResourceAsStream(csvFilePath);
+        BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
 
     // Skip the first line
-//    String headerLine = br.readLine();
+    String headerLine = br.readLine();
     String line;
     while ((line = br.readLine()) != null) {
         String[] data = line.split(",");
@@ -257,15 +253,16 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
         model.setRowCount(0);
     
         // Populate the table with data from the CSV file
-        populateOTTable(model, "permanent_storage/overtime/overtime.csv");
+        populateOTTable(model, "/Files/OvertimeRequest.csv");
     }//GEN-LAST:event_btnOvertimeRequestActionPerformed
 
     private void populateOTTable(DefaultTableModel model, String csvFilePath) {
     boolean foundRecords = false;
     
-    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+    try (InputStream inputStream = Requests.class.getResourceAsStream(csvFilePath);
+         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
         // Skip the first line
-//        String headerLine = br.readLine();
+        String headerLine = br.readLine();
         String line;
         while ((line = br.readLine()) != null) {
             String[] data = line.split(",");
@@ -300,51 +297,31 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
     
     private void saveRequestUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveRequestUpdateBtnActionPerformed
                 if (OverTimePane.isVisible()) {
-                    saveData();
+                    saveData( "src/Files/OvertimeRequest.csv");
                 } else if (LeavePane.isVisible()) {
-                    saveData();
+                    saveData( "src/Files/LeaveRequests.csv");
                 }
       
     }//GEN-LAST:event_saveRequestUpdateBtnActionPerformed
 
-    private void saveData() {
-        DefaultTableModel model = null;
-        String dataType = "";
+    private void saveData(String fileName) {
+    String csvFilePath = "";
+    DefaultTableModel model = null;
 
     if (OverTimePane.isVisible()) {
-            model = (DefaultTableModel) OvertimeTable.getModel();
-            dataType = "overtime";
-        } else if (LeavePane.isVisible()) {
-            model = (DefaultTableModel) LeaveTable.getModel();
-            dataType = "leave";
-        }
+        csvFilePath = fileName;
+        model = (DefaultTableModel) OvertimeTable.getModel();
+    } else if (LeavePane.isVisible()) {
+        csvFilePath = fileName;
+        model = (DefaultTableModel) LeaveTable.getModel();
+    }
 
     if (model == null) {
         System.out.println("No table is visible.");
         return;
     }
-    
-    File temporaryFile = null;
-    
-    // Get the directory where the JAR file is located
-        String jarPath = Requests.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-        File jarDirectory = new File(jarPath).getParentFile();
-    
-    // Create a temporary file for each data type
-    try {
-        if ("overtime".equals(dataType)) {
-            temporaryFile = File.createTempFile("overtime_data", ".csv");
-        } else if ("leave".equals(dataType)) {
-            temporaryFile = File.createTempFile("leave_data", ".csv");
-        }
-        temporaryFile.deleteOnExit(); // Ensure temporary file is deleted when the application exits
-    } catch (IOException e) {
-        e.printStackTrace();
-        JOptionPane.showMessageDialog(this, "Error creating temporary file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
 
-    try (FileWriter writer = new FileWriter(temporaryFile)) {
+    try (FileWriter writer = new FileWriter(csvFilePath)) {
         int rowCount = model.getRowCount();
         int columnCount = model.getColumnCount();
 
@@ -373,15 +350,8 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
 
         writer.flush();
     } catch (IOException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Error saving data to temporary file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-            
-        }
-    
-    // Call method to persist data to permanent storage
-            DataPersistenceManager dataPersistenceManager = new DataPersistenceManager(temporaryFile, dataType);
-            dataPersistenceManager.persistToPermanentStorage();
+        e.printStackTrace();
+    }
 
     // Show a dialog box depending on the selected status
     int selectedRow = OverTimePane.isVisible() ? OvertimeTable.getSelectedRow() : LeaveTable.getSelectedRow();
@@ -406,10 +376,6 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
         }
     }
 }
-    
-private File createTemporaryFile(String prefix, String suffix, File directory) throws IOException {
-        return File.createTempFile(prefix, suffix, directory);
-    }
     
     
 //  private void saveData(String fileName) {

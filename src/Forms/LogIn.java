@@ -32,7 +32,7 @@ public class LogIn extends javax.swing.JFrame {
         
         // Load employee records from CSV when the form is initialized
         employees = EmployeeRecords.readEmployeesFromCSV("/Files/EmployeeData.csv");
-        user = User.readUserFromCSV("permanent_storage/user/user.csv");
+        user = User.readUserFromCSV("/Files/User.csv");
        
     }
    

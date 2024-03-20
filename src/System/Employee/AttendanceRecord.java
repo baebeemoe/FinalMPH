@@ -22,9 +22,6 @@ public class AttendanceRecord {
     private String timeOut;
     private String overTime;
  
-    public AttendanceRecord(int empID) {
-        this.empID = empID;
-    }
     
 //Set up getter
     public int getEmpID() {
@@ -95,20 +92,16 @@ public long calculateOvertime(String timeIn, String timeOut) {
 }
 
 
-    public void writeToCSV(String timeIn, String timeOut) {
-        String dataType = "attendance";
-    
-    // Get the directory where the JAR file is located
-    String jarPath = Request.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-    File jarDirectory = new File(jarPath).getParentFile();
-    
-    // Create a file for attendance data
-    File attendanceFile = new File(jarDirectory, "attendance_data.csv");
-    
+  public void writeToCSV(String timeIn, String timeOut) {
     try {
-        // Prepare the data to be written
-        StringBuilder newData = new StringBuilder();
-
+        File file = new File("src/Files/Attendance.csv");
+        boolean isNewFile = !file.exists();
+        FileWriter writer = new FileWriter(file, true); // Append to existing file
+        
+        if (isNewFile) {
+            writer.append("UserID,Date,TimeIn,TimeOut,Overtime\n");
+        }
+        
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a");
 
@@ -122,23 +115,14 @@ public long calculateOvertime(String timeIn, String timeOut) {
             String formattedTimeIn = timeFormat.format(timeInDate);
             String formattedTimeOut = timeFormat.format(timeOutDate);
             long overtime = calculateOvertime(timeIn, timeOut);
-            
-            newData.append(empID).append(",").append(formattedDate).append(",").append(formattedTimeIn).append(",").append(formattedTimeOut).append(",").append(overtime).append("\n");
+
+            writer.append(empID + "," + formattedDate + "," + formattedTimeIn + "," + formattedTimeOut + "," + overtime + "\n");
         } else {
             System.out.println("Error: Time in or time out is null or empty.");
-            return; // Exit the method if there's no valid data
         }
 
-        // Append the new data to the existing data
-        FileWriter writer = new FileWriter(attendanceFile, true);
-        writer.append(newData.toString());
         writer.close();
-        
         System.out.println("Data written to CSV successfully.");
-        
-        // Call method to persist data to permanent storage
-        DataPersistenceManager dataPersistenceManager = new DataPersistenceManager(attendanceFile, dataType);
-        dataPersistenceManager.persistToPermanentStorage();
     } catch (IOException | ParseException e) {
         e.printStackTrace();
     }
@@ -220,7 +204,8 @@ public long calculateOvertime(String timeIn, String timeOut) {
 public static AttendanceRecord[] readAttendanceFromCSV(String filePath) {
     List<AttendanceRecord> records = new ArrayList<>();
 
-    try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+    try (InputStream inputStream = AttendanceRecord.class.getResourceAsStream(filePath);
+         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
         //Skip the header line
         br.readLine();
         
