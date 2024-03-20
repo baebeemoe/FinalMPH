@@ -3050,7 +3050,7 @@ try {
         String StartTime = timePicker1.getTimeStringOrEmptyString();
         String EndTime = timePicker2.getTimeStringOrEmptyString();
         String Reason = OvertimeReason.getText();
-        String status ="";
+        String status ="Pending";
         
         
         int dialogResult = JOptionPane.showConfirmDialog(this, "Submit Request Form?", "Leave Request Confirmation", JOptionPane.YES_NO_OPTION);
@@ -3102,8 +3102,8 @@ if (accessGranted) {
         String line;
         while ((line = br.readLine()) != null) {
             String[] data = line.split(",");
-            if (data.length >= 5 && data[0].equals(empID)) {
-                model.addRow(new Object[]{data[1], data[2], data[3], data[4]});
+            if (data.length >= 6 && data[0].equals(empID)) {
+                model.addRow(new Object[]{data[1], data[2], data[3], data[4],data[5]});
                 foundRecords = true;
             }
         }
@@ -3153,7 +3153,7 @@ if (accessGranted) {
         String enddateFiled = dateFormat.format(endDate);
         String leaveType = LeavePanelLeaveSelector.getSelectedItem().toString();
         String reason = LeavePanelReason.getText();
-        String status = "";
+        String status = "Pending";
         if (startDate.compareTo(endDate) >= 0) {
             JOptionPane.showMessageDialog(this, "End date should be greater than Start Date");
         } else {
@@ -3205,8 +3205,8 @@ if (accessGranted) {
         String line;
         while ((line = br.readLine()) != null) {
             String[] data = line.split(",");
-            if (data.length >= 6 && data[0].equals(empID)) {
-                model.addRow(new Object[]{data[1], data[2], data[3], data[4],data[5]});
+            if (data.length >= 7 && data[0].equals(empID)) {
+                model.addRow(new Object[]{data[1], data[2], data[3], data[4],data[5],data[6]});
                 foundRecords = true;
             }
         }
