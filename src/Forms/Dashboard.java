@@ -56,10 +56,10 @@ public class Dashboard extends javax.swing.JFrame {
         initComponents();
         
         // Load employee records from CSV when the form is initialized
-        employees = EmployeeRecords.readEmployeesFromCSV("/Files/EmployeeData.csv");
-        attendance = AttendanceRecord.readAttendanceFromCSV("/Files/Attendance.csv");
-        user = User.readUserFromCSV("/Files/User.csv");
-        pay = PayRate.readPayFromCSV("/Files/PayRate.csv");
+        employees = EmployeeRecords.readEmployeesFromCSV("db/Files/EmployeeData.csv");
+        attendance = AttendanceRecord.readAttendanceFromCSV("db/Files/Attendance.csv");
+        user = User.readUserFromCSV("db/Files/User.csv");
+        pay = PayRate.readPayFromCSV("db/Files/PayRate.csv");
     }
 
     public JLabel getLblPending() {
@@ -2805,8 +2805,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         // Grant or deny access based on the result
         if (accessGranted) {
-            populateAttTableFromCSV("/Files/Attendance.csv", attendanceTable, empID);
-            populateOTTableFromCSV("/Files/OvertimeRequest.csv", otRequestTable, empID);
+            populateAttTableFromCSV("db/Files/Attendance.csv", attendanceTable, empID);
+            populateOTTableFromCSV("db/Files/OvertimeRequest.csv", otRequestTable, empID);
             DefaultTableModel model = new DefaultTableModel();
             model.setRowCount(0);
 
@@ -2833,8 +2833,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         List<List<Object>> rowDataList = new ArrayList<>();
 
-        try (InputStream inputStream = getClass().getResourceAsStream(csvFilePath);
-            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
@@ -2869,7 +2868,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Check if records were found for the employee
         if (!foundRecords) {
-            JOptionPane.showMessageDialog(this, "No records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "No leave records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -2880,8 +2879,7 @@ public class Dashboard extends javax.swing.JFrame {
     
         List<List<Object>> rowOTDataList = new ArrayList<>();
 
-        try (InputStream inputStream = getClass().getResourceAsStream(csvFilePath);
-            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
@@ -2916,7 +2914,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Check if records were found for the employee
     if (!foundRecords) {
-        JOptionPane.showMessageDialog(this, "No records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "No overtime records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
     }
 }
     
@@ -3038,11 +3036,10 @@ public class Dashboard extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) leaveReqTbl.getModel();
         model.setRowCount(0); // Clear existing data
 
-        String csvFilePath = "/Files/LeaveRequests.csv";
+        String csvFilePath = "db/Files/LeaveRequests.csv";
         boolean foundRecords = false;
 
-        try (InputStream inputStream = getClass().getResourceAsStream(csvFilePath);
-        BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
@@ -3304,7 +3301,7 @@ public class Dashboard extends javax.swing.JFrame {
         
         if (newPassword.equals(confirmPassword)) {
             // Path to the CSV file
-            String csvFilePath = "src/Files/User.csv";
+            String csvFilePath = "db/Files/User.csv";
     
         try {
         // Read the CSV file
@@ -3364,7 +3361,7 @@ public class Dashboard extends javax.swing.JFrame {
         String[] dates = cutoffDate.split(" - ");
         String startDateString = dates[0];
         String endDateString = dates[1];
-        PayPeriod payperiod = new PayPeriod("10001", dateFormat.parse(startDateString), dateFormat.parse(endDateString), "/Files/Attendance.csv");
+        PayPeriod payperiod = new PayPeriod("10001", dateFormat.parse(startDateString), dateFormat.parse(endDateString), "db/Files/Attendance.csv");
         String empID = MainDashboardempNo.getText();
         Benefit benefit = new Benefit();
         Earning earning = new Earning();

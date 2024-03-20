@@ -94,7 +94,7 @@ public long calculateOvertime(String timeIn, String timeOut) {
 
   public void writeToCSV(String timeIn, String timeOut) {
     try {
-        File file = new File("src/Files/Attendance.csv");
+        File file = new File("db/Files/Attendance.csv");
         boolean isNewFile = !file.exists();
         FileWriter writer = new FileWriter(file, true); // Append to existing file
         
@@ -204,8 +204,7 @@ public long calculateOvertime(String timeIn, String timeOut) {
 public static AttendanceRecord[] readAttendanceFromCSV(String filePath) {
     List<AttendanceRecord> records = new ArrayList<>();
 
-    try (InputStream inputStream = AttendanceRecord.class.getResourceAsStream(filePath);
-         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+    try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
         //Skip the header line
         br.readLine();
         

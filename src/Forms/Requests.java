@@ -199,11 +199,10 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
     model.setRowCount(0);
     
   // Populate the table with data from the CSV file
-   String csvFilePath = "/Files/LeaveRequests.csv"; // Adjust path as necessary
+   String csvFilePath = "db/Files/LeaveRequests.csv"; // Adjust path as necessary
     boolean foundRecords = false;
 
-    try (InputStream inputStream = Requests.class.getResourceAsStream(csvFilePath);
-        BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
 
     // Skip the first line
     String headerLine = br.readLine();
@@ -253,14 +252,13 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
         model.setRowCount(0);
     
         // Populate the table with data from the CSV file
-        populateOTTable(model, "/Files/OvertimeRequest.csv");
+        populateOTTable(model, "db/Files/OvertimeRequest.csv");
     }//GEN-LAST:event_btnOvertimeRequestActionPerformed
 
     private void populateOTTable(DefaultTableModel model, String csvFilePath) {
     boolean foundRecords = false;
     
-    try (InputStream inputStream = Requests.class.getResourceAsStream(csvFilePath);
-         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+    try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
         // Skip the first line
         String headerLine = br.readLine();
         String line;
@@ -297,9 +295,9 @@ DefaultTableModel model = (DefaultTableModel) LeaveTable.getModel();
     
     private void saveRequestUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveRequestUpdateBtnActionPerformed
                 if (OverTimePane.isVisible()) {
-                    saveData( "src/Files/OvertimeRequest.csv");
+                    saveData( "db/Files/OvertimeRequest.csv");
                 } else if (LeavePane.isVisible()) {
-                    saveData( "src/Files/LeaveRequests.csv");
+                    saveData( "db/Files/LeaveRequests.csv");
                 }
       
     }//GEN-LAST:event_saveRequestUpdateBtnActionPerformed

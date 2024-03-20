@@ -51,8 +51,7 @@ public class PayPeriod {
         String line;
         String delimiter = ",";
         Dashboard dashboard = new Dashboard();
-        try (InputStream inputStream = getClass().getResourceAsStream(csvFile);
-         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             // Skip header line
             br.readLine();
             while ((line = br.readLine()) != null) {
@@ -82,8 +81,7 @@ public class PayPeriod {
     String line;
     String delimiter = ",";
     
-    try (InputStream inputStream = getClass().getResourceAsStream(csvFile);
-         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+    try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
         // Skip header line
         br.readLine();
         while ((line = br.readLine()) != null) {

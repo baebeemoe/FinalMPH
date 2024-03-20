@@ -34,7 +34,7 @@ public class Request {
    
     public void LeaveRequestwriteToCSV(String employeeID,String leaveType, String startDate, String endDate, String reason, String status) {
     try {
-        File file = new File("src/Files/LeaveRequests.csv");
+        File file = new File("db/Files/LeaveRequests.csv");
         boolean isNewFile = !file.exists();
         FileWriter writer = new FileWriter(file, true); // Append to existing file
         
@@ -63,7 +63,7 @@ public class Request {
     public void OvertimeRequestwriteToCSV(String employeeID, String Date, String startTime, String endTime, String reason, String status){
         
         try {
-            File file = new File("src/Files/OvertimeRequest.csv");
+            File file = new File("db/Files/OvertimeRequest.csv");
             boolean isNewFile = !file.exists();
             FileWriter  writer = new FileWriter(file, true);// Append if there is an existing file 
             
@@ -100,8 +100,7 @@ public class Request {
     int count = 0;
     String line;
     String delimiter = ",";
-    try (InputStream inputStream = getClass().getResourceAsStream(csvFile);
-            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+    try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
         // Skip header line
         br.readLine();
         while ((line = br.readLine()) != null) {

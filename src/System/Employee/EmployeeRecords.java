@@ -109,13 +109,9 @@ public class EmployeeRecords {
         BufferedReader br = null;
 
     try {
-        // Open the CSV file using InputStream
-        InputStream inputStream = EmployeeRecords.class.getResourceAsStream(filePath);
-        if (inputStream == null) {
-            System.err.println("File not found: " + filePath);
-            return new EmployeeRecords[0]; // or throw an exception
-        }
-        br = new BufferedReader(new InputStreamReader(inputStream));
+        // Open the CSV file using FileReader
+        FileReader fileReader = new FileReader(filePath);
+        br = new BufferedReader(fileReader);
 
 //        // Skip the first line (column headers)
 //        br.readLine();
