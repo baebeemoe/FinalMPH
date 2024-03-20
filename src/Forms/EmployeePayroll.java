@@ -323,6 +323,7 @@ private PayRate[] pay;
          
         DefaultTableModel model = (DefaultTableModel) RunPayrollTable.getModel();
         model.setRowCount(0);
+        DecimalFormat df = new DecimalFormat("#,##0.00");
       
         // Iterate over each column
         for (int columnIndex = 0; columnIndex < RunPayrollTable.getColumnCount(); columnIndex++) {
@@ -352,26 +353,19 @@ private PayRate[] pay;
                });
        
         for (EmployeeRecords employee : employees)
-        for (PayRate pay : pay)
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-             String line;
-           
-            //Skip the first line (header)
-            
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(";");
+        for (PayRate pay : pay) {
+            if (employee.getEmpNo() == pay.getEmpNo()){
+                
                 
                 double grossSalary = pay.getGrossSalary();
                 double totalDeduction = deduction.totalDeduction(pay);
-                double takehomepay = grossSalary - totalDeduction;
+                double takehomepay = (grossSalary - totalDeduction);
+                
+                String formattedTakeHomePay = df.format(takehomepay);
              
-               model.addRow(new Object[]{data[0], data[1], data[2], data[10],data[11], "Php" + " " + takehomepay});
+               model.addRow(new Object[]{employee.getEmpNo(), employee.getFirstName(), employee.getLastName(), employee.getPosition(), employee.getStatus(), "Php" + " " + formattedTakeHomePay});
             }
             
-             break;
-             
-        } catch (IOException e) {
-            e.printStackTrace();
         }
 
         // Center align cells
