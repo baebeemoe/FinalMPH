@@ -56,8 +56,6 @@ public class Requests extends javax.swing.JFrame {
         btnLeaveRequest = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jPanel1.setBackground(new java.awt.Color(0, 153, 204));
         jPanel1.setForeground(new java.awt.Color(255, 153, 0));
 

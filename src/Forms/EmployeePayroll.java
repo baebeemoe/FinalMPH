@@ -82,7 +82,6 @@ private AttendanceRecord[] attendance;
         RunPayrollTable1 = new javax.swing.JTable();
         jComboBox1 = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N

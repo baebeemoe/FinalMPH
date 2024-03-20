@@ -479,7 +479,6 @@ public javax.swing.JPanel getProfilePanel() {
 
         ChangePasswordDialog.setBackground(new java.awt.Color(51, 204, 255));
         ChangePasswordDialog.setMinimumSize(new java.awt.Dimension(466, 330));
-        ChangePasswordDialog.setPreferredSize(new java.awt.Dimension(466, 317));
         ChangePasswordDialog.setResizable(false);
 
         lblChangePassword.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
@@ -566,7 +565,6 @@ public javax.swing.JPanel getProfilePanel() {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -2929,8 +2927,8 @@ try {
                 LeavePanel.setVisible(false);
                 PayPeriodPanel.setVisible(false);
                 OvertimePanel.setVisible(false);
-               PayrollRecords_MainDashboard.setVisible(false);
-              Requests_MainDashboard1.setVisible(false);
+                PayrollRecords_MainDashboard.setVisible(false);
+                Requests_MainDashboard1.setVisible(false);
                 
                 
         }
