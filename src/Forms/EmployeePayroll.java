@@ -64,10 +64,10 @@ private PayRate[] pay;
     
         initComponents();
         // Load employee records from CSV when the form is initialized
-        String csvFileName = "/Files/EmployeeData.csv";
+        String csvFileName = "permanent_storage/employee/employeeData.csv";
         employees = EmployeeRecords.readEmployeesFromCSV(csvFileName);
-        attendance = AttendanceRecord.readAttendanceFromCSV("/Files/Attendance.csv");
-        pay = PayRate.readPayFromCSV("/Files/PayRate.csv");
+        attendance = AttendanceRecord.readAttendanceFromCSV("permanent_storage/attendance/attendance.csv");
+        pay = PayRate.readPayFromCSV("permanent_storage/payrate/payRate.csv");
         monthSelectorPayReport.setModel((new javax.swing.DefaultComboBoxModel<>(getMonths())));
         
 //        PanelMonthlyPayrollReport.setVisible(false);
@@ -353,8 +353,7 @@ private PayRate[] pay;
        
         for (EmployeeRecords employee : employees)
         for (PayRate pay : pay)
-        try (InputStream inputStream = getClass().getResourceAsStream(csvFile);
-         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
              String line;
            
             //Skip the first line (header)

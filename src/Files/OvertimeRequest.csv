@@ -1,3 +1,4 @@
 EmployeeID,Date,Start Time,End Time,Reason,Status
 1,2024-03-08,16:00,17:00,Make up hours,Pending
 1,2024-03-18,14:00,16:00,Make up hours,Denied
+3,2024-03-22,13:00,14:00,Emergency down time,Pending

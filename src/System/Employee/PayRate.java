@@ -70,13 +70,10 @@ public class PayRate {
         BufferedReader br = null;
 
     try {
-        // Open the CSV file using InputStream
-        InputStream inputStream = PayRate.class.getResourceAsStream(filePath);
-        if (inputStream == null) {
-            System.err.println("File not found: " + filePath);
-            return new PayRate[0]; // or throw an exception
-        }
-        br = new BufferedReader(new InputStreamReader(inputStream));
+        // Open the CSV file using FileReader
+        FileReader fileReader = new FileReader(filePath);
+        br = new BufferedReader(fileReader);
+
 
 //        // Skip the first line (column headers)
 //        br.readLine();

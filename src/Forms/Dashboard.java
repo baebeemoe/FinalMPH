@@ -56,10 +56,10 @@ public class Dashboard extends javax.swing.JFrame {
         initComponents();
         
         // Load employee records from CSV when the form is initialized
-        employees = EmployeeRecords.readEmployeesFromCSV("/Files/EmployeeData.csv");
-        attendance = AttendanceRecord.readAttendanceFromCSV("/Files/Attendance.csv");
-        user = User.readUserFromCSV("/Files/User.csv");
-        pay = PayRate.readPayFromCSV("/Files/PayRate.csv");
+        employees = EmployeeRecords.readEmployeesFromCSV("permanent_storage/employee/employeeData.csv");
+        attendance = AttendanceRecord.readAttendanceFromCSV("permanent_storage/attendance/attendance.csv");
+        user = User.readUserFromCSV("permanent_storage/user/user.csv");
+        pay = PayRate.readPayFromCSV("permanent_storage/payrate/payRate.csv");
     }
 
     public JLabel getLblPending() {
@@ -823,6 +823,8 @@ public class Dashboard extends javax.swing.JFrame {
         attTabbedPane.setForeground(new java.awt.Color(255, 255, 255));
         attTabbedPane.setOpaque(true);
 
+        attScrollPane.setEnabled(false);
+
         attendanceTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
         attendanceTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -857,6 +859,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         ));
         attendanceTable.setBackground(new java.awt.Color(255, 255, 255));
+        attendanceTable.setEnabled(false);
         attendanceTable.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
         attendanceTable.setForeground(new java.awt.Color(0, 0, 0));
         attendanceTable.setGridColor(new java.awt.Color(153, 153, 153));
@@ -895,6 +898,7 @@ public class Dashboard extends javax.swing.JFrame {
                 "Date", "Start Time", "End Time", "Reason", "Status"
             }
         ));
+        otRequestTable.setEnabled(false);
         otScrollPane.setViewportView(otRequestTable);
 
         requestOvertimeBtn.setText("REQUEST OVERTIME");
@@ -1704,12 +1708,12 @@ public class Dashboard extends javax.swing.JFrame {
         });
         jPanel6.add(AttendanceMainDashboardButton);
 
-        LeaveMainDashboard.setBackground(new java.awt.Color(34, 34, 50));
-        LeaveMainDashboard.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
-        LeaveMainDashboard.setForeground(new java.awt.Color(255, 255, 255));
         LeaveMainDashboard.setText("Leave");
+        LeaveMainDashboard.setBackground(new java.awt.Color(34, 34, 50));
         LeaveMainDashboard.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         LeaveMainDashboard.setBorderPainted(false);
+        LeaveMainDashboard.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        LeaveMainDashboard.setForeground(new java.awt.Color(255, 255, 255));
         LeaveMainDashboard.setPreferredSize(new java.awt.Dimension(160, 52));
         LeaveMainDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2805,8 +2809,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         // Grant or deny access based on the result
         if (accessGranted) {
-            populateAttTableFromCSV("/Files/Attendance.csv", attendanceTable, empID);
-            populateOTTableFromCSV("/Files/OvertimeRequest.csv", otRequestTable, empID);
+            populateAttTableFromCSV("permanent_storage/attendance/attendance.csv", attendanceTable, empID);
+            populateOTTableFromCSV("permanent_storage/overtime/overtime.csv", otRequestTable, empID);
             DefaultTableModel model = new DefaultTableModel();
             model.setRowCount(0);
 
@@ -2833,8 +2837,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         List<List<Object>> rowDataList = new ArrayList<>();
 
-        try (InputStream inputStream = getClass().getResourceAsStream(csvFilePath);
-            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
@@ -2869,7 +2872,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Check if records were found for the employee
         if (!foundRecords) {
-            JOptionPane.showMessageDialog(this, "No records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "No attendance records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -2880,8 +2883,7 @@ public class Dashboard extends javax.swing.JFrame {
     
         List<List<Object>> rowOTDataList = new ArrayList<>();
 
-        try (InputStream inputStream = getClass().getResourceAsStream(csvFilePath);
-            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
@@ -2916,7 +2918,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Check if records were found for the employee
     if (!foundRecords) {
-        JOptionPane.showMessageDialog(this, "No records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "No overtime records found for the employee ID.", "Error", JOptionPane.ERROR_MESSAGE);
     }
 }
     
@@ -2958,20 +2960,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void PayslipMaindashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PayslipMaindashboardActionPerformed
         String empID = MainDashboardempNo.getText(); 
-        boolean accessGranted = false;
-        for (EmployeeRecords employee : employees) 
-            for (AttendanceRecord att : attendance) {
-                if (att.getEmpID() == Integer.parseInt(empID))
-                    if (employee.getEmpNo() == Integer.parseInt(empID)) {
-                        accessGranted = true;
-                        
-                        break; // No need to continue the loop if access is granted
-                    }
-            }
-        if (accessGranted) {
-            
-            for (AttendanceRecord att : attendance)
-                for (EmployeeRecords employee : employees) {
+        
                     
                     //Hide other panels
                     TimeKeeping_MainDashboard.setVisible(false);
@@ -2983,11 +2972,9 @@ public class Dashboard extends javax.swing.JFrame {
                     ProfilePanel.setVisible(false);
                     AttendancePanel.setVisible(false);
                     LeavePanel.setVisible(false);
-                }
+                
             
-        } else {
-            // Handle cases where access is not granted
-        }
+        
     }//GEN-LAST:event_PayslipMaindashboardActionPerformed
 
     private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
@@ -2999,21 +2986,8 @@ public class Dashboard extends javax.swing.JFrame {
     private void LeaveMainDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaveMainDashboardActionPerformed
             
         String empID = MainDashboardempNo.getText().trim();
-        boolean accessGranted = false;
-
-        System.out.println("Employee ID from input: " + empID);
-
-        for (AttendanceRecord att : attendance) {
-            System.out.println("Employee ID from record: " + att.getEmpID());
-            if (att.getEmpID() == Integer.parseInt(empID)) {
-                accessGranted = true;
-                break;
-            }
-        }
-
-        // Grant or deny access based on the result
-        if (accessGranted) {
-            populateLeaveTable(empID);
+                
+        populateLeaveTable(empID);
 
     // Show the AttendancePanel and hide other panels
     TimeKeeping_MainDashboard.setVisible(false);
@@ -3028,21 +3002,20 @@ public class Dashboard extends javax.swing.JFrame {
     PayrollRecords_MainDashboard.setVisible(false);
     RequestList_MainDashboard.setVisible(false);
     
-} else {
-    // Access denied, display an error message
-    JOptionPane.showMessageDialog(this, "Access Denied. Employee ID not found.", "Error", JOptionPane.ERROR_MESSAGE);
-}
+//} else {
+//    // Access denied, display an error message
+//    JOptionPane.showMessageDialog(this, "Access Denied. Employee ID not found.", "Error", JOptionPane.ERROR_MESSAGE);
+//}
     }//GEN-LAST:event_LeaveMainDashboardActionPerformed
 
     private void populateLeaveTable (String empID) {
         DefaultTableModel model = (DefaultTableModel) leaveReqTbl.getModel();
         model.setRowCount(0); // Clear existing data
 
-        String csvFilePath = "/Files/LeaveRequests.csv";
+        String csvFilePath = "permanent_storage/leave/leave.csv";
         boolean foundRecords = false;
 
-        try (InputStream inputStream = getClass().getResourceAsStream(csvFilePath);
-        BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
@@ -3447,42 +3420,46 @@ public class Dashboard extends javax.swing.JFrame {
     
     private void timeIn() {
         String empID = MainDashboardempNo.getText(); // Assuming you're getting the employee ID from a JTextField
-        boolean accessGranted = false;
-
-        for (AttendanceRecord att : attendance) {
-            if (att.getEmpID() == Integer.parseInt(empID)) {
-                // Compare empID with the employee ID from the CSV
-                accessGranted = true;
-                try {
-                    String timeIn = att.punchIn(); // Record time in
-                    if (timeIn != null) {
-                        TimeInLabel.setText(att.formatTime(timeIn)); // Display time in
-                        JOptionPane.showMessageDialog(this, "Punch in successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                        TimeButton.setText("Time out");
-                        break; // Exit the loop once time in is recorded
-                    }
-                } catch (Exception ex) {
-                    Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
-                }
+        // Check if the employee ID is valid (you might have additional validation logic here)
+        if (empID != null && !empID.isEmpty()) {
+            try {
+            
+                // Create a new AttendanceRecord for the employee
+                AttendanceRecord att = new AttendanceRecord(Integer.parseInt(empID));
+            
+                // Record time in
+                String timeIn = att.punchIn();
+            
+            if (timeIn != null) {
+                TimeInLabel.setText(att.formatTime(timeIn)); // Display time in
+                JOptionPane.showMessageDialog(this, "Punch in successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                TimeButton.setText("Time out");
+            } else {
+                JOptionPane.showMessageDialog(this, "Failed to record time in!", "Error", JOptionPane.ERROR_MESSAGE);
             }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Invalid Employee ID format! Access Denied.", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error recording time in: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        if (!accessGranted) {
-            // If access is not granted (i.e., employee ID not found in the CSV), display an error message
-            JOptionPane.showMessageDialog(this, "Invalid Employee ID! Access Denied.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+    } else {
+        JOptionPane.showMessageDialog(this, "Invalid Employee ID! Access Denied.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
         
     }
     
+    
+    
     private void timeOut() {
         String empID = MainDashboardempNo.getText();
-        boolean accessGranted = false;
-
-        for (AttendanceRecord att : attendance) {
-            if (att.getEmpID()== Integer.parseInt(empID)) {
-        // Compare empID with the employee ID from the CSV
-        accessGranted = true;
+        if (empID != null && !empID.isEmpty()) {
+            
         try {
+            
+            // Create a new AttendanceRecord for the employee
+                AttendanceRecord att = new AttendanceRecord(Integer.parseInt(empID));
+            
             // Show a confirmation dialog
             int dialogResult = JOptionPane.showConfirmDialog(this, "Are you sure you want to punch out?", "Punch Out Confirmation", JOptionPane.YES_NO_OPTION);
             if (dialogResult == JOptionPane.YES_OPTION) {
@@ -3492,7 +3469,7 @@ public class Dashboard extends javax.swing.JFrame {
                     att.writeToCSV(TimeInLabel.getText().toString(), TimeOutLabel.getText().toString()); // Write to CSV
                     JOptionPane.showMessageDialog(this, "Punch Out successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
                     TimeButton.setText("Time in");
-                    break; // Exit the loop once time in is recorded
+                    
                 } else {
                     // Handle the case when timeOut is null
                     System.out.println("Error: Time out is null.");
@@ -3503,13 +3480,8 @@ public class Dashboard extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
-        break; // Exit the loop once the employee ID is found
-    }
-        }
-
-        if (!accessGranted) {
-            // If access is not granted (i.e., employee ID not found in the CSV), display an error message
-            JOptionPane.showMessageDialog(this, "Invalid Employee ID! Access Denied.", "Error", JOptionPane.ERROR_MESSAGE);
+        
+    
         }
     }
     
